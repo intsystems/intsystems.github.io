@@ -13,6 +13,7 @@
 | Student | Year | Thesis topic | Scientific adviser | Link to publication |
 |:---:|:---:|:---:|:---:|:---:|
 | Andrei Filatov | 2 | Infinite transformers | [Strijov V.V.](http://www.ccas.ru/strijov/) | [Paper](https://github.com/intsystems/Filatov-MS-Thesis/tree/master/paper), [Code](https://github.com/intsystems/Filatov-MS-Thesis/tree/master/code), [Slides](https://github.com/intsystems/Filatov-MS-Thesis/tree/master/slides) |
+| Rustem Islamov | 2 | Distributed Newton-Type Methods with Communication Compression and Bernoulli Aggregation | [Strijov V.V.](http://www.ccas.ru/strijov/) | [Paper](https://arxiv.org/abs/2206.03588), [Code]([https://github.com/intsystems/Filatov-MS-Thesis/tree/master/code](https://github.com/Rustem-Islamov/Islamov-MS-Thesis/tree/main/Code)), [Slides]([https://github.com/intsystems/Filatov-MS-Thesis/tree/master/slides](https://github.com/Rustem-Islamov/Islamov-MS-Thesis/blob/main/Presentation/Islamov2022Presentation.pdf)) |
 |  |  |  |  |  |
 
 
