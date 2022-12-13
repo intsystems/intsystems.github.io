@@ -32,7 +32,7 @@
 
 | Student | Year | Thesis topic | Scientific adviser | Link to publication |
 |:---:|:---:|:---:|:---:|:---:|
-|  |  |  |  |  |
+| Kornilov Nikita | 4 | Gradient Free Optimization with Infinite Variance | [Gasnikov A.V.](https://scholar.google.ru/citations?user=AmeE8qkAAAAJ&hl=ru&oi=ao) | [Paper](https://github.com/Jhomanik/KornilovBSThesis/blob/main/paper/GradFree_with_inf__noise.pdf), Slides(https://github.com/Jhomanik/KornilovBSThesis/blob/main/slides/InfZero_Grad_Pres.pdf) |
 
 
 
