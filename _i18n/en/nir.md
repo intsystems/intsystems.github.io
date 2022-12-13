@@ -34,6 +34,8 @@
 | Student | Year | Thesis topic | Scientific adviser | Link to publication |
 |:---:|:---:|:---:|:---:|:---:|
 | Eduard Vladimirov | 4 | Ways to account for data noise in a Neural ODE model | [Strijov V.V.](http://www.ccas.ru/strijov/) | [Paper](https://github.com/intsystems/Vladimirov-BS-Thesis/raw/master/paper/VladimirovNODEandNoise.pdf), [Code](https://github.com/intsystems/Vladimirov-BS-Thesis/blob/master/code/main.ipynb) [Slides](https://github.com/intsystems/Vladimirov-BS-Thesis/tree/master/slides) |
+| Alexander Molozhavenko | 4 | Solution of a block multidimensional search problem eigenvalues | Gasnikov A.V. |  [Code](https://colab.research.google.com/drive/1rZMr2G-ITnQVVJhsO_QIm23NzXjm4bGj?usp=sharing), [Slides](https://www.overleaf.com/read/gxtnzbdhzhcj) |
+
 
 
 
