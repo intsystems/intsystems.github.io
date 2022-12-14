@@ -5,6 +5,7 @@
 | Postgraduate student | Year | PhD thesis topic | Scientific adviser | Link to publication |
 |:---:|:---:|:---:|:---:|:---:|
 | Vasiliy Alekseev | 3 | Incompleteness and Instability of Topic Models | [Vorontsov K.V.](http://www.machinelearning.ru/wiki/index.php?title=User:Vokov) | [Paper](https://link.springer.com/article/10.1134/S106456242202003X), [Paper (conf.)](https://link.springer.com/chapter/10.1007/978-3-031-19032-2_12) |
+| Polina Potapova | 3 | Topic modeling for multilingual topic search | [Vorontsov K.V.](http://www.machinelearning.ru/wiki/index.php?title=User:Vokov) | [Paper](https://www.overleaf.com/7641677752mmzmcfghzydj), [Code](https://github.com/machine-intelligence-laboratory/text_categorization)|
 |  |  |  |  |  |
 
 
