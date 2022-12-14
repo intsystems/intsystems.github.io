@@ -5,7 +5,7 @@
 | Postgraduate student | Year | PhD thesis topic | Scientific adviser | Link to publication |
 |:---:|:---:|:---:|:---:|:---:|
 | Vasiliy Alekseev | 3 | Incompleteness and Instability of Topic Models | [Vorontsov K.V.](http://www.machinelearning.ru/wiki/index.php?title=User:Vokov) | [Paper](https://link.springer.com/article/10.1134/S106456242202003X), [Paper (conf.)](https://link.springer.com/chapter/10.1007/978-3-031-19032-2_12) |
-|  |  |  |  |  |
+| Vasilii Novitskii | 2 | New Bounds for One-point Oracle in Stochastic Gradient-free Optimization | [Gasnikov A.V.](http://www.mathnet.ru/php/person.phtml?option_lang=rus&personid=27590) | [Paper 1](https://arxiv.org/abs/2101.03821), [Paper 2](https://arxiv.org/abs/2103.00321), [Slides](https://drive.google.com/file/d/1XLs65z9Yir-h4kgtQK-7ccqIYKL4g4U9/view?usp=sharing), [Code](https://drive.google.com/file/d/1RUPsCpTCSvPb9WYWTK8ybV89Z1RKzudj/view?usp=sharing)|
 
 
 
