@@ -21,7 +21,7 @@
 
 | Student | Year | Topic | Scientific adviser | Link to publication |
 |:---:|:---:|:---:|:---:|:---:|
-| Alkin Emil | 1 | Expessive Power of Recurrent Neural Networks | [Oseledets I. V.](https://faculty.skoltech.ru/people/ivanoseledets) | [Code](https://colab.research.google.com/drive/1mTdzgFeBJbxkDu5zR4Lw5snZ-IGUNL50?usp=sharing) |
+| Alkin Emil | 1 | Expessive Power of Recurrent Neural Networks | [Oseledets I. V.](https://faculty.skoltech.ru/people/ivanoseledets) | [Slides](https://www.overleaf.com/read/bxvwpmzvnzvp), [Code](https://colab.research.google.com/drive/1mTdzgFeBJbxkDu5zR4Lw5snZ-IGUNL50?usp=sharing) |
 | Yakovlev Konstantin | 1 | Concordant Neural Architecture Search on Multidomain Data | Bakhteev O. Y. | [Code](https://github.com/Konstantin-Iakovlev/Concord-NAS/tree/rnn) |
 | Kovaleva Maria | 1 |  Neural architecture search with early stopping | [Alexey Zaytsev](https://faculty.skoltech.ru/people/alexeizaitsev) | [Code](https://github.com/MarKovka20/Project_reseach/tree/main) |
 
