@@ -20,6 +20,7 @@
 |:---:|:---:|:---:|:---:|:---:|
 | Yakovlev Konstantin | 1 | Concordant Neural Architecture Search on Multidomain Data | Bakhteev O. Y. | [Code](https://github.com/Konstantin-Iakovlev/Concord-NAS/tree/rnn) |
 | Kovaleva Maria | 1 |  Neural architecture search with early stopping | [Alexey Zaytsev](https://faculty.skoltech.ru/people/alexeizaitsev) | [Code](https://github.com/MarKovka20/Project_reseach/tree/main) |
+| Tolmachev Alexander | 1 | Information Bottleneck Analysis of Deep Neural Networks | [Alexey Frolov](https://faculty.skoltech.ru/people/alexeyfrolov) | [Slides](https://github.com/Alexandr-Tolmachev/Master-Thesis-public/blob/main/Report.pdf) |
 
 #### Fourth Year Bachelor Students
 
