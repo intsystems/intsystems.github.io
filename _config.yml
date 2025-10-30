@@ -4,9 +4,9 @@ image:
 og:
   image: /images/main/main.jpg
 
-url: https://kisnikser.github.io
+url: https://intsystems.github.io
 edit: https://github.com/kisnikser/intsystems.github.io/edit/main/
-baseurl: /intsystems.github.io
+baseurl:
 permalink: /:year/:month/:day/:title.html
 
 # Main Info
