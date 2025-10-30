@@ -1,7 +1,8 @@
 * {
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: $font-primary;
 }
 
 html,
@@ -11,155 +12,165 @@ body {
 }
 
 html {
-  font-family: "Open Sans", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.6;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  overflow-x: hidden;
+}
 
-  @media (min-width: 38em) {
-    font-size: 20px;
+@media (max-width: $lt-width) {
+  html {
+    font-size: 0.9rem;
   }
 }
 
 body {
-  color: #515151;
+  // color: black;
+  color: #333;
+  line-height: 1.6;
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-x: hidden;
+  width: 100%;
 }
 
-.MathJax_Display{
-  font-size: 80%;
+.MathJax_Display {
+  font-size: $font-size-math;
 }
 
 a {
-  color: #268bd2;
-  text-decoration: none;
-
+  color: inherit;
+  text-decoration: underline;
+  transition: color 0.2s ease;
   &:hover,
   &:focus {
-    text-decoration: underline;
+    color: $href-color;
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: auto;
-  margin-bottom: 1em;
-  font-weight: 600;
-  font-family: "Open Sans", "Source Sans Pro";
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: auto 0 1rem 0;
+  font-family: $font-primary;
   line-height: 1.1;
-  color: #333;
-  letter-spacing: -.025rem;
+  color: #111;
   scroll-margin-top: 50px;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: $font-size-h1;
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: $font-size-h2;
 }
 
 h3 {
-  font-size: 1.3rem;
+  font-size: $font-size-h3;
 }
 
-h4, h5, h6 {
-  font-size: 1rem;
+h4,
+h5,
+h6 {
+  font-size: $font-size-h4;
 }
 
 p {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica;
-  font-weight: 300;
+  font-family: $font-primary;
   margin: 0 0 1rem;
-  font-size: 0.8rem;
+  font-size: $font-size-body;
 }
 
-ul, ol, dl {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica;
-  font-weight: 300;
-  font-size: 0.8rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
+ul,
+ol,
+dl {
+  font-family: $font-primary;
+  font-size: $font-size-body;
 }
 
-li > ul > li {
-    margin-left: 1rem;
-}
-
-dt {
-  font-weight: bold;
-}
-
-dd {
-  margin-bottom: .5rem;
-}
-
+/* нормальная типографика списков */
 ul {
-  /*font-family: Helvetica, 'Ubuntu Mono';*/
-  font-size: 0.8rem;
-  list-style: inside circle;
-  padding-left: 0;
-
-  li {
-    margin-bottom: .25rem;
-  }
-
-  ul,
-  ol {
-    margin-top: .25rem;
-    margin-bottom: .5rem;
-  }
-}
-
-ul.share-buttons{
-  list-style: none;
-  padding: 0;
+  list-style-type: disc; /* или circle, если нужно */
+  list-style-position: outside; /* ключевая строка */
+  padding-left: 1.25rem; /* базовый отступ под маркер */
+  margin-left: 0;
 }
 
 ol {
-  list-style: inside decimal;
-  padding-left: 0;
+  list-style-position: outside;
+  padding-left: 1.5rem; /* цифрам обычно чуть больше */
+  margin-left: 0;
+}
 
-  li {
-    margin-bottom: .25rem;
-  }
+li {
+  text-indent: 0; /* на всякий случай */
+  margin-bottom: 0.4rem; /* межстрочный интервал между пунктами */
+}
 
-  ul,
-  ol {
-    margin-top: .25rem;
-    margin-bottom: .5rem;
-  }
+p:has(+ ol),
+p:has(+ ul) {
+  margin-bottom: 0.4rem;
+}
+
+/* вложенные списки — чуть глубже */
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+}
+
+/* длинные DOI/URL не ломают разметку */
+li a {
+  overflow-wrap: anywhere;
 }
 
 p + h1,
 p + h2,
 p + h3,
+p + h4,
+p + h5,
+p + h6,
 ul + h1,
 ul + h2,
 ul + h3,
+ul + h4,
+ul + h5,
+ul + h6,
 ol + h1,
 ol + h2,
-ol + h3 {
+ol + h3,
+ol + h4,
+ol + h5,
+ol + h6 {
   margin-top: 1.5rem;
+}
+
+ul + p,
+ol + p {
+  margin-top: 1rem;
 }
 
 hr {
   border: 0;
-  border-top: .5px solid #eee;
-  border-bottom: .5px solid #eee;
-  margin: 0px;
-  padding: 0px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e0e0e0 20%, #e0e0e0 80%, transparent);
+  margin: 3em 0 2em 0;
+  padding: 0;
 }
 
 strong {
-  color: #333;
+  color: #111;
   font-weight: 600;
 }
 
 abbr {
-  font-size: 80%;
+  font-size: $font-size-code;
   font-weight: bold;
   color: #555;
   text-transform: uppercase;
@@ -173,8 +184,7 @@ abbr[title] {
 blockquote {
   padding: 0 0 0 1.5rem;
   margin: 0 2rem 1rem 0;
-  //color: #999;
-  border-left: .5rem; //solid #e5e5e5
+  border-left: 0.5rem;
 
   p:last-child {
     margin-bottom: 0;
@@ -183,12 +193,12 @@ blockquote {
 
 code,
 pre {
-  font-family: Monaco, "Courier New", monospace;
+  font-family: $font-monospace;
 }
 
 code {
-  padding: .25em .5em;
-  font-size: 80%;
+  padding: 0.25em 0.5em;
+  font-size: $font-size-code;
   color: #bf616a;
   background-color: #f9f9f9;
   border-radius: 3px;
@@ -199,7 +209,7 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  font-size: .8rem;
+  font-size: $font-size-body;
   line-height: 1.4;
   white-space: pre;
   white-space: pre-wrap;
@@ -210,7 +220,7 @@ pre {
 
 pre code {
   padding: 0;
-  font-size: 80%;
+  font-size: $font-size-code;
   color: inherit;
   background-color: transparent;
 }
@@ -227,38 +237,130 @@ pre code {
 
 img {
   display: block;
-  max-width: 200px;
   margin: 0 0 1rem;
   border-radius: 5px;
 }
 
 table {
-  margin-bottom: 1rem;
-  width: 100%;
-  font-size: 70%;
-  border: 1px solid #e5e5e5;
+  font-family: $font-primary;
+  line-height: 1.4;
   border-collapse: collapse;
-}
-
-td,
-th {
-  padding: .25rem .5rem;
+  width: 100%;
+  margin: 1.5em 0;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  font-size: $font-size-small;
+  font-weight: 400;
   border: 1px solid #e5e5e5;
-  font-size: 140%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-tbody tr:nth-child(odd) td,
-tbody tr:nth-child(odd) th {
-  background-color: #f9f9f9;
+.table-scroll {
+  position: relative;
+  margin: 1.5em 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 0.25rem;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.table-scroll::after {
+  content: "";
+  position: sticky;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 1.5rem;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.85));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.table-scroll:hover::after,
+.table-scroll:focus-within::after {
+  opacity: 1;
+}
+
+.table-scroll > table {
+  margin: 0;
+  width: max-content;
+  min-width: 100%;
+  border: none;
+  box-shadow: none;
+}
+
+table a {
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+th {
+  background: #f5f5f5;
+  font-weight: 500;
+  text-align: left;
+  padding: 0.75em 1em;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+td {
+  padding: 0.75em 1em;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+th,
+td {
+  max-width: 12rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+  vertical-align: top;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover {
+  background: #f8f8f8;
+  transition: background 0.15s ease;
+}
+
+tr:nth-child(even) {
+  background: #fafafa;
+}
+
+tr:nth-child(even):hover {
+  background: #f5f5f5;
+}
+
+/* запретить justify внутри таблиц */
+table,
+table th,
+table td {
+  text-align: left !important; // переопределяем возможный глобальный justify
+  text-align-last: auto; // чтобы последняя строка не дотягивалась
+  text-justify: auto; // отменяем межсловное выравнивание
+  hyphens: manual; // без агрессивных переносов
+  word-break: normal;
+  white-space: normal;
+}
+
+/* на случай, если в ячейках есть p/span/a с унаследованным justify */
+table :is(p, span, a, li) {
+  text-align: left !important;
 }
 
 .list {
   &-post-title {
-    margin-bottom: .25rem;
+    margin-bottom: 0.25rem;
 
     a {
-      color: #333;
-
       &:hover,
       &:focus {
         text-decoration: none;
@@ -267,7 +369,7 @@ tbody tr:nth-child(odd) th {
   }
   &-post-date {
     margin-bottom: 1rem;
-    font-size: .75rem;
+    font-size: $font-size-small;
     text-transform: uppercase;
   }
 }
@@ -275,10 +377,18 @@ tbody tr:nth-child(odd) th {
 // customization
 .list-header {
   margin: auto;
-  padding: 5px;
+  padding: 1rem 0;
 }
 
-.list-header>h3 {
+.list-header > h1 {
+  margin: auto;
+}
+
+.list-header > h2 {
+  margin: auto;
+}
+
+.list-header > h3 {
   margin: auto;
 }
 
@@ -288,13 +398,41 @@ tbody tr:nth-child(odd) th {
 }
 
 .list-post-title .name {
-  font-size: 18px;
+  font-size: $font-size-name;
+  text-decoration: none;
 }
 
-.list-post-title {
-  color: black;
+.list-item a:hover,
+.list-post-title:hover .name,
+.list-post-title .name:hover {
+  color: $href-color;
 }
 
-.list-item a:hover, .list-post-title:hover .name, .list-post-title .name:hover {
-  color: #c42929;
+.data-table > summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+  outline: none;
+}
+
+.data-table > summary::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 0.5em solid transparent;
+  border-bottom: 0.5em solid transparent;
+  border-left: 0.6em solid #333;
+  margin-right: 0.7em;
+  transition: transform 0.2s;
+}
+
+.data-table[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.data-table > summary h3 {
+  margin: 0.5rem 0;
+  font-size: $font-size-h3;
 }

@@ -1,0 +1,75 @@
+// Миксины для переиспользования
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: #{$lt-width - 1px}) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media (min-width: $lt-width) and (max-width: #{$md-width - 1px}) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: $md-width) {
+      @content;
+    }
+  }
+  @if $breakpoint == large {
+    @media (min-width: $lg-width) {
+      @content;
+    }
+  }
+}
+
+@mixin button-base {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: $font-family-base;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px $shadow-medium;
+  }
+}
+
+@mixin card-shadow {
+  box-shadow: 0 2px 12px $shadow-light;
+  transition: box-shadow 0.2s ease;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 4px 20px $shadow-medium;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

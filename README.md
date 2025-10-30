@@ -1,65 +1,43 @@
-# Machine Learning Phystech WebSite
+# Intelligent Systems Department Website
 
-**Если вы значительно меняете сайт (добавляете страницы и т.п.), рекомендуется перед коммитом проверить работоспособность сайта:**
-`sudo bash docker_test.sh`
- 
-## Добавление курса: TODO --- сейчас не актуально
-Для добавления нового курса требуется создать файл `course_name.md` в папке `_course/`. Далее требуется заполнить метаинформацию о курсе:
-```
----
-title: Сюда вписать названия курса (название которое во вкладке браузера )
-name: Продублировать название курса (название которое будет на сайте)
-type: bachelor (курс из бакалавриата или магистратуры, валидные поля bachelor/master)
-avatar: название изображению в папке images/course (если поле пустое, то будет взято default.jpg изображение)
-lecturers: лекторы через запятую, в качестве идентификатора использовать название файлов (без приставки .md) в папке _people (например strijov_vv,grabovoy_av)
-site: основной сайт курса (можно не указывать), ВАЖНО! Без приставки https://
----
-```
+[![License](https://badgen.net/github/license/intsystems/intsystems.github.io)](https://github.com/intsystems/intsystems.github.io/blob/main/LICENSE)
+[![GitHub Contributors](https://img.shields.io/github/contributors/intsystems/intsystems.github.io)](https://github.com/intsystems/intsystems.github.io/graphs/contributors)
 
-После заполенения метаинформации требуется указать описание самого курса в формате markdown.
+This repository contains the source code for the Intelligent Systems Department website. It is designed to provide information about our department, courses, lecturers, research, publications and contact details.
 
-## Добавление пользователя:  TODO --- сейчас не актуально
-Для добавления нового пользователя требуется создать файл `lecturer_name.md` в папке `_people/`. Далее требуется заполнить метаинформацию о лекторе:
-```
----
-title: Сюда вписать имя фамилию преподавателя (название которое во вкладке браузера )
-name: Продублировать имя преподавателя (так как на сайте будет)
-position: phd (начная степень преподавателя или должность, возможные значения смотрите тут https://github.com/intsystems/intsystems.github.ioblob/master/_config.yml#L81)
-avatar: название изображению в папке images/people (если поле пустое, то будет взято default.jpg изображение)
-mail: почта преподавателя (может быть пусто)
-site: сайт преподавателя (может быть пусто)
-scholar: ссылка на scholar (может быть пусто)
----
-```
+If you want to make a large contribution, please do it in a pull request, and ask [@kisnikser](https://github.com/kisnikser) for a review. Else if your changes are small (typos, small content edits), you can directly edit the files in GitHub web interface as follows.
 
-Вся дополнительная информация указывается ниже в формате markdown.
+## Research Report
 
-## Исправления текста локализации en/ru
+1. Go to the file [`_i18n/en/nir.md`](_i18n/en/nir.md).
+2. If you add new semester, create a new section, e.g., `### 2025 Fall`, and create a table for your course (see previous semesters for examples).
+3. Add your report information in the format:
+   ```markdown
+   | Student      | Topic      | Advisor               | Links                                    |
+   | :----------- | :--------- | :-------------------- | :--------------------------------------- |
+   | Name Surname | Topic name | Name Surname, PhD/DSc | [Paper](URL), [Code](URL), [Slides](URL) |
+   ```
 
-Английский язык: [ссылка](https://github.com/intsystems/intsystems.github.ioblob/master/_i18n/en.yml)
+## Thesis
 
-Русский язык: [ссылка](https://github.com/intsystems/intsystems.github.ioblob/master/_i18n/ru.yml)
+1. Go to the file [`_i18n/en/thesis.md`](_i18n/en/thesis.md).
+2. If you add new year, create a new section, e.g., `### 2025`, and create a table for your course (see previous years for examples).
+3. Add your report information in the format:
+   ```markdown
+   | Student      | Topic       | Advisor               | Link to Project | Link to Paper | Link to Slides |
+   | :----------- | :---------- | :-------------------- | :-------------- | ------------- | -------------- |
+   | Name Surname | Thesis name | Name Surname, PhD/DSc | [Project](URL)  | [Thesis](URL) | [Slides](URL)  |
+   ```
 
-## Изменения страницы HOME
+## People
 
-Метаинформация страницы: [ссылка](https://github.com/intsystems/intsystems.github.ioedit/master/index.md)
+1. Create or edit a file in the [`_people`](_people/) folder. Use the existing files as a reference for the structure and required fields. Each file should be named using the format `lastname_firstname.md`.
+2. Add a brief biography and any relevant links (e.g., personal website, scholar, elibrary) to the files in [`_i18n/en/_people/`](_i18n/en/_people/) and [`_i18n/ru/_people/`](_i18n/ru/_people/) directories. Name files consistently across languages, following the same `lastname_firstname` format.
+3. Add the person's profile picture to the [`images/people/`](images/people/) folder. Please, compress the image to optimize loading times. Add image filename to the file from 1st step.
+4. Update meta information `people` in the [`_i18n/en.yml`](_i18n/en.yml) and [`_i18n/ru.yml`](_i18n/ru.yml) files to include the new person, following the same `lastname_firstname` format.
 
-Английская версия: [ссылка](https://github.com/intsystems/intsystems.github.ioblob/master/_i18n/en/index.md)
+## Courses
 
-Русская версия: [ссылка](https://github.com/intsystems/intsystems.github.ioblob/master/_i18n/ru/index.md)
-
-## Изменения страницы ABOUT
-
-Метаинформация страницы: [ссылка](https://github.com/intsystems/intsystems.github.ioedit/master/about.md)
-
-Английская версия: [ссылка](https://github.com/intsystems/intsystems.github.ioblob/master/_i18n/en/about.md)
-
-Русская версия: [ссылка](https://github.com/intsystems/intsystems.github.ioblob/master/_i18n/ru/about.md)
-
-## Изменения страницы Admission
-
-Метаинформация страницы: [ссылка](https://github.com/intsystems/intsystems.github.ioedit/master/admission.md)
-
-Английская версия: [ссылка](https://github.com/intsystems/intsystems.github.ioblob/master/_i18n/en/admission.md)
-
-Русская версия: [ссылка](https://github.com/intsystems/intsystems.github.ioblob/master/_i18n/ru/admission.md)
+1. Create or edit a file in the [`_course`](_course/) folder. Use the existing files as a reference for the structure and required fields. Each file should be named using the format `course_name.md`.
+2. Add course details and any relevant links (e.g., syllabus, resources) to the files in [`_i18n/en/_course/`](_i18n/en/_course/) and [`_i18n/ru/_course/`](_i18n/ru/_course/) directories. Name files consistently across languages, following the same `course_name` format.
+3. Update meta information `courses` in the [`_i18n/en.yml`](_i18n/en.yml) and [`_i18n/ru.yml`](_i18n/ru.yml) files to include the new course, following the same `course_name` format.

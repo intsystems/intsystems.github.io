@@ -1,16 +1,15 @@
 ---
-title: peoples.title.bishuk_ay
-name: peoples.name
+title: people.bishuk_ay
 edit: true
-position: gs
+position: pgs
 avatar: bishuk_ay.jpeg
 mail: anton.bishuk@mail.ru
-site: 
-scholar: 
-orcid: 
-mathnet: 
-scopus: 
-elib: 
+site:
+scholar:
+orcid:
+mathnet:
+scopus:
+elib:
 ---
 
 {% tf _people/bishuk_ay.md %}

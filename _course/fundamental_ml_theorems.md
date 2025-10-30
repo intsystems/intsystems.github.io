@@ -1,9 +1,6 @@
 ---
-edit: true
-title: courses.title.fundamental_ml_theorems
-name: courses.name
+title: courses.fundamental_ml_theorems
 type: deprecated
-avatar:
 lecturers: strijov_vv
 site:
 ---

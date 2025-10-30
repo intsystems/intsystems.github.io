@@ -1,11 +1,8 @@
 ---
-edit: true
-title: courses.title.software_engineering_data_analysis
-name: courses.name
-type: master
-avatar:
+title: courses.software_engineering_data_analysis
+type: bachelor,master
 lecturers: khritankov_as
-site: 
+site:
 ---
 
 {% tf _course/software_engineering_data_analysis.md %}

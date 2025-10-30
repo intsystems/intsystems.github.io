@@ -1,4 +1,3 @@
-He graduated from [Moscow Institute of Physics and Tecnhology](https://mipt.ru/english/) (MIPT) in 2024.
-Since 2024 he is a postgraduate student in MIPT.
+He graduated with honors from MIPT in 2024 and is currently a postgraduate student in at the Intelligent Systems Department.
 
-**Professional interests:** TODO
+**Professional interests:** Statistical learning theory.

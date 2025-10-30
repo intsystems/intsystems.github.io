@@ -1,20 +1,43 @@
 .container {
-    width: 100%;
-    padding: 0px;
+  width: 100%;
+  padding: 0px;
 }
 
 .content {
   padding: 10px;
-  margin-left:  auto;
-  margin-right: auto;
-  text-align: justify;
+  margin-top: 2rem !important;
+  margin-bottom: 3rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   min-height: 100vh;
+
+  &.content--home {
+    margin-top: 0 !important;
+  }
 }
 
-.sidebar-left {
-  display: flex;
-  overflow-y: scroll;
-  background-color: $bg-sidecar;
+@media (max-width: $md-width) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .content {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+
+    &.content--home {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: $lt-width) {
+  .content {
+    margin-top: 1rem !important;
+  }
 }
 
 @media (min-width: $lt-width) {
@@ -23,15 +46,13 @@
   }
 
   .content {
-    margin-left: calc(#{$page-margin}*100%);
+    margin-left: calc(#{$page-margin}* 100%);
     width: calc(#{$lt-width} * 0.7);
-  }
 
-  .sidebar-left {
-    position: fixed;
-    top: 50px;
-    bottom: 0px;
-    width: calc(#{$lt-width} * #{$page-margin});
+    &.content--home {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 
@@ -41,15 +62,13 @@
   }
 
   .content {
-    margin-left: calc(#{$page-margin}*100%);
+    margin-left: calc(#{$page-margin}* 100%);
     width: 70%;
-  }
 
-  .sidebar-left {
-    position: fixed;
-    top: 50px;
-    bottom: 0px;
-    width: calc(#{$page-margin}*100%);
+    &.content--home {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 
@@ -59,15 +78,13 @@
   }
 
   .content {
-    margin-left: calc(#{$page-margin}*100%);
+    // margin-left: calc(#{$page-margin}* 100%);
     width: calc(#{$lg-width} * 0.7);
-  }
 
-  .sidebar-left {
-    position: fixed;
-    top: 50px;
-    bottom: 0px;
-    width: calc(#{$lg-width} * #{$page-margin});
+    &.content--home {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 
@@ -77,15 +94,13 @@
   }
 
   .content {
-    margin-left: calc(#{$page-margin}*100%);
+    margin-left: calc(#{$page-margin}* 100%);
     width: calc(#{$xl-width} * 0.7);
-  }
 
-  .sidebar-left {
-    position: fixed;
-    top: 50px;
-    bottom: 0px;
-    width: calc(#{$xl-width} * #{$page-margin});
+    &.content--home {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 
@@ -95,15 +110,13 @@
   }
 
   .content {
-    margin-left: calc(#{$page-margin}*100%);
+    margin-left: calc(#{$page-margin}* 100%);
     width: calc(#{$qhd-width} * 0.7);
-  }
 
-  .sidebar-left {
-    position: fixed;
-    top: 50px;
-    bottom: 0px;
-    width: calc(#{$qhd-width} * #{$page-margin});
+    &.content--home {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 
@@ -113,14 +126,12 @@
   }
 
   .content {
-    margin-left: calc(#{$page-margin}*100%);
+    margin-left: calc(#{$page-margin}* 100%);
     width: calc(#{$wqhd-width} * 0.7);
-  }
 
-  .sidebar-left {
-    position: fixed;
-    top: 50px;
-    bottom: 0px;
-    width: calc(#{$wqhd-width} * #{$page-margin});
+    &.content--home {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }

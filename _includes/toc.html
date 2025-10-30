@@ -1,0 +1,18 @@
+{% capture toc_title %}{% if page.toc_title %}{{ page.toc_title }}{% else %}{% t site.toc.title %}{% endif %}{% endcapture %}
+<nav class="toc" data-toc hidden aria-label="{{ toc_title | strip }}"
+  data-scroll-threshold="{{ page.toc_scroll_threshold | default: 0 }}"
+  data-hide-delay="{{ page.toc_hide_delay | default: 2000 }}"
+  data-heading-selector="{{ page.toc_headings | default: 'h2, h3' }}"
+  data-velocity-distance="{{ page.toc_velocity_distance | default: 480 }}"
+  data-velocity-window="{{ page.toc_velocity_window | default: 480 }}"
+  {% if page.toc_depth %}data-toc-depth="{{ page.toc_depth }}"{% endif %}
+  {% if page.toc_sticky %}data-toc-sticky="true"{% endif %}>
+  <div class="toc__container">
+    <div class="toc__header">
+      <p class="toc__title">{{ toc_title | strip }}</p>
+    </div>
+    <div class="toc__body" data-toc-body>
+      <ul class="toc__list" id="toc-list" data-toc-list></ul>
+    </div>
+  </div>
+</nav>

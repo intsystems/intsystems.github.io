@@ -1,7 +1,21 @@
 footer {
+    font-family: $font-primary;
+    font-size: $font-size-small;
     width: 100%;
     color: #777;
-    font-size: 12px;
     text-align: center;
-    padding-bottom: 10px;
+    margin: 10px 0;
+}
+
+a.social {
+    text-decoration: none;
+    color: inherit;
+    font-size: $font-size-footer-icon;
+    margin: 2px;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $href-color;
+    }
 }

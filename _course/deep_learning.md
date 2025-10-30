@@ -1,11 +1,8 @@
 ---
-edit: true
-title: courses.title.deep_learning
-name: courses.name
+title: courses.deep_learning
 type: bachelor
-avatar:
-lecturers: kropotov_da,grebenkova_os,filatov_av,bishuk_ay,yakovlev_kd
-site: 
+lecturers: vladimirov_ea,dorin_dd,kiselev_ns,firsov_sa,kasyuk_va
+site: https://github.com/intsystems/Deep-Learning-Course
 ---
 
 {% tf _course/deep_learning.md %}

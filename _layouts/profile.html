@@ -1,46 +1,74 @@
 ---
 layout: default
 ---
-<meta name="description" content="{% t metatags.lecturer %}, {% t peoples.name.{{ page.id | split: "/" | last }} %}" />
+<meta name="description" content="{% t metatags.lecturer %}, {% t people.{{ page.id | split: '/' | last }} %}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-<div class="no_toc_section">
-  <h3 id="{% t peoples.name.{{ page.id | split: "/" | last }} %}" class="title">{% t peoples.name.{{ page.id | split: "/" | last }} %}</h3>
+<div class="profile-header">
+    <div class="profile-avatar">
+        {% if page.avatar %}
+        <img width="300" height="auto" src="{{ site.baseurl_root }}/images/people/{{page.avatar}}">
+        {% else %}
+        <img width="300" height="auto" src="{{ site.baseurl_root }}/images/people/default.jpg">
+        {% endif %}
+    </div>
+    <div class="profile-info">
+        <div class="no_toc_section" style="margin-top: 2rem;">
+            <h1 id="{% t people.{{ page.id | split: '/' | last }} %}" class="title" style="margin-bottom: 0.5rem;">{% t people.{{ page.id | split: '/' | last }} %}</h1>
+        </div>
+        {% if page.site or page.mail or page.scholar or page.orcid or page.scopus or page.elib or page.mathnet %}
+        <div class="profile-links">
+            {% if page.site %}
+            <div class="profile-link-item">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <a href="{{page.site}}" target="_blank">{% t profile.website %}</a>
+            </div>
+            {% endif %}
+            
+            {% if page.mail %}
+            <div class="profile-link-item">
+                <i class="fa fa-envelope-o"></i>
+                <a href="#" onclick="copyEmailToClipboard(event, '{{page.mail}}')">{{ page.mail }}</a>
+            </div>
+            {% endif %}
+            
+            {% if page.scholar %}
+            <div class="profile-link-item">
+                <i class="ai ai-google-scholar"></i>
+                <a href="{{page.scholar}}" target="_blank">Google Scholar</a>
+            </div>
+            {% endif %}
+            
+            {% if page.orcid %}
+            <div class="profile-link-item">
+                <i class="ai ai-orcid"></i>
+                <a href="{{page.orcid}}" target="_blank">ORCID</a>
+            </div>
+            {% endif %}
+            
+            {% if page.scopus %}
+            <div class="profile-link-item">
+                <i class="ai ai-scopus"></i>
+                <a href="{{page.scopus}}" target="_blank">Scopus</a>
+            </div>
+            {% endif %}
+            
+            {% if page.elib %}
+            <div class="profile-link-item">
+                <i class="fa fa-bar-chart"></i>
+                <a href="{{page.elib}}" target="_blank">eLibrary</a>
+            </div>
+            {% endif %}
+            
+            {% if page.mathnet %}
+            <div class="profile-link-item">
+                <i class="fa fa-bar-chart"></i>
+                <a href="{{page.mathnet}}" target="_blank">Math-Net</a>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
 </div>
-
-{% if page.avatar %}
-<img width="300" src="/images/people/{{ page.avatar }}">
-{% endif %}
-
-{% if page.site %}
-<i class="fa fa-user" aria-hidden="true"></i> <a href="{{page.site}}">{% t profile.website %}</a> <br>
-{% endif %}
-
-{% if page.mail %}
-<i class="fa fa-envelope-o"></i> <a href="mailto:{{page.mail}}">{{ page.mail }}</a> <br>
-{% endif %}
-
-{% if page.scholar %}
-<i class="ai ai-google-scholar"></i> <a href="https://{{page.scholar}}">google scholar</a> <br>
-{% endif %}
-{% if page.orcid %}
-<i class="ai ai-orcid"></i> <a href="https://{{page.orcid}}">OrcID</a> <br>
-{% endif %}
-{% if page.scopus %}
-<i class="ai ai-scopus"></i> <a href="http://{{page.scopus}}">Scopus</a> <br>
-{% endif %}
-{% if page.elib %}
-<i class="fa fa-bar-chart"></i> <a href="http://{{page.elib}}">eLibrary</a> <br>
-{% endif %}
-{% if page.mathnet %}
-<i class="fa fa-bar-chart"></i> <a href="http://{{page.mathnet}}">Math-Net</a> <br>
-{% endif %}
-&nbsp;
-<hr>
-&nbsp;
-
-
-
-
 {{ content }}
 
 {% assign found = false %}
@@ -52,23 +80,20 @@ layout: default
 		{% endif %}			
 	{% endfor %}	
   {% endfor %}
-  
 
-{% if found %}	  
-	&nbsp;
-	<hr>
-	<p><h3>{% t profile.teaches %}:</h3></p>
-
-	<div>
-	  {% for course in site.course %}
+{% if found %}
+<hr>
+<h3>{% t profile.teaches %}</h3>
+<div class="profile-courses-list">
+    {% for course in site.course %}
 		{% assign lecturers = course.lecturers | split: "," %}
 		{% for lecturer in lecturers %}
 			{% if page.url contains lecturer %}
-				<ul><li> <a href="{{ site.baseurl }}{{ course.url }}">
-					  {% t courses.name.{{ course.id | split: "/" | last }} %}</a> 
-				</li></ul>
-			{% endif %}			
+    <a href="{{ site.baseurl }}{{ course.url }}" class="profile-course-item">
+        {% t courses.{{ course.id | split: '/' | last }} %}
+    </a>
+    {% endif %}			
 		{% endfor %}	
 	  {% endfor %}
-	</div>
-{% endif %}	
+</div>
+{% endif %}

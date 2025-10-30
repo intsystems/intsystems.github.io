@@ -1,11 +1,8 @@
 ---
-edit: true
-title: courses.title.intellectual_data_analysis
-name: courses.name
+title: courses.intellectual_data_analysis
 type: master
-avatar:
-lecturers: strijov_vv,bakhteev_oy
-site: 
+lecturers: strijov_vv,vladimirov_ea
+site: https://github.com/intsystems/ida
 ---
 
 {% tf _course/intellectual_data_analysis.md %}

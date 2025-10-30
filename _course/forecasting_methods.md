@@ -1,11 +1,8 @@
 ---
-edit: true
-title: courses.title.forecasting_methods
-name: courses.name
+title: courses.forecasting_methods
 type: bachelor
-avatar:
-lecturers: strijov_vv,samokhina_am,tikhonov_dm
-site: 
+lecturers: tikhonov_dm,panchenko_sk
+site: https://github.com/intsystems/MathematicalForecastingMethods
 ---
 
 {% tf _course/forecasting_methods.md %}

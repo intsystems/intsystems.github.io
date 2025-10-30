@@ -1,12 +1,11 @@
 ---
-title: peoples.title.potanin_ms
-name: peoples.name
+title: people.potanin_ms
 edit: true
-position: gs
+position: pgs
 avatar: potanin_ms.jpg
 mail:
 site:
-scholar: scholar.google.com/citations?hl=ru&user=F9T_I50AAAAJ
+scholar: https://scholar.google.com/citations?hl=ru&user=F9T_I50AAAAJ
 orcid:
 mathnet:
 ---

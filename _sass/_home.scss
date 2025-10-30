@@ -1,0 +1,315 @@
+.layout-home {
+    margin: 0 auto;
+}
+
+.news-block {
+    font-family: $font-primary;
+    text-align: left;
+    line-height: 1.4;
+    display: block;
+    min-width: 200px;
+    max-width: 300px;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+    border-left: 10px solid #f5f5f5;
+    box-shadow:
+        0px 1px 3px rgba(0, 0, 0, 0.05),
+        1px 0px 3px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: inherit;
+    transition:
+        box-shadow 0.2s,
+        transform 0.2s,
+        background-color 0.2s;
+    flex-shrink: 0;
+    position: relative;
+
+    &:hover,
+    &:focus {
+        background-color: #f5f5f5;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+
+        .news-title {
+            color: $href-color;
+        }
+    }
+}
+
+.news-title {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 0.2rem;
+    transition: color 0.2s ease;
+    color: inherit;
+}
+
+.news-date {
+    font-family: $font-primary;
+    color: #777;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.news-excerpt {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 0px;
+}
+
+.news-important-badge {
+    position: absolute;
+    top: 0rem;
+    right: -1rem;
+    background: $href-bg-color;
+    color: $href-color;
+    font-weight: 600;
+    padding: 0.4rem 1.2rem;
+    border-radius: 0.5rem;
+    box-shadow:
+        0px 1px 3px rgba(0, 0, 0, 0.05),
+        1px 0px 3px rgba(0, 0, 0, 0.05);
+    transform: rotate(15deg);
+    pointer-events: none;
+}
+
+.research-block {
+    display: block;
+    font-family: $font-primary;
+    border-radius: 1rem;
+    padding: 2rem;
+    border-left: 10px solid #f5f5f5;
+    box-shadow:
+        0px 1px 3px rgba(0, 0, 0, 0.05),
+        1px 0px 3px rgba(0, 0, 0, 0.05);
+
+    transition:
+        box-shadow 0.2s,
+        transform 0.2s,
+        background-color 0.2s;
+
+    &:hover,
+    &:focus {
+        background-color: #f5f5f5;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+            color: $href-color;
+        }
+    }
+}
+
+.research-block-title {
+    font-size: $font-size-h3;
+    font-weight: 600;
+    text-align: left;
+    transition: color 0.2s ease;
+}
+
+.carousel-item {
+    font-family: $font-primary;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px; /* Фиксированная высота контейнера */
+    width: 100%; /* Ограничиваем ширину */
+    max-width: 100%; /* Не даем выйти за границы */
+    overflow: hidden; /* Скрываем все, что выходит за границы */
+}
+
+.carousel-item img {
+    max-height: 500px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Сохраняем пропорции */
+    border-radius: 5px;
+}
+
+#carousel-section {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Только горизонтальный overflow */
+}
+
+#carousel-section .carousel,
+#carousel-section .slider-container {
+    margin: 0 auto; /* Центрируем карусель */
+}
+
+#carousel-section .container {
+    flex-grow: 1;
+    margin: 0 auto; /* Центрируем контейнер */
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem; /* Добавляем отступы по бокам */
+}
+
+/* Убираем адаптивные ограничения ширины для карусели */
+/* Карусель всегда занимает всю доступную ширину и центрируется */
+@media screen and (min-width: 1024px) {
+    #carousel-section .container {
+        max-width: 100%;
+        padding: 0 2rem;
+    }
+}
+
+@media screen and (min-width: 1216px) {
+    #carousel-section .container {
+        max-width: 100%;
+        padding: 0 3rem;
+    }
+}
+
+@media screen and (min-width: 1408px) {
+    #carousel-section .container {
+        max-width: 100%;
+        padding: 0 4rem;
+    }
+}
+
+/* Стили для стрелок навигации карусели */
+/* Центрируем стрелки по изображению, а не по всему блоку */
+#carousel-section .slider-navigation-previous,
+#carousel-section .slider-navigation-next {
+    /* Рассчитываем позицию: половина высоты контейнера минус половина высоты подписи */
+    top: calc(50% - 1.5rem) !important; /* вычитаем примерно половину высоты подписи */
+    transform: translateY(-50%);
+}
+
+/* Адаптивные размеры для мобильных */
+@media screen and (max-width: 768px) {
+    .carousel-item {
+        min-height: 400px;
+        padding: 1rem;
+    }
+
+    .carousel-item img {
+        max-height: 300px;
+    }
+
+    /* Стрелки навигации на мобильных - по центру изображения */
+    #carousel-section .slider-navigation-previous,
+    #carousel-section .slider-navigation-next {
+        top: calc(50% - 1.5rem) !important;
+        transform: translateY(-50%);
+    }
+}
+
+/* Conference Card Styles */
+.conference-card {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1rem;
+    border-left: 10px solid #f5f5f5;
+    box-shadow:
+        0px 1px 3px rgba(0, 0, 0, 0.05),
+        1px 0px 3px rgba(0, 0, 0, 0.05);
+    transition:
+        box-shadow 0.2s,
+        transform 0.2s,
+        background-color 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: #f5f5f5;
+        text-decoration: none;
+        color: inherit;
+
+        h4 {
+            color: $href-color;
+        }
+    }
+
+    h4 {
+        color: inherit;
+        font-size: $font-size-h4;
+        font-weight: 600;
+        margin: 0 0 0.8rem 0;
+        transition: color 0.2s ease;
+    }
+
+    .conference-name {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin-bottom: 0.8rem;
+    }
+
+    .conference-rank {
+        background: #f0f0f0;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-weight: 600;
+        color: #666;
+    }
+
+    .conference-full-name {
+        opacity: 0.85;
+        margin-bottom: 1rem;
+        color: inherit;
+    }
+
+    .conference-deadline-box {
+        background: #f5f5f5;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-left: 3px solid #ddd;
+
+        .deadline-label {
+            opacity: 0.7;
+            margin-bottom: 0.3rem;
+        }
+
+        .deadline-date {
+            font-weight: 600;
+        }
+
+        .deadline-warning {
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background: #fff3cd;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+            color: #856404;
+            border-left: 3px solid #ffc107;
+        }
+    }
+
+    .conference-info {
+        opacity: 0.7;
+        margin-bottom: 0.5rem;
+        color: inherit;
+    }
+}
+
+/* Responsive adjustments for conference cards */
+@media screen and (max-width: $lt-width) {
+    .conference-card {
+        font-size: 0.9rem;
+        padding: 1.5rem;
+        .conference-deadline-box {
+            padding: 0.8rem;
+        }
+    }
+}

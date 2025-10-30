@@ -1,9 +1,6 @@
 ---
-edit: true
-title: courses.title.image_processing_recognition
-name: courses.name
+title: courses.image_processing_recognition
 type: deprecated
-avatar:
 lecturers: mestetskiy_lm
 site:
 ---

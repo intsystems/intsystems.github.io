@@ -1,11 +1,8 @@
 ---
-edit: true
-title: courses.title.networks_text_analysis
-name: courses.name
-type: bachelor
-avatar:
+title: courses.networks_text_analysis
+type: deprecated
 lecturers: meysuradze_ai
-site: 
+site:
 ---
 
 {% tf _course/networks_text_analysis.md %}

@@ -5,26 +5,27 @@
   margin-bottom: 2em;
 }
 
-.list-course {
-  padding: 10px;
-}
-
 .list-item-course {
   display: block;
-  padding: 7px 20px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  border-radius: 6px;
-  border-left: 10px solid #cfdee3;
-  box-shadow: 2px -2px 5px 0 rgba(0,0,0,0.05),
-             -2px -2px 5px 0 rgba(0,0,0,0.05),
-              2px  2px 5px 0 rgba(0,0,0,0.05),
-             -2px  2px 5px 0 rgba(0,0,0,0.05);
-}
+  font-family: $font-primary;
+  border-radius: 1rem;
+  padding: 0.75rem;
+  margin: 0.25rem 0;
+  border-left: 10px solid #f5f5f5;
+  box-shadow:
+    0px 1px 3px rgba(0, 0, 0, 0.05),
+    1px 0px 3px rgba(0, 0, 0, 0.05);
 
-.list-item-course:hover {
-  background-color: #cfdfe3;
-  cursor: pointer;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s,
+    background-color 0.2s;
+
+  &:hover,
+  &:focus {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
 }
 
 .list-item-course-title img {
@@ -32,21 +33,60 @@
   margin-top: 1.25em;
 }
 
-.list-item-course-title  {
-  font-size: 18px;
-}
-
 .list-item-course-title {
-  color: black;
+  font-size: $font-size-name;
   margin: 0px;
 }
 
 a.course-name {
-  color: inherit;
-  font-size: 18px;
-  
+  text-decoration: none;
   &:hover,
   &:focus {
+    color: $href-color;
+  }
+}
+
+// Кнопка для ссылки на сайт курса
+.course-website-link {
+  // font-family: $font-primary;
+  font-size: $font-size-name;
+  display: inline-block;
+  border-radius: 1rem;
+  padding: 0.5rem 0.75rem;
+  margin: 0.25rem 0;
+  border-left: 10px solid #f5f5f5;
+  box-shadow:
+    0px 1px 3px rgba(0, 0, 0, 0.05),
+    1px 0px 3px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s,
+    background-color 0.2s;
+
+  &:hover,
+  &:focus {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+
+  i {
+    margin-right: 8px;
+    color: $href-color;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #f5f5f5;
     text-decoration: none;
   }
+}
+
+// Минималистичный разделитель секций
+.course-section-divider {
+  margin-top: 3em;
+  margin-bottom: 2em;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e0e0e0 20%, #e0e0e0 80%, transparent);
 }

@@ -1,11 +1,8 @@
 ---
-edit: true
-title: courses.title.natural_language_processing
-name: courses.name
-type: master
-avatar:
+title: courses.natural_language_processing
+type: deprecated
 lecturers: popov_as,hrilchenkov_ky
-site: 
+site:
 ---
 
 {% tf _course/natural_language_processing.md %}

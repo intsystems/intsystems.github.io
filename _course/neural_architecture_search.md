@@ -1,9 +1,6 @@
 ---
-edit: true
-title: courses.title.neural_architecture_search
-name: courses.name
+title: courses.neural_architecture_search
 type: deprecated
-avatar:
 lecturers: potanin_ms
 site:
 ---

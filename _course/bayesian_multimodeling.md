@@ -1,11 +1,8 @@
 ---
-edit: true
-title: courses.title.bayesian_multimodeling
-name: courses.name
+title: courses.bayesian_multimodeling
 type: master
-avatar:
 lecturers: bakhteev_oy
-site: 
+site: https://github.com/intsystems/BMM
 ---
 
 {% tf _course/bayesian_multimodeling.md %}

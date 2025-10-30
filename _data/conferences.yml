@@ -1,0 +1,109 @@
+conferences:
+  - name: "NeurIPS"
+    full_name: "Neural Information Processing Systems"
+    submission_deadline: "2025-05-21"
+    conference_date: "2025-12-09"
+    location: "Vancouver, Canada"
+    website: "https://neurips.cc"
+    rank: "A*"
+    active: false
+
+  - name: "ICML"
+    full_name: "International Conference on Machine Learning"
+    submission_deadline: "2026-01-31"
+    conference_date: "2026-07-12"
+    location: "TBA"
+    website: "https://icml.cc"
+    rank: "A*"
+    active: false
+
+  - name: "ICLR"
+    full_name: "International Conference on Learning Representations"
+    submission_deadline: "2025-10-01"
+    conference_date: "2026-04-24"
+    location: "Singapore"
+    website: "https://iclr.cc"
+    rank: "A*"
+    active: false
+
+  - name: "CVPR"
+    full_name: "Conference on Computer Vision and Pattern Recognition"
+    submission_deadline: "2025-11-15"
+    conference_date: "2026-06-16"
+    location: "Seattle, USA"
+    website: "https://cvpr.thecvf.com"
+    rank: "A*"
+    active: false
+
+  - name: "ICCV"
+    full_name: "International Conference on Computer Vision"
+    abstract_deadline: "2026-03-01"
+    submission_deadline: "2026-03-15"
+    conference_date: "2026-10-10"
+    location: "TBA"
+    website: "http://iccv2026.thecvf.com"
+    rank: "A*"
+    active: false
+
+  - name: "ECCV"
+    full_name: "European Conference on Computer Vision"
+    submission_deadline: "2026-03-07"
+    conference_date: "2026-09-30"
+    location: "TBA"
+    website: "https://eccv2026.ecva.net"
+    rank: "A*"
+    active: false
+
+  - name: "AAAI"
+    full_name: "AAAI Conference on Artificial Intelligence"
+    submission_deadline: "2025-08-07"
+    conference_date: "2026-02-23"
+    location: "Philadelphia, USA"
+    website: "https://aaai.org/conference/aaai/"
+    rank: "A*"
+    active: false
+
+  - name: "IJCAI"
+    full_name: "International Joint Conference on Artificial Intelligence"
+    submission_deadline: "2026-01-21"
+    conference_date: "2026-08-21"
+    location: "TBA"
+    website: "https://www.ijcai.org"
+    rank: "A*"
+    active: false
+
+  - name: "AISTATS"
+    full_name: "International Conference on Artificial Intelligence and Statistics"
+    submission_deadline: "2025-10-14"
+    conference_date: "2026-04-14"
+    location: "Valencia, Spain"
+    website: "http://aistats.org"
+    rank: "A"
+    active: false
+
+  - name: "KDD"
+    full_name: "ACM SIGKDD Conference on Knowledge Discovery and Data Mining"
+    submission_deadline: "2026-02-06"
+    conference_date: "2026-08-23"
+    location: "TBA"
+    website: "https://www.kdd.org"
+    rank: "A*"
+    active: false
+
+  - name: "ACL"
+    full_name: "Annual Meeting of the Association for Computational Linguistics"
+    submission_deadline: "2026-02-15"
+    conference_date: "2026-07-30"
+    location: "TBA"
+    website: "https://www.2026.aclweb.org"
+    rank: "A*"
+    active: false
+
+  - name: "EMNLP"
+    full_name: "Conference on Empirical Methods in Natural Language Processing"
+    submission_deadline: "2025-06-15"
+    conference_date: "2025-11-12"
+    location: "Miami, USA"
+    website: "https://2025.emnlp.org"
+    rank: "A"
+    active: false

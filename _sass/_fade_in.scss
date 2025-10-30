@@ -1,0 +1,115 @@
+// Fade-in animations for scroll effects
+
+// Page fade-in on load
+body {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+// Respect user's motion preferences
+@media (prefers-reduced-motion: reduce) {
+    body {
+        opacity: 1;
+        transition: none;
+    }
+}
+
+// Base hidden state
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+// Visible state
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+// Variants with different directions
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease-out;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s ease-out;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-down {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 1s ease-out;
+}
+
+.fade-in-down.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+// Scale variant
+.fade-in-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 1s ease-out;
+}
+
+.fade-in-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+// Delayed variants for staggered animations
+.fade-in-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.fade-in-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.fade-in-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.fade-in-delay-4 {
+    transition-delay: 0.4s;
+}
+
+// Slower/faster variants
+.fade-in-slow {
+    transition-duration: 1s;
+}
+
+.fade-in-fast {
+    transition-duration: 0.3s;
+}

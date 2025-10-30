@@ -1,9 +1,6 @@
 ---
-edit: true
-title: courses.title.computational_geometry
-name: courses.name
+title: courses.computational_geometry
 type: deprecated
-avatar:
 lecturers: mestetskiy_lm
 site:
 ---

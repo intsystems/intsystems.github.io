@@ -1,33 +1,54 @@
 // Навигация по сайт (сверху)
 .navbar-page {
-  height: 50px;
-  margin-bottom: 0px;
+  height: 48px;
+  margin: auto auto;
   width: 100%;
 }
 
 .navbar-container {
+  font-family: $font-primary;
   height: 100%;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  border-bottom: 2px solid #f5f5f5;
 }
 
 @media (min-width: $lt-width) {
   .navbar-right {
-    float: right!important;
+    float: right !important;
     margin-right: 0px;
   }
-  
+
+  .navbar-center {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .navbar-center > li {
+    float: none;
+    display: inline-block;
+  }
+
   .navbar-container {
     width: 100%;
+  }
+}
+
+@media (max-width: $md-width) {
+  .navbar-page {
+    height: 30px;
   }
 }
 
 @media (min-width: $md-width) {
   .navbar-container {
     width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
@@ -56,7 +77,6 @@
 }
 
 .navbar-brand {
-  font-size: 20px;
   font-weight: 300;
   padding: 0px;
 }
@@ -66,65 +86,441 @@
   margin-bottom: 0px;
 }
 
-.navbar, .navbar-nav>li>a {
-  background-color: $bg-navbar;
-  font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
+.navbar,
+.navbar-nav > li > a {
+  text-decoration: none;
+  background-color: $bg-default;
   font-weight: 400;
-  font-size: 80%;
+  font-size: $font-size-navbar;
+  // padding: 15px;
+  color: #333;
+  transition: color 0.3s ease;
 }
 
-.navbar-nav>li {
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+  color: $href-color !important;
+  background-color: $bg-default !important;
+}
+
+// Специфичность для ссылок с классом name
+.navbar-nav > li > a.name {
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar-nav > li > a.name:hover,
+.navbar-nav > li > a.name:focus {
+  color: $href-color !important;
+  background-color: $bg-default !important;
+}
+
+// Стили для dropdown (Materials и т.д.)
+.navbar-nav > li > a.dropdown-toggle {
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar-nav > li > a.dropdown-toggle:hover,
+.navbar-nav > li > a.dropdown-toggle:focus {
+  color: $href-color !important;
+  background-color: $bg-default !important;
+}
+
+// Стили для выпадающего меню в основной навигации
+.navbar-nav > li.dropdown {
+  position: relative;
+
+  .dropdown-menu {
+    background-color: $bg-default;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin-top: 0;
+    min-width: 200px;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        a {
+          display: block;
+          padding: 8px 20px;
+          color: #333;
+          text-decoration: none;
+          font-size: $font-size-navbar;
+          font-weight: 400;
+          transition: all 0.2s ease;
+
+          &:hover,
+          &:focus {
+            background-color: #f8f8f8;
+            color: $href-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar-nav > li {
   margin-bottom: 0;
-  padding: 0px;
+  padding: 3px;
 }
 
-.navbar-toggle, .navbar-default .navbar-toggle:hover {
+.navbar-toggle,
+.navbar-default,
+.navbar-toggle:hover {
   border: none;
-  background-color: $bg-navbar;
+  background-color: $bg-default;
   margin-left: auto;
   margin-right: auto;
 }
 
-// Навигация по странице (слева)
+.navbar-toggle {
+  .icon-bar {
+    background-color: #333;
+    transition: background-color 0.3s ease;
+  }
 
-div.section-nav {
+  &:hover .icon-bar,
+  &:focus .icon-bar {
+    background-color: $href-color;
+  }
+}
+
+.navbar-social-block {
   display: flex;
-}
+  align-items: center;
+  gap: 1.1rem;
+  margin-left: auto;
+  padding-right: 15px;
 
-ul.section-nav {
-  margin: auto;
-  text-align: left;
-  list-style-type: none;
-  padding: 10px;
-}
-
-.toc-entry>ul > li::before {
-  display: inline-block;
-  content: "-";
-  width: 1em;
-  text-align: center;
-  margin-left: -1em;
-}
-ul.section-nav  > li::before {
-  display: inline-block;
-  content: "-";
-  width: 1em;
-  text-align: center;
-  margin-left: -1em;
-}
-
-.toc-entry>ul {
-  list-style-type: none;
-}
-
-.toc-entry>a {
-  color: inherit;
-  font-size: 12px;
-  
-  &:hover,
-  &:focus {
+  .social-link {
+    color: #333;
     text-decoration: none;
-    text-shadow: 0px 0px 4px;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease;
+
+    &:hover,
+    &:focus {
+      color: $href-color;
+    }
+
+    img {
+      height: 24px;
+      width: 24px;
+      display: block;
+    }
+  }
+}
+
+.navbar-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+
+  .navbar-header {
+    justify-self: start; // логотип слева
+    min-width: 0; // Позволяет сжиматься
+  }
+
+  .navbar-collapse {
+    justify-self: center; // меню точно по центру
+    min-width: 0; // Позволяет сжиматься
+  }
+
+  .navbar-social-block {
+    justify-self: end; // соцсети справа
+    min-width: fit-content; // Не позволяет сжиматься
+  }
+}
+
+.navbar-social-block {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 0;
+
+  .nav-item.dropdown {
+    display: flex;
+    align-items: center;
+
+    .nav-link {
+      padding: 10px 12px;
+      font-size: $font-size-navbar;
+      font-weight: 400;
+      color: #333 !important;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        color: $href-color !important;
+        text-decoration: none;
+      }
+    }
+
+    // Стили для выпадающего меню
+    .dropdown-menu {
+      background-color: $bg-default;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 0;
+      margin-top: 5px;
+      min-width: 70px;
+      right: 0;
+      left: auto;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          width: 100%;
+          border-bottom: 1px solid #f0f0f0;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          a {
+            display: block;
+            padding: 8px 15px;
+            color: #333;
+            text-decoration: none;
+            font-size: $font-size-navbar;
+            font-weight: 400;
+            transition: all 0.2s ease;
+            text-align: center;
+
+            &:hover,
+            &:focus {
+              background-color: #f8f8f8;
+              color: $href-color;
+            }
+          }
+        }
+      }
+    }
+
+    // При наведении на сам dropdown показываем красный цвет
+    &:hover .nav-link,
+    &.open .nav-link {
+      color: $href-color !important;
+    }
+  }
+}
+
+a.navbar-social {
+  color: inherit;
+  font-size: $font-size-navbar-icon;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+// Убедитесь, что collapse не имеет float
+.navbar-collapse {
+  float: none;
+}
+
+// Мобильный соц-блок - скрыт по умолчанию (для десктопа)
+.navbar-social-mobile {
+  display: none;
+}
+
+@media (max-width: $md-width) {
+  .navbar-brand {
+    display: none !important;
+  }
+  .navbar-social-block {
+    display: none !important;
+  }
+}
+
+// Для мобильных - единый блок всех стилей
+@media (max-width: $lt-width) {
+  // Основные стили navbar
+  .navbar {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .navbar-toggle {
+    padding: 10px 10px;
+    margin: 0;
+  }
+
+  // Скрываем десктопный соц-блок
+  .navbar-social-block {
+    display: none;
+  }
+
+  // Убираем ограничения для Bootstrap collapse
+  .collapse {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .collapse.in {
+    overflow: visible !important;
+  }
+
+  // Отключаем анимацию для быстрого появления меню
+  .navbar-collapse.collapsing {
+    transition: none !important;
+    height: auto !important;
+  }
+
+  .navbar-container {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    padding: 0;
+    min-height: auto;
+
+    .navbar-header {
+      justify-self: stretch;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 5px 15px;
+
+      // Скрываем логотип на мобильных
+      .navbar-brand {
+        display: none;
+      }
+
+      // Кнопка toggle справа с симметричными отступами
+      .navbar-toggle {
+        margin: 0;
+        padding: 8px 8px;
+        float: none;
+      }
+    }
+    .navbar-collapse {
+      grid-column: 1;
+      justify-self: stretch;
+      width: 100%;
+      max-height: none !important;
+      overflow: visible !important;
+
+      // Меню по левому краю на мобильных
+      .navbar-center {
+        text-align: left;
+
+        > li {
+          display: block;
+          width: 100%;
+          padding: 0 5px;
+          margin: 0;
+
+          > a {
+            display: block;
+            width: 100%;
+            padding: 10px 10px;
+            border-bottom: 1px solid #f0f0f0;
+          }
+        }
+      }
+    }
+
+    .navbar-social-block {
+      display: none !important;
+    }
+  }
+
+  // Показываем мобильную версию соц-блока только на мобильных
+  .navbar-social-mobile {
+    display: block !important;
+    padding: 0;
+    margin-left: 0;
+    margin-top: 0px;
+
+    .navbar-social-mobile-divider {
+      height: 1px;
+      background: #fafafa;
+      margin-bottom: 10px;
+    }
+
+    .navbar-social-mobile-item {
+      margin-bottom: 10px;
+
+      .navbar-social-mobile-label {
+        display: block;
+        font-family: $font-primary;
+        margin-bottom: 6px;
+      }
+
+      .navbar-social-mobile-links {
+        display: flex;
+        gap: 12px;
+
+        a {
+          color: #333;
+          text-decoration: none;
+          font-size: 0.95rem;
+          font-weight: 400;
+          padding: 4px 8px;
+          transition: all 0.2s ease;
+
+          &.active {
+            background-color: $href-color;
+            color: white;
+          }
+
+          &:hover,
+          &:focus {
+            color: $href-color;
+            background-color: white;
+          }
+
+          &.active:hover {
+            background-color: darken($href-color, 10%);
+            color: white;
+          }
+        }
+      }
+
+      .navbar-social-mobile-icons {
+        gap: 15px;
+
+        a {
+          text-decoration: none;
+          color: #333;
+          font-size: 1.3rem;
+          transition: color 0.2s ease;
+
+          &:hover,
+          &:focus {
+            color: $href-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1365px) {
+  .navbar-logo-ru {
+    display: none !important;
   }
 }

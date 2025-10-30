@@ -2,11 +2,14 @@
 ---
 
 @import "variables";
+@import "mixins";
+@import "fade_in";
+@import "home";
 @import "navbar";
 @import "footer";
 @import "page";
 @import "profile";
-@import "profile";
 @import "course";
+@import "admission";
 @import "main";
-@import "sidecar";
+@import "toc";

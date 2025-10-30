@@ -1,11 +1,8 @@
 ---
-edit: true
-title: courses.title.probabilistic_topic_models
-name: courses.name
+title: courses.probabilistic_topic_models
 type: master
-avatar:
 lecturers: vorontsov_kv
-site: 
+site: http://bit.ly/2EGWcjA
 ---
 
 {% tf _course/probabilistic_topic_models.md %}

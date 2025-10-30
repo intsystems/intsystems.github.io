@@ -9,19 +9,23 @@ site:
 
   nav:
     names:
-      home: главная
-      about: о кафедре
-      lecturers: преподаватели
-      courses: курсы
-      materials: материалы
-      admission: поступающим
-      nir: отчеты нир
-      scholarship: стипендии
-      conferences: список конференций
-      thesis: дипломы
-      education: расписание
-      seminars: семинары
-      paper_guidelines: как писать научные работы
+      home: Главная
+      education: Расписание
+      lecturers: Преподаватели
+      courses: Курсы
+      admission: Поступающим
+      materials: Материалы
+      nir: Отчеты НИР
+      thesis: Дипломы
+      seminars: Семинары
+      scholarship: Стипендии
+      paper_guidelines: Как писать научные работы
+      templates: Шаблоны
+      conferences: Список конференций
+
+  toc:
+    title: Содержание
+    toggle: Свернуть или развернуть содержание
 
   global:
     course:
@@ -29,139 +33,89 @@ site:
         bachelor: Бакалавриат
         master: Магистратура
         deprecated: Больше не преподаются
+        draft: В разработке
     people:
       roles:
         hotd: Основатели кафедры
         dos: Доктора наук
         phd: Кандидаты наук
-        gs: Аспиранты
+        pgs: Аспиранты
+        gs: Студенты
         template: ПРИМЕР
 
-peoples:
-  name:
-    grabovoy_av: Грабовой Андрей Валериевич
-    aduenko_aa: Адуенко Александр Александрович
-    bakhteev_oy: Бахтеев Олег Юрьевич
-    khrilchenko_ky: Хрыльченко Кирилл Ярославович
-    isachenko_rv: Исаченко Роман Владимирович
-    khritankov_as: Хританков Антон Сергеевич
-    kropotov_da: Кропотов Дмитрий Александрович
-    meysuradze_ai: Майсурадзе Арчил Ивериевич
-    mestetskiy_lm: Местецкий Леонид Моисеевич
-    popov_as: Попов Артем Сергеевич
-    potanin_ms: Потанин Марк Станиславович
-    strijov_vv: Стрижов Вадим Викторович
-    vorontsov_kv: Воронцов Константин Вячеславович
-    torshin_iy: Торшин Иван Юрьевич
-    rudakov_kv: Рудаков Константин Владимирович
-    zhuravlyov_yv: Журавлев Юрий Иванович
-    apishev_ma: Апишев Мурат Азаматович
-    gneushev_an: Гнеушев Александр Николаевич
-    dulin_sk: Дулин Сергей Константинович
-    khoroshevsky_vf: Хорошевский Владимир Федорович
-    mohonko_ez: Мохонько Елена Захаровна
-    tsurkov_vi: Цурков Владимир Иванович
-    matveev_ia: Матвеев Иван Алексеевич
-    chekhovich_yv: Чехович Юрий Викторович
-    grebenkova_os: Гребенькова Ольга Сергеевна
-    filatov_av: Филатов Андрей Викторович
-    samokhina_am: Самохина Алина Максимовна
-    severilov_pa: Северилов Павел Андреевич
-    bishuk_ay: Бишук Антон Юрьевич
-    grishanov_av: Гришанов Алексей Владимирович
-    volodkevich_aa: Володкевич Анна Алексеевна
-    beznosikov_an: Безносиков Александр Николаевич 
-    mokrov_pv: Мокров Петр Владимирович 
-    tikhonov_dm: Тихонов Денис Максимович
-    yakovlev_kd: Яковлев Константин Дмитриевич
-
-  title:
-    grabovoy_av: Грабовой Андрей Валериевич
-    aduenko_aa: Адуенко Александр Александрович
-    bakhteev_oy: Бахтеев Олег Юрьевич
-    khrilchenko_ky: Хрыльченко Кирилл Ярославович
-    isachenko_rv: Исаченко Роман Владимирович
-    khritankov_as: Хританков Антон Сергеевич
-    kropotov_da: Кропотов Дмитрий Александрович
-    meysuradze_ai: Майсурадзе Арчил Ивериевич
-    mestetskiy_lm: Местецкий Леонид Моисеевич
-    popov_as: Попов Артем Сергеевич
-    potanin_ms: Потанин Марк Станиславович
-    strijov_vv: Стрижов Вадим Викторович
-    vorontsov_kv: Воронцов Константин Вячеславович
-    torshin_iy: Торшин Иван Юрьевич
-    rudakov_kv: Рудаков Константин Владимирович
-    zhuravlyov_yv: Журавлев Юрий Иванович
-    apishev_ma: Апишев Мурат Азаматович
-    gneushev_an: Гнеушев Александр Николаевич
-    dulin_sk: Дулин Сергей Константинович
-    khoroshevsky_vf: Хорошевский Владимир Федорович
-    mohonko_ez: Мохонько Елена Захаровна
-    tsurkov_vi: Цурков Владимир Иванович
-    matveev_ia: Матвеев Иван Алексеевич
-    chekhovich_yv: Чехович Юрий Викторович
-    grebenkova_os: Гребенькова Ольга Сергеевна
-    filatov_av: Филатов Андрей Викторович
-    samokhina_am: Самохина Алина Максимовна
-    severilov_pa: Северилов Павел Андреевич
-    bishuk_ay: Бишук Антон Юрьевич
-    grishanov_av: Гришанов Алексей Владимирович
-    volodkevich_aa: Володкевич Анна Алексеевна
-    beznosikov_an: Безносиков Александр Николаевич 
-    mokrov_pv: Мокров Петр Владимирович 
-    tikhonov_dm: Тихонов Денис Максимович
-    yakovlev_kd: Яковлев Константин Дмитриевич
+people:
+  grabovoy_av: Грабовой Андрей Валериевич
+  aduenko_aa: Адуенко Александр Александрович
+  bakhteev_oy: Бахтеев Олег Юрьевич
+  khrilchenko_ky: Хрыльченко Кирилл Ярославович
+  isachenko_rv: Исаченко Роман Владимирович
+  khritankov_as: Хританков Антон Сергеевич
+  kropotov_da: Кропотов Дмитрий Александрович
+  meysuradze_ai: Майсурадзе Арчил Ивериевич
+  mestetskiy_lm: Местецкий Леонид Моисеевич
+  popov_as: Попов Артем Сергеевич
+  potanin_ms: Потанин Марк Станиславович
+  strijov_vv: Стрижов Вадим Викторович
+  vorontsov_kv: Воронцов Константин Вячеславович
+  torshin_iy: Торшин Иван Юрьевич
+  rudakov_kv: Рудаков Константин Владимирович
+  zhuravlyov_yv: Журавлев Юрий Иванович
+  apishev_ma: Апишев Мурат Азаматович
+  gneushev_an: Гнеушев Александр Николаевич
+  dulin_sk: Дулин Сергей Константинович
+  khoroshevsky_vf: Хорошевский Владимир Федорович
+  mohonko_ez: Мохонько Елена Захаровна
+  tsurkov_vi: Цурков Владимир Иванович
+  matveev_ia: Матвеев Иван Алексеевич
+  chekhovich_yv: Чехович Юрий Викторович
+  grebenkova_os: Гребенькова Ольга Сергеевна
+  filatov_av: Филатов Андрей Викторович
+  samokhina_am: Самохина Алина Максимовна
+  severilov_pa: Северилов Павел Андреевич
+  bishuk_ay: Бишук Антон Юрьевич
+  grishanov_av: Гришанов Алексей Владимирович
+  volodkevich_aa: Володкевич Анна Алексеевна
+  mokrov_pv: Мокров Петр Владимирович
+  tikhonov_dm: Тихонов Денис Максимович
+  yakovlev_kd: Яковлев Константин Дмитриевич
+  panchenko_sk: Панченко Святослав Константинович
+  vladimirov_ea: Владимиров Эдуард Анатольевич
+  dorin_dd: Дорин Даниил Дмитриевич
+  kiselev_ns: Киселев Никита Сергеевич
+  firsov_sa: Фирсов Сергей Андреевич
+  kasyuk_va: Касюк Вадим Александрович
+  morozov_ma: Морозов Матвей Алексеевич
+  kreinin_mv: Крейнин Матвей Вадимович
+  nikitina_ma: Никитина Мария Александровна
 
 courses:
-  name:
-    automation_scientific_research: Автоматизация научных исследований
-    bayesian_model_selection: Байесовский выбор моделей
-    bayesian_multimodeling: Байесовское мультимоделирование
-    bioinformatics: Биоинформатика
-    computational_geometry: Алгоритмы вычислительной геометрии
-    deep_generative_models: Порождающие модели машинного обучения
-    deep_learning: Методы глубокого обучения
-    image_processing_recognition: Обработка и распознавание изображений
-    introduction_machine_learning: Введение в машинное обучение
-    forecasting_methods: Математические методы прогнозирования
-    fundamental_ml_theorems: Фундаментальные теоремы машинного обучения
-    natural_language_processing: Математические методы анализа текстов
-    networks_text_analysis: Анализ сетей и текстов
-    neural_architecture_search: Поиск нейросетевых архитектур
-    probabilistic_topic_models: Вероятностные тематические модели
-    recommender_systems: Рекомендательные системы
-    rnd_in_ai: Создание интеллектуальных систем
-    signal_processing: Обработка сигналов
-    software_engineering_data_analysis: Программная инженерия для анализа данных
-    intellectual_data_analysis: Интеллектуальный анализ данных
-    optimization_methods: Методы оптимизации в машинном обучении
-    
-  title:
-    automation_scientific_research: Автоматизация научных исследований
-    bayesian_model_selection: Байесовский выбор моделей
-    bayesian_multimodeling: Байесовское мультимоделирование
-    bioinformatics: Биоинформатика
-    computational_geometry: Алгоритмы вычислительной геометрии
-    deep_generative_models: Порождающие модели машинного обучения
-    deep_learning: Методы глубокого обучения
-    forecasting_methods: Математические методы прогнозирования
-    fundamental_ml_theorems: Фундаментальные теоремы машинного обучения
-    image_processing_recognition: Обработка и распознавание изображений
-    introduction_machine_learning: Введение в машинное обучение
-    networks_text_analysis: Анализ сетей и текстов
-    neural_architecture_search: Поиск нейросетевых архитектур
-    natural_language_processing: Математические методы анализа текстов
-    probabilistic_topic_models: Вероятностные тематические модели
-    recommender_systems: Рекомендательные системы
-    rnd_in_ai: Создание интеллектуальных систем
-    signal_processing: Обработка сигналов и многомерных массивов данных
-    software_engineering_data_analysis: Программная инженерия для анализа данных
-    intellectual_data_analysis: Интеллектуальный анализ данных
-    optimization_methods: Методы оптимизации в машинном обучении
-    
+  automation_scientific_research: Автоматизация научных исследований
+  bayesian_model_selection: Байесовский выбор моделей
+  bayesian_multimodeling: Байесовское мультимоделирование
+  bioinformatics: Биоинформатика
+  computational_geometry: Алгоритмы вычислительной геометрии
+  deep_generative_models: Порождающие модели машинного обучения
+  deep_learning: Методы глубокого обучения
+  image_processing_recognition: Обработка и распознавание изображений
+  introduction_machine_learning: Введение в машинное обучение
+  forecasting_methods: Математические методы прогнозирования
+  fundamental_ml_theorems: Фундаментальные теоремы машинного обучения
+  natural_language_processing: Математические методы анализа текстов
+  networks_text_analysis: Анализ сетей и текстов
+  neural_architecture_search: Поиск нейросетевых архитектур
+  probabilistic_topic_models: Вероятностные тематические модели
+  recommender_systems: Рекомендательные системы
+  rnd_in_ai: Создание интеллектуальных систем
+  signal_processing: Обработка сигналов
+  software_engineering_data_analysis: Программная инженерия для анализа данных
+  intellectual_data_analysis: Интеллектуальный анализ данных
+  deep_learning_audio: Глубокое обучение для аудио
+  programming_practicum_python: Практикум по программированию на Python
+  functional_data_analysis: Функциональный анализ данных
+  computer_vision: Компьютерное зрение
+
 titles:
   index: Интеллектуальные системы
-  about: О кафедре
   course: Курсы
   people: Преподаватели
   materials: Материалы
@@ -173,6 +127,7 @@ titles:
   admission: Поступающим
   seminars: Научные семинары
   paper_guidelines: Рекомендации по написанию ВКР и научных работ
+  templates: Шаблоны
 
 course:
   teachers: Преподаватели
@@ -183,6 +138,6 @@ profile:
   teaches: Преподает
 
 metatags:
-    lecturer: Преподаватель Кафедры интеллектуальных систем МФТИ
-    bachelor_course: Курс бакалаврской программы Кафедры интеллектуальных систем МФТИ
-    master_course: Курс магистерской программы Кафедры интеллектуальных систем МФТИ
+  lecturer: Преподаватель Кафедры интеллектуальных систем МФТИ
+  bachelor_course: Курс бакалаврской программы Кафедры интеллектуальных систем МФТИ
+  master_course: Курс магистерской программы Кафедры интеллектуальных систем МФТИ

@@ -1,104 +1,100 @@
-# Расписание 
+## Schedule
 
-## Осенний  семестр, 2025
+**Online Classes:**
 
-### Занятия онлайн
-- бакалавры [m1p.org/go_zoom](https://m1p.org/go_zoom)
-- магистры [m1p.org/go_zoom2](https://m1p.org/go_zoom2)
-- канал [youtube.com/@MachineLearningPhystech](https://www.youtube.com/@MachineLearningPhystech)
+- Bachelor's: [m1p.org/go_zoom](https://m1p.org/go_zoom)
+- Master's: [m1p.org/go_zoom2](https://m1p.org/go_zoom2)
+- YouTube: [youtube.com/@MachineLearningPhystech](https://www.youtube.com/@MachineLearningPhystech)
 
-### Расписание занятий
+**Documents and Links:**
 
-#### 4 курс, 7 семестр - вторник
+- Institute Schedule: [link](https://mipt.ru/upload/%D0%A3%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B5%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/%D0%A0%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%81%D0%B5%D1%81%D1%81%D0%B8%D0%B8/%D0%9B%D0%95%D0%A2%D0%9E%202023-2024/%D0%93%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82.docx.pdf)
+- Research Report Template: [link](https://docs.google.com/document/d/1XsYWC7isbiums9jqjzddHIkDjvxqKNvf/edit?usp=sharing)
+- State Exam Program for 6th Year: [link](https://docs.google.com/document/d/1KkePnIg2BOf_LHBLBbgRL0W4gqKtt1W0OhJSg43lR_Y/edit?usp=sharing)
 
-| Время | Предмет  | Преподаватели  | Форма отчетности  | Зачетные единицы |
-|---|---|---|---|---|
-| 10:30-12:00 | [Методы глубокого обучения: лекция](/ru/course/deep_learning/index.html) | [Филатов А.В.](/ru/people/filatov_av/index.html), [Яковлев К.Д.](/ru/people/yakovlev_kd) | Дифф. зачет | 2 |
-| 12:10-13:40 | [Методы глубокого обучения: семинар](/ru/course/deep_learning/index.html) | [Филатов А.В.](/ru/people/filatov_av/index.html), [Яковлев К.Д.](/ru/people/yakovlev_kd)|  |  |
-| 14:30-16:00 | [Байесовский выбор моделей](/ru/course/bayesian_model_selection/index.html) | [Адуенко А.А.](/ru/people/aduenko_aa/index.html), [Яковлев К.Д.](/ru/people/yakovlev_kd) | Дифф. зачет | 1 |
-| 16:10-17:40 | [Математические методы прогнозирования](/ru/course/forecasting_methods/index.html) | [Тихонов Д.М.](/ru/people/tikhonov_dm) | Дифф. зачет | 1 |
+### Fall 2025
 
-#### 5 курс, 9 семестр - вторник
+#### Key Dates
 
-| Время | Предмет  | Преподаватели  | Форма отчетности | Зачетные единицы |
-|---|---|---|---|---|
-| 14:30-16:00 |  [Байесовское мультимоделирование](/ru/course/bayesian_multimodeling/index.html) | [Бахтеев О.Ю.](/ru/people/bakhteev_oy/index.html)| Дифф. зачет | 2 |
-| 16:10-17:40 |  [Создание интеллектуальных систем](/ru/course/rnd_in_ai/index.html) | [Грабовой А.В.](/ru/people/grabovoy_av/index.html) | Дифф. зачет | 2 |
-| 18:00-19:30 | [Порождающие модели машинного обучения: лекция](/ru/course/deep_generative_models/index.html) | [Исаченко Р.В.](/ru/people/isachenko_rv/index.html), Морозов М. | Экзамен | 3 |
-| 19:30-21:00 | [Порождающие модели машинного обучения: семинар](/ru/course/deep_generative_models/index.html) | [Исаченко Р.В.](/ru/people/isachenko_rv/index.html), Морозов М. |  |  |
+- **September 2:** Deadline for [scholarship]({{ site.baseurl }}/materials/scholarship) applications
+- **September 6:** Start of classes at the department
+- **September 11-12:** Organizational meeting
+- **October 23:** Department presentation for 3rd year students
+- **November 1:** Interview for 3rd year students applying to the department
+- **December 15-21:** Exam week for 3rd to 6th year students
+- **December 21:** ❗️ Credit on Research (be ready with paper/code/slides)
+- **January 17:** State exam for 6th year students
 
-#### 6 курс, 11 семестр - четверг
+#### 4th year, 7th semester (Tuesday)
 
-| Время | Предмет  | Преподаватели  | Форма отчетности | Зачетные единицы |
-|---|---|---|---|---|
-| 10:30-12:00 | [Обработка сигналов](/ru/course/signal_processing/index.html) | [Северилов П.А.](/ru/people/severilov_pa/index.html) | Экзамен | 3 |
-| 12:10-13:40 | [Интеллектуальный анализ данных](/ru/course/intellectual_data_analysis/index.html)  | [Стрижов В.В.](/ru/people/strijov_vv/index.html), [Бахтеев О.Ю.](/ru/people/bakhteev_oy/index.html) | Зачет | 2 |
-| 14:30-16:00 | [Вероятностные тематические модели](/ru/course/probabilistic_topic_models/index.html) | [Воронцов К.В.](/ru/people/vorontsov_kv/index.html) | Дифф. зачет | 2 |
+| Time        | Course                                                                            | Instructors                                                                                                                                                                                                                                                                         | Assessment Type       | Credits |
+| ----------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ------- |
+| 10:30-12:00 | [Deep Learning: Lecture]({{ site.baseurl }}/course/deep_learning)                 | [Eduard Vladimirov]({{ site.baseurl }}/people/vladimirov_ea), [Daniil Dorin]({{ site.baseurl }}/people/dorin_dd), [Nikita Kiselev]({{ site.baseurl }}/people/kiselev_ns), [Sergey Firsov]({{ site.baseurl }}/people/firsov_sa), [Vadim Kasiuk]({{ site.baseurl }}/people/kasiuk_va) | Differentiated credit | 2       |
+| 12:10-13:40 | [Deep Learning: Seminar]({{ site.baseurl }}/course/deep_learning)                 | [Eduard Vladimirov]({{ site.baseurl }}/people/vladimirov_ea), [Daniil Dorin]({{ site.baseurl }}/people/dorin_dd), [Nikita Kiselev]({{ site.baseurl }}/people/kiselev_ns), [Sergey Firsov]({{ site.baseurl }}/people/firsov_sa), [Vadim Kasiuk]({{ site.baseurl }}/people/kasiuk_va) |                       |         |
+| 14:30-16:00 | [Bayesian Model Selection]({{ site.baseurl }}/course/bayesian_model_selection)    | [Alexander Aduenko]({{ site.baseurl }}/people/aduenko_aa), [Konstantin Yakovlev]({{ site.baseurl }}/people/yakovlev_kd)                                                                                                                                                             | Differentiated credit | 1       |
+| 16:10-17:40 | [Mathematical Forecasting Methods]({{ site.baseurl }}/course/forecasting_methods) | [Denis Tikhonov]({{ site.baseurl }}/people/tikhonov_dm), [Sviatoslav Panchenko]({{ site.baseurl }}/people/panchenko_sk)                                                                                                                                                             | Differentiated credit | 1       |
 
-### Ключевые даты 
-- **2 сентября** - завершение приема заявок на научную стипендию
-- **6 сентября** - начало занятий на кафедре
-- **11,12 сентября** - научная ориентация и обсуждение требований к НИР
-- **5 октября** - презентация кафедры для 3 курса (вечером, офлайн)
-- **1 ноября** - собеседование на кафедру, начало в 15:00
-<!-- - **12 ноября** - окончание приема тезисов на конференцию ММРО в 2025 это было до 3 августа-->
-- **15-21 декабря** - зачетная неделя для 3–6 курсов
-- **2-15 декабря** - конференция ММРО
-- **21 декабря** - зачёт по НИР для 3–6 курсов и аспирантов
-- **17 января** - гос. экзамен 6 курса
+#### 5th year, 9th semester (Tuesday)
 
-## Весенний семестр, 2026
+| Time        | Course                                                                              | Instructors                                                                                                       | Assessment Type       | Credits |
+| ----------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | --------------------- | ------- |
+| 14:30-16:00 | [Bayesian Multimodeling]({{ site.baseurl }}/course/bayesian_multimodeling)          | [Oleg Bakhteev]({{ site.baseurl }}/people/bakhteev_oy)                                                            | Differentiated credit | 2       |
+| 16:10-17:40 | [Creation of Intelligent Systems]({{ site.baseurl }}/course/rnd_in_ai)              | [Andrey Grabovoy]({{ site.baseurl }}/people/grabovoy_av)                                                          | Differentiated credit | 2       |
+| 18:00-19:30 | [Deep Generative Models: Lecture]({{ site.baseurl }}/course/deep_generative_models) | [Roman Isachenko]({{ site.baseurl }}/people/isachenko_rv), [Matvey Morozov]({{ site.baseurl }}/people/morozov_ma) | Exam                  | 3       |
+| 19:30-21:00 | [Deep Generative Models: Seminar]({{ site.baseurl }}/course/deep_generative_models) | [Roman Isachenko]({{ site.baseurl }}/people/isachenko_rv), [Matvey Morozov]({{ site.baseurl }}/people/morozov_ma) |                       |         |
 
-#### 3 курс, 6 семестр – четверг
+#### 6th year, 11th semester (Thursday)
 
-| Время | Предмет  | Преподаватели  | Форма отчетности  | Зачетные единицы |
-|---|---|---|---|---|
-| 12:10-13:40 | [Введение в машинное обучение](/ru/course/introduction_machine_learning/index.html) | [Грабовой А.В.](/ru/people/grabovoy_av/index.html), [Воронцов К.В.](/ru/people/vorontsov_kv/index.html) | Дифф. зачет | 1 |
-| 14:30-16:00 | [Практикум по программированию на языке Питон](https://github.com/MelLain/mipt-python) | [Апишев М.А.](/people/apishev_ma/index.html) | Зачет | 1 |
-| 16:10-17:40 | [Создание интеллектуальных систем](/ru/course/rnd_in_ai/index.html) | Стрижов В.В., [Грабовой А.В.](/ru/people/grabovoy_av/index.html)  | Зачет | 1 |
-| 17:50-19:20 | [Автоматизация научных исследований (Моя первая научная статья)](http://m1p.org) | Стрижов В.В., [Бахтеев О.Ю.](/ru/people/bakhteev_oy/index.html), [Грабовой А.В.](/ru/people/grabovoy_av/index.html) | Дифф. зачет | 1 |
+| Time        | Course                                                                             | Instructors                                                    | Assessment Type       | Credits |
+| ----------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------- | --------------------- | ------- |
+| 10:30-12:00 | [Functional Data Analysis]({{ site.baseurl }}/course/functional_data_analysis)     | [Vadim Strijov]({{ site.baseurl }}/people/strijov_vv)          | Exam                  | 3       |
+| 12:10-13:40 | [Intellectual Data Analysis]({{ site.baseurl }}/course/intellectual_data_analysis) | [Vadim Strijov]({{ site.baseurl }}/people/strijov_vv)          | Credit                | 2       |
+| 14:30-16:00 | [Probabilistic Topic Models]({{ site.baseurl }}/course/probabilistic_topic_models) | [Konstantin Vorontsov]({{ site.baseurl }}/people/vorontsov_kv) | Differentiated credit | 2       |
 
-#### 4 курс, 8 семестр – вторник
+<br>
 
-| Время | Предмет  | Преподаватели  | Форма отчетности  | Зачетные единицы |
-|---|---|---|---|---|
-| 10:30-12:00 | [Рекомендательные системы](/ru/course/recommender_systems/index.html) | [Гришанов А.В.](/ru/people/grishanov_av/index.html), [Володкевич А.А.](/ru/people/volodkevich_aa/index.html) | Дифф. зачет | 2 |
-| 12:10-13:40 | [Математические методы прогнозирования](/ru/course/forecasting_methods/index.html) | [Тихонов Д.М.](/ru/people/tikhonov_dm) | Дифф. зачет | 3 |
-| 14:30-16:00 | [Байесовский выбор моделей](/ru/course/bayesian_model_selection/index.html) | [Адуенко А.А.](/ru/people/aduenko_aa/index.html) | Экзамен | 2 |
-| 16:10-17:40 | [Планирование проектов по созданию программного обеспечения](/ru/course/software_engineering_data_analysis/index.html) | [Хританков А.С.](/ru/people/khritankov_as/index.html) | Дифф. зачет | 1 |
+### Spring 2025
 
-#### 5 курс, 10 семестр – вторник
+#### Key Dates
 
-| Время | Предмет  | Преподаватели  | Форма отчетности  | Зачетные единицы |
-|---|---|---|---|---|
-| 10:30-12:00 |  |   |  |  |
-| 12:10-13:40 | [Биоинформатика](/ru/course/bioinformatics/index.html) | [Торшин И.Ю.](/ru/people/torshin_iy/index.html) | Дифф. зачет | 1 |
-| 14:30-16:00 | [Создание интеллектуальных систем](/ru/course/rnd_in_ai/index.html) | [Грабовой А.А.](/ru/people/grabovoy_av/index.html) | Экзамен | 2 |
-| 16:10-17:40 | [Планирование проектов по созданию программного обеспечения](/ru/course/software_engineering_data_analysis/index.html) | [Хританков А.С.](/ru/people/khritankov_as/index.html) | Дифф. зачет | 1 |
-| 17:50-19:20 | [Байесовское мультимоделирование](/ru/course/bayesian_multimodeling/index.html) | [Бахтеев О.Ю.](/ru/people/bakhteev_oy/index.html) | Экзамен | 2 |
+- **February 6:** Start of classes at the department
+- **February 9:** Deadline for [scholarship]({{ site.baseurl }}/materials/scholarship) applications
+- **March 4:** Monday 18:30 presentation about the department for second-year students, offline
+- **March 10:** Deadline for submissions to the MIPT conference
+- **April 4:** 13:00 conference and discussion of theses for 4th and 6th year students
+- **May 18-24:** Exam week for 3rd to 6th year students
+- **May 13:** 17:00 (Saturday) Credit on research work for 3rd-6th year and postgraduate students
+- **June 2:** PhD qualifying exam for postgraduate students
+- **June 6:** 10:00 predefense for 6th year students
+- **June 13:** State final attestation for graduating postgraduate students
+- **June 13:** 10:00 predefense for 4th year students
+- **June 17:** 13:00 (Wednesday) defense for 6th year students, offline 355 room
+- **June 17:** Scientific report for graduating postgraduate students
+- **June 24:** 13:00 (Wednesday) defense for 4th year students, offline 355 room
 
-<!-- весна 2026 Ксенофонтов вместо Хританкова, тк Хританков перешел на 4 курс -->
+#### 3rd year, 6th semester – Thursday
 
-### Ключевые даты
- <!-- написать преподавателям -->
- <!-- уточник в деканате список курсов на этот семестр -->
- <!-- до начала поставить в таблицу и в вопросник от деканата наши курсы -->
-- **9 февраля** - начало занятий
-- **9 февраля** - завершение приема заявок на научную стипендию
-- **4 марта** - понедельник 18:30 рассказ о кафедре для студентов второго курса, офлайн 
-- **10 марта** - завершение приема работ на конференцию МФТИ
-- **4 апреля** - 13:00 конференция и обсуждение ВКР 4 и 6 курсов
-- **18-24 мая** - зачетная неделя для 3–6 курсов
-- **13 мая** - 17:00 (суббота) зачёт по НИР для 3–6 курсов и аспирантов
-- **2 июня** - кандидатский экзамен у аспирантов
-- **6 июня** - 10:00 предзащита 6 курса 
-- **13 июня** - ГИА у выпускающихся аспирантов
-- **13 июня** - 10:00 предзащита 4 курса
-- **17 июня** - в 13:00 (среда) защита 6 курса, очно ВЦ 355
-- **17 июня** - научный доклад у выпускающихся аспирантов
-- **24 июня** - в 13:00 (среда) защита 4 курса, очно ВЦ 355
+| Time        | Course                                                                                      | Instructors                                                                                                                                                             | Assessment Type       | Credits |
+| ----------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ------- |
+| 12:10-13:40 | [Introduction to Machine Learning]({{ site.baseurl }}/course/introduction_machine_learning) | [Andrey Grabovoy]({{ site.baseurl }}/people/grabovoy_av), [Konstantin Vorontsov]({{ site.baseurl }}/people/vorontsov_kv)                                                | Differentiated credit | 1       |
+| 14:30-16:00 | [Programming Practicum in Python](https://github.com/MelLain/mipt-python)                   | [Murat Apishev]({{ site.baseurl }}/people/apishev_ma)                                                                                                                   | Credit                | 1       |
+| 16:10-17:40 | [Creation of Intelligent Systems]({{ site.baseurl }}/course/rnd_in_ai)                      | [Andrey Grabovoy]({{ site.baseurl }}/people/grabovoy_av), [Vadim Strijov]({{ site.baseurl }}/people/strijov_vv)                                                         | Credit                | 1       |
+| 17:50-19:20 | [My First Scientific Paper](http://m1p.org)                                                 | [Andrey Grabovoy]({{ site.baseurl }}/people/grabovoy_av), [Oleg Bakhteev]({{ site.baseurl }}/people/bakhteev_oy), [Vadim Strijov]({{ site.baseurl }}/people/strijov_vv) | Differentiated credit | 1       |
 
-## Документы и ссылки
-- График учебного процесса: [ссылка]([https://mipt.ru/about/departments/uchebniy/schedule/study/](https://mipt.ru/upload/%D0%A3%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B5%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/%D0%A0%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D1%81%D0%B5%D1%81%D1%81%D0%B8%D0%B8/%D0%9B%D0%95%D0%A2%D0%9E%202023-2024/%D0%93%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D1%83%D1%87%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82.docx.pdf)
-- Шаблон отчета по НИР: [ссылка](https://docs.google.com/document/d/1XsYWC7isbiums9jqjzddHIkDjvxqKNvf/edit?usp=sharing).
-- Программа государственного экзамена для 6 курса: [ссылка](https://docs.google.com/document/d/1KkePnIg2BOf_LHBLBbgRL0W4gqKtt1W0OhJSg43lR_Y/edit?usp=sharing).
+#### 4th year, 8th semester – Tuesday
+
+| Time        | Course                                                                                                    | Instructors                                                                                                              | Assessment Type       | Credits |
+| ----------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | --------------------- | ------- |
+| 10:30-12:00 | [Recommender Systems]({{ site.baseurl }}/course/recommender_systems)                                      | [Alexey Grishanov]({{ site.baseurl }}/people/grishanov_av), [Anna Volodkevich]({{ site.baseurl }}/people/volodkevich_aa) | Differentiated credit | 2       |
+| 12:10-13:40 | [Mathematical Forecasting Methods]({{ site.baseurl }}/course/forecasting_methods)                         | [Denis Tikhonov]({{ site.baseurl }}/people/tikhonov_dm), [Sviatoslav Panchenko]({{ site.baseurl }}/people/panchenko_sk)  | Differentiated credit | 3       |
+| 14:30-16:00 | [Bayesian Model Selection]({{ site.baseurl }}/course/bayesian_model_selection)                            | [Alexander Aduenko]({{ site.baseurl }}/people/aduenko_aa), [Konstantin Yakovlev]({{ site.baseurl }}/people/yakovlev_kd)  | Exam                  | 2       |
+| 16:10-17:40 | [Software Engineering for Machine Learning]({{ site.baseurl }}/course/software_engineering_data_analysis) | [Anton Khritankov]({{ site.baseurl }}/people/khritankov_as)                                                              | Differentiated credit | 1       |
+
+#### 5th year, 10th semester – Tuesday
+
+| Time        | Course                                                                                                    | Instructors                                                 | Assessment Type       | Credits |
+| ----------- | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- | --------------------- | ------- |
+| 12:10-13:40 | [Bioinformatics]({{ site.baseurl }}/course/bioinformatics)                                                | [Ivan Torshin]({{ site.baseurl }}/people/torshin_iy)        | Differentiated credit | 1       |
+| 14:30-16:00 | [Creation of Intelligent Systems]({{ site.baseurl }}/course/rnd_in_ai)                                    | [Andrey Grabovoy]({{ site.baseurl }}/people/grabovoy_av)    | Exam                  | 2       |
+| 16:10-17:40 | [Software Engineering for Machine Learning]({{ site.baseurl }}/course/software_engineering_data_analysis) | [Anton Khritankov]({{ site.baseurl }}/people/khritankov_as) | Differentiated credit | 1       |
+| 17:50-19:20 | [Bayesian Multimodeling]({{ site.baseurl }}/course/bayesian_multimodeling)                                | [Oleg Bakhteev]({{ site.baseurl }}/people/bakhteev_oy)      | Exam                  | 2       |

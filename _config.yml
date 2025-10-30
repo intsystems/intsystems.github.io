@@ -1,14 +1,13 @@
-brand:              /images/logo/logo_square.jpg
+brand: /images/logo/logo-square.png
+logo: /images/logo/logo-full.png
 image:
 og:
-  image:            /images/main/main.jpg
+  image: /images/main/main.jpg
 
-url:                https://intsystems.github.io
-edit:               https://github.com/intsystems/intsystems.github.io/edit/main/
-baseurl:
-permalink:          /:year/:month/:day/:title.html
-
-sidebar: true
+url: https://kisnikser.github.io
+edit: https://github.com/kisnikser/intsystems.github.io/edit/main/
+baseurl: /intsystems.github.io
+permalink: /:year/:month/:day/:title.html
 
 # Main Info
 github: intsystems
@@ -18,87 +17,80 @@ telegram: https://t.me/IS_MIPT
 rutube: https://rutube.ru/channel/40144363
 
 header:
-- Machine Learning
-- Data Analysis
+  - Machine Learning
+  - Data Analysis
 
 # Markdown
-markdown:           kramdown
+markdown: kramdown
 
 # Sass
 sass:
-  sass_dir:         _sass
-  style:            :compressed
+  sass_dir: _sass
+  style: :compressed
 
 exclude: ["LICENSE", "README.md", "Gemfile", "Gemfile.lock", "vendor", "_sass"]
 
 # Highlighter
-highlighter:        rouge
+highlighter: rouge
 
 plugins:
-  - jekyll-feed
   - jekyll-multiple-languages-plugin
-  - jekyll-toc
-  - jekyll-sitemap
 
 languages: ["en", "ru"]
 
-exclude_from_localizations: ["images", "favicon.ico", "javascript", "style.scss"]
+exclude_from_localizations:
+  ["images", "favicon.ico", "javascript", "style.scss"]
 
 default_locale_in_subfolder: False
 
 # Navigation
 nav:
   pages:
-  - id: "home"
-    href: "/"
-    name: site.nav.names.home
-  - id: "education"
-    href: "/education"
-    name: site.nav.names.education
-  - id: "about"
-    href: "/about"
-    name: site.nav.names.about
-  - id: "lecturers"
-    href: "/people"
-    name: site.nav.names.lecturers
-  - id: "courses"
-    href: "/course"
-    name: site.nav.names.courses
-  - id: "admission"
-    href: "/admission"
-    name: site.nav.names.admission
-  - id: "materials"
-    href: "/materials"
-    name: site.nav.names.materials
-    dropdown:
-    - id: "nir"
-      href: "/materials/nir"
-      name: site.nav.names.nir
-    - id: "scholarship"
-      href: "/materials/scholarship"
-      name: site.nav.names.scholarship
-    - id: "conferences"
-      href: "/materials/conferences"
-      name: site.nav.names.conferences
-    - id: "thesis"
-      href: "/materials/thesis"
-      name: site.nav.names.thesis
-    - id: "seminars"
-      href: "/materials/seminars"
-      name: site.nav.names.seminars
-    - id: "paper_guidelines"
-      href: "/materials/paper_guidelines"
-      name: site.nav.names.paper_guidelines
+    - id: "home"
+      href: "/"
+      name: site.nav.names.home
+    - id: "education"
+      href: "/education"
+      name: site.nav.names.education
+    - id: "lecturers"
+      href: "/people"
+      name: site.nav.names.lecturers
+    - id: "courses"
+      href: "/course"
+      name: site.nav.names.courses
+    - id: "admission"
+      href: "/admission"
+      name: site.nav.names.admission
+    - id: "materials"
+      href: "/materials"
+      name: site.nav.names.materials
+      dropdown:
+        - id: "nir"
+          href: "/materials/nir"
+          name: site.nav.names.nir
+        - id: "thesis"
+          href: "/materials/thesis"
+          name: site.nav.names.thesis
+        - id: "seminars"
+          href: "/materials/seminars"
+          name: site.nav.names.seminars
+        - id: "scholarship"
+          href: "/materials/scholarship"
+          name: site.nav.names.scholarship
+        - id: "paper_guidelines"
+          href: "/materials/paper_guidelines"
+          name: site.nav.names.paper_guidelines
+        - id: "templates"
+          href: "/materials/templates"
+          name: site.nav.names.templates
+        - id: "conferences"
+          href: "/materials/conferences"
+          name: site.nav.names.conferences
 
 # Scopes
 defaults:
   - scope:
       path: ""
-    values:
-      toc: true
-  - scope:
-      path: ""
-      type: "pages"
     values:
       layout: "page"
   - scope:
@@ -130,22 +122,23 @@ collections:
     output: true
     permalink: /course/:title/index.html
 
-
 global:
   langs:
-    ru: Русский
-    en: English
+    ru: RU
+    en: EN
 
   course:
     types:
-    - bachelor
-    - master
-    - deprecated
+      - bachelor
+      - master
+      - deprecated
+      - draft
 
   people:
     roles:
-    - hotd
-    - dos
-    - phd
-    - gs
-    - template
+      - hotd
+      - dos
+      - phd
+      - pgs
+      - gs
+      - template

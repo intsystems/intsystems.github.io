@@ -1,11 +1,8 @@
 ---
-edit: true
-title: courses.title.signal_processing
-name: courses.name
-type: master
-avatar:
+title: courses.signal_processing
+type: deprecated
 lecturers: strijov_vv
-site: 
+site:
 ---
 
 {% tf _course/signal_processing.md %}

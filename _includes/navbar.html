@@ -2,7 +2,20 @@
     <div class="navbar-container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+            <a class="navbar-brand" href="{{ site.baseurl }}/">
+                <img
+                    src="{{ site.baseurl_root }}/{{ site.logo }}"
+                    height="50px"
+                    alt="Logo"
+                    class="navbar-logo{% if site.lang == 'ru' %} navbar-logo-ru{% endif %}"
+                >
+            </a>
+            <button
+                type="button"
+                class="navbar-toggle"
+                data-toggle="collapse"
+                data-target="#navbar"
+            >
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -11,26 +24,142 @@
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar">
-            <ul class="nav navbar-nav navbar-right">
-                <ul class="nav navbar-nav navbar-right">
-                  {% for nav in site.nav.pages %}
-                    {% if nav.dropdown %}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="{{ t nav.id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% t nav.name %}</a>
-                        <div class="dropdown-menu" aria-labelledby="{{ t nav.id }}">
-                            <ul class="nav navbar-nav navbar-right">
-                                {% for drop in nav.dropdown %}
-                                <li style="width:100% !important;"><a class='name' href="{{ site.baseurl }}{{ drop.href }}">{% t drop.name %}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </li>
-                    {% else %}
-                    <li><a class='name' href="{{ site.baseurl }}{{ nav.href }}">{% t nav.name %}</a></li>
-                    {% endif %}
-                  {% endfor %}
-                </ul>
+            <ul class="nav navbar-nav navbar-center">
+                {% for nav in site.nav.pages %}
+                {% if nav.dropdown %}
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="{{ t nav.id }}"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >{% t nav.name %}</a>
+                    <div class="dropdown-menu" aria-labelledby="{{ t nav.id }}">
+                        <ul class="nav navbar-nav">
+                            {% for drop in nav.dropdown %}
+                            <li style="width:100% !important;">
+                                <a class="name" href="{{ site.baseurl }}{{ drop.href }}">{% t drop.name %}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                {% else %}
+                <li>
+                    <a class="name" href="{{ site.baseurl }}{{ nav.href }}">{% t nav.name %}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
             </ul>
+            <!-- Social links for mobile (inside collapse menu) -->
+            <div class="navbar-social-mobile">
+                <!-- Language switcher -->
+                <div class="navbar-social-mobile-item">
+                    <span class="navbar-social-mobile-label">Language:</span>
+                    <div class="navbar-social-mobile-links">
+                        {% for lang in site.languages %}
+                        {% if lang == site.default_lang and site.default_locale_in_subfolder != true %}
+                        <a href="{{ site.baseurl_root }}{{ page.url }}" class="{% if site.lang == lang %}active{% endif %}">{{ site.global.langs[lang] }}</a>
+                        {% else %}
+                        <a href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}" class="{% if site.lang == lang %}active{% endif %}">{{ site.global.langs[lang] }}</a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- Social icons -->
+                <div class="navbar-social-mobile-item">
+                    <span class="navbar-social-mobile-label">Connect:</span>
+                    <div class="navbar-social-mobile-icons">
+                        {% if site.github %}
+                        <a href="https://github.com/{{site.github}}" target="_blank" style="margin-right: 1rem;">
+                            <i class="fa fa-github"></i>
+                        </a>
+                        {% endif %}
+                        {% if site.mail %}
+                        <a href="#" onclick="copyEmailToClipboard(event, '{{site.mail}}')" style="margin-right: 1rem;">
+                            <i class="fa fa-envelope-o"></i>
+                        </a>
+                        {% endif %}
+                        {% if site.telegram %}
+                        <a href="{{site.telegram}}" target="_blank" style="margin-right: 1rem;">
+                            <i class="fa fa-telegram"></i>
+                        </a>
+                        {% endif %}
+                        {% if site.youtube %}
+                        <a href="{{site.youtube}}" target="_blank" style="margin-right: 1rem;">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                        {% endif %}
+                        {% if site.rutube %}
+                        <a href="{{site.rutube}}" target="_blank" style="font-size: 1rem; font-weight: 400; text-decoration: none;">
+                            Rutube
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Social links -->
+        <div class="navbar-social-block">
+            <!-- Language switcher -->
+            <div class="nav-item dropdown">
+                <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="languageDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    style="color: inherit; text-decoration: none; cursor: pointer;"
+                >{{ site.global.langs[site.lang] }}</a>
+                <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <ul class="nav navbar-nav">
+                        {% for lang in site.languages %}
+                        <li>
+                            {% if lang == site.default_lang and site.default_locale_in_subfolder != true %}
+                            <a class="name" href="{{ site.baseurl_root }}{{ page.url }}">{{ site.global.langs[lang] }}</a>
+                            {% else %}
+                            <a class="name" href="{{ site.baseurl_root }}/{{ lang }}{{ page.url }}">{{ site.global.langs[lang] }}</a>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% if site.github %}
+            <a href="https://github.com/{{site.github}}" class="navbar-social" target="_blank">
+                <i class="fa fa-github"></i>
+            </a>
+            {% endif %}
+            {% if site.mail %}
+            <a href="#" onclick="copyEmailToClipboard(event, '{{site.mail}}')" class="navbar-social">
+                <i class="fa fa-envelope-o"></i>
+            </a>
+            {% endif %}
+            {% if site.telegram %}
+            <a href="{{site.telegram}}" class="navbar-social" target="_blank">
+                <i class="fa fa-telegram"></i>
+            </a>
+            {% endif %}
+            {% if site.youtube %}
+            <a href="{{site.youtube}}" class="navbar-social" target="_blank">
+                <i class="fa fa-youtube-play"></i>
+            </a>
+            {% endif %}
+            {% if site.rutube %}
+            <a
+                href="{{site.rutube}}"
+                class="navbar-social"
+                target="_blank"
+                style="font-size: 1rem; font-weight: 400;"
+            >
+                Rutube
+            </a>
+            {% endif %}
         </div>
     </div>
 </nav>
