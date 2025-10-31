@@ -2,7 +2,7 @@ brand: /images/logo/logo-square.png
 logo: /images/logo/logo-full.png
 image:
 og:
-  image: /images/main/main.jpg
+  image: /images/logo/logo-full.png
 
 url: https://intsystems.github.io
 edit: https://github.com/kisnikser/intsystems.github.io/edit/main/

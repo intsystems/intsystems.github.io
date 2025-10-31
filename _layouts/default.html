@@ -5,11 +5,12 @@
         <meta name="google-site-verification" content="Mq6PRXIcGjEbdk2gdU6tahVlGnP5nsUEPwtpEH_eYb8">
         <meta name="yandex-verification" content="b955620073da94d9">
         <!-- open graph -->
-        <meta property="og:image" content="{% if page.image %}{{ page.image }}{% else %}{{ site.og.image }}{% endif %}">
+        <meta property="og:image" content="{{ site.og.image }}">
         <meta property="og:title" content="{% if page.title %}{% t page.title %}{% else %}{% t site.name %}{% endif %}">
+        <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
         <meta property="og:site_name" content="{% t site.name %}">
         <meta property="og:type" content="article">
-        <meta property="og:url" content="{{site.url}}/{{ lang }}{{ page.url }}">
+        <meta property="og:url" content="{{ site.url }}{{ page.url }}">
         <!-- twitter -->
         <meta name="twitter:title" content="{% if page.title %}{% t page.title %}{% else %}{% t site.name %}{% endif %}">
         <meta name="twitter:image:src" content="{% if page.image %}{{ page.image }}{% else %}{{ site.og.image }}{% endif %}">
