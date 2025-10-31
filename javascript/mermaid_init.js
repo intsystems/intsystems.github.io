@@ -3,7 +3,6 @@ import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.mi
 
 mermaid.initialize({ 
     startOnLoad: false,
-    theme: 'base'
 });
 
 // Wait for DOM to be ready

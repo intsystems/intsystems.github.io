@@ -436,3 +436,11 @@ table :is(p, span, a, li) {
   margin: 0.5rem 0;
   font-size: $font-size-h3;
 }
+
+.mermaid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 100%;
+}
