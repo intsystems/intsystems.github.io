@@ -22,7 +22,7 @@
 - **October 23:** Department presentation for 3rd year students
 - **November 1:** Interview for 3rd year students applying to the department
 - **December 15-21:** Exam week for 3rd to 6th year students
-- **December 21:** ❗️ Credit on Research (be ready with paper/code/slides)
+- **December 20:** ❗️ Credit on Research (be ready with paper/code/slides)
 - **January 17:** State exam for 6th year students
 
 #### 4th year, 7th semester (Tuesday)
