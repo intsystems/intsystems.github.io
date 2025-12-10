@@ -5,7 +5,7 @@ og:
   image: /images/logo/logo-full.png
 
 url: https://intsystems.github.io
-edit: https://github.com/kisnikser/intsystems.github.io/edit/main/
+edit: https://github.com/intsystems/intsystems.github.io/edit/main/
 baseurl:
 permalink: /:year/:month/:day/:title.html
 
