@@ -1,8 +1,8 @@
 ---
-title: people.kasyuk_va
+title: people.kasiuk_va
 edit: true
 position: gs
-avatar: kasyuk_va.jpeg
+avatar: kasiuk_va.jpeg
 mail: kasiuk.va@phystech.edu
 site:
 scholar:
@@ -12,4 +12,4 @@ scopus:
 elib:
 ---
 
-{% tf _people/kasyuk_va.md %}
+{% tf _people/kasiuk_va.md %}

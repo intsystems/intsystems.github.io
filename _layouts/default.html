@@ -2,6 +2,11 @@
 <html lang="{{ site.lang }}">
     <head>
         <!-- google and yandex -->
+        <!-- legacy, keep until providers stop requiring re-validation -->
+        <meta name="google-site-verification" content="XV1-cta_IB_JudVfTh__LZ1ZW8DEQl_V2G6mEooWnPM">
+        <meta name="google-site-verification" content="6FZTLZFVokuoMZwaG6p7A0YYiEHS6QJiZl1SN9y61oY">
+        <meta name="yandex-verification" content="5145b57371dbc003">
+        <!-- actual -->
         <meta name="google-site-verification" content="Mq6PRXIcGjEbdk2gdU6tahVlGnP5nsUEPwtpEH_eYb8">
         <meta name="yandex-verification" content="b955620073da94d9">
         <!-- open graph -->
@@ -85,5 +90,6 @@
         {% if page.toc %}
         <script type="module" src="{{ site.baseurl_root }}/javascript/toc.js"></script>
         {% endif %}
+        {% include edit.html %}
     </body>
 </html>

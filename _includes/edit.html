@@ -1,0 +1,39 @@
+{% assign edit_allowed = page.edit | default: false %}
+{% assign edit_base = site.edit | default: '' %}
+{% assign edit_path = page.relative_path | default: page.path %}
+{% assign edit_href = page.edit_url | default: '' %}
+{% assign edit_label = page.edit_label | default: '' %}
+
+{% if edit_label == '' %}
+    {% if site.lang == 'ru' %}
+        {% assign edit_label = 'Редактировать страницу' %}
+    {% else %}
+        {% assign edit_label = 'Edit this page' %}
+    {% endif %}
+{% endif %}
+
+{% if edit_href == '' and edit_base != '' and edit_path %}
+    {% assign localized_path = '_i18n/' | append: site.lang | append: '/' | append: page.path %}
+    {% assign edit_href = edit_base | append: localized_path %}
+{% endif %}
+
+{% if edit_allowed and edit_href != '' %}
+<a
+    class="edit-floating-btn"
+    href="{{ edit_href }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="{{ edit_label }}"
+    title="{{ edit_label }}"
+>
+    <svg
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+        fill="currentColor"
+        stroke="currentColor"
+    >
+        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+    </svg>
+</a>
+{% endif %}

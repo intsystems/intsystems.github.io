@@ -4,7 +4,7 @@ edit: true
 position: dos
 avatar: strijov_vv.jpg
 mail: strijov@ccas.ru
-site: http://ccas.ru/strijov/
+site: https://m1p.org/index.php/My_first_scientific_paper
 scholar: https://scholar.google.com/citations?user=3TpENmIAAAAJ&hl=en&oi=ao
 orcid: https://orcid.org/0000-0002-2194-8859/print
 mathnet: https://www.mathnet.ru/php/person.phtml?option_lang=rus&personid=71984
