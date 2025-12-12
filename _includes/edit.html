@@ -13,8 +13,13 @@
 {% endif %}
 
 {% if edit_href == '' and edit_base != '' and edit_path %}
-    {% assign localized_path = '_i18n/' | append: site.lang | append: '/' | append: page.path %}
-    {% assign edit_href = edit_base | append: localized_path %}
+    {% assign first_char = edit_path | slice: 0, 1 %}
+    {% if edit_path contains '_i18n/' or first_char == '_' %}
+        {% assign edit_href = edit_base | append: edit_path %}
+    {% else %}
+        {% assign localized_path = '_i18n/' | append: site.lang | append: '/' | append: edit_path %}
+        {% assign edit_href = edit_base | append: localized_path %}
+    {% endif %}
 {% endif %}
 
 {% if edit_allowed and edit_href != '' %}

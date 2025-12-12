@@ -1,4 +1,5 @@
 ---
+edit: true
 title: "An Exploration of Softmax Alternatives Belonging to the Spherical Loss Family"
 lang: en
 date: 2025-12-11
