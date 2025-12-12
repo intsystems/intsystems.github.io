@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+    <header class="blog-post__header" style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #e5e5e5;">
+        <h2 class="blog-post__title" itemprop="headline">{{ page.title }}</h2>
+        {% if page.tags %}
+        <ul class="blog-post__tags" itemprop="keywords">
+            {% for tag in page.tags %}
+            <li>{{ tag }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="blog-post__meta">
+            <span itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</span>
+            {% if page.read_time %}
+            <span aria-hidden="true">&middot;</span>
+            <span>{{ page.read_time }} min</span>
+            {% endif %}
+            {% if page.authors %}
+            <span aria-hidden="true">&middot;</span>
+            <span itemprop="author">{{ page.authors | join: ", " }}</span>
+            {% endif %}
+        </div>
+        {% if page.summary %}
+        <p class="blog-post__summary" itemprop="description">{{ page.summary }}</p>
+        {% endif %}
+    </header>
+    <div class="blog-post__content" itemprop="articleBody">
+        {{ content }}
+    </div>
+</article>

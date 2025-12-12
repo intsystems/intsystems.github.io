@@ -71,6 +71,9 @@ nav:
         - id: "thesis"
           href: "/materials/thesis"
           name: site.nav.names.thesis
+        - id: "blog"
+          href: "/materials/blog"
+          name: site.nav.names.blog
         - id: "seminars"
           href: "/materials/seminars"
           name: site.nav.names.seminars
@@ -113,6 +116,11 @@ defaults:
       type: "course"
     values:
       layout: "course"
+  - scope:
+      path: ""
+      type: "blogs"
+    values:
+      layout: "blog"
 
 collections:
   people:
@@ -121,6 +129,9 @@ collections:
   course:
     output: true
     permalink: /course/:title/index.html
+  blogs:
+    output: true
+    permalink: /materials/blog/:name/
 
 global:
   langs:

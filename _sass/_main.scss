@@ -2,7 +2,6 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: $font-primary;
 }
 
 html,
@@ -35,8 +34,28 @@ body {
   width: 100%;
 }
 
+// Let MathJax keep TeX fonts and predictable layout.
+mjx-container {
+  font-family: "MJXTEX", "Times New Roman", serif !important;
+  line-height: 1.3;
+}
+
+mjx-container[jax="CHTML"][display="true"],
 .MathJax_Display {
-  font-size: $font-size-math;
+  font-size: 1rem;
+  text-align: center;
+  margin: 1rem auto;
+  padding: 0.25rem 0;
+  overflow-x: auto;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  font-size: 1.25rem !important;
+}
+
+mjx-container[jax="CHTML"][display="false"] {
+  padding: 0;
+  overflow: visible;
 }
 
 a {

@@ -17,6 +17,7 @@ site:
       materials: Materials
       nir: Research Reports
       thesis: Theses
+      blog: Blog
       seminars: Meetings
       scholarship: Scholarships
       paper_guidelines: Paper Guidelines
@@ -128,6 +129,7 @@ titles:
   admission: Admission
   seminars: Scientific seminars
   templates: Templates
+  blog: Blog
 
 course:
   teachers: People

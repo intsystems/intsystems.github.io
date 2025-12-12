@@ -17,6 +17,7 @@ site:
       materials: Материалы
       nir: Отчеты НИР
       thesis: Дипломы
+      blog: Блог
       seminars: Семинары
       scholarship: Стипендии
       paper_guidelines: Как писать научные работы
@@ -128,6 +129,7 @@ titles:
   seminars: Научные семинары
   paper_guidelines: Рекомендации по написанию ВКР и научных работ
   templates: Шаблоны
+  blog: Блог
 
 course:
   teachers: Преподаватели
