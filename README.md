@@ -7,6 +7,11 @@ This repository contains the source code for the Intelligent Systems Department 
 
 If you want to make a large contribution, please do it in a pull request, and ask [@kisnikser](https://github.com/kisnikser) for a review. Else if your changes are small (typos, small content edits), you can directly edit the files in GitHub web interface as follows.
 
+## Blog
+
+1. Create or edit a file in the [`_blogs`](_blogs/) folder. Use the existing files as a reference for the structure and required fields.
+2. If your blog contains some images, add them to the [`images/blog/{blog-title}`](images/blog/) folder, where `blog-title` equals your `.md` filename under [`_blogs`](_blogs/). Please, compress the images to optimize loading times.
+
 ## Research Report
 
 1. Go to the file [`_i18n/en/nir.md`](_i18n/en/nir.md).
