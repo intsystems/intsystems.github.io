@@ -18,9 +18,9 @@ If you want to make a large contribution, please do it in a pull request, and as
 2. If you add new semester, create a new section, e.g., `### 2025 Fall`, and create a table for your course (see previous semesters for examples).
 3. Add your report information in the format:
    ```markdown
-   | Student      | Topic      | Advisor               | Links                                    |
-   | :----------- | :--------- | :-------------------- | :--------------------------------------- |
-   | Name Surname | Topic name | Name Surname, PhD/DSc | [Paper](URL), [Code](URL), [Slides](URL) |
+   | Student      | Title | Advisor                      | Links                                    |
+   | :----------- | :---- | :--------------------------- | :--------------------------------------- |
+   | Name Surname | Title | [Name Surname, PhD/DSc](URL) | [Paper](URL), [Code](URL), [Slides](URL) |
    ```
 
 ## Thesis
@@ -29,9 +29,9 @@ If you want to make a large contribution, please do it in a pull request, and as
 2. If you add new year, create a new section, e.g., `### 2025`, and create a table for your course (see previous years for examples).
 3. Add your report information in the format:
    ```markdown
-   | Student      | Topic       | Advisor               | Link to Project | Link to Paper | Link to Slides |
-   | :----------- | :---------- | :-------------------- | :-------------- | ------------- | -------------- |
-   | Name Surname | Thesis name | Name Surname, PhD/DSc | [Project](URL)  | [Thesis](URL) | [Slides](URL)  |
+   | Student      | Title       | Advisor                      | Link to Project | Link to Paper | Link to Slides |
+   | :----------- | :---------- | :--------------------------- | :-------------- | ------------- | -------------- |
+   | Name Surname | Thesis name | [Name Surname, PhD/DSc](URL) | [Project](URL)  | [Thesis](URL) | [Slides](URL)  |
    ```
 
 ## People

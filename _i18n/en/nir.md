@@ -2,31 +2,31 @@
 
 This page contains information about the research projects of students at the Intelligent Systems Department. Here you can find the titles of theses, names of advisors, links to publications, presentations and code repositories.
 
-### 2025 Spring
+### 2025 Fall
 
 #### PhD Students
 
-| PhD Student  | Year | Title | Advisor             | Links                                    |
-| :----------- | :--: | :---- | :------------------ | :--------------------------------------- |
-| Name Surname | Year | Title | Name Surname + link | Paper + link, Code + link, Slides + link |
+| PhD Student  | Year | Title | Advisor               | Links               |
+| :----------- | :--: | :---- | :-------------------- | :------------------ |
+| Name Surname | Year | Title | Name Surname, PhD/DSc | Paper, Code, Slides |
 
 #### Master's Students (2nd year)
 
-| Student        | Title                                                                  | Advisor                                                                                | Links                                                                                                                                                                                                                                                                        |
-| :------------- | :--------------------------------------------------------------------- | :------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Nikita Kiselev | Robust Convergence of Loss Landscapes through Distributional Averaging | [Andrey Grabovoy](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=ru&oi=sra) | [Paper](https://github.com/kisnikser/robust-loss-landscape-convergence/blob/main/paper/main.pdf), [Code](https://github.com/kisnikser/robust-loss-landscape-convergence), [Slides](https://github.com/kisnikser/robust-loss-landscape-convergence/blob/main/slides/main.pdf) |
+| Student        | Title                                                                  | Advisor                                                                                     | Links                                                                                                                                                                                                                                                                        |
+| :------------- | :--------------------------------------------------------------------- | :------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Nikita Kiselev | Robust Convergence of Loss Landscapes through Distributional Averaging | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=ru&oi=sra) | [Paper](https://github.com/kisnikser/robust-loss-landscape-convergence/blob/main/paper/main.pdf), [Code](https://github.com/kisnikser/robust-loss-landscape-convergence), [Slides](https://github.com/kisnikser/robust-loss-landscape-convergence/blob/main/slides/main.pdf) |
 
 #### Master's Students (1st year)
 
-| Student      | Title | Advisor             | Links                                    |
-| :----------- | :---- | :------------------ | :--------------------------------------- |
-| Name Surname | Title | Name Surname + link | Paper + link, Code + link, Slides + link |
+| Student      | Title | Advisor               | Links               |
+| :----------- | :---- | :-------------------- | :------------------ |
+| Name Surname | Title | Name Surname, PhD/DSc | Paper, Code, Slides |
 
 #### Bachelor's Students (4th year)
 
-| Student      | Title | Advisor             | Links                                    |
-| :----------- | :---- | :------------------ | :--------------------------------------- |
-| Name Surname | Title | Name Surname + link | Paper + link, Code + link, Slides + link |
+| Student      | Title | Advisor               | Links               |
+| :----------- | :---- | :-------------------- | :------------------ |
+| Name Surname | Title | Name Surname, PhD/DSc | Paper, Code, Slides |
 
 ### 2025 Spring
 
