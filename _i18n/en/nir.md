@@ -21,6 +21,7 @@ This page contains information about the research projects of students at the In
 | Student      | Title | Advisor               | Links               |
 | :----------- | :---- | :-------------------- | :------------------ |
 | Fedor Sobolevsky | Automatic Hierarchical Summarization of Scientific Texts | [Konstantin Vorontsov, DSc](https://scholar.google.com/citations?user=KIW4fnsAAAAJ&hl=en&oi=ao) | [Paper](https://github.com/intsystems/Sobolevsky-MS-Thesis/blob/main/paper/IEEE_APEIE_2025/Sobolevsky2025TTED_IEEE_KNOTH.pdf), [Code](https://github.com/intsystems/Sobolevsky-MS-Thesis), [Slides](https://github.com/intsystems/Sobolevsky-MS-Thesis/blob/main/slides/fall2025report/Sobolevsky_MS_Thesis_Fall_2025_Slides.pdf) |
+| Papay Ivan | Implicit weak adversarial networks to solve stochastic partial differential equations  | [Strijov V. V., DSc](https://scholar.google.com/citations?user=3TpENmIAAAAJ&hl=ru&oi=ao) | [Paper](https://github.com/intsystems/Papay-MS-Thesis/tree/master), [Code](https://github.com/intsystems/Papay-MS-Thesis/tree/master), [Slides](https://github.com/intsystems/Papay-MS-Thesis/tree/master) |
 
 #### Bachelor's Students (4th year)
 
