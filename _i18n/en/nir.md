@@ -28,7 +28,7 @@ This page contains information about the research projects of students at the In
 
 | Student      | Title | Advisor               | Links               |
 | :----------- | :---- | :-------------------- | :------------------ |
-| Name Surname | Title | Name Surname, PhD/DSc | Paper, Code, Slides |
+| Maksim Ivanov | Surrogate-based neural network structural pruning | [Bakhteev O. Y., PhD](https://bahleg.site/publications) | [Paper](https://github.com/intsystems/Zero-shot-structural-pruning/blob/master/paper/main.pdf), [Code](https://github.com/intsystems/Zero-shot-structural-pruning/blob/master/notebooks/depgraph-experiments.ipynb), [Slides](https://github.com/intsystems/Zero-shot-structural-pruning/blob/master/slides/slides.pdf) |
 
 ### 2025 Spring
 
