@@ -33,6 +33,7 @@ This page contains information about the research projects of students at the In
 | Student      | Title | Advisor               | Links               |
 | :----------- | :---- | :-------------------- | :------------------ |
 | Maksim Ivanov | Surrogate-based neural network structural pruning | [Bakhteev O. Y., PhD](https://bahleg.site/publications) | [Paper](https://github.com/intsystems/Zero-shot-structural-pruning/blob/master/paper/main.pdf), [Code](https://github.com/intsystems/Zero-shot-structural-pruning/blob/master/notebooks/depgraph-experiments.ipynb), [Slides](https://github.com/intsystems/Zero-shot-structural-pruning/blob/master/slides/slides.pdf) |
+| Daniil Kazachkov | Pairs Reconstruction | [Alexander Korotin PhD](https://akorotin.netlify.app/) | [Paper](https://github.com/intsystems/Kazachkov-BSc-Thesis/blob/main/docs/pairs_reconstruction.pdf), [Code](https://github.com/intsystems/Kazachkov-BSc-Thesis/tree/main/code), Slides |
 
 ### 2025 Spring
 
