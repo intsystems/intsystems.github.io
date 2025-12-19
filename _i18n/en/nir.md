@@ -34,6 +34,7 @@ This page contains information about the research projects of students at the In
 | :----------- | :---- | :-------------------- | :------------------ |
 | Maksim Ivanov | Surrogate-based neural network structural pruning | [Bakhteev O. Y., PhD](https://bahleg.site/publications) | [Paper](https://github.com/intsystems/Zero-shot-structural-pruning/blob/master/paper/main.pdf), [Code](https://github.com/intsystems/Zero-shot-structural-pruning/blob/master/notebooks/depgraph-experiments.ipynb), [Slides](https://github.com/intsystems/Zero-shot-structural-pruning/blob/master/slides/slides.pdf) |
 | [Daniil Kazachkov](https://www.linkedin.com/in/daniil-kazachkov/) | Pairs Reconstruction | [Alexander Korotin PhD](https://akorotin.netlify.app/) | [Paper](https://github.com/intsystems/Kazachkov-BSc-Thesis/blob/main/docs/pairs_reconstruction.pdf), [Code](https://github.com/intsystems/Kazachkov-BSc-Thesis/tree/main/code), Slides |
+| [Alexey Kravatskiy](https://scholar.google.com/citations?hl=en&user=aLnWEyUAAAAJ) | The Ky Fan Norms and Beyond: Dual Norms and Combinations for Matrix Optimization | [Prof. Ivan Oseledets](https://scholar.google.com/citations?hl=ru&user=5kMqBQEAAAAJ&view_op=list_works&sortby=pubdate) | [Paper](https://arxiv.org/pdf/2512.09678) | [Code](https://github.com/alexlegeartis/Neon), [Slides](https://github.com/alexlegeartis/Neon/blob/main/slides/neon_short_slides.pdf) |  
 
 ### 2025 Spring
 
