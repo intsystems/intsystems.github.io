@@ -65,6 +65,9 @@ This page contains information about the research projects of students at the In
 |[Mark Ikonnikov](https://github.com/makemebright) | Bayesian Causal Inference in the Convergent Cross-Mapping test | [Vadim Strijov, DSc](https://scholar.google.com/citations?user=3TpENmIAAAAJ&hl=en) | [Paper](https://github.com/makemebright/Ikonnikov_BS_thesis/blob/master/paper/Ikonnikov_CI_%D0%A1%D0%A1M_thesis_raw.pdf), [Code](), [Slides]() |
 |[Egor Petrov](https://github.com/modernTalker) | Closing the Curvature Gap: Full Transformer Hessians and Their Implications for Scaling Laws | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=en) | [GitHub](https://github.com/modernTalker/Closing-the-Curvature-Gap), [Paper](https://github.com/modernTalker/Closing-the-Curvature-Gap/blob/main/paper/paper.pdf), [Code](https://github.com/modernTalker/transformer_hessian#), [Arxiv](https://arxiv.org/abs/2510.16927), [Slides](https://github.com/modernTalker/Closing-the-Curvature-Gap/blob/main/slides/slides.pdf) |
 
+|[Roman Shevchuk](https://github.com/RomanS123) | Analysis of the Relationship Between Electroencephalography (EEG) and
+Functional Magnetic Resonance Imaging (fMRI) Signals | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=en) | [GitHub](https://github.com/intsystems/Shevchuk-BS-Thesis/tree/main), [Paper](https://github.com/intsystems/Shevchuk-BS-Thesis/blob/main/paper/article_ru.pdf), [Code](https://github.com/intsystems/Shevchuk-BS-Thesis/tree/main)|
+
 ### 2025 Spring
 
 #### PhD Students
