@@ -8,7 +8,10 @@ This page contains information about the research projects of students at the In
 
 | PhD Student  | Year | Title | Advisor               | Links               |
 | :----------- | :--: | :---- | :-------------------- | :------------------ |
+| [Konstantin Yakovlev](https://scholar.google.com/citations?user=S3P0l0MAAAAJ&hl=ru) | 2 | Tensor Methods in Federated Learning | [Alexander Gasnikov, DSc](https://scholar.google.com/citations?user=AmeE8qkAAAAJ&hl=ru) | [Paper](https://proceedings-mlr-press.translate.goog/v291/yakovlev25a.html?_x_tr_sl=en&_x_tr_tl=ru&_x_tr_hl=ru&_x_tr_pto=sc), [Slides](https://github.com/Konstantin-Iakovlev/Slides/blob/main/Report_20Dec_2025.pdf) |
 | Name Surname | Year | Title | Name Surname, PhD/DSc | Paper, Code, Slides |
+
+
 
 #### Master's Students (2nd year)
 
