@@ -9,7 +9,7 @@ This page contains information about the research projects of students at the In
 | PhD Student  | Year | Title | Advisor               | Links               |
 | :----------- | :--: | :---- | :-------------------- | :------------------ |
 | [Konstantin Yakovlev](https://scholar.google.com/citations?user=S3P0l0MAAAAJ&hl=ru) | 2 | Tensor Methods in Federated Learning | [Alexander Gasnikov, DSc](https://scholar.google.com/citations?user=AmeE8qkAAAAJ&hl=ru) | [Paper](https://proceedings-mlr-press.translate.goog/v291/yakovlev25a.html?_x_tr_sl=en&_x_tr_tl=ru&_x_tr_hl=ru&_x_tr_pto=sc), [Slides](https://github.com/Konstantin-Iakovlev/Slides/blob/main/Report_20Dec_2025.pdf) |
-| [Ildar Khabutdinov](https://scholar.google.com/citations?user=S3P0l0MAAAAJ&hl=ru) | 1 | Интеллектуальные методы оценки достоверности и качества текстов | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=ru) | [Video](https://vkvideo.ru/video-214485707_456239057?ref_domain=isprasopen.ru), [Slides](https://vkvideo.ru/video-214485707_456239057?ref_domain=isprasopen.ru) |
+| [Ildar Khabutdinov](https://scholar.google.com/citations?user=S3P0l0MAAAAJ&hl=ru) | 1 | Интеллектуальные методы оценки достоверности и качества текстов | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=ru) | [Video](https://vkvideo.ru/video-214485707_456239057?ref_domain=isprasopen.ru), [Slides](https://drive.google.com/file/d/1Yagm6Be9C7Ciu4oySLclckIgiRe3ENUb/view?usp=sharing) |
 | Name Surname | Year | Title | Name Surname, PhD/DSc | Paper, Code, Slides |
 
 
