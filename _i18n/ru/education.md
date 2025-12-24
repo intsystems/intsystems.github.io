@@ -12,7 +12,7 @@
 - Шаблон отчета НИР: [link](https://docs.google.com/document/d/1XsYWC7isbiums9jqjzddHIkDjvxqKNvf/edit?usp=sharing)
 - Программа госэкзамена для 6 курса: [link](https://docs.google.com/document/d/1KkePnIg2BOf_LHBLBbgRL0W4gqKtt1W0OhJSg43lR_Y/edit?usp=sharing)
 
-<!-Section-of-the-spring-semester--------------->
+<!--Section-of-the-spring-semester--------------->
 ### Весна 2026
 
 #### Важные даты 
@@ -61,7 +61,7 @@
 
 
 ### Осень 2025
-<!-Section-of-the-autumn-semester--------------->
+<!--Section-of-the-autumn-semester--------------->
 #### Важные даты
 
 - **2 сентября:** Крайний срок подачи заявок на [стипендию]({{ site.baseurl }}/materials/scholarship)
