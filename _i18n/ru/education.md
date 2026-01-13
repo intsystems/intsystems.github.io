@@ -47,8 +47,9 @@
 | 10:30-12:00 | [Рекомендательные системы]({{ site.baseurl }}/course/recommender_systems)                                | [Алексей Гришанов]({{ site.baseurl }}/people/grishanov_av), [Анна Володкевич]({{ site.baseurl }}/people/volodkevich_aa) | Дифференцированный зачет  | 2                |
 | 12:10-13:40 | [Математические методы прогнозирования]({{ site.baseurl }}/course/forecasting_methods)                   | [Денис Тихонов]({{ site.baseurl }}/people/tikhonov_dm), [Святослав Панченко]({{ site.baseurl }}/people/panchenko_sk)    | Дифференцированный зачет  | 3                |
 | 14:30-16:00 | [Байесовский выбор моделей]({{ site.baseurl }}/course/bayesian_model_selection)                          | [Александр Адуенко]({{ site.baseurl }}/people/aduenko_aa), [Константин Яковлев]({{ site.baseurl }}/people/yakovlev_kd)  | Экзамен                   | 2                |
-| | Научно-исследовательская работа | | Дифференцированный зачет | 1 | 
-<!-- | 16:10-17:40 | [Программная инженерия для анализа данных]({{ site.baseurl }}/course/software_engineering_data_analysis) | [Антон Хританков]({{ site.baseurl }}/people/khritankov_as)                                                              | Дифференцированный зачет  | 1                | Не нашли места в учебном плане-->
+| | Научно-исследовательская работа | | Дифференцированный зачет | 1 |
+
+<!--Программная инженерия для анализа данных, не нашли места в учебном плане-->
 
 #### 5 курс, 10 семестр (вторник)
 
