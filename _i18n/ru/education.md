@@ -37,8 +37,8 @@
 | Время       | Дисциплина                                                                              | Преподаватели                                                                                                                                                          | Форма итоговой аттестации | Зачетные единицы |
 | ----------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | ---------------- |
 | 12:10-13:40 | [Введение в машинное обучение]({{ site.baseurl }}/course/introduction_machine_learning) | [Андрей Грабовой]({{ site.baseurl }}/people/grabovoy_av), [Константин Воронцов]({{ site.baseurl }}/people/vorontsov_kv)                                                | Дифференцированный зачет  | 1                |
-| 14:30-16:00 | [Практикум по программированию на Python](https://github.com/MelLain/mipt-python)       | [Мурат Апишев]({{ site.baseurl }}/people/apishev_ma)                                                                                                                   | Зачет                     | 1                |
-| 16:10-17:40 | [Создание интеллектуальных систем]({{ site.baseurl }}/course/rnd_in_ai)                 | [Андрей Грабовой]({{ site.baseurl }}/people/grabovoy_av), [Вадим Стрижов]({{ site.baseurl }}/people/strijov_vv)                                                        | Зачет                     | 1                |
+| 14:30-16:00 | [Практикум по программированию на Python](https://github.com/MelLain/mipt-python)       | [Мурат Апишев]({{ site.baseurl }}/people/apishev_ma)                                                                                                                   | Зачет                     | 1                | <!--оба предмета идут в зачетную ведомость Введение в машинное обучение и практикум на языке Python-->
+| 16:10-17:40 | [Введение в специальность]({{ site.baseurl }}/course/rnd_in_ai)                 | [Андрей Грабовой]({{ site.baseurl }}/people/grabovoy_av), [Вадим Стрижов]({{ site.baseurl }}/people/strijov_vv)                                                        | Зачет                     | 1                | <!--раньше это был Создание интеллектуальных систем, идет в ведомость Б.1.В.39 Инновационная и проектная деятельность (курс по выбору)-->
 | 17:50-19:20 | [Автоматизация научных исследований](http://m1p.org)                                    | [Андрей Грабовой]({{ site.baseurl }}/people/grabovoy_av), [Олег Бахтеев]({{ site.baseurl }}/people/bakhteev_oy), [Вадим Стрижов]({{ site.baseurl }}/people/strijov_vv) | Дифференцированный зачет  | 1                |
 
 #### 4 курс, 8 семестр (вторник)
@@ -48,16 +48,20 @@
 | 10:30-12:00 | [Рекомендательные системы]({{ site.baseurl }}/course/recommender_systems)                                | [Алексей Гришанов]({{ site.baseurl }}/people/grishanov_av), [Анна Володкевич]({{ site.baseurl }}/people/volodkevich_aa) | Дифференцированный зачет  | 2                |
 | 12:10-13:40 | [Математические методы прогнозирования]({{ site.baseurl }}/course/forecasting_methods)                   | [Денис Тихонов]({{ site.baseurl }}/people/tikhonov_dm), [Святослав Панченко]({{ site.baseurl }}/people/panchenko_sk)    | Дифференцированный зачет  | 3                |
 | 14:30-16:00 | [Байесовский выбор моделей]({{ site.baseurl }}/course/bayesian_model_selection)                          | [Александр Адуенко]({{ site.baseurl }}/people/aduenko_aa), [Константин Яковлев]({{ site.baseurl }}/people/yakovlev_kd)  | Экзамен                   | 2                |
-| 16:10-17:40 | [Программная инженерия для анализа данных]({{ site.baseurl }}/course/software_engineering_data_analysis) | [Антон Хританков]({{ site.baseurl }}/people/khritankov_as)                                                              | Дифференцированный зачет  | 1                |
+| | Научно-исследовательская работа | | Дифференцированный зачет | 1 | 
+<!--| 16:10-17:40 | [Программная инженерия для анализа данных]({{ site.baseurl }}/course/software_engineering_data_analysis) | [Антон Хританков]({{ site.baseurl }}/people/khritankov_as)                                                              | Дифференцированный зачет  | 1                | Не нашли места в учебном плане-->
 
 #### 5 курс, 10 семестр (вторник)
 
 | Время       | Дисциплина                                                                                               | Преподаватели                                              | Форма итоговой аттестации | Зачетные единицы |
 | ----------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ------------------------- | ---------------- |
+| 10:30-12:00 | [Оптимальный транспорт в порождающем моделировании]({{ site.baseurl }}/course/TODO)                      | [Григорий Ксенофонтов]({{ site.baseurl }}/people/TODO), [Михаил Персиянов]({{ site.baseurl }}/people/TODO)      | Дифференцированный зачет  | 1                |
 | 12:10-13:40 | [Биоинформатика]({{ site.baseurl }}/course/bioinformatics)                                               | [Иван Торшин]({{ site.baseurl }}/people/torshin_iy)        | Дифференцированный зачет  | 1                |
 | 14:30-16:00 | [Создание интеллектуальных систем]({{ site.baseurl }}/course/rnd_in_ai)                                  | [Андрей Грабовой]({{ site.baseurl }}/people/grabovoy_av)   | Экзамен                   | 2                |
 | 16:10-17:40 | [Программная инженерия для анализа данных]({{ site.baseurl }}/course/software_engineering_data_analysis) | [Антон Хританков]({{ site.baseurl }}/people/khritankov_as) | Дифференцированный зачет  | 1                |
 | 17:50-19:20 | [Байесовское мультимоделирование]({{ site.baseurl }}/course/bayesian_multimodeling)                      | [Олег Бахтеев]({{ site.baseurl }}/people/bakhteev_oy)      | Экзамен                   | 2                |
+| 19:30-21:00 | [Математические методы анализа текстов]({{ site.baseurl }}/course/TODO)                      | [Герман Грицай]({{ site.baseurl }}/people/TODO) | Дифференцированный зачет  | 1                |
+| | Научно-исследовательская работа | | Дифференцированный зачет | 1 | 
 
 
 ### Осень 2025
@@ -81,6 +85,7 @@
 | 12:10-13:40 | [Методы глубокого обучения: Семинар]({{ site.baseurl }}/course/deep_learning)          | [Эдуард Владимиров]({{ site.baseurl }}/people/vladimirov_ea), [Даниил Дорин]({{ site.baseurl }}/people/dorin_dd), [Никита Киселев]({{ site.baseurl }}/people/kiselev_ns), [Сергей Фирсов]({{ site.baseurl }}/people/firsov_sa), [Вадим Касюк]({{ site.baseurl }}/people/kasiuk_va) |                           |                  |
 | 14:30-16:00 | [Байесовский выбор моделей]({{ site.baseurl }}/course/bayesian_model_selection)        | [Александр Адуенко]({{ site.baseurl }}/people/aduenko_aa), [Константин Яковлев]({{ site.baseurl }}/people/yakovlev_kd)                                                                                                                                                             | Дифференцированный зачет  | 1                |
 | 16:10-17:40 | [Математические методы прогнозирования]({{ site.baseurl }}/course/forecasting_methods) | [Денис Тихонов]({{ site.baseurl }}/people/tikhonov_dm), [Святослав Панченко]({{ site.baseurl }}/people/panchenko_sk)                                                                                                                                                               | Дифференцированный зачет  | 1                |
+| | Научно-исследовательская работа | | Дифференцированный зачет | 1 | 
 
 #### 5 курс, 9 семестр (вторник)
 
@@ -90,6 +95,7 @@
 | 16:10-17:40 | [Создание интеллектуальных систем]({{ site.baseurl }}/course/rnd_in_ai)                            | [Андрей Грабовой]({{ site.baseurl }}/people/grabovoy_av)                                                         | Дифференцированный зачет  | 2                |
 | 18:00-19:30 | [Порождающие модели машинного обучения: Лекция]({{ site.baseurl }}/course/deep_generative_models)  | [Роман Исаченко]({{ site.baseurl }}/people/isachenko_rv), [Матвей Морозов]({{ site.baseurl }}/people/morozov_ma) | Экзамен                   | 3                |
 | 19:30-21:00 | [Порождающие модели машинного обучения: Семинар]({{ site.baseurl }}/course/deep_generative_models) | [Роман Исаченко]({{ site.baseurl }}/people/isachenko_rv), [Матвей Морозов]({{ site.baseurl }}/people/morozov_ma) |                           |                  |
+| | Научно-исследовательская работа | | Дифференцированный зачет | 1 |
 
 #### 6 курс, 11 семестр (четверг)
 
@@ -98,4 +104,5 @@
 | 10:30-12:00 | [Функциональный анализ данных]({{ site.baseurl }}/course/functional_data_analysis)        | [Вадим Стрижов]({{ site.baseurl }}/people/strijov_vv)         | Экзамен                   | 3                |
 | 12:10-13:40 | [Интеллектуальный анализ данных]({{ site.baseurl }}/course/intellectual_data_analysis)    | [Вадим Стрижов]({{ site.baseurl }}/people/strijov_vv)         | Зачет                     | 2                |
 | 14:30-16:00 | [Вероятностные тематические модели]({{ site.baseurl }}/course/probabilistic_topic_models) | [Константин Воронцов]({{ site.baseurl }}/people/vorontsov_kv) | Дифференцированный зачет  | 2                |
+| | Научно-исследовательская работа | | Дифференцированный зачет | 1 | 
 
