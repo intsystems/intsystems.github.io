@@ -11,7 +11,7 @@
 ### Прием заявок на стипендию
 
 - Дедлайн осень: 2 сентября
-- Дедлайн весна: 3 февраля
+- Дедлайн весна: 15 февраля
 - Заявку загрузить [сюда, в Google form](https://forms.gle/4TQrMp4mWPV8CxcE9) <!--(https://www.overleaf.com/2952223929srbyhvyfpbhx#b06fd2) (2025 change to googe form) -->
 - [Заявки прошлых лет и Порядок назначения стипендии](images/NIR_KV_Rudakov_scholarship.pdf)
 
