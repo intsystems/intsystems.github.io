@@ -194,6 +194,36 @@
     height: auto;
 }
 
+// Адаптивные изображения в контенте блог-поста
+.blog-post__content {
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 1.5rem auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    // Для изображений в параграфах
+    p img {
+        margin: 1rem auto;
+    }
+    
+    // Для больших изображений с атрибутом width
+    img[width],
+    img[height] {
+        max-width: 100%;
+        width: auto !important;
+        height: auto !important;
+    }
+    
+    // Для responsive tables с изображениями
+    .table-scroll img {
+        max-width: none;
+    }
+}
+
 // News post styles
 .news-post__header {
     margin-bottom: 2rem;

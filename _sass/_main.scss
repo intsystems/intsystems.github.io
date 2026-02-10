@@ -256,8 +256,23 @@ pre code {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
   margin: 0 0 1rem;
   border-radius: 5px;
+}
+
+// Исключения для навигации и специальных элементов
+.navbar img,
+.navbar-brand img,
+.navbar-logo,
+.navbar-logo-ru,
+.profile-thumbnail,
+.list-post-title img {
+  max-width: none !important;
+  height: auto !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
 }
 
 table {

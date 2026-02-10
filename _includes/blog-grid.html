@@ -1,6 +1,4 @@
-{% assign current_lang = include.lang | default: page.lang | default: site.active_lang | default: site.locale %}
-{% assign blogs = site.blogs | where: "lang", current_lang | sort: "date" | reverse %}
-{% assign blogs = site.blogs | where: "lang", current_lang | sort: "date" | reverse %}
+{% assign blogs = site.blogs | sort: "date" | reverse %}
 {% assign empty_copy = include.empty | default: "We are preparing the first articles. Stay tuned!" %}
 
 {% if blogs.size == 0 %}
@@ -16,7 +14,7 @@
         <a class="blog-card__link" href="{{ site.baseurl }}{{ post.url }}">
             <div class="blog-card__cover{% unless has_cover %} blog-card__cover--placeholder{% endunless %}">
                 {% if has_cover %}
-                <img src="{{ post.cover | relative_url }}" alt="{{ post.title }} cover" loading="lazy">
+                <img src="{{ site.baseurl_root }}{{ post.cover }}" alt="{{ post.title }} cover" loading="lazy">
                 {% else %}
                 <span>{{ post.tags | first | default: "Blog" }}</span>
                 {% endif %}

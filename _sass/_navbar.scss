@@ -79,6 +79,17 @@
 .navbar-brand {
   font-weight: 300;
   padding: 0px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  
+  img {
+    height: 50px !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
 }
 
 // change font for navbar
@@ -517,6 +528,15 @@ a.navbar-social {
       }
     }
   }
+}
+
+// Фиксируем размеры логотипа
+.navbar-logo,
+.navbar-logo-ru {
+  height: 50px !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: 50px !important;
 }
 
 @media (max-width: 1365px) {
