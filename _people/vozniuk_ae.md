@@ -1,7 +1,7 @@
 ---
 title: people.vozniuk_ae
 edit: true
-position: pgs
+position: gs
 avatar: default.jpg
 mail: vozniuk.ae@phystech.edu
 site:
