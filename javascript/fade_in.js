@@ -2,25 +2,14 @@
 (function() {
   'use strict';
   
-  // Page fade-in on load
+  // Page fade-in on load (отключено - вызывало белый flash)
   function initPageFadeIn() {
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    if (prefersReducedMotion) {
-      // Skip animation for users who prefer reduced motion
-      document.body.classList.add('page-loaded');
-    } else {
-      // Add class after a tiny delay to ensure styles are loaded
-      requestAnimationFrame(function() {
-        document.body.classList.add('page-loaded');
-      });
-    }
+    // Больше не используется
   }
   
-  // Force scroll to top on page load/refresh
+  // Плавная прокрутка к якорям вместо принудительного скролла вверх
   if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
+    history.scrollRestoration = 'auto';  // Изменено с 'manual' на 'auto'
   }
   
   // Configuration
@@ -63,19 +52,9 @@
   // Initialize when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
-      initPageFadeIn();
       initFadeIn();
     });
   } else {
-    initPageFadeIn();
     initFadeIn();
   }
-  
-  // Scroll to top after page is fully loaded (including images and styles)
-  window.addEventListener('load', function() {
-    // Small delay to ensure all layout shifts are complete
-    setTimeout(function() {
-      window.scrollTo(0, 0);
-    }, 0);
-  });
 })();

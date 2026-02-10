@@ -3,6 +3,9 @@
   object-position: center top;
   width: 150px;
   height: 150px;
+  // Предотвращаем reflow при загрузке
+  min-width: 150px;
+  min-height: 150px;
 }
 
 .list-post-title {

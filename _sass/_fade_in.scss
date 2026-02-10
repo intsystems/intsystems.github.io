@@ -1,20 +1,25 @@
 // Fade-in animations for scroll effects
 
-// Page fade-in on load
-body {
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
+// Плавный переход для контента (не для body)
+.content {
+    animation: contentFadeIn 0.5s ease-out;
 }
 
-body.page-loaded {
-    opacity: 1;
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 // Respect user's motion preferences
 @media (prefers-reduced-motion: reduce) {
-    body {
-        opacity: 1;
-        transition: none;
+    .content {
+        animation: none;
     }
 }
 
