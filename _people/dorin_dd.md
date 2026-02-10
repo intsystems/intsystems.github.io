@@ -4,6 +4,7 @@ edit: true
 position: gs
 avatar: dorin_dd.jpeg
 mail: dorin.dd@phystech.edu
+telegram: danulkin
 site:
 scholar: https://scholar.google.com/citations?user=LbVyeRgAAAAJ
 orcid:

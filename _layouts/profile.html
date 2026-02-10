@@ -14,7 +14,7 @@ layout: default
         <div class="no_toc_section" style="margin-top: 2rem;">
             <h1 id="{% t people.{{ page.id | split: '/' | last }} %}" class="title" style="margin-bottom: 0.5rem;">{% t people.{{ page.id | split: '/' | last }} %}</h1>
         </div>
-        {% if page.site or page.mail or page.scholar or page.orcid or page.scopus or page.elib or page.mathnet %}
+        {% if page.site or page.mail or page.telegram or page.scholar or page.orcid or page.scopus or page.elib or page.mathnet %}
         <div class="profile-links">
             {% if page.site %}
             <div class="profile-link-item">
@@ -27,6 +27,13 @@ layout: default
             <div class="profile-link-item">
                 <i class="fa fa-envelope-o"></i>
                 <a href="#" onclick="copyEmailToClipboard(event, '{{page.mail}}')">{{ page.mail }}</a>
+            </div>
+            {% endif %}
+            
+            {% if page.telegram %}
+            <div class="profile-link-item">
+                <i class="fa fa-telegram"></i>
+                <a href="https://t.me/{{page.telegram}}" target="_blank">@{{ page.telegram }}</a>
             </div>
             {% endif %}
             

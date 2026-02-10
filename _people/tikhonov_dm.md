@@ -4,6 +4,7 @@ edit: true
 position: pgs
 avatar: tikhonov_dm.jpeg
 mail: tihonov.dm@phystech.edu
+telegram: TikhonovDenisM
 site:
 scholar:
 orcid:

@@ -4,6 +4,7 @@ edit: true
 position: pgs
 avatar: persiianov_mi.jpeg
 mail: persiianov.mi@yandex.ru
+telegram: MuXauJl11110
 site:
 scholar: https://scholar.google.com/citations?user=YXX3VMQAAAAJ
 orcid:

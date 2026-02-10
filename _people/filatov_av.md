@@ -4,6 +4,7 @@ edit: true
 position: pgs
 avatar: filatov_av.jpg
 mail: filatovandreiv@gmail.com
+telegram: anvilarth
 site:
 scholar: https://scholar.google.com/citations?user=xRNTrdcAAAAJ
 orcid:

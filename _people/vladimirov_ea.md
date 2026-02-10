@@ -4,6 +4,7 @@ edit: true
 position: pgs
 avatar: vladimirov_ea.jpeg
 mail:
+telegram: edyarich
 site:
 scholar:
 orcid:

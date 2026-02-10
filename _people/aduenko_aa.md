@@ -4,6 +4,7 @@ edit: true
 position: phd
 avatar: aduenko_aa.jpg
 mail:
+telegram: aduenko
 site:
 scholar:
 orcid:

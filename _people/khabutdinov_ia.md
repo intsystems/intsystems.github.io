@@ -4,6 +4,7 @@ edit: true
 position: pgs
 avatar: default.jpg
 mail: khabutdinov.ia@phystech.edu
+telegram: mnsildar
 site:
 scholar:
 orcid:

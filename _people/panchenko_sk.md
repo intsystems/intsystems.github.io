@@ -4,6 +4,7 @@ edit: true
 position: pgs
 avatar: panchenko_sk.jpg
 mail:
+telegram: PanchenkoSviatoslav
 site:
 scholar:
 orcid:

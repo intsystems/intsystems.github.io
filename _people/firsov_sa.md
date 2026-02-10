@@ -4,6 +4,7 @@ edit: true
 position: gs
 avatar: firsov_sa.jpg
 mail: firsov.sa@phystech.edu
+telegram: schaft_192
 site: https://t.me/schafts
 scholar:
 orcid:

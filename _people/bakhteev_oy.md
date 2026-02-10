@@ -4,6 +4,7 @@ edit: true
 position: phd
 avatar: bakhteev_oy.jpg
 mail: bakhteev@phystech.edu
+telegram: leg_bah
 site: https://bahleg.github.io
 scholar: https://scholar.google.com/citations?user=7eWNuFkAAAAJ&hl=ru
 orcid:

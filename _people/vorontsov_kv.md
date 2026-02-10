@@ -4,6 +4,7 @@ edit: true
 position: hotd
 avatar: vorontsov_kv.jpg
 mail:
+telegram: k_v_vorontsov
 site: http://www.machinelearning.ru/wiki/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:Vokov
 scholar: https://scholar.google.com/citations?user=KIW4fnsAAAAJ&hl=ru&oi=ao
 orcid:

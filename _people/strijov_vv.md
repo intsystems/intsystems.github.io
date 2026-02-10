@@ -4,6 +4,7 @@ edit: true
 position: dos
 avatar: strijov_vv.jpg
 mail: strijov@ccas.ru
+telegram: vadim_strijov
 site: https://m1p.org/index.php/My_first_scientific_paper
 scholar: https://scholar.google.com/citations?user=3TpENmIAAAAJ&hl=en&oi=ao
 orcid: https://orcid.org/0000-0002-2194-8859/print

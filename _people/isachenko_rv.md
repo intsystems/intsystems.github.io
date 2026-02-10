@@ -4,6 +4,7 @@ edit: true
 position: phd
 avatar: isachenko_rv.jpg
 mail: roman.isachenko@phystech.edu
+telegram: roman_isachenko
 site:
 scholar:
 orcid: https://orcid.org/0000-0002-6361-0784
