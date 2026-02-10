@@ -260,6 +260,22 @@ img {
   border-radius: 5px;
 }
 
+// Строгие исключения для элементов с фиксированными размерами
+.profile-thumbnail,
+.profile-avatar img,
+.list-post-title img,
+.navbar-logo,
+.navbar-logo-ru,
+.navbar-brand img {
+  margin: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.navbar-brand img {
+  border-radius: 0 !important;
+}
+
 table {
   font-family: $font-primary;
   line-height: 1.4;

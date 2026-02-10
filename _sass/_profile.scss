@@ -1,11 +1,15 @@
 .profile-thumbnail {
   object-fit: cover;
   object-position: center top;
-  width: 150px;
-  height: 150px;
-  // Предотвращаем reflow при загрузке
-  min-width: 150px;
-  min-height: 150px;
+  width: 150px !important;
+  height: 150px !important;
+  min-width: 150px !important;
+  min-height: 150px !important;
+  max-width: 150px !important;
+  max-height: 150px !important;
+  display: block !important;
+  margin: 0 auto 0.75em !important;
+  border-radius: 5px !important;
 }
 
 .list-post-title {
@@ -25,7 +29,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0rem;
+  gap: 2rem;
 }
 
 .list-item-people {
@@ -37,6 +41,10 @@
 }
 
 @media (max-width: $sm-width) {
+  .people {
+    gap: 0.5rem;
+  }
+
   .list-item-people {
     width: 150px;
   }
@@ -46,8 +54,12 @@
   }
 
   .profile-thumbnail {
-    width: 100px;
-    height: 100px;
+    width: 100px !important;
+    height: 100px !important;
+    min-width: 100px !important;
+    min-height: 100px !important;
+    max-width: 100px !important;
+    max-height: 100px !important;
   }
 }
 
@@ -84,8 +96,9 @@
     flex-shrink: 0;
 
     img {
-      width: 200px;
-      height: auto;
+      width: 200px !important;
+      height: auto !important;
+      max-width: 200px !important;
     }
   }
 }
