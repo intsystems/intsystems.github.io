@@ -194,11 +194,12 @@
     height: auto;
 }
 
-// Адаптивные изображения в контенте блог-поста
+// Адаптивные изображения ТОЛЬКО в контенте блог-поста
 .blog-post__content {
+    // Применяем адаптивность только к изображениям в контенте
     img {
-        max-width: 100%;
-        height: auto;
+        max-width: 100% !important;
+        height: auto !important;
         display: block;
         margin: 1.5rem auto;
         border-radius: 8px;
@@ -213,15 +214,21 @@
     // Для больших изображений с атрибутом width
     img[width],
     img[height] {
-        max-width: 100%;
+        max-width: 100% !important;
         width: auto !important;
         height: auto !important;
     }
     
     // Для responsive tables с изображениями
     .table-scroll img {
-        max-width: none;
+        max-width: none !important;
     }
+}
+
+// Адаптивность для карточек блогов (cover images)
+.blog-card__cover img {
+    max-width: 100%;
+    height: auto;
 }
 
 // News post styles
