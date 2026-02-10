@@ -1,32 +1,29 @@
 ### About
 
-The course covers the main tasks and mathematical methods of natural language processing.
+This course introduces students to both foundational and modern techniques in Natural Language Processing (NLP). Covering everything from classic text processing and statistical language models to the latest in deep learning, the course aims to equip students with practical skills and theoretical insights for building and analyzing state-of-the-art NLP systems.
 
 ### Syllabus
 
-- Preprocessing, feature extraction and classification.
-- Vector representations of words.
-- The task of marking sequences (tagging). The Linear-CRF model.
-- Recurrent neural network models: GRNN, LSTM.
-- Machine translation. The Sequence-to-sequence approach. The mechanism of attention.
-- Transformer architecture.
-- The task of language modeling.
-- Statistical and neural network language models.
-- The task of generating a natural language.
-- Contextual vector representations of words.
-- Transfer learning to NLP.
-- The BERT model and its modifications.
-- Text classification.
-- Topic modeling and its applications.
+1. **NLP Basics**: tokenization, text preprocessing, text representations
+2. **Text & Language Models**: embeddings, n-gram models, RNNs, LSTMs, seq2seq, attention
+3. **Transformers & LLMs**: Transformer, pre-training (MLM/CLM), prompting, fine-tuning, PEFT
+4. **Scaling & Optimization**: : distributed training, MoE, efficient inference, quantization
+5. **Retrieval & Agents:** Information Retrieval, RAG, agent-based systems
+6. **Post-training**: alignment, RLHF, DPO
 
-### Labworks
+### Coursework
 
-The course includes four practical tasks and an exam. The deadline for completing each task is 2 weeks. You can get up to 10 points for each task. For each day of delay, a penalty of 1 point is assigned.
+TODO
 
 ### Grading
 
-0.7 _ hw points / 5 + 0.3 _ exam points.
+TODO
+
+**Final grade:** `TODO`
 
 ### Prerequisites
 
-Machine learning, deep learning, Python.
+- Probability Theory + Statistics
+- Machine Learning
+- Python
+- Basic knowledge on NLP

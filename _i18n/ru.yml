@@ -88,9 +88,14 @@ people:
   morozov_ma: Морозов Матвей Алексеевич
   kreinin_mv: Крейнин Матвей Вадимович
   nikitina_ma: Никитина Мария Александровна
+  ksenofontov_gs: Ксенофонтов Григорий Сергеевич
+  persiianov_mi: Персиянов Михаил Игоревич
+  gritsay_gm: Грицай Герман Михайлович
+  khabutdinov_ia: Хабутдинов Ильдар Айратович
+  vozniuk_ae: Вознюк Анастасия Евгеньевна
 
 courses:
-  automation_scientific_research: Автоматизация научных исследований
+  automation_scientific_research: Моя первая научная статья
   bayesian_model_selection: Байесовский выбор моделей
   bayesian_multimodeling: Байесовское мультимоделирование
   bioinformatics: Биоинформатика
@@ -111,9 +116,11 @@ courses:
   software_engineering_data_analysis: Программная инженерия для анализа данных
   intellectual_data_analysis: Интеллектуальный анализ данных
   deep_learning_audio: Глубокое обучение для аудио
-  programming_practicum_python: Практикум по программированию на Python
+  programming_practicum_python: Практикум по программированию на языке Python
   functional_data_analysis: Функциональный анализ данных
   computer_vision: Компьютерное зрение
+  optimal_transport: Оптимальный транспорт в порождающем моделировании
+  introduction_to_speciality: Введение в специальность
 
 titles:
   index: Интеллектуальные системы

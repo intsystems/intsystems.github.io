@@ -88,6 +88,11 @@ people:
   morozov_ma: Matvey Morozov
   kreinin_mv: Matvei Kreinin
   nikitina_ma: Maria Nikitina
+  ksenofontov_gs: Grigoriy Ksenofontov
+  persiianov_mi: Mikhail Persiianov
+  gritsay_gm: German Gritsay
+  khabutdinov_ia: Ildar Khabutdinov
+  vozniuk_ae: Anastasiia Vozniuk
 
 courses:
   automation_scientific_research: My First Scientific Paper
@@ -114,6 +119,8 @@ courses:
   programming_practicum_python: Programming Practicum in Python
   functional_data_analysis: Functional Data Analysis
   computer_vision: Computer Vision
+  optimal_transport: Optimal Transport
+  introduction_to_speciality: Introduction to Speciality
 
 titles:
   index: Intelligent Systems

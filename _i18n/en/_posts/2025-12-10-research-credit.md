@@ -4,7 +4,7 @@ title: "Research Credit"
 date: 2025-12-10
 excerpt: "Research credit will take place on December 20. The time will be announced later."
 lang: en
-important: true
+important: false
 ---
 
 Dear students and graduate students!

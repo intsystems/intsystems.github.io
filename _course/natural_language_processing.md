@@ -1,8 +1,8 @@
 ---
 title: courses.natural_language_processing
-type: deprecated
-lecturers: popov_as,hrilchenkov_ky
-site:
+type: master
+lecturers: gritsay_gm,vozniuk_ae,khabutdinov_ia
+site: https://github.com/intsystems/NLP_Course
 ---
 
 {% tf _course/natural_language_processing.md %}
