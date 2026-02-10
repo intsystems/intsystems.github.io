@@ -1,10 +1,10 @@
 ---
 layout: default
 ---
-<article>
-    <header style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #e5e5e5;">
+<article class="news-post">
+    <header class="news-post__header">
         <h2>{{ page.title }}</h2>
-        <p style="color: #777; font-size: 1rem; margin-bottom: 0;">{{ page.date | date: "%B %d, %Y" }}</p>
+        <p class="news-post__date">{{ page.date | date: "%B %d, %Y" }}</p>
     </header>
     <div>
         {{ content }}

@@ -35,6 +35,7 @@ highlighter: rouge
 
 plugins:
   - jekyll-multiple-languages-plugin
+  - jekyll-sitemap
 
 languages: ["en", "ru"]
 

@@ -1,0 +1,184 @@
+<!-- SEO Meta Tags -->
+{% assign seo_title = page.title | default: site.title | default: "Intelligent Systems" %}
+{% assign seo_description = "" %}
+{% assign page_type = "website" %}
+
+<!-- Определяем описание на основе типа страницы и языка -->
+{% if site.lang == 'ru' %}
+  {% assign seo_description = page.meta_desc_ru | default: page.description %}
+{% else %}
+  {% assign seo_description = page.meta_desc_en | default: page.description %}
+{% endif %}
+
+<!-- Для курсов -->
+{% if page.layout == "course" %}
+  {% if page.type == "bachelor" %}
+    {% assign course_type_ru = "Бакалаврский курс" %}
+    {% assign course_type_en = "Bachelor course" %}
+  {% else %}
+    {% assign course_type_ru = "Магистерский курс" %}
+    {% assign course_type_en = "Master course" %}
+  {% endif %}
+  
+  {% if site.lang == 'ru' %}
+    {% assign seo_description = course_type_ru | append: " - " | append: seo_title | append: " - Кафедра интеллектуальных систем МФТИ" %}
+  {% else %}
+    {% assign seo_description = course_type_en | append: " - " | append: seo_title | append: " - Intelligent Systems Department MIPT" %}
+  {% endif %}
+  {% assign page_type = "article" %}
+{% endif %}
+
+<!-- Для профилей преподавателей -->
+{% if page.layout == "profile" %}
+  {% if site.lang == 'ru' %}
+    {% assign seo_description = "Преподаватель кафедры интеллектуальных систем МФТИ - " | append: seo_title %}
+  {% else %}
+    {% assign seo_description = "Lecturer at Intelligent Systems Department MIPT - " | append: seo_title %}
+  {% endif %}
+  {% assign page_type = "profile" %}
+{% endif %}
+
+<!-- Для блогов -->
+{% if page.layout == "blog" %}
+  {% assign seo_description = page.summary | default: seo_description %}
+  {% assign page_type = "article" %}
+{% endif %}
+
+<!-- Fallback описание -->
+{% unless seo_description and seo_description != "" %}
+  {% if site.lang == 'ru' %}
+    {% assign seo_description = "Кафедра интеллектуальных систем МФТИ - подготовка бакалавров и магистров по прикладной математике и физике с фокусом на анализ данных, машинное обучение и искусственный интеллект" %}
+  {% else %}
+    {% assign seo_description = "Intelligent Systems Department at MIPT - training bachelors and masters in applied mathematics and physics with focus on data science, machine learning and artificial intelligence" %}
+  {% endif %}
+{% endunless %}
+
+<!-- Canonical URL -->
+{% if page.canonical_url %}
+  {% assign canonical = page.canonical_url %}
+{% else %}
+  {% assign canonical = page.url | replace: 'index.html', '' | absolute_url %}
+{% endif %}
+
+<!-- Page Image -->
+{% assign seo_image = page.image | default: page.cover | default: site.og.image | absolute_url %}
+
+<!-- Meta Tags -->
+<meta name="description" content="{{ seo_description | strip_html | normalize_whitespace | truncate: 160 }}">
+<meta name="keywords" content="{% if page.tags %}{{ page.tags | join: ', ' }}{% else %}machine learning, data science, AI, MIPT, intelligent systems{% endif %}">
+<link rel="canonical" href="{{ canonical }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{ page_type }}">
+<meta property="og:title" content="{{ seo_title | strip_html }}">
+<meta property="og:description" content="{{ seo_description | strip_html | normalize_whitespace | truncate: 200 }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:site_name" content="{% if site.lang == 'ru' %}Кафедра интеллектуальных систем МФТИ{% else %}Intelligent Systems MIPT{% endif %}">
+<meta property="og:image" content="{{ seo_image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+{% if page.layout == "blog" and page.date %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% endif %}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seo_title | strip_html | truncate: 70 }}">
+<meta name="twitter:description" content="{{ seo_description | strip_html | normalize_whitespace | truncate: 200 }}">
+<meta name="twitter:image" content="{{ seo_image }}">
+
+<!-- Additional Meta Tags -->
+<meta name="author" content="{% if page.authors %}{{ page.authors | join: ', ' }}{% else %}Intelligent Systems Department MIPT{% endif %}">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+{% if site.lang %}
+<meta name="language" content="{{ site.lang }}">
+<html lang="{{ site.lang }}">
+{% endif %}
+
+<!-- Multilingual / hreflang tags -->
+{% if site.languages %}
+  {% for lang in site.languages %}
+    {% if lang == 'en' %}
+<link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ page.url | remove: '/ru/' | remove: '/en/' }}">
+    {% elsif lang == 'ru' %}
+<link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}/{{ lang }}{{ page.url | remove: '/ru/' | remove: '/en/' }}">
+    {% endif %}
+  {% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url | remove: '/ru/' | remove: '/en/' }}">
+{% endif %}
+
+<!-- Structured Data - JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{% if page.layout == 'profile' %}Person{% elsif page.layout == 'blog' %}Article{% elsif page.layout == 'course' %}Course{% else %}WebPage{% endif %}",
+  {% if page.layout == "profile" %}
+  "name": "{{ seo_title }}",
+  "url": "{{ canonical }}",
+  {% if page.avatar %}
+  "image": "{{ page.avatar | absolute_url }}",
+  {% endif %}
+  {% if page.mail %}
+  "email": "{{ page.mail }}",
+  {% endif %}
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Moscow Institute of Physics and Technology",
+    "url": "https://mipt.ru"
+  }
+  {% elsif page.layout == "blog" %}
+  "headline": "{{ seo_title }}",
+  "description": "{{ seo_description | strip_html | normalize_whitespace }}",
+  "url": "{{ canonical }}",
+  {% if page.cover or page.image %}
+  "image": "{{ seo_image }}",
+  {% endif %}
+  {% if page.date %}
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  {% endif %}
+  {% if page.authors %}
+  "author": [
+    {% for author in page.authors %}
+    {
+      "@type": "Person",
+      "name": "{{ author }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  {% endif %}
+  "publisher": {
+    "@type": "Organization",
+    "name": "Intelligent Systems Department MIPT",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.logo | absolute_url }}"
+    }
+  }
+  {% elsif page.layout == "course" %}
+  "name": "{{ seo_title }}",
+  "description": "{{ seo_description | strip_html | normalize_whitespace }}",
+  "url": "{{ canonical }}",
+  "provider": {
+    "@type": "Organization",
+    "name": "Moscow Institute of Physics and Technology",
+    "url": "https://mipt.ru"
+  },
+  {% if page.lecturers %}
+  "instructor": [
+    {% assign lecturers = page.lecturers | split: "," %}
+    {% for lecturer in lecturers %}
+    {
+      "@type": "Person",
+      "name": "{{ lecturer }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  {% endif %}
+  "educationalLevel": "{% if page.type == 'bachelor' %}Undergraduate{% else %}Graduate{% endif %}"
+  {% else %}
+  "name": "{{ seo_title }}",
+  "description": "{{ seo_description | strip_html | normalize_whitespace }}",
+  "url": "{{ canonical }}"
+  {% endif %}
+}
+</script>

@@ -65,12 +65,6 @@ a.course-name {
     transform 0.2s,
     background-color 0.2s;
 
-  &:hover,
-  &:focus {
-    background-color: #f5f5f5;
-    cursor: pointer;
-  }
-
   i {
     margin-right: 8px;
     color: $href-color;
@@ -79,6 +73,7 @@ a.course-name {
   &:hover,
   &:focus {
     background-color: #f5f5f5;
+    cursor: pointer;
     text-decoration: none;
   }
 }

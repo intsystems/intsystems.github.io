@@ -1,6 +1,6 @@
 ---
 title: courses.software_engineering_data_analysis
-type: bachelor,master
+type: master
 lecturers: khritankov_as
 site:
 ---

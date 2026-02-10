@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://intsystems.github.io/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /vendor/
+Disallow: /_sass/
+
+# Allow search engines to crawl all content
+Allow: /images/
+Allow: /javascript/
+Allow: /course/
+Allow: /people/
+Allow: /materials/
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1

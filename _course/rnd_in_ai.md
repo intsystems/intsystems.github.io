@@ -1,6 +1,6 @@
 ---
 title: courses.rnd_in_ai
-type: bachelor,master
+type: master
 lecturers: grabovoy_av
 site: https://github.com/Intelligent-Systems-Phystech/CreationOfIntelligentSystems
 ---

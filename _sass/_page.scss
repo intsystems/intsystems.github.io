@@ -42,22 +42,6 @@
 
 @media (min-width: $lt-width) {
   .container {
-    width: $lt-width;
-  }
-
-  .content {
-    margin-left: calc(#{$page-margin}* 100%);
-    width: calc(#{$lt-width} * 0.7);
-
-    &.content--home {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-}
-
-@media (min-width: $lt-width) {
-  .container {
     width: 100%;
   }
 

@@ -10,8 +10,6 @@ spring_2026:
         course_id: introduction_to_speciality
       - time: "17:50-19:20"
         course_id: automation_scientific_research
-      - time: ""
-        course_id: research_work
 
   year_4_semester_8:
     day: tuesday
