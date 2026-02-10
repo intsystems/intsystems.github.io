@@ -141,6 +141,14 @@ titles:
 course:
   teachers: Преподаватели
   website: Страница курса
+  lecture: Лекция
+  seminar: Семинар
+
+schedule:
+  time: Время
+  course: Дисциплина
+  instructors: Преподаватели
+  research_work: Научно-исследовательская работа
 
 profile:
   website: Персональная страница

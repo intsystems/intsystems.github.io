@@ -1,0 +1,91 @@
+spring_2026:
+  year_3_semester_6:
+    day: thursday
+    courses:
+      - time: "12:10-13:40"
+        course_id: introduction_machine_learning
+      - time: "14:30-16:00"
+        course_id: programming_practicum_python
+      - time: "16:10-17:40"
+        course_id: introduction_to_speciality
+      - time: "17:50-19:20"
+        course_id: automation_scientific_research
+      - time: ""
+        course_id: research_work
+
+  year_4_semester_8:
+    day: tuesday
+    courses:
+      - time: "10:30-12:00"
+        course_id: recommender_systems
+      - time: "12:10-13:40"
+        course_id: forecasting_methods
+      - time: "14:30-16:00"
+        course_id: bayesian_model_selection
+      - time: ""
+        course_id: research_work
+
+  year_5_semester_10:
+    day: tuesday
+    courses:
+      - time: "10:30-12:00"
+        course_id: optimal_transport
+      - time: "12:10-13:40"
+        course_id: bioinformatics
+      - time: "14:30-16:00"
+        course_id: natural_language_processing
+      - time: "16:10-17:40"
+        course_id: software_engineering_data_analysis
+      - time: "17:50-19:20"
+        course_id: bayesian_multimodeling
+      - time: "19:30-21:00"
+        course_id: rnd_in_ai
+      - time: ""
+        course_id: research_work
+
+fall_2026:
+  year_4_semester_7:
+    day: tuesday
+    courses:
+      - time: "10:30-12:00"
+        course_id: deep_learning
+        type: lecture
+      - time: "12:10-13:40"
+        course_id: deep_learning
+        type: seminar
+      - time: "14:30-16:00"
+        course_id: bayesian_model_selection
+      - time: "16:10-17:40"
+        course_id: forecasting_methods
+      - time: ""
+        course_id: research_work
+
+  year_5_semester_9:
+    day: tuesday
+    courses:
+      - time: "12:10-13:40"
+        course_id: bioinformatics
+      - time: "14:30-16:00"
+        course_id: bayesian_multimodeling
+      - time: "16:10-17:40"
+        course_id: rnd_in_ai
+      - time: "18:00-19:30"
+        course_id: deep_generative_models
+        type: lecture
+      - time: "19:30-21:00"
+        course_id: deep_generative_models
+        type: seminar
+      - time: ""
+        course_id: research_work
+
+  year_6_semester_11:
+    day: thursday
+    courses:
+      - time: "10:30-12:00"
+        course_id: functional_data_analysis
+      - time: "12:10-13:40"
+        course_id: intellectual_data_analysis
+      - time: "14:30-16:00"
+        course_id: probabilistic_topic_models
+      - time: ""
+        course_id: research_work

@@ -1,0 +1,60 @@
+{% comment %}
+  Usage: {% include schedule_table.html semester="spring_2026.year_3_semester_6" %}
+  
+  This include generates a course schedule table automatically using:
+  - Course data from _course/*.md (title, lecturers)
+  - Schedule data from _data/schedule.yml (times, course IDs)
+  - People data from _people/*.md (instructor names)
+{% endcomment %}
+
+{% assign semester_path = include.semester | split: "." %}
+{% assign season = semester_path[0] %}
+{% assign year_sem = semester_path[1] %}
+{% assign schedule = site.data.schedule[season][year_sem] %}
+
+<table>
+  <thead>
+    <tr>
+      <th>{% t schedule.time %}</th>
+      <th>{% t schedule.course %}</th>
+      <th>{% t schedule.instructors %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in schedule.courses %}
+      {% assign course_id = item.course_id %}
+      
+      {% comment %} Find the course in site.course collection {% endcomment %}
+      {% assign course = site.course | where_exp: "c", "c.url contains course_id" | first %}
+      
+      {% if course %}
+        <tr>
+          <td>{{ item.time }}</td>
+          <td>
+            <a href="{{ site.baseurl }}{{ course.url }}">
+              {% t courses.{{ course_id }} %}{% if item.type %}: {% t course.{{ item.type }} %}{% endif %}
+            </a>
+          </td>
+          <td>
+            {% if course.lecturers %}
+              {% assign lecturers = course.lecturers | split: "," %}
+              {% for lecturer_id in lecturers %}
+                {% assign lecturer_id_trimmed = lecturer_id | strip %}
+                {% assign profile = site.people | where_exp: "p", "p.url contains lecturer_id_trimmed" | first %}
+                {% if profile %}
+                  <a href="{{ site.baseurl }}{{ profile.url }}">{% t people.{{ lecturer_id_trimmed }} %}</a>{% unless forloop.last %}<br>{% endunless %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </td>
+        </tr>
+      {% elsif course_id == "research_work" %}
+        <tr>
+          <td>{{ item.time }}</td>
+          <td>{% t schedule.research_work %}</td>
+          <td></td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>

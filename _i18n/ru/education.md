@@ -33,39 +33,19 @@
 
 #### 3 курс, 6 семестр (четверг)
 
-| Время       | Дисциплина                                                                                        | Преподаватели                                                                                                                                                                                                                                                                      |
-| ----------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 12:10-13:40 | [Введение в машинное обучение]({{ site.baseurl }}/course/introduction_machine_learning)           | [Андрей Грабовой]({{ site.baseurl }}/people/grabovoy_av), [Константин Воронцов]({{ site.baseurl }}/people/vorontsov_kv)                                                                                                                                                            |
-| 14:30-16:00 | [Практикум по программированию на Python]({{ site.baseurl }}/course/programming_practicum_python) | [Мурат Апишев]({{ site.baseurl }}/people/apishev_ma)                                                                                                                                                                                                                               |
-| 17:50-19:20 | [Введение в специальность]({{ site.baseurl }}/course/introduction_to_speciality)                  | [Андрей Грабовой]({{ site.baseurl }}/people/grabovoy_av), [Вадим Стрижов]({{ site.baseurl }}/people/strijov_vv)                                                                                                                                                                    |
-| 16:10-17:40 | [Моя первая научная статья]({{ site.baseurl }}/course/automation_scientific_research)             | [Даниил Дорин]({{ site.baseurl }}/people/dorin_dd), [Никита Киселев]({{ site.baseurl }}/people/kiselev_ns), [Андрей Грабовой]({{ site.baseurl }}/people/grabovoy_av), [Олег Бахтеев]({{ site.baseurl }}/people/bakhteev_oy), [Вадим Стрижов]({{ site.baseurl }}/people/strijov_vv) |
+{% include schedule_table.html semester="spring_2026.year_3_semester_6" %}
 
-<!--оба предмета идут в зачетную ведомость Введение в машинное обучение и практикум на языке Python-->
-
-<!--раньше это был Создание интеллектуальных систем, идет в ведомость Б.1.В.39 Инновационная и проектная деятельность (курс по выбору)-->
+<!--оба предмета "Введение в машинное обучение" и "Практикум по программированию на языке Python" идут в зачетную ведомость "Введение в машинное обучение и практикум на языке Python"-->
 
 #### 4 курс, 8 семестр (вторник)
 
-| Время       | Дисциплина                                                                             | Преподаватели                                                                                                           |
-| ----------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| 10:30-12:00 | [Рекомендательные системы]({{ site.baseurl }}/course/recommender_systems)              | [Алексей Гришанов]({{ site.baseurl }}/people/grishanov_av), [Анна Володкевич]({{ site.baseurl }}/people/volodkevich_aa) |
-| 12:10-13:40 | [Математические методы прогнозирования]({{ site.baseurl }}/course/forecasting_methods) | [Денис Тихонов]({{ site.baseurl }}/people/tikhonov_dm), [Святослав Панченко]({{ site.baseurl }}/people/panchenko_sk)    |
-| 14:30-16:00 | [Байесовский выбор моделей]({{ site.baseurl }}/course/bayesian_model_selection)        | [Александр Адуенко]({{ site.baseurl }}/people/aduenko_aa), [Константин Яковлев]({{ site.baseurl }}/people/yakovlev_kd)  |
-|             | Научно-исследовательская работа                                                        |                                                                                                                         |
+{% include schedule_table.html semester="spring_2026.year_4_semester_8" %}
 
 <!--Программная инженерия для анализа данных, не нашли места в учебном плане-->
 
 #### 5 курс, 10 семестр (вторник)
 
-| Время       | Дисциплина                                                                                               | Преподаватели                                                                                                                                                                  |
-| ----------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 10:30-12:00 | [Оптимальный транспорт в порождающем моделировании]({{ site.baseurl }}/course/optimal_transport)         | [Григорий Ксенофонтов]({{ site.baseurl }}/people/ksenofontov_gs), [Михаил Персиянов]({{ site.baseurl }}/people/persiianov_mi)                                                  |
-| 12:10-13:40 | [Биоинформатика]({{ site.baseurl }}/course/bioinformatics)                                               | [Иван Торшин]({{ site.baseurl }}/people/torshin_iy)                                                                                                                            |
-| 14:30-16:00 | [Математические методы анализа текстов]({{ site.baseurl }}/course/natural_language_processing)           | [Герман Грицай]({{ site.baseurl }}/people/gritsay_gm), [Анастасия Вознюк]({{ site.baseurl }}/people/vozniuk_ae), [Ильдар Хабутдинов]({{ site.baseurl }}/people/khabutdinov_ia) |
-| 16:10-17:40 | [Программная инженерия для анализа данных]({{ site.baseurl }}/course/software_engineering_data_analysis) | [Антон Хританков]({{ site.baseurl }}/people/khritankov_as)                                                                                                                     |
-| 17:50-19:20 | [Байесовское мультимоделирование]({{ site.baseurl }}/course/bayesian_multimodeling)                      | [Олег Бахтеев]({{ site.baseurl }}/people/bakhteev_oy)                                                                                                                          |
-| 19:30-21:00 | [Создание интеллектуальных систем]({{ site.baseurl }}/course/rnd_in_ai)                                  | [Андрей Грабовой]({{ site.baseurl }}/people/grabovoy_av)                                                                                                                       |
-|             | Научно-исследовательская работа                                                                          |                                                                                                                                                                                |
+{% include schedule_table.html semester="spring_2026.year_5_semester_10" %}
 
 ### Осень 2026
 
@@ -84,30 +64,12 @@
 
 #### 4 курс, 7 семестр (вторник)
 
-| Время       | Дисциплина                                                                             | Преподаватели                                                                                                                                                                                                                                                                      |
-| ----------- | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 10:30-12:00 | [Методы глубокого обучения: Лекция]({{ site.baseurl }}/course/deep_learning)           | [Эдуард Владимиров]({{ site.baseurl }}/people/vladimirov_ea), [Даниил Дорин]({{ site.baseurl }}/people/dorin_dd), [Никита Киселев]({{ site.baseurl }}/people/kiselev_ns), [Сергей Фирсов]({{ site.baseurl }}/people/firsov_sa), [Вадим Касюк]({{ site.baseurl }}/people/kasiuk_va) |
-| 12:10-13:40 | [Методы глубокого обучения: Семинар]({{ site.baseurl }}/course/deep_learning)          | [Эдуард Владимиров]({{ site.baseurl }}/people/vladimirov_ea), [Даниил Дорин]({{ site.baseurl }}/people/dorin_dd), [Никита Киселев]({{ site.baseurl }}/people/kiselev_ns), [Сергей Фирсов]({{ site.baseurl }}/people/firsov_sa), [Вадим Касюк]({{ site.baseurl }}/people/kasiuk_va) |
-| 14:30-16:00 | [Байесовский выбор моделей]({{ site.baseurl }}/course/bayesian_model_selection)        | [Александр Адуенко]({{ site.baseurl }}/people/aduenko_aa), [Константин Яковлев]({{ site.baseurl }}/people/yakovlev_kd)                                                                                                                                                             |
-| 16:10-17:40 | [Математические методы прогнозирования]({{ site.baseurl }}/course/forecasting_methods) | [Денис Тихонов]({{ site.baseurl }}/people/tikhonov_dm), [Святослав Панченко]({{ site.baseurl }}/people/panchenko_sk)                                                                                                                                                               |
-|             | Научно-исследовательская работа                                                        |                                                                                                                                                                                                                                                                                    |
+{% include schedule_table.html semester="fall_2026.year_4_semester_7" %}
 
 #### 5 курс, 9 семестр (вторник)
 
-| Время       | Дисциплина                                                                                         | Преподаватели                                                                                                    |
-| ----------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| 12:10-13:40 | [Биоинформатика]({{ site.baseurl }}/course/bioinformatics)                                         | [Иван Торшин]({{ site.baseurl }}/people/torshin_iy)                                                              |
-| 14:30-16:00 | [Байесовское мультимоделирование]({{ site.baseurl }}/course/bayesian_multimodeling)                | [Олег Бахтеев]({{ site.baseurl }}/people/bakhteev_oy)                                                            |
-| 16:10-17:40 | [Создание интеллектуальных систем]({{ site.baseurl }}/course/rnd_in_ai)                            | [Андрей Грабовой]({{ site.baseurl }}/people/grabovoy_av)                                                         |
-| 18:00-19:30 | [Порождающие модели машинного обучения: Лекция]({{ site.baseurl }}/course/deep_generative_models)  | [Роман Исаченко]({{ site.baseurl }}/people/isachenko_rv), [Матвей Морозов]({{ site.baseurl }}/people/morozov_ma) |
-| 19:30-21:00 | [Порождающие модели машинного обучения: Семинар]({{ site.baseurl }}/course/deep_generative_models) | [Роман Исаченко]({{ site.baseurl }}/people/isachenko_rv), [Матвей Морозов]({{ site.baseurl }}/people/morozov_ma) |
-|             | Научно-исследовательская работа                                                                    |                                                                                                                  |
+{% include schedule_table.html semester="fall_2026.year_5_semester_9" %}
 
 #### 6 курс, 11 семестр (четверг)
 
-| Время       | Дисциплина                                                                                | Преподаватели                                                 |
-| ----------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| 10:30-12:00 | [Обработка сигналов]({{ site.baseurl }}/course/functional_data_analysis)                  | [Вадим Стрижов]({{ site.baseurl }}/people/strijov_vv)         |
-| 12:10-13:40 | [Интеллектуальный анализ данных]({{ site.baseurl }}/course/intellectual_data_analysis)    | [Вадим Стрижов]({{ site.baseurl }}/people/strijov_vv)         |
-| 14:30-16:00 | [Вероятностные тематические модели]({{ site.baseurl }}/course/probabilistic_topic_models) | [Константин Воронцов]({{ site.baseurl }}/people/vorontsov_kv) |
-|             | Научно-исследовательская работа                                                           |                                                               |
+{% include schedule_table.html semester="fall_2026.year_6_semester_11" %}

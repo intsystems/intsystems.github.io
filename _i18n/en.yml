@@ -141,6 +141,14 @@ titles:
 course:
   teachers: People
   website: Course Website
+  lecture: Lecture
+  seminar: Seminar
+
+schedule:
+  time: Time
+  course: Course
+  instructors: Instructors
+  research_work: Research Work
 
 profile:
   website: Personal Website

@@ -33,37 +33,19 @@
 
 #### 3rd year, 6th semester (Thursday)
 
-| Time        | Course                                                                                      | Instructors                                                                                                                                                                                                                                                                         |
-| ----------- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 12:10-13:40 | [Introduction to Machine Learning]({{ site.baseurl }}/course/introduction_machine_learning) | [Andrey Grabovoy]({{ site.baseurl }}/people/grabovoy_av), [Konstantin Vorontsov]({{ site.baseurl }}/people/vorontsov_kv)                                                                                                                                                            |
-| 14:30-16:00 | [Programming Practicum in Python]({{ site.baseurl }}/course/programming_practicum_python)   | [Murat Apishev]({{ site.baseurl }}/people/apishev_ma)                                                                                                                                                                                                                               |
-| 16:10-17:40 | [Introduction to Speciality]({{ site.baseurl }}/course/introduction_to_speciality)          | [Andrey Grabovoy]({{ site.baseurl }}/people/grabovoy_av), [Vadim Strijov]({{ site.baseurl }}/people/strijov_vv)                                                                                                                                                                     |
-| 17:50-19:20 | [My First Scientific Paper]({{ site.baseurl }}/course/automation_scientific_research)       | [Daniil Dorin]({{ site.baseurl }}/people/dorin_dd), [Nikita Kiselev]({{ site.baseurl }}/people/kiselev_ns), [Andrey Grabovoy]({{ site.baseurl }}/people/grabovoy_av), [Oleg Bakhteev]({{ site.baseurl }}/people/bakhteev_oy), [Vadim Strijov]({{ site.baseurl }}/people/strijov_vv) |
+{% include schedule_table.html semester="spring_2026.year_3_semester_6" %}
 
 <!--both courses "Introduction to Machine Learning" and "Programming Practicum in Python" are listed in the grade sheet "Introduction to Machine Learning and Python Programming Practicum"-->
 
 #### 4th year, 8th semester (Tuesday)
 
-| Time        | Course                                                                            | Instructors                                                                                                              |
-| ----------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| 10:30-12:00 | [Recommender Systems]({{ site.baseurl }}/course/recommender_systems)              | [Alexey Grishanov]({{ site.baseurl }}/people/grishanov_av), [Anna Volodkevich]({{ site.baseurl }}/people/volodkevich_aa) |
-| 12:10-13:40 | [Mathematical Forecasting Methods]({{ site.baseurl }}/course/forecasting_methods) | [Denis Tikhonov]({{ site.baseurl }}/people/tikhonov_dm), [Sviatoslav Panchenko]({{ site.baseurl }}/people/panchenko_sk)  |
-| 14:30-16:00 | [Bayesian Model Selection]({{ site.baseurl }}/course/bayesian_model_selection)    | [Alexander Aduenko]({{ site.baseurl }}/people/aduenko_aa), [Konstantin Yakovlev]({{ site.baseurl }}/people/yakovlev_kd)  |
-|             | Research Work                                                                     |                                                                                                                          |
+{% include schedule_table.html semester="spring_2026.year_4_semester_8" %}
 
-<!--Software Engineering for Machine Learning, could not find a place in the curriculum-->
+<!--Software Engineering for Data Analysis, could not find a place in the curriculum-->
 
 #### 5th year, 10th semester (Tuesday)
 
-| Time        | Course                                                                                                    | Instructors                                                                                                                                                                       |
-| ----------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 10:30-12:00 | [Optimal Transport]({{ site.baseurl }}/course/optimal_transport)                                          | [Grigory Ksenofontov]({{ site.baseurl }}/people/ksenofontov_gs), [Mikhail Persiianov]({{ site.baseurl }}/people/persiianov_mi)                                                    |
-| 12:10-13:40 | [Bioinformatics]({{ site.baseurl }}/course/bioinformatics)                                                | [Ivan Torshin]({{ site.baseurl }}/people/torshin_iy)                                                                                                                              |
-| 14:30-16:00 | [Natural Language Processing]({{ site.baseurl }}/course/natural_language_processing)                      | [German Gritsay]({{ site.baseurl }}/people/gritsay_gm), [Anastasiia Vozniuk]({{ site.baseurl }}/people/vozniuk_ae), [Ildar Khabutdinov]({{ site.baseurl }}/people/khabutdinov_ia) |
-| 16:10-17:40 | [Software Engineering for Machine Learning]({{ site.baseurl }}/course/software_engineering_data_analysis) | [Anton Khritankov]({{ site.baseurl }}/people/khritankov_as)                                                                                                                       |
-| 17:50-19:20 | [Bayesian Multimodeling]({{ site.baseurl }}/course/bayesian_multimodeling)                                | [Oleg Bakhteev]({{ site.baseurl }}/people/bakhteev_oy)                                                                                                                            |
-| 19:30-21:00 | [Creation of Intelligent Systems]({{ site.baseurl }}/course/rnd_in_ai)                                    | [Andrey Grabovoy]({{ site.baseurl }}/people/grabovoy_av)                                                                                                                          |
-|             | Research Work                                                                                             |                                                                                                                                                                                   |
+{% include schedule_table.html semester="spring_2026.year_5_semester_10" %}
 
 ### Fall 2026
 
@@ -82,30 +64,12 @@
 
 #### 4th year, 7th semester (Tuesday)
 
-| Time        | Course                                                                            | Instructors                                                                                                                                                                                                                                                                         |
-| ----------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 10:30-12:00 | [Deep Learning Methods: Lecture]({{ site.baseurl }}/course/deep_learning)         | [Eduard Vladimirov]({{ site.baseurl }}/people/vladimirov_ea), [Daniil Dorin]({{ site.baseurl }}/people/dorin_dd), [Nikita Kiselev]({{ site.baseurl }}/people/kiselev_ns), [Sergey Firsov]({{ site.baseurl }}/people/firsov_sa), [Vadim Kasiuk]({{ site.baseurl }}/people/kasiuk_va) |
-| 12:10-13:40 | [Deep Learning Methods: Seminar]({{ site.baseurl }}/course/deep_learning)         | [Eduard Vladimirov]({{ site.baseurl }}/people/vladimirov_ea), [Daniil Dorin]({{ site.baseurl }}/people/dorin_dd), [Nikita Kiselev]({{ site.baseurl }}/people/kiselev_ns), [Sergey Firsov]({{ site.baseurl }}/people/firsov_sa), [Vadim Kasiuk]({{ site.baseurl }}/people/kasiuk_va) |
-| 14:30-16:00 | [Bayesian Model Selection]({{ site.baseurl }}/course/bayesian_model_selection)    | [Alexander Aduenko]({{ site.baseurl }}/people/aduenko_aa), [Konstantin Yakovlev]({{ site.baseurl }}/people/yakovlev_kd)                                                                                                                                                             |
-| 16:10-17:40 | [Mathematical Forecasting Methods]({{ site.baseurl }}/course/forecasting_methods) | [Denis Tikhonov]({{ site.baseurl }}/people/tikhonov_dm), [Sviatoslav Panchenko]({{ site.baseurl }}/people/panchenko_sk)                                                                                                                                                             |
-|             | Research Work                                                                     |                                                                                                                                                                                                                                                                                     |
+{% include schedule_table.html semester="fall_2026.year_4_semester_7" %}
 
 #### 5th year, 9th semester (Tuesday)
 
-| Time        | Course                                                                              | Instructors                                                                                                       |
-| ----------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| 12:10-13:40 | [Bioinformatics]({{ site.baseurl }}/course/bioinformatics)                          | [Ivan Torshin]({{ site.baseurl }}/people/torshin_iy)                                                              |
-| 14:30-16:00 | [Bayesian Multimodeling]({{ site.baseurl }}/course/bayesian_multimodeling)          | [Oleg Bakhteev]({{ site.baseurl }}/people/bakhteev_oy)                                                            |
-| 16:10-17:40 | [Creation of Intelligent Systems]({{ site.baseurl }}/course/rnd_in_ai)              | [Andrey Grabovoy]({{ site.baseurl }}/people/grabovoy_av)                                                          |
-| 18:00-19:30 | [Deep Generative Models: Lecture]({{ site.baseurl }}/course/deep_generative_models) | [Roman Isachenko]({{ site.baseurl }}/people/isachenko_rv), [Matvey Morozov]({{ site.baseurl }}/people/morozov_ma) |
-| 19:30-21:00 | [Deep Generative Models: Seminar]({{ site.baseurl }}/course/deep_generative_models) | [Roman Isachenko]({{ site.baseurl }}/people/isachenko_rv), [Matvey Morozov]({{ site.baseurl }}/people/morozov_ma) |
-|             | Research Work                                                                       |                                                                                                                   |
+{% include schedule_table.html semester="fall_2026.year_5_semester_9" %}
 
 #### 6th year, 11th semester (Thursday)
 
-| Time        | Course                                                                             | Instructors                                                    |
-| ----------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| 10:30-12:00 | [Signal Processing]({{ site.baseurl }}/course/functional_data_analysis)            | [Vadim Strijov]({{ site.baseurl }}/people/strijov_vv)          |
-| 12:10-13:40 | [Intellectual Data Analysis]({{ site.baseurl }}/course/intellectual_data_analysis) | [Vadim Strijov]({{ site.baseurl }}/people/strijov_vv)          |
-| 14:30-16:00 | [Probabilistic Topic Models]({{ site.baseurl }}/course/probabilistic_topic_models) | [Konstantin Vorontsov]({{ site.baseurl }}/people/vorontsov_kv) |
-|             | Research Work                                                                      |                                                                |
+{% include schedule_table.html semester="fall_2026.year_6_semester_11" %}
