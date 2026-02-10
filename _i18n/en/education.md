@@ -51,7 +51,7 @@
 | 14:30-16:00 | [Bayesian Model Selection]({{ site.baseurl }}/course/bayesian_model_selection)    | [Alexander Aduenko]({{ site.baseurl }}/people/aduenko_aa), [Konstantin Yakovlev]({{ site.baseurl }}/people/yakovlev_kd)  |
 |             | Research Work                                                                     |                                                                                                                          |
 
-<!--Software Engineering for Data Analysis, could not find a place in the curriculum-->
+<!--Software Engineering for Machine Learning, could not find a place in the curriculum-->
 
 #### 5th year, 10th semester (Tuesday)
 
