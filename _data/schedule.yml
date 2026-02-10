@@ -33,9 +33,9 @@ spring_2026:
       - time: "14:30-16:00"
         course_id: natural_language_processing
       - time: "16:10-17:40"
-        course_id: software_engineering_data_analysis
-      - time: "17:50-19:20"
         course_id: bayesian_multimodeling
+      - time: "17:50-19:20"
+        course_id: software_engineering_data_analysis
       - time: "19:30-21:00"
         course_id: rnd_in_ai
       - time: ""
