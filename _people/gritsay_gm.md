@@ -2,7 +2,7 @@
 title: people.gritsay_gm
 edit: true
 position: pgs
-avatar: default.jpg
+avatar: gritsay_gm.jpg
 mail: gritsai.gm@phystech.edu
 telegram: ggritsay
 site:
