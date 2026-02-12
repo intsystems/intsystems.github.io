@@ -1,7 +1,7 @@
 ---
 title: courses.introduction_to_speciality
 type: bachelor
-lecturers: grabovoy_av,strijov_vv
+lecturers: grabovoy_av
 site:
 ---
 
