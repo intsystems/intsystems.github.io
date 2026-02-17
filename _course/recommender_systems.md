@@ -1,7 +1,7 @@
 ---
 title: courses.recommender_systems
 type: bachelor
-lecturers: grishanov_av,volodkevich_aa
+lecturers: grishanov_av
 site: https://github.com/shashist/recsys-course
 ---
 
