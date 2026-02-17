@@ -8,9 +8,8 @@ authors:
   - Dmitrii Vasilenko
 summary: "Hyperband is a novel bandit-based approach to hyperparameter optimization that speeds up random search by adaptive resource allocation and early-stopping. It outperforms Bayesian optimization methods by an order of magnitude on deep learning and kernel-based problems."
 tags:
-  - AutoML
-  - Hyperparameter Optimization
-  - Machine Learning
+  - bmm
+  - hyperparameter optimization
   - Deep Learning
 cover: /images/blog/hyperband/cover.png
 ---
@@ -33,10 +32,6 @@ This creates a fundamental tradeoff:
     * *Risk:* You might stop a promising configuration too early ("false negative").
 2. **Minimize $n$ (Depth):** You sample few configurations, but train them to convergence.
     * *Risk:* You train a poor configuration for too long, wasting resources that could have been used to explore other areas of the search space.
-
-![The envelope of validation error. To distinguish between the best model and the second best, we need a sufficient budget.](/images/blog/hyperband/figure2_envelope.png)
-
-*The envelope of validation error. To distinguish between the best model ($\nu_1$) and the second best ($\nu_2$), we need a sufficient budget. If the budget is too small (left side), the confidence intervals overlap, and we cannot tell them apart.*
 
 For a fixed budget, it is impossible to know which strategy — width or depth — will yield the best model. Hyperband was designed specifically to solve this dilemma.
 
@@ -69,7 +64,7 @@ Hyperband is notably easy to configure, requiring only two inputs:
 1. **$R$**: The maximum amount of resource that can be allocated to a single configuration (e.g., 100 epochs, or the full dataset size).
 2. **$\eta$**: The proportion of configurations discarded in each round of Successive Halving.
 
-![Pseudocode of the Hyperband algorithm showing the outer loop for brackets and inner loop for Successive Halving.](/images/blog/hyperband/algorithm1.png)
+![Pseudocode of the Hyperband algorithm showing the outer loop for brackets and inner loop for Successive Halving.](/images/blog/hyperband/algorithm.png)
 
 By iterating through these brackets, Hyperband performs a geometric search over the trade-off between "number of configurations" and "resource per configuration."
 
