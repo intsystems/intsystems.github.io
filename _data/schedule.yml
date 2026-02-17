@@ -2,7 +2,7 @@ spring_2026:
   year_3_semester_6:
     day: thursday
     courses:
-      - time: "12:10-13:40"
+      - time: "12:20-13:50"
         course_id: introduction_machine_learning
       - time: "14:30-16:00"
         course_id: programming_practicum_python
@@ -34,10 +34,10 @@ spring_2026:
         course_id: natural_language_processing
       - time: "17:00-18:30"
         course_id: software_engineering_data_analysis
-      - time: "19:30-21:00"
-        course_id: rnd_in_ai
       - time: ""
         course_id: bayesian_multimodeling
+      - time: ""
+        course_id: rnd_in_ai
       - time: ""
         course_id: research_work
 
