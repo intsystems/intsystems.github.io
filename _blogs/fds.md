@@ -46,11 +46,11 @@ Let's denote:
 - $\mathcal{L}$ - the loss function to be optimized.
 - $\mathcal{D}$ - a dataset with train split $\mathcal{D}_\text{train}$ and validation split $\mathcal{D}_\text{val}$.
 - $\Phi$ - a gradient-based optimizer for $\boldsymbol{\theta}$.
-- $\boldsymbol{\lambda}_{[t]}$ - the set of hyperparameters that $\Phi$ uses for the optimization step $t$ (to get $\boldsymbol{\theta}_{t}$ from $\boldsymbol{\theta}_{t-1}$). Note that this implies that $\boldsymbol{\theta}_t = \boldsymbol{\theta}_t(\boldsymbol{\lambda}_{[1:t]})$.
+- $\boldsymbol{\lambda}\_{[t]}$ - the set of hyperparameters that $\Phi$ uses for the optimization step $t$ (to get $\boldsymbol{\theta}\_{t}$ from $\boldsymbol{\theta}\_{t-1}$). Note that this implies that $\boldsymbol{\theta}\_t = \boldsymbol{\theta}\_t(\boldsymbol{\lambda}_{[1:t]})$.
 - $\boldsymbol{\lambda} = \boldsymbol{\lambda}_{[1:T]}$ - the full set of hyperparameters used by $\Phi$ for optimization.
 - $T$ - the number of optimization steps $\Phi$ takes.
 
-Our task is to find the optimal set of hyperparameters $\boldsymbol{\lambda}^*$ such that the result at time $T$ of the gradient process optimizing the train loss $\mathcal{L}_\text{train}$ also minimizes the generalization loss $\mathcal{L}_\text{val}$ on the validation set $\mathcal{D}_\text{val}$:
+Our task is to find the optimal set of hyperparameters $\boldsymbol{\lambda}^*$ such that the result at time $T$ of the gradient process optimizing the train loss $\mathcal{L}\_\text{train}$ also minimizes the generalization loss $\mathcal{L}\_\text{val}$ on the validation set $\mathcal{D}_\text{val}$:
 
 $$
 \boldsymbol{\lambda}^* = \arg\min_\boldsymbol{\lambda} \mathcal{L}_\text{val}(\boldsymbol{\theta}_T, \mathcal{D}_\text{val}), 
@@ -65,7 +65,7 @@ The memory cost of BPTT, the go-to method for solving the optimization problem a
 
 ### Forward-mode differentiation
 
-Let's consider the general case of using one hyperparameter $\boldsymbol{\lambda}_t$ per step. First, we use the chain rule, knowing that $\partial\mathcal{L}_\text{val}/\partial\boldsymbol{\lambda} = 0$ since the loss function doesn't directly depend on the hyperparameters:
+Let's consider the general case of using one hyperparameter $\boldsymbol{\lambda}_t$ per step. First, we use the chain rule, knowing that $\partial\mathcal{L}\_\text{val}/\partial\boldsymbol{\lambda} = 0$ since the loss function doesn't directly depend on the hyperparameters:
 
 $$
 \frac{d\mathcal{L}_\text{val}}{d\boldsymbol{\lambda}} = \frac{\partial\mathcal{L}_\text{val}}{\partial\boldsymbol{\theta_{T}}} \frac{d\boldsymbol{\theta_{T}}}{d\boldsymbol{\lambda}}.
@@ -83,7 +83,7 @@ $$
 \mathbf{Z}_t = \mathbf{A}_t \mathbf{Z}_{t-1} + \mathbf{B}_t.
 $$
 
-The expressions for $\mathbf{A}_t$ and $\mathbf{B}_t$ depend on the specific hyperparameters used. The authors give an example for SGD with momentum with learning rate $α_t$, momentum $β_t$, weight decay $ξ_t$ and velocity $\mathbf{\nu}_t = \beta_t \mathbf{\nu}_{t-1} + (\partial\mathcal{L}_\text{train}/\partial\boldsymbol{\theta}_{t-1}) + \xi_t\boldsymbol{\theta}_{t-1}$:
+The expressions for $\mathbf{A}\_t$ and $\mathbf{B}\_t$ depend on the specific hyperparameters used. The authors give an example for SGD with momentum with learning rate $α_t$, momentum $β_t$, weight decay $ξ_t$ and velocity $\mathbf{\nu}\_t=\beta_t\mathbf{\nu}\_{t-1}+\partial\mathcal{L}\_\text{train}/\partial\boldsymbol{\theta}\_{t-1})+\xi_t\boldsymbol{\theta}_{t-1}$:
 
 $$
 \left\{
