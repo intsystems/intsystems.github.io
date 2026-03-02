@@ -51,10 +51,12 @@ Let's denote:
 - $T$ - the number of optimization steps $\Phi$ takes.
 
 Our task is to find the optimal set of hyperparameters $\boldsymbol{\lambda}^*$ such that the result at time $T$ of the gradient process optimizing the train loss $\mathcal{L}_\text{train}$ also minimizes the generalization loss $\mathcal{L}_\text{val}$ on the validation set $\mathcal{D}_\text{val}$:
+
 $$
 \boldsymbol{\lambda}^* = \arg\min_\boldsymbol{\lambda} \mathcal{L}_\text{val}(\boldsymbol{\theta}_T, \mathcal{D}_\text{val}), 
 \quad \text{subject to } \boldsymbol{\theta}_{t+1} = \Phi(\mathcal{L}_\text{train}(\boldsymbol{\theta}_{t}(\boldsymbol{\lambda}_{[1:t]}), \mathcal{D}_\text{train}), \boldsymbol{\lambda}_{[t+1]}).
 $$
+
 Here, the inner optimization loop, optimizing $\boldsymbol{\theta}$, expresses a constraint on the outer loop, optimizing $\boldsymbol{\lambda}$.
 
 Let $H$ be the horizon, which corresponds to the number of optimization steps taken in the inner loop before a step is taken in the outer loop (optimizing the hyperparameters). If we solve this problem non-greedily, we have $T=H$. This means that non-greedy methods, like FDS, only update $\boldsymbol{\lambda}_{[t]}$ at time $T$. If we, on the other hand, consider a greedy approach, we get $H\ll T$. For example, [Hypergradient Descent (HD)](https://arxiv.org/pdf/1703.04782), a standard gradient-based HPO method, uses $H=1$. 
@@ -64,18 +66,25 @@ The memory cost of BPTT, the go-to method for solving the optimization problem a
 ### Forward-mode differentiation
 
 Let's consider the general case of using one hyperparameter $\boldsymbol{\lambda}_t$ per step. First, we use the chain rule, knowing that $\partial\mathcal{L}_\text{val}/\partial\boldsymbol{\lambda} = 0$ since the loss function doesn't directly depend on the hyperparameters:
+
 $$
 \frac{d\mathcal{L}_\text{val}}{d\boldsymbol{\lambda}} = \frac{\partial\mathcal{L}_\text{val}}{\partial\boldsymbol{\theta_{T}}} \frac{d\boldsymbol{\theta_{T}}}{d\boldsymbol{\lambda}}.
 $$
+
 The first can be calculated as usual through backpropagation. The second term can be calculated recursively, again using the chain rule:
+
 $$
 \frac{d\boldsymbol{\theta_t}}{d\boldsymbol{\lambda}} = \left.\frac{\partial\boldsymbol{\theta_t}}{\partial\boldsymbol{\theta_{t-1}}}\right|_\boldsymbol{\lambda} \frac{d\boldsymbol{\theta_{t-1}}}{d\boldsymbol{\lambda}} + \left.\frac{\partial\boldsymbol{\theta_t}}{\partial\boldsymbol{\lambda}}\right|_\boldsymbol{\theta_{t-1}}
 $$
+
 We can write this as 
+
 $$
 \mathbf{Z}_t = \mathbf{A}_t \mathbf{Z}_{t-1} + \mathbf{B}_t.
 $$
+
 The expressions for $\mathbf{A}_t$ and $\mathbf{B}_t$ depend on the specific hyperparameters used. The authors give an example for SGD with momentum with learning rate $α_t$, momentum $β_t$, weight decay $ξ_t$ and velocity $\mathbf{\nu}_t = \beta_t \mathbf{\nu}_{t-1} + (\partial\mathcal{L}_\text{train}/\partial\boldsymbol{\theta}_{t-1}) + \xi_t\boldsymbol{\theta}_{t-1}$:
+
 $$
 \left\{
 \begin{array}{ll}
@@ -85,6 +94,7 @@ $$
 \end{array}
 \right.
 $$
+
 Here, a further recursive term $\mathbf{C}_t = (\partial\mathbf{v}_t/\partial\boldsymbol{\lambda})$ must be considered to get exact hypergradients.
 
 Forward-mode differentiation scales in memory as $\mathcal{O}(DN)$, where $N$ is the number of learnable hyperparameters. The additional scaling by $N$ is a limitation in case we learn one hyperparameter per inner step ($N=T$). However, we can conveniently allow for smaller values of $N$ using hyperparameter sharing.
@@ -94,9 +104,11 @@ Forward-mode differentiation scales in memory as $\mathcal{O}(DN)$, where $N$ is
 As we noticed earlier, one problem of non-greedy HPO methods is gradient degradation. Specifically, small changes in initial parameters like weight initialization and minibatch ordering can drastically affect hypergradients, introducing large fluctuations. Ideally, hyperparameters should be agnostic to such factors, so we would like to average out their effect on hypergradients. However, the most obvious way of doing that, *ensemble averaging*, has very high computational and memory cost. FDS utilizes a different strategy - **time averaging**.
 
 The idea of time averaging is to average out hypergradients across the inner training loop rather than the outer loop. Specifically, in FDS we average out hypergradients from $W$ neighboring time steps in the inner loop, which is, in fact, equivalent to sharing one hyperparameter over all these steps. This helps reduce gradient degradation, but introduces a bias, since in general ensemble averaging and time averaging aren't equivalent. Nevertheless, the authors manage to prove that the hypergradient error $\text{MSE}_W$ with sharing (specifically, the mean variance of the hypergradient, given that it can be approximated with a Gaussian) has the following upper bound:
+
 $$
 \text{MSE}_W < \frac{(1+c(W - 1))}{W}\text{MSE}_1 + L^2\frac{W^2 - 1}{12},
 $$
+
 where $c$ is the maximum absolute correlation between hypergradients, $L$ is the Lipschitz constant for the network, and $\text{MSE}_1$ is the hypergradient error without hyperparameter sharing. In fact, this entails that for sufficiently small $c$ and $L$, we actually end up with $\text{MSE}_W < \text{MSE}_1$ for some positive $W$. 
 
 ## Experiments
