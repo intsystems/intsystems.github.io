@@ -117,26 +117,26 @@ The paper's authors conducted several experiments to test FDS on long-horizon ta
 
 ### The effect of hyperparameter sharing on hypergradient noise
 
-![](figure2.png)
+![](/images/blog/fds/figure2.png)
 ***Figure 1:** Hypergradients on SVHN for 100 seeds in the non-greedy (left) and greedy (middle) setting. The mean squared error is also shown (right).*
 
 The first experiment tested how well hyperparameter sharing dealt with hypergradient noise and how it affected the hypergradient error, training the learning rate for LeNet on the SVHN dataset. The method did, in fact, outperform the greedy setting, significantly reducing noise for many values of $W$. Interestingly, the mean squared error of the gradient has also significantly reduced, showing the best result for $W=50$.
 
 ### The effect of hyperparameter sharing on HPO
 
-![](figure3.png)
+![](/images/blog/fds/figure3.png)
 ***Figure 2:** The learning rate schedule learned on MNIST and SVHN using LeNet.*
 
 The next two experiments analyze how hyperparameter sharing affects performance of HPO on various real datasets. In the Figure 2, we can see the results of training the learning rate for LeNet on MNIST and SVHN. Despite LeNet being a relatively small architecture, making non-greedy HPO a viable option, both greedy and non-greedy HPO fail to find reasonable learning rates for training on SVHN, probably due to hypergradient variance. On the other hand, FDS stabilizes non-greedy hypergradients and allows to find learning rates that even outperform reasonable off-the-shelf schedules (cosine annealing in this case).
 
-![](figure4.png)
+![](/images/blog/fds/figure4.png)
 ***Figure 3:** FDS applied to SGD with momentum to learn the learning rate schedule $\alpha$, momentum $\beta$ and weight decay $\xi$.*
 
 Figure 3 shows the results of an experiment with a larger model, WideResNet-16-1, on the CIFAR-10 dataset. Due to the size of the model, non-greedy HPO without hyperparameter sharing becomes too computationally expensive, so the authors only compared FDS with a greedy method, Hypergradient Descent (HD). This experiment shows that in just 10 outer steps, FDS manages to converge to noticeably more reasonable values of the hyperparameters than HD, resulting in better test performance while still being a viable option in this setting.
 
 ### FDS vs. other HPO methods
 
-![](figure1.png)
+![](/images/blog/fds/figure1.png)
 ***Figure 4:** Performance of the most popular HPO methods on CIFAR-10 for a WideResNet-16.*
 
 The last experiment aims to demonstrate why FDS is such a valuable method compared to others used before it. We can see that non-greedy methods like random search (RS), Bayesian optimization (BO), Hyperband (HB) and the combination of the latter two (BOHB), while solving for global optima, rely on trial-and-error, which makes them very slow. On the other hand, greedy methods like Hypergradient Descent (HD) are faster but solve for local optima. FDS manages to take the best of both worlds, outperforming even the next best method while converging 20 times faster.
