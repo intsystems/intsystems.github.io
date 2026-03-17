@@ -2,7 +2,7 @@
 title: people.khabutdinov_ia
 edit: true
 position: pgs
-avatar: default.jpg
+avatar: khabutdinov_ia.jpg
 mail: khabutdinov.ia@phystech.edu
 telegram: mnsildar
 site:

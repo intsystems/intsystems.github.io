@@ -2,7 +2,7 @@
 title: people.grabovoy_av
 edit: true
 position: phd
-avatar: grabovoy_av.jpg
+avatar: grabovoy_av_improved_compressed.jpg
 mail: grabovoy.av@phystech.edu
 site: https://andriygav.github.io
 scholar: https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=ru
