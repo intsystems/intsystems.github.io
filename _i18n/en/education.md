@@ -21,7 +21,7 @@
 - **March 4:** Monday 18:30 presentation about the department for second-year students, offline
 - **March 10:** Deadline for submissions to the student conference
 - **April 4:** 13:00 conference and discussion of theses for 4th and 6th year students
-- **May 16:** 17:00 (Saturday) Credit on research work for 3rd-6th year and postgraduate students
+- **May 23:** 15:00 (Saturday) Credit on research work for 3rd-6th year and postgraduate students
 - **May 18-24:** Exam week for 3rd to 6th year students
 - **June 2:** PhD qualifying exam for postgraduate students
 - **June 6:** 10:00 predefense for 6th year students
