@@ -49,7 +49,7 @@ SC-VAMP resolves this by re-parameterizing the entire algorithm in terms of the 
 Suppose we observe a noisy vector $\mathbf{r} = \mathbf{x} + \gamma^{-1/2}\mathbf{z}$ where $\mathbf{z} \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$. The optimal MMSE denoiser is given by **Tweedie's formula**:
 $$\hat{\mathbf{x}} = \mathbb{E}[\mathbf{x}|\mathbf{r}] = \mathbf{r} + \frac{1}{\gamma}\nabla_{\mathbf{r}} \log p(\mathbf{r}; \gamma).$$
 
-The gradient term is the \textbf{score function}. Modern diffusion models train neural networks 
+The gradient term is the $\textbf{score function}$. Modern diffusion models train neural networks 
 $\mathbf{s}_\theta(\mathbf{r}, \gamma) \approx \nabla_{\mathbf{r}} \log p(\mathbf{r}; \gamma)$. 
 Thus, we can implement the optimal denoiser using only a forward pass through a score network:
 $$
