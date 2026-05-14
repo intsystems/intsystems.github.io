@@ -11,7 +11,7 @@ tags:
   - bmm
   - gaussian processes
   - kalman filter
-cover: /images/blog/hyperband/cover.png
+cover: /images/blog/gauss_and_kalman/GPSSM (1).png
 ---
 ## Why this paper matters
 
@@ -84,6 +84,8 @@ For this paper, the important point is not only that EnKF is fast. It is also di
 ## How EnVI unites GPSSMs and EnKF
 
 The paper's central idea is to put EnKF inside variational inference for GPSSMs. Variational inference normally introduces an approximate posterior distribution $q$ and optimizes an evidence lower bound, or **ELBO**. In many previous GPSSM methods, the distribution over hidden states is parameterized by many extra variables or by an inference network. That can be slow, unstable, and awkward for online learning.
+
+![Graphical model of GPSSM](/images/blog/gauss_and_kalman/GPSSM (1).png)
 
 EnVI changes the design:
 
@@ -227,6 +229,6 @@ There are also natural limitations. EnKF relies on Gaussian-style updates, so it
 - Practical GP library documentation: [GPyTorch variational and approximate GPs](https://docs.gpytorch.ai/en/stable/examples/04_Variational_and_Approximate_GPs/index.html)
 
 
-![Pseudocode of the Hyperband algorithm showing the outer loop for brackets and inner loop for Successive Halving.](/images/blog/hyperband/algorithm.png)
+
 
 
