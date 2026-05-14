@@ -29,19 +29,19 @@ This post walks through the statement, the proof idea, and what it does (and doe
 
 ## The setup
 
-Fix a target ReLU network $f^*$ of depth $\ell$ and width $n$, with bounded weights $\lVert w \rVert \le 1$. We want to approximate $f^*$ within error $\varepsilon$ on the unit ball.
+Fix a target ReLU network $f^{\star}$ of depth $\ell$ and width $n$, with bounded weights $\lVert w \rVert \le 1$. We want to approximate $f^{\star}$ within error $\varepsilon$ on the unit ball.
 
 The construction is:
 
 1. Take a randomly-initialized ReLU network $G$ of depth $2\ell$ and width polynomial in $n, d, 1/\varepsilon, \log(1/\delta)$.
 2. Do not train it. Instead, select a binary mask $M$ over its weights.
-3. Show that $M \odot G$ approximates $f^*$ uniformly with high probability $1 - \delta$.
+3. Show that $M \odot G$ approximates $f^{\star}$ uniformly with high probability $1 - \delta$.
 
 The notable points: depth only doubles, width is polynomial, weights are never modified; they are only kept or zeroed out.
 
 ## The main theorem (informal)
 
-Let $f^*$ be any ReLU network of depth $\ell$, width $n$, and bounded weights. For any $\varepsilon, \delta > 0$, a random ReLU network of depth $2\ell$ and width polynomial in $n, \ell, d, 1/\varepsilon, \log(1/\delta)$ contains, with probability at least $1 - \delta$, a subnetwork that uniformly $\varepsilon$-approximates $f^*$ on the unit ball. The number of active (non-pruned) weights in the subnetwork is $O(dn + n^2 \ell)$, the same order as the parameter count of $f^*$.
+Let $f^{\star}$ be any ReLU network of depth $\ell$, width $n$, and bounded weights. For any $\varepsilon, \delta > 0$, a random ReLU network of depth $2\ell$ and width polynomial in $n, \ell, d, 1/\varepsilon, \log(1/\delta)$ contains, with probability at least $1 - \delta$, a subnetwork that uniformly $\varepsilon$-approximates $f^{\star}$ on the unit ball. The number of active (non-pruned) weights in the subnetwork is $O(dn + n^2 \ell)$, the same order as the parameter count of $f^{\star}$.
 
 In other words: expressivity of pruning a random net equals expressivity of training a net of the same target size, up to polynomial overhead in width.
 
@@ -63,7 +63,7 @@ w \cdot x = \sigma(w \cdot x) - \sigma(-w \cdot x)
 $$
 so two ReLU units with input weights $+w$ and $-w$ (and output signs $+1$ and $-1$) reproduce the linear function $x \mapsto w \cdot x$ exactly.
 
-In the random network we do not have $\pm w$ available, but we have a *pool* of many random scalars. The pool is wide enough that, with high probability, it contains a pair of values close to $+w$ and $-w$ within accuracy $\varepsilon'$. Pruning everything else leaves a two-neuron gadget that approximates $w \cdot x$.
+In the random network we do not have $\pm w$ available, but we have a *pool* of many random scalars. The pool is wide enough that, with high probability, it contains a pair of values close to $+w$ and $-w$ within accuracy $\varepsilon_0$. Pruning everything else leaves a two-neuron gadget that approximates $w \cdot x$.
 
 ### Step 2: pick by pruning
 
@@ -71,7 +71,7 @@ The random network has many neurons in each layer. For each target weight, the c
 
 ### Step 3: error accumulation
 
-Each weight is approximated to error $\varepsilon'$. The approximation errors propagate through $\ell$ layers, and by Lipschitz arguments on bounded-weight networks, the total error is $\mathrm{poly}(\ell, n) \cdot \varepsilon'$. Choosing $\varepsilon'$ small enough gives uniform $\varepsilon$-approximation of $f^*$.
+Each weight is approximated to error $\varepsilon_0$. The approximation errors propagate through $\ell$ layers, and by Lipschitz arguments on bounded-weight networks, the total error is $\mathrm{poly}(\ell, n) \cdot \varepsilon_0$. Choosing $\varepsilon_0$ small enough gives uniform $\varepsilon$-approximation of $f^{\star}$.
 
 ### Why depth doubles
 
@@ -79,13 +79,13 @@ Each target layer is implemented by two layers of the random network: one for th
 
 ### Why width is polynomial
 
-For each target weight, the pool has to be large enough that two random scalars fall within $\varepsilon'$ of any target value in $[-1, 1]$. A covering argument on $[-1, 1]$ shows this requires $\widetilde{O}(1/\varepsilon'^2)$ random samples per weight, and a union bound over all $n^2 \ell$ weights yields a polynomial width.
+For each target weight, the pool has to be large enough that two random scalars fall within $\varepsilon_0$ of any target value in $[-1, 1]$. A covering argument on $[-1, 1]$ shows this requires $\widetilde{O}(1/\varepsilon_0^{2})$ random samples per weight, and a union bound over all $n^2 \ell$ weights yields a polynomial width.
 
 ## What this changes about how we think about pruning
 
 Pruning is at least as expressive as training. Up to polynomial overhead in width, anything a trained network of size $n$ can represent can also be represented by pruning a random network of size $\mathrm{poly}(n)$. Empirical pruning algorithms are searching over a hypothesis class that is, in principle, rich enough.
 
-The winning ticket is universal. The same random network contains tickets for *every* target; the choice of mask depends on $f^*$, but the random weights do not.
+The winning ticket is universal. The same random network contains tickets for *every* target; the choice of mask depends on $f^{\star}$, but the random weights do not.
 
 It partially explains why pruning works so well after training. If subnetworks of the *initial* random network can already approximate good functions, it is not surprising that subnetworks of a *trained* network can match its accuracy.
 
