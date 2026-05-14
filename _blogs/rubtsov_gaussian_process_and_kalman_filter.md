@@ -1,121 +1,232 @@
 ---
 edit: true
-title: "Hyperband: Accelerating Hyperparameter Optimization via Adaptive Resource Allocation"
+title: "When Gaussian Processes Meet the Ensemble Kalman Filter"
 lang: en
-date: 2026-02-17
+date: 2026-05-14
 read_time: 8
 authors:
-  - Dmitrii Vasilenko
-summary: "Hyperband is a novel bandit-based approach to hyperparameter optimization that speeds up random search by adaptive resource allocation and early-stopping. It outperforms Bayesian optimization methods by an order of magnitude on deep learning and kernel-based problems."
+  - Denis Rubtsov
+summary: "A gentle blog-style guide to EnVI and OEnVI for Gaussian process state-space models. Based on the paper 'Ensemble Kalman Filtering Meets Gaussian Process SSM for Non-Mean-Field and Online Inference' by Zhidi Lin, Yiyong Sun, Feng Yin, and Alexandre Hoang Thiery."
 tags:
   - bmm
-  - hyperparameter optimization
-  - Deep Learning
+  - gaussian processes
+  - kalman filter
 cover: /images/blog/hyperband/cover.png
 ---
+## Why this paper matters
 
-## Some background
+Many machine-learning problems are really problems about hidden motion. We do not directly see the true state of a system: the position and velocity of a car, the internal state of a robot, the real phase of an epidemic, or the underlying dynamics of a noisy sensor. We only see imperfect measurements. A **state-space model** is a standard way to describe this situation.
 
-Hyperparameter Optimization (HPO) remains one of the most resource-intensive bottlenecks in the machine learning pipeline. While the community has largely moved past Grid Search, the standard alternatives — Random Search and Bayesian Optimization — still suffer from a fundamental inefficiency: they treat the training process as a "black box" that must be run to completion.
+The paper *Ensemble Kalman Filtering Meets Gaussian Process SSM for Non-Mean-Field and Online Inference* asks a practical question: can we learn an unknown nonlinear dynamical system from noisy observations while also estimating the hidden states? The authors combine two ideas that are powerful in different ways:
 
-In 2018, Lisha Li and researchers from Carnegie Mellon, Google, and the University of Washington published the paper [**"Hyperband: A Novel Bandit-Based Approach to Hyperparameter Optimization."**](https://arxiv.org/abs/1603.06560) They proposed a paradigm shift: instead of trying to *intelligently select* configurations (as Bayesian methods do), we should focus on efficiently evaluating them using adaptive resource allocation.
+- **Gaussian processes (GPs)**: flexible Bayesian models for unknown functions, with uncertainty.
+- **Ensemble Kalman filtering (EnKF)**: a fast filtering method that tracks hidden states using a cloud of particles.
 
-In this post, we will deconstruct the Hyperband algorithm, the theoretical problem it solves, and why it often outperforms Bayesian methods.
+Their method is called **EnVI**: EnKF-aided Variational Inference. The online version is called **OEnVI**. The main message is simple: instead of training a large neural inference network to guess hidden states, use a model-based filter to do that job, and let the GP focus on learning the dynamics.
 
-## The Core Problem: The "n vs. B/n" Tradeoff
+> **One-sentence intuition:** the GP learns "how the system tends to move", while the EnKF continuously asks "given what we just observed, where is the system now?"
 
-The central challenge in random search-based HPO is resource allocation. Suppose you have a total finite budget $B$ (e.g., total GPU hours). You need to decide how many unique hyperparameter configurations $n$ to evaluate.
+## The modeling problem: hidden states and noisy observations
 
-This creates a fundamental tradeoff:
+A state-space model has two parts. The first part says how the hidden state evolves. The second part says how observations are generated from the hidden state:
 
-1. **Maximize $n$ (Width):** You sample many configurations to cover the search space, but each gets a very small average budget ($B/n$).
-    * *Risk:* You might stop a promising configuration too early ("false negative").
-2. **Minimize $n$ (Depth):** You sample few configurations, but train them to convergence.
-    * *Risk:* You train a poor configuration for too long, wasting resources that could have been used to explore other areas of the search space.
+$$
+x_{t+1} = f(x_t) + v_t, \qquad y_t = Cx_t + e_t.
+$$
 
-For a fixed budget, it is impossible to know which strategy — width or depth — will yield the best model. Hyperband was designed specifically to solve this dilemma.
+Here $x_t$ is the hidden state, $y_t$ is the observation, $f$ is the transition function, and $v_t, e_t$ are noise terms. The matrix $C$ maps the hidden state to the observation space.
 
-## The Building Block: Successive Halving
+If $f$ is known and the model is linear-Gaussian, the classical Kalman filter is almost ideal. But in many realistic problems, $f$ is not known. We may only have a sequence of noisy observations and need to learn both:
 
-To understand Hyperband, one must first understand its subroutine: **Successive Halving (SH)**. Originally proposed for multi-armed bandit problems, SH operates like a tournament:
+1. the hidden trajectory $x_0, x_1, \ldots, x_T$;
+2. the transition rule $f$ that generated it.
 
-1. **Initialize:** Start with **$n$** randomly sampled configurations.
-2. **Evaluate:** Allocate a small budget **$r$** (e.g., 1 epoch) to all configurations.
-3. **Select:** Rank them by validation loss and discard the worst half.
-4. **Promote:** The surviving configurations are promoted to the next round with a larger budget.
-5. **Repeat:** Continue until one configuration remains.
+This creates a chicken-and-egg problem. To learn $f$, we need good estimates of the hidden states. To infer the hidden states, we need a good $f$.
 
-While SH is efficient, it still requires the user to choose $n$. Given some finite budget $B$, if $n$ is too large, the initial budget $r$ might be too small to distinguish good models from bad ones. If $n$ is too small, SH behaves like standard Random Search.
+## Gaussian processes: learning a function with uncertainty
 
-## The Hyperband Algorithm
+A Gaussian process is a distribution over functions. Instead of saying "the transition function must be a neural network with these weights", a GP says: before seeing data, plausible functions are those that look smooth according to a kernel $k$.
 
-Hyperband acts as a "wrapper" or an outer loop around Successive Halving. Instead of forcing the user to guess the optimal $n$, Hyperband iterates through different feasible values of $n$ for a fixed total budget.
+A compact way to write this is:
 
-It divides the total budget into several **"brackets"** (instances of Successive Halving):
+$$
+f(\cdot) \sim \mathcal{GP}(0, k(\cdot, \cdot)).
+$$
 
-* **Most Aggressive Bracket ($s = s_{max}$):** Starts with the maximum possible number of configurations ($n_{max}$) with the minimum resource per config. This is designed to identify "fast learners" quickly.
-* **Intermediate Brackets:** Gradually decrease $n$ and increase the initial resource $r$.
-* **Most Conservative Bracket ($s = 0$):** Starts with a small number of configurations but allocates the maximum resource immediately. This is essentially equivalent to standard Random Search (exploration) or simply training to convergence (exploitation).
+After seeing data, the GP gives two things at a new input:
 
-### Algorithm Inputs
+- a mean prediction: the most likely function value;
+- a variance: how uncertain the model is there.
 
-Hyperband is notably easy to configure, requiring only two inputs:
+This uncertainty is very useful in dynamical systems. If we ask the model to predict in a region it has not seen, it should not pretend to be confident. This is one reason GP state-space models, or **GPSSMs**, are attractive for small and medium datasets.
 
-1. **$R$**: The maximum amount of resource that can be allocated to a single configuration (e.g., 100 epochs, or the full dataset size).
-2. **$\eta$**: The proportion of configurations discarded in each round of Successive Halving.
+The difficulty is computational. A full GP becomes expensive for long time series, and in GPSSMs the inputs to the GP are hidden states, not observed data. The paper therefore uses a standard sparse-GP trick: **inducing points**. These are a small set of representative pseudo-inputs that summarize the transition function. Instead of carrying the whole GP over every time point, the algorithm learns a compact surrogate.
+
+## Kalman filtering and EnKF: tracking the hidden state
+
+The Kalman filter alternates between two steps:
+
+1. **Predict:** use the dynamics to move the previous state estimate forward.
+2. **Update:** correct the prediction using the new observation.
+
+In the linear-Gaussian case, this is exact. In nonlinear systems, the Ensemble Kalman Filter keeps a cloud of particles, called an ensemble, and moves each particle through the dynamics. Then it updates the whole cloud using a Kalman-style correction.
+
+A simplified update for the mean looks like this:
+
+$$
+m_t = \bar m_t + G_t(y_t - C\bar m_t),
+$$
+
+where $\bar m_t$ is the predicted mean, $y_t - C\bar m_t$ is the surprise in the new observation, and $G_t$ is the Kalman gain. The gain decides how much to trust the observation versus the model prediction.
+
+For this paper, the important point is not only that EnKF is fast. It is also differentiable when implemented carefully with reparameterized noise. That means gradients can flow through the filtering procedure, so the GP parameters and variational parameters can be optimized with tools such as automatic differentiation.
+
+## How EnVI unites GPSSMs and EnKF
+
+The paper's central idea is to put EnKF inside variational inference for GPSSMs. Variational inference normally introduces an approximate posterior distribution $q$ and optimizes an evidence lower bound, or **ELBO**. In many previous GPSSM methods, the distribution over hidden states is parameterized by many extra variables or by an inference network. That can be slow, unstable, and awkward for online learning.
+
+EnVI changes the design:
+
+```text
+Noisy observations y_t
+        |
+        v
+EnKF estimates hidden states x_t
+        |
+        v
+Sparse GP learns transition f(x_t)
+        |
+        v
+ELBO balances data fit + regularization
+        |
+        v
+Updated model for filtering and forecasting
+```
+
+The approximate objective derived in the paper can be read as:
+
+$$
+\mathcal L \approx
+\mathbb E_{q(u)}\left[\sum_{t=1}^T \log p(y_t \mid u, y_{1:t-1})\right]
+- \mathrm{KL}(q(x_0)\|p(x_0))
+- \mathrm{KL}(q(u)\|p(u)).
+$$
+
+The first term rewards predictions that explain the observations. The two KL terms act as regularizers: the initial state and the GP transition should not drift too far from their priors unless the data strongly supports it.
+
+This is a nice objective because it is interpretable. The algorithm is not just fitting observations. It is also controlling model complexity and uncertainty.
+
+### Why "non-mean-field" matters
+
+A mean-field approximation breaks dependencies between groups of variables. This often makes optimization easier, but in a dynamical model it can be too aggressive. The hidden states and transition function are deeply linked: changing the transition function changes the plausible hidden trajectory, and changing the hidden trajectory changes what transition function is learned.
+
+EnVI keeps this relationship more naturally. The EnKF state estimates depend on the GP transition, and the GP is learned from those filtered states. This is why the paper calls the method non-mean-field: it does not pretend that the latent states and GP dynamics are independent.
+
+## Online learning: OEnVI
+
+The online version, **OEnVI**, processes data one time step at a time. At each new observation it performs the same basic cycle:
+
+1. sample or use the current GP surrogate;
+2. predict the ensemble forward;
+3. update the ensemble with the new observation;
+4. update model and variational parameters using the local objective.
+
+The online objective has the same spirit as the offline one:
+
+$$
+\mathcal L_t = \mathbb E_{q(u)}[\log p(y_t \mid u, y_{1:t-1})]
+- \mathrm{KL}(q(u)\|p(u)).
+$$
+
+This matters because many systems do not arrive as a fixed dataset. Sensors, robots, vehicles, and monitoring systems stream data continuously. A method that requires the entire sequence at training time is less convenient there. OEnVI is designed to update as data arrives.
+
+## What tasks does this combination solve?
+
+The GP-EnKF combination is useful for several related tasks:
+
+| Task | What the model does | Why the combination helps |
+|---|---|---|
+| Filtering | Estimate current hidden state from noisy observations | EnKF corrects predictions using new measurements |
+| Dynamics learning | Learn the unknown nonlinear transition function | GP models flexible dynamics and reports uncertainty |
+| Forecasting | Predict future observations and uncertainty | The learned GP transition can be rolled forward |
+| Online inference | Update the model as data streams in | OEnVI avoids a heavy inference network trained on full sequences |
+
+The key design choice is that EnKF handles the state-estimation part, while the GP handles the unknown-function part. Variational inference ties them together with a principled training objective.
+
+## Experimental results: what was most impressive?
+
+The authors test the methods on synthetic and real datasets. The exact numbers are less important than the pattern: EnVI is usually more accurate, more robust, or faster to train than competing GPSSM and neural state-space methods.
+
+### 1. Linear-Gaussian tracking: close to the Kalman filter
+
+The authors first use a setting where the classical Kalman filter is available as a strong reference: a linear-Gaussian car-tracking model. EnVI and OEnVI do not receive the true physical transition model, only noisy observations.
+
+Even so, their state estimates are close to the Kalman filter baseline. The reported latent-state RMSE values are:
+
+- Kalman filter: **0.5252**;
+- EnVI: **0.6841**;
+- OEnVI: **0.7784**;
+- raw observations versus latent states: **0.9872**.
+
+This experiment is a sanity check. If a learned GPSSM cannot do well on a linear-Gaussian system, it is hard to trust it on nonlinear ones. EnVI passes this check convincingly. OEnVI is less accurate at the beginning because it learns sequentially, but the paper reports that after more online data it improves substantially.
+
+### 2. Kink function: learning nonlinear dynamics under noise
+
+The kink function is a classic GPSSM test. It is a one-dimensional nonlinear transition that is simple enough to visualize but hard enough to expose bad uncertainty estimates.
+
+Across three observation-noise levels, EnVI obtains the best transition-function fit among the compared methods. For example, at the lowest noise level, EnVI reports MSE **0.0046**, while AD-EnKF reports **0.0285**, VCDT **0.2057**, and vGPSSM **1.0410**. At high noise, EnVI still performs best: MSE **0.5315**, compared with **1.3489** for AD-EnKF, **1.4035** for VCDT, and **1.9584** for vGPSSM.
+
+The visual result is also important: EnVI learns both the shape of the kink and a reasonable uncertainty band. The paper argues that AD-EnKF can become overconfident because it uses a deterministic neural transition model, while EnVI keeps uncertainty through the GP.
+
+Another striking result is convergence. On the kink experiment, EnVI reaches good performance after roughly **300 iterations**, whereas vGPSSM and VCDT require many more iterations and more runtime. This supports the authors' claim that removing a large inference network makes optimization easier.
+
+### 3. Real time-series forecasting: strong small-data performance
+
+The paper also evaluates five public system-identification datasets: Actuator, Ball Beam, Drive, Dryer, and Gas Furnace. The model trains on the first half of each sequence and forecasts the second half. The reported metric is 50-step-ahead RMSE.
+
+EnVI is best on four of the five datasets and competitive on the fifth. Its RMSEs are:
+
+- Actuator: **0.657**;
+- Ball Beam: **0.055**;
+- Drive: **0.703**;
+- Dryer: **0.125**;
+- Gas Furnace: **1.388**.
+
+The Drive dataset is the main exception: PRSSM reports **0.647**, better than EnVI's **0.703**. But overall, the results are strong, especially because these datasets are relatively small. That is exactly the regime where GP-based models can be attractive compared with large neural models.
+
+### 4. Online NASCAR dynamics: OEnVI wins clearly
+
+For online learning, the authors use a NASCAR-shaped latent trajectory and compare OEnVI with SVMC and VJF. The prediction RMSEs are:
+
+- OEnVI: **1.8780**;
+- SVMC: **4.6682**;
+- VJF: **10.8499**.
+
+This is one of the clearest experimental wins in the paper. OEnVI tracks and predicts the latent trajectory much better than the alternatives. The authors attribute this to the EnKF-based approximation of the latent-state distribution: it is structured enough to be stable, but flexible enough to work online.
+
+## Takeaways and limitations
+
+The paper is interesting because it does not simply replace everything with a neural network. It combines a probabilistic non-parametric model with a classical filtering algorithm, then trains the whole system with variational inference.
+
+The main takeaways are:
+
+- GPSSMs are useful when the transition dynamics are unknown and nonlinear.
+- EnKF provides a practical way to infer hidden states without a heavy inference network.
+- The resulting ELBO has a clear interpretation: fit the observations, but regularize the initial state and transition function.
+- OEnVI makes the method suitable for streaming data.
+- The strongest empirical results are on nonlinear dynamics learning and online tracking.
+
+There are also natural limitations. EnKF relies on Gaussian-style updates, so it may struggle in strongly non-Gaussian settings where particle filters are more appropriate. The paper mainly uses a linear emission model, although EnKF can be extended to nonlinear emissions. Finally, the conclusion notes that time-varying dynamical systems remain an important direction for future work.
+
+## Useful links for readers
+
+- Original paper on arXiv: [Ensemble Kalman Filtering Meets Gaussian Process SSM](https://arxiv.org/abs/2312.05910)
+- Authors' GPSSM code repository: [zhidilin/gpssmProj](https://github.com/zhidilin/gpssmProj)
+- A classic free book on Gaussian processes: [Gaussian Processes for Machine Learning](https://gaussianprocess.org/gpml/)
+- Intuitive Kalman filtering book with Python code: [Kalman and Bayesian Filters in Python](https://rlabbe.github.io/Kalman-and-Bayesian-Filters-in-Python/)
+- Practical GP library documentation: [GPyTorch variational and approximate GPs](https://docs.gpytorch.ai/en/stable/examples/04_Variational_and_Approximate_GPs/index.html)
+
 
 ![Pseudocode of the Hyperband algorithm showing the outer loop for brackets and inner loop for Successive Halving.](/images/blog/hyperband/algorithm.png)
 
-By iterating through these brackets, Hyperband performs a geometric search over the trade-off between "number of configurations" and "resource per configuration."
 
-## Theoretical Framework: The Infinite-Armed Bandit
-
-The authors frame HPO as a non-stochastic infinite-armed bandit problem.
-
-* **Infinite-armed:** The hyperparameters are drawn from a continuous probability distribution.
-* **Non-stochastic:** The algorithm does not make strong assumptions about the convergence curves of the loss functions.
-
-This theoretical grounding is significant because it contrasts with Bayesian Optimization (BO). BO relies on fitting a probabilistic model to the function $f(x)$. In high-dimensional spaces, fitting this model becomes computationally expensive and often inaccurate. Hyperband avoids this complexity entirely by relying on principled random sampling and aggressive early stopping.
-
-## Empirical Results
-
-The paper presents extensive evaluation comparing Hyperband against Random Search, SMAC, TPE, and Spearmint (popular Bayesian optimization frameworks) on several benchmarks.
-
-### 1. Deep Learning (Iterations as Resource)
-
-In this experiment, the authors tuned Convolutional Neural Networks (CNNs) on datasets like CIFAR-10 and SVHN. The resource budget was defined as the number of training iterations (epochs).
-
-![Average test error across 10 trials on CIFAR-10.](/images/blog/hyperband/image-deeplearning.png)
-
-*Average test error across 10 trials. Label “SMAC (early)” corresponds to SMAC with the early-stopping criterion and label “bracket s = 4” corresponds to repeating the most exploratory bracket of Hyperband. **Result: Hyperband found high-quality configurations 5× to 30× faster than Bayesian methods.***
-
-### 2. Kernel Methods (Data Subsampling as Resource)
-
-Here, the task was Kernel Least Squares classification. The resource was the size of the dataset subsample.
-
-![Comparison of Hyperband and other methods on Kernel Least Squares classification tasks.](/images/blog/hyperband/image-kernel.png)
-
-*On left: Average test error of the best kernel regularized least square classification model found by each searcher on CIFAR-10. On right: Average test error of the best random features model. **Result: Hyperband achieved a massive 70× speedup over Random Search.***
-
-### 3. Generalization (117 OpenML Datasets)
-
-To test robustness, Hyperband was evaluated on a large-scale automated machine learning task involving 117 real-world datasets from OpenML.
-
-![Average rank across all data sets for each searcher.](/images/blog/hyperband/image-openmldatasets.png)
-
-*Average rank across all data sets for each searcher. For each data set, the searchers are ranked according to the average validation/test error across 20 trials.*
-
-* **Avoiding Overfitting:** A key finding was that Bayesian optimization methods often "overfit" the validation set — they found configurations that looked good during search but performed worse on the test set. Hyperband, being closer to Random Search in its sampling strategy, showed better generalization.
-* **Cost vs. Benefit:** On a subset of 21 datasets where subsampling yielded meaningful computational speedups, Hyperband was the clear winner. However, on very small datasets where training takes seconds, the overhead of Hyperband made it less effective than simple Random Search.
-
-## Conclusion
-
-The Hyperband paper provides a compelling argument that in the era of expensive model training, adaptive resource allocation is more critical than adaptive configuration selection.
-
-**Key Practical Takeaways:**
-
-1. **Efficiency:** For problems where partial training (e.g., few epochs) correlates with final performance, Hyperband is superior to standard Random Search and often beats Bayesian Optimization.
-2. **Simplicity:** It requires minimal tuning compared to the complex kernels and acquisition functions of Gaussian Processes.
-3. **Parallelism:** The algorithm is easily parallelizable, making it ideal for modern distributed computing clusters.
-
-Today, Hyperband has become an industry standard, available in major HPO frameworks such as **Ray Tune**, **Optuna**, and **Scikit-learn** (`HalvingRandomSearchCV`). For anyone dealing with computationally expensive model tuning, it is a valuable tool in the machine learning toolkit.
