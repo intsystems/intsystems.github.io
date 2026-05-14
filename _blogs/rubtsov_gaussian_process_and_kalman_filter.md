@@ -11,7 +11,7 @@ tags:
   - bmm
   - gaussian processes
   - kalman filter
-cover: /images/blog/gauss_and_kalman/GPSSM(1).png
+cover: /images/blog/gauss_and_kalman/GPSSM.jpg
 ---
 ## Why this paper matters
 
@@ -85,7 +85,7 @@ For this paper, the important point is not only that EnKF is fast. It is also di
 
 The paper's central idea is to put EnKF inside variational inference for GPSSMs. Variational inference normally introduces an approximate posterior distribution $q$ and optimizes an evidence lower bound, or **ELBO**. In many previous GPSSM methods, the distribution over hidden states is parameterized by many extra variables or by an inference network. That can be slow, unstable, and awkward for online learning.
 
-![Graphical model of GPSSM](/images/blog/gauss_and_kalman/GPSSM(1).png)
+![Graphical model of GPSSM](/images/blog/gauss_and_kalman/GPSSM.jpg)
 
 EnVI changes the design:
 
