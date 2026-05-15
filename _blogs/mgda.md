@@ -3,7 +3,7 @@ edit: true
 title: "Multi-Task Learning as Multi-Objective Optimization"
 lang: en
 date: 2026-05-15
-read_time: 12
+read_time: 7
 authors:
   - Altay Eynullayev
 summary: "Casting Multi-Task Learning as Multi-Objective Optimization using a scalable gradient-based algorithm (MGDA-UB) to find Pareto optimal solutions in deep networks."
@@ -156,8 +156,9 @@ Once again, MGDA-UB achieved state-of-the-art results across all three metrics. 
 
 ###### Figure 3. Authors plot the performance of all baselines for the tasks of semantic segmentation, instance segmentation, and depth estimation. They use mIoU for semantic segmentation, error of per-pixel regression (normalized to image size) for instance segmentation, and disparity error for depth estimation. To convert errors to performance measures, they use 1 - instance error and 1/disparity error. They plot 2D projections of the performance profile for each pair of tasks. Although they plot pairwise projections for visualization, each point in the plots solves all tasks. Top-right is better.
 
-| ![CS1](/images/blog/mgda/cityscapes_1.png) | ![CS2](/images/blog/mgda/cityscapes_2.png) | ![CS3](/images/blog/mgda/cityscapes_3.png) |
-|:---:|:---:|:---:|
+![CS1](/images/blog/mgda/cityscapes_1.png)
+![CS2](/images/blog/mgda/cityscapes_2.png) 
+![CS3](/images/blog/mgda/cityscapes_3.png)
 
 ### 4. The Role of the Approximation (Ablation Study)
 
