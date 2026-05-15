@@ -12,7 +12,7 @@ tags:
   - Multi-Objective Optimization
   - Pareto Optimality
   - BMM
-cover: /images/blog/mgda/cover.png
+cover: /images/blog/mgda/celeba.png
 ---
 
 **Based on the 2018 NeurIPS conference paper by Ozan Sener and Vladlen Koltun**
