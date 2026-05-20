@@ -5,7 +5,7 @@ lang: en
 date: 2026-05-20
 read_time: 12
 authors:
-  - Ilya
+  - Stepanov Ilya
 summary: "A blog post about robust regression with Student-t processes and efficient O(n) inference via state-space models."
 tags:
   - Gaussian processes
@@ -217,79 +217,31 @@ This gives the model the heavy-tailed behavior of the Student-t process while pr
 
 ## Filtering: the forward pass
 
-Inference is performed by a forward recursion very similar to the Kalman filter.
+Inference is carried out by a forward recursion that is closely analogous to the Kalman filter.  
+At each step, the algorithm maintains a current estimate of the latent state together with its uncertainty, plus two Student-t-specific variables that control how strongly the next observation should affect the posterior.
 
-At each step $k$, we keep track of the mean $m_{k|k}$, covariance $P_{k|k}$, degrees of freedom $\nu_k$, and scale $\gamma_k$.
+The recursion has four conceptual stages:
 
-The recursion is:
+**Prediction**  
+The model first propagates the previous estimate forward in time using the state-space dynamics.
 
-**Prediction**
-$$
-m_{k|k-1} = A_{k-1}m_{k-1|k-1},
-$$
+**Innovation**  
+It then compares the prediction with the new observation and measures how surprising that observation is.
 
-$$
-P_{k|k-1} = A_{k-1}P_{k-1|k-1}A_{k-1}^T + \gamma_{k-1}Q_{k-1}.
-$$
+**Scale update**  
+This is the key Student-t feature. If the innovation is unusually large, the model increases its scale variable, which inflates uncertainty and reduces the influence of that suspicious observation.
 
-**Innovation**
-$$
-v_k = y_k - H_k m_{k|k-1},
-\qquad
-S_k = H_k P_{k|k-1} H_k^T.
-$$
+**State update**  
+Finally, the latent state estimate is corrected using the innovation, but now with the outlier-robust weighting produced by the scale update.
 
-**Scale update**
-$$
-\nu_k = \nu_{k-1} + 1,
-$$
-
-$$
-\gamma_k =
-\frac{\nu_{k-1} - 2 + v_k^T S_k^{-1} v_k}{\nu_k - 2}\,\gamma_{k-1}.
-$$
-
-**State update**
-$$
-K_k = P_{k|k-1}H_k^T S_k^{-1},
-$$
-
-$$
-m_{k|k} = m_{k|k-1} + K_k v_k,
-$$
-
-$$
-P_{k|k}
-=
-\frac{\gamma_k}{\gamma_{k-1}}
-\bigl(P_{k|k-1} - K_k S_k K_k^T\bigr).
-$$
-
-The important part is the scale update: if the innovation is unusually large, the model increases $\gamma_k$, which inflates uncertainty and reduces the impact of the suspicious observation.
+So the forward pass behaves like a Kalman filter, but with an adaptive mechanism that automatically softens the impact of outliers instead of treating every observation equally.
 
 ## Smoothing: the backward pass
 
-Filtering gives online estimates, but if the full sequence is available, we can improve the posterior with a backward smoothing pass.
+Filtering gives good online estimates, but if the full sequence is available, the posterior can be improved with a backward smoothing pass.  
+This second pass propagates information in reverse time and refines each latent state using both the past and the future.
 
-The smoothed quantities are $m_{k|n}$ and $P_{k|n}$, where $n$ is the total number of observations. The main recursion is:
-
-$$
-G_k = P_{k|k}A_k^T P_{k+1|k}^{-1},
-$$
-
-$$
-m_{k|n} = m_{k|k} + G_k\left(m_{k+1|n} - m_{k+1|k}\right),
-$$
-
-$$
-P_{k|n}
-=
-\frac{\gamma_n}{\gamma_{k-1}}
-\bigl(P_{k|k} - G_k P_{k+1|k} G_k^T\bigr)
-+ G_k P_{k+1|n} G_k^T.
-$$
-
-This produces a globally refined trajectory estimate while keeping the same robustness benefits.
+The result is a globally consistent trajectory estimate with the same robustness benefits as the forward pass. In practice, smoothing usually produces a cleaner reconstruction than filtering alone, especially when the observations contain noise spikes or corrupted segments.
 
 ## Marginal likelihood and learning
 
