@@ -68,7 +68,7 @@ Points in the good set are then **weighted by their hypervolume contribution** �
 
 MOTPE uses **Expected Hypervolume Improvement (EHVI)** as its acquisition function. Remarkably, after derivation, EHVI simplifies to:
 
-![alt text](EHVI.png)
+![alt text](/images/blog/EHVI.png)
 
 
 This means: **To maximize EHVI, simply maximize the ratio l(xᵢ) / g(xᵢ)** — exactly the same as in single-objective TPE! No complex EHVI calculations are needed.
