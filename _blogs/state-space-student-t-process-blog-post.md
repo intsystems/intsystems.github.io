@@ -5,7 +5,7 @@ lang: en
 date: 2026-05-20
 read_time: 12
 authors:
-  - Ilya
+  - Stepanov Ilya
 summary: "A blog post about robust regression with Student-t processes and efficient O(n) inference via state-space models."
 tags:
   - Gaussian processes
