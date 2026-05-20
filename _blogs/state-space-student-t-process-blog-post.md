@@ -5,7 +5,7 @@ lang: en
 date: 2026-05-20
 read_time: 12
 authors:
-  - Stepanov Ilya
+  - Ilya
 summary: "A blog post about robust regression with Student-t processes and efficient O(n) inference via state-space models."
 tags:
   - Gaussian processes
@@ -23,7 +23,7 @@ This post explains how to turn a standard Gaussian-process-style regression prob
 
 Gaussian processes (GPs) are one of the most elegant tools for non-parametric regression. They provide closed-form posterior predictions, uncertainty estimates, and a principled way to encode prior structure through kernels. But in practice, standard GP regression has two major weaknesses:
 
-1. **Computational cost**: the naive implementation requires matrix inversion and scales as \(O(n^3)\).
+1. **Computational cost**: the naive implementation requires matrix inversion and scales as $O(n^3)$.
 2. **Sensitivity to outliers**: the posterior variance depends only on input locations, not on observed values, so a single bad observation does not automatically increase uncertainty.
 
 For many real-world time series, these limitations are a problem. Sensor failures, missing values, and occasional large spikes are common, and a model should react to them instead of treating every observation as equally trustworthy.
@@ -38,7 +38,7 @@ $$
 f(x) \sim \mathcal{GP}(\mu(x), k(x,x'))
 $$
 
-which means that for any finite set of inputs \(x_1,\dots,x_n\), the vector of function values is jointly Gaussian:
+which means that for any finite set of inputs $x_1,\dots,x_n$, the vector of function values is jointly Gaussian:
 
 $$
 (f(x_1), \ldots, f(x_n))^T \sim \mathcal{N}(\boldsymbol{\mu}, K),
@@ -46,7 +46,7 @@ $$
 K_{ij} = k(x_i, x_j).
 $$
 
-For GP regression, the posterior mean and variance at a test point \(x_*\) are
+For GP regression, the posterior mean and variance at a test point $x_*$ are
 
 $$
 \mathbb{E}[f(x_*)] = k_*^T K^{-1} y,
@@ -56,11 +56,11 @@ $$
 \mathbb{V}[f(x_*)] = k(x_*,x_*) - k_*^T K^{-1} k_*.
 $$
 
-The problem is visible in the variance formula: the uncertainty depends only on the kernel geometry and the training inputs, not on the actual observed values \(y\). If the data contains a strong outlier, the model does not automatically become more uncertain about that region.
+The problem is visible in the variance formula: the uncertainty depends only on the kernel geometry and the training inputs, not on the actual observed values $y$. If the data contains a strong outlier, the model does not automatically become more uncertain about that region.
 
 ## Why Student-t processes help
 
-The Student-t distribution has heavier tails than the Gaussian, which makes it much more forgiving to unexpected observations. For a vector \(y \in \mathbb{R}^n\),
+The Student-t distribution has heavier tails than the Gaussian, which makes it much more forgiving to unexpected observations. For a vector $y \in \mathbb{R}^n$,
 
 $$
 y \sim \mathrm{MVT}(\mu, K, \nu)
@@ -77,7 +77,7 @@ p(y|\mu,K,\nu) =
 \right)^{-\frac{\nu+n}{2}}.
 $$
 
-As \(\nu \to \infty\), this distribution approaches a Gaussian.
+As $\nu \to \infty$, this distribution approaches a Gaussian.
 
 A useful way to think about the Student-t distribution is as a **scale mixture of Gaussians**:
 
@@ -89,7 +89,7 @@ y \mid \gamma \sim \mathcal{N}(\mu, \gamma K)
 y \sim \mathrm{MVT}(\mu, K, \nu).
 $$
 
-So the Student-t is still Gaussian at its core, but with a random scale factor \(\gamma\). That single random variable is what makes the model adaptive: unusual observations can be explained by a larger local scale, which effectively reduces their influence.
+So the Student-t is still Gaussian at its core, but with a random scale factor $\gamma$. That single random variable is what makes the model adaptive: unusual observations can be explained by a larger local scale, which effectively reduces their influence.
 
 ## Student-t process regression
 
@@ -103,7 +103,7 @@ if every finite collection of function values follows a multivariate Student-t l
 
 For regression, the crucial point is that the conditional distribution of one block of variables given another retains the same structure. If the joint vector is Student-t distributed, then the conditional posterior is also Student-t, with a mean similar to the GP case but with a variance scaling term that depends on the observations.
 
-For a test point \(x_*\), the predictive distribution can be written as
+For a test point $x_*$, the predictive distribution can be written as
 
 $$
 f(x_*) \mid D \sim \mathrm{MVT}\!\left(
@@ -141,15 +141,15 @@ $$
 + \frac{\nu+n}{2}\log\!\left(1+\frac{\beta}{\nu-2}\right),
 $$
 
-where \(\beta = (y-\mu)^T K^{-1}(y-\mu)\).
+where $\beta = (y-\mu)^T K^{-1}(y-\mu)$.
 
 The learned parameters are:
 
-- \(\theta\): kernel hyperparameters,
-- \(\sigma_n^2\): noise level,
-- \(\nu\): degrees of freedom, which control tail heaviness.
+- $\theta$: kernel hyperparameters,
+- $\sigma_n^2$: noise level,
+- $\nu$: degrees of freedom, which control tail heaviness.
 
-Smaller \(\nu\) means heavier tails and stronger robustness.
+Smaller $\nu$ means heavier tails and stronger robustness.
 
 ## From Gaussian processes to state-space models
 
@@ -189,7 +189,7 @@ This transformation is the reason the method becomes scalable: rather than worki
 
 ## The Student-t process as a state-space model
 
-The same idea extends to the Student-t process by introducing a random scaling variable \(\gamma\). The state-space model becomes a Gaussian SDE with a shared scale:
+The same idea extends to the Student-t process by introducing a random scaling variable $\gamma$. The state-space model becomes a Gaussian SDE with a shared scale:
 
 $$
 \mathbf{f}(0) \sim \mathcal{N}(0, \gamma P_0),
@@ -219,7 +219,7 @@ This gives the model the heavy-tailed behavior of the Student-t process while pr
 
 Inference is performed by a forward recursion very similar to the Kalman filter.
 
-At each step \(k\), we keep track of the mean \(m_{k|k}\), covariance \(P_{k|k}\), degrees of freedom \(\nu_k\), and scale \(\gamma_k\).
+At each step $k$, we keep track of the mean $m_{k|k}$, covariance $P_{k|k}$, degrees of freedom $\nu_k$, and scale $\gamma_k$.
 
 The recursion is:
 
@@ -265,13 +265,13 @@ P_{k|k}
 \bigl(P_{k|k-1} - K_k S_k K_k^T\bigr).
 $$
 
-The important part is the scale update: if the innovation is unusually large, the model increases \(\gamma_k\), which inflates uncertainty and reduces the impact of the suspicious observation.
+The important part is the scale update: if the innovation is unusually large, the model increases $\gamma_k$, which inflates uncertainty and reduces the impact of the suspicious observation.
 
 ## Smoothing: the backward pass
 
 Filtering gives online estimates, but if the full sequence is available, we can improve the posterior with a backward smoothing pass.
 
-The smoothed quantities are \(m_{k|n}\) and \(P_{k|n}\), where \(n\) is the total number of observations. The main recursion is:
+The smoothed quantities are $m_{k|n}$ and $P_{k|n}$, where $n$ is the total number of observations. The main recursion is:
 
 $$
 G_k = P_{k|k}A_k^T P_{k+1|k}^{-1},
@@ -311,13 +311,13 @@ $$
 \right].
 $$
 
-The payoff is computational: if the latent state dimension is \(m \ll n\), the cost becomes approximately
+The payoff is computational: if the latent state dimension is $m \ll n$, the cost becomes approximately
 
 $$
 O(nm^3) \approx O(n),
 $$
 
-instead of \(O(n^3)\) for the naive covariance-matrix approach.
+instead of $O(n^3)$ for the naive covariance-matrix approach.
 
 ## Experiments
 
@@ -369,6 +369,5 @@ The main message is that robustness and efficiency do not have to be in conflict
 
 - **GPs are elegant but brittle** when the data contains outliers.
 - **Student-t processes add robustness** through heavy tails and observation-dependent uncertainty.
-- **State-space inference makes the method scalable**, turning \(O(n^3)\) inference into an approximately linear-time algorithm for temporal kernels.
+- **State-space inference makes the method scalable**, turning $O(n^3)$ inference into an approximately linear-time algorithm for temporal kernels.
 - **Filtering and smoothing remain analytical**, so the model stays interpretable and easy to optimize.
-
