@@ -1,3 +1,21 @@
+---
+edit: true
+title: "Multiobjective Tree-Structured Parzen Estimator (MOTPE): Bayesian Optimization for the Real World"
+lang: en
+date: 2026-05-21
+read_time: 10
+authors:
+  - Vladislav Meshkov
+summary: "MOTPE extends the Tree-Structured Parzen Estimator (TPE) to multiobjective optimization, handling complex, conditional search spaces with high efficiency. It uses dominance-based splitting and hypervolume contribution to approximate the Pareto front, scales to hundreds of evaluations, and supports asynchronous parallelization — outperforming GP-based methods on real-world tasks like CNN design."
+tags:
+  - Hyperparameter optimization
+  - Bayesian optimization
+  - Multiobjective optimization
+  - MOTPE
+  - Tree-structured Parzen estimator
+cover: /images/blog/MOTPE.png
+---
+
 # Multiobjective Tree-Structured Parzen Estimator (MOTPE): Bayesian Optimization for the Real World
 
 
