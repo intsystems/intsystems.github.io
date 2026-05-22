@@ -2,6 +2,32 @@
 
 This page contains information about the research projects of students at the Intelligent Systems Department. Here you can find the titles of theses, names of advisors, links to publications, presentations and code repositories.
 
+### 2026 Spring
+
+#### PhD Students
+
+| PhD Student | Year | Title | Advisor | Links |
+| :---------- | :--: | :---- | :------ | :---- |
+| [Name Surname](https://example.com) | Year | Title | [Name Surname](https://example.com) | [Paper](https://example.com), [Code](https://example.com), [Slides](https://example.com) |
+
+#### Master's Students (2nd year)
+
+| Student | Title | Advisor | Links |
+| :------ | :---- | :------ | :---- |
+| [Name Surname](https://example.com) | Title | [Name Surname](https://example.com) | [Paper](https://example.com), [Code](https://example.com), [Slides](https://example.com) |
+
+#### Master's Students (1st year)
+
+| Student | Title | Advisor | Links |
+| :------ | :---- | :------ | :---- |
+| [Name Surname](https://example.com) | Title | [Name Surname](https://example.com) | [Paper](https://example.com), [Code](https://example.com), [Slides](https://example.com) |
+
+#### Bachelor's Students (4th year)
+
+| Student | Title | Advisor | Links |
+| :------ | :---- | :------ | :---- |
+| [Name Surname](https://example.com) | Title | [Name Surname](https://example.com) | [Paper](https://example.com), [Code](https://example.com), [Slides](https://example.com) |
+
 ### 2025 Fall
 
 #### PhD Students
