@@ -23,6 +23,7 @@ This page contains information about the research projects of students at the In
 | Student | Title | Advisor | Links |
 | :------ | :---- | :------ | :---- |
 | [Dmitrii Vasilenko](https://github.com/Dimundel) | Jacobian Analysis of a Recurrent Transformer Block | [Andrey Grabovoy](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ) | [Paper](https://github.com/intsystems/Vasilenko-MS-Thesis/blob/main/paper/Jacobian_Analysis_of_a_Recurrent_Transformer_Block.pdf), [Code](https://github.com/intsystems/Vasilenko-MS-Thesis/tree/main/src), [Slides](https://github.com/intsystems/Vasilenko-MS-Thesis/blob/main/slides/slides.pdf) |
+| [Denis Rubtsov](https://github.com/RubtsovDN/Rubtsov-MSc-Thesis) | Generative Models from Physical Processes | [Alexander Korotin](https://scholar.google.com/citations?user=1rIIvjAAAAAJ&hl=ru&oi=ao) | [Paper](https://github.com/RubtsovDN/Rubtsov-MSc-Thesis/blob/master/paper/main.pdf), [Code](https://github.com/RubtsovDN/Rubtsov-MSc-Thesis/tree/master/code), [Slides](https://github.com/RubtsovDN/Rubtsov-MSc-Thesis/blob/master/slides/slides.pdf) |
 
 #### Bachelor's Students (4th year)
 
