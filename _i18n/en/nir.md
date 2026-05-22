@@ -8,25 +8,25 @@ This page contains information about the research projects of students at the In
 
 | PhD Student | Year | Title | Advisor | Links |
 | :---------- | :--: | :---- | :------ | :---- |
-| [Name Surname](https://example.com) | Year | Title | [Name Surname](https://example.com) | [Paper](https://example.com), [Code](https://example.com), [Slides](https://example.com) |
+| [Name Surname](https://example.com/) | Year | Title | [Name Surname](https://example.com/) | [Paper](https://example.com/), [Code](https://example.com/), [Slides](https://example.com/) |
 
 #### Master's Students (2nd year)
 
 | Student | Title | Advisor | Links |
 | :------ | :---- | :------ | :---- |
-| [Name Surname](https://example.com) | Title | [Name Surname](https://example.com) | [Paper](https://example.com), [Code](https://example.com), [Slides](https://example.com) |
+| [Nikita Kiselev](https://kisnikser.github.io/) | Curvature-Aligned Probing for Local Loss-Landscape Stabilization | [Andrey Grabovoy](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ) | [Paper](https://arxiv.org/abs/2604.14870), [Code](https://github.com/intsystems/curvature-subspace-landscape), [Slides](https://github.com/intsystems/robust-loss-landscape-convergence/blob/main/slides/main.pdf) |
 
 #### Master's Students (1st year)
 
 | Student | Title | Advisor | Links |
 | :------ | :---- | :------ | :---- |
-| [Name Surname](https://example.com) | Title | [Name Surname](https://example.com) | [Paper](https://example.com), [Code](https://example.com), [Slides](https://example.com) |
+| [Name Surname](https://example.com/) | Title | [Name Surname](https://example.com/) | [Paper](https://example.com/), [Code](https://example.com/), [Slides](https://example.com/) |
 
 #### Bachelor's Students (4th year)
 
 | Student | Title | Advisor | Links |
 | :------ | :---- | :------ | :---- |
-| [Name Surname](https://example.com) | Title | [Name Surname](https://example.com) | [Paper](https://example.com), [Code](https://example.com), [Slides](https://example.com) |
+| [Name Surname](https://example.com/) | Title | [Name Surname](https://example.com/) | [Paper](https://example.com/), [Code](https://example.com/), [Slides](https://example.com/) |
 
 ### 2025 Fall
 
