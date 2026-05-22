@@ -15,6 +15,7 @@ This page contains information about the research projects of students at the In
 | Student | Title | Advisor | Links |
 | :------ | :---- | :------ | :---- |
 | [Nikita Kiselev](https://kisnikser.github.io/) | Curvature-Aligned Probing for Local Loss-Landscape Stabilization | [Andrey Grabovoy](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ) | [Paper](https://arxiv.org/abs/2604.14870), [Code](https://github.com/intsystems/curvature-subspace-landscape), [Slides](https://github.com/intsystems/robust-loss-landscape-convergence/blob/main/slides/main.pdf) |
+| Kirill Semkin | Dynamical systems time series classification | [Vadim Strijov](https://intsystems.github.io/ru/people/strijov_vv/index.html)  | [Paper](https://github.com/intsystems/n_ode/blob/main/paper/node_classification_Semkin.pdf), [Code](https://github.com/intsystems/n_ode/tree/main/experiment), [Slides](https://github.com/intsystems/n_ode/blob/main/slides/neural_ode_Semkin_slides.pdf) |
 
 #### Master's Students (1st year)
 
