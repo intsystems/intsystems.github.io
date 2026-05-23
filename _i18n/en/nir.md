@@ -10,6 +10,7 @@ This page contains information about the research projects of students at the In
 | :---------- | :--: | :---- | :------ | :---- |
 | [German Gritsai](https://scholar.google.com/citations?hl=ru&user=68A6gGYAAAAJ&view_op=list_works&sortby=pubdate) | 1 | Verification of artificially generated text fragments | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=ru) | [Paper](https://github.com/intsystems/Gritsai-MS-Thesis/blob/master/paper/multitask.pdf), [Slides](https://github.com/intsystems/Gritsai-MS-Thesis/blob/master/slides/pre_defense_nir_presentation.pdf) |
 | [Nikita Kornilov](https://scholar.google.com/citations?user=zvQZigsAAAAJ&hl=ru) | 1 | Методы оптимизации, устойчивые к тяжелым шумам | [Alexander Gasnikov, DSc](https://scholar.google.com/citations?user=AmeE8qkAAAAJ&hl=ru) | [Paper](https://arxiv.org/pdf/2502.07923), [Slides](https://drive.google.com/file/d/1S2pqjKfD4iSlp4nYkxyTa42I9suwvvzE/view?usp=sharing) |
+| [Grigoriy Ksenofontov](https://scholar.google.com/citations?user=e0mirzYAAAAJ&hl=ru) | 2 | Discrete Schrödinger Bridges | [Alexander Korotin, PhD](https://scholar.google.ru/citations?user=1rIIvjAAAAAJ&hl=ru) | [Publication](https://openreview.net/forum?id=XcPDT615Gd), [Code](https://github.com/gregkseno/catsbench), [Slides](https://drive.google.com/file/d/1CHXeKmzl1T2gLRDaaysqEmMHuLQue86T/view?usp=sharing) |
 
 #### Master's Students (2nd year)
 
