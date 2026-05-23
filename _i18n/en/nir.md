@@ -32,6 +32,7 @@ This page contains information about the research projects of students at the In
 | Student | Title | Advisor | Links |
 | :------ | :---- | :------ | :---- |
 | [Name Surname](https://example.com/) | Title | [Name Surname](https://example.com/) | [Paper](https://example.com/), [Code](https://example.com/), [Slides](https://example.com/) |
+| [Alexey Kravatskiy](https://scholar.google.com/citations?user=aLnWEyUAAAAJ&hl=en) | ImprovEvolve: Ask AlphaEvolve to Improve the Input Solution and Then Improvise | [Ivan Oseledets, DSc](https://scholar.google.com/citations?hl=ru&user=5kMqBQEAAAAJ&view_op=list_works&sortby=pubdate) | [Paper](https://arxiv.org/pdf/2602.10233), [Code](https://github.com/FusionBrainLab/gigaevo-core/commit/6d6fec46d3d360d51adeafdaa31aaff9939de6e0), [Slides](https://drive.google.com/file/d/1ueEtDGYfGE84IBISvxQJZXrTefXuQFEq/view) |
 
 ### 2025 Fall
 
