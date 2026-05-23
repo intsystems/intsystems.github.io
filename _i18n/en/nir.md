@@ -41,6 +41,7 @@ This page contains information about the research projects of students at the In
 | :------ | :---- | :------ | :---- |
 | [Alexey Kravatskiy](https://scholar.google.com/citations?user=aLnWEyUAAAAJ&hl=en) | ImprovEvolve: Ask AlphaEvolve to Improve the Input Solution and Then Improvise | [Ivan Oseledets, DSc](https://scholar.google.com/citations?hl=ru&user=5kMqBQEAAAAJ&view_op=list_works&sortby=pubdate) | [Paper](https://arxiv.org/pdf/2602.10233), [Code](https://github.com/FusionBrainLab/gigaevo-core/commit/6d6fec46d3d360d51adeafdaa31aaff9939de6e0), [Slides](https://drive.google.com/file/d/1ueEtDGYfGE84IBISvxQJZXrTefXuQFEq/view) |
 | Sergey Dementev | Mathematical model of hidden feedback loop | [Anton Khritankov, PhD](https://scholar.google.com/citations?hl=ru&user=OtxWKpMAAAAJ) | [Paper](https://github.com/sdem3/Hidden-Feedback-Loops-At-RecSys/tree/main/paper), [Code](https://github.com/sdem3/Hidden-Feedback-Loops-At-RecSys/tree/main/code), [Slides](https://github.com/sdem3/Hidden-Feedback-Loops-At-RecSys/tree/main/slides) |
+| Aleksandr Astakhov | Dimensionality reduction in control problems | [Vadim Strijov, DSc](https://scholar.google.com/citations?user=3TpENmIAAAAJ&hl=en) | [Paper](https://github.com/AleksandrAstakhov/dynamic-systems/blob/dev/docs/thesis.pdf), [Code](https://github.com/AleksandrAstakhov/dynamic-systems/tree/dev), [Slides](https://github.com/AleksandrAstakhov/dynamic-systems/blob/dev/docs/presentation.pdf) |
 
 
 ### 2025 Fall
