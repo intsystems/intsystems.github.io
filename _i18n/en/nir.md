@@ -8,7 +8,7 @@ This page contains information about the research projects of students at the In
 
 | PhD Student | Year | Title | Advisor | Links |
 | :---------- | :--: | :---- | :------ | :---- |
-| [Name Surname](https://example.com/) | Year | Title | [Name Surname, PhD/DSc](https://example.com/) | [Paper](https://example.com/), [Code](https://example.com/), [Slides](https://example.com/) |
+| [German Gritsai](https://scholar.google.com/citations?hl=ru&user=68A6gGYAAAAJ&view_op=list_works&sortby=pubdate) | 1 | Verification of artificially generated text fragments | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=ru) | [Paper](https://github.com/intsystems/Gritsai-MS-Thesis/blob/master/paper/multitask.pdf), [Slides](https://github.com/intsystems/Gritsai-MS-Thesis/blob/master/slides/pre_defense_nir_presentation.pdf) |
 
 #### Master's Students (2nd year)
 
