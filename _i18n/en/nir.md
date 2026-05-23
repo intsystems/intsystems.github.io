@@ -9,7 +9,7 @@ This page contains information about the research projects of students at the In
 | PhD Student | Year | Title | Advisor | Links |
 | :---------- | :--: | :---- | :------ | :---- |
 | [German Gritsai](https://scholar.google.com/citations?hl=ru&user=68A6gGYAAAAJ&view_op=list_works&sortby=pubdate) | 1 | Verification of artificially generated text fragments | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=ru) | [Paper](https://github.com/intsystems/Gritsai-MS-Thesis/blob/master/paper/multitask.pdf), [Slides](https://github.com/intsystems/Gritsai-MS-Thesis/blob/master/slides/pre_defense_nir_presentation.pdf) |
-
+| [Nikita Kornilov](https://scholar.google.com/citations?user=zvQZigsAAAAJ&hl=ru) | 1 | Методы оптимизации, устойчивые к тяжелым шумам | [Alexander Gasnikov, DSc](https://scholar.google.com/citations?user=AmeE8qkAAAAJ&hl=ru) | [Paper](https://arxiv.org/pdf/2502.07923), [Slides](https://drive.google.com/file/d/1S2pqjKfD4iSlp4nYkxyTa42I9suwvvzE/view?usp=sharing) |
 #### Master's Students (2nd year)
 
 | Student | Title | Advisor | Links |
