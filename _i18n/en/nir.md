@@ -8,30 +8,29 @@ This page contains information about the research projects of students at the In
 
 | PhD Student | Year | Title | Advisor | Links |
 | :---------- | :--: | :---- | :------ | :---- |
-| [Name Surname](https://example.com/) | Year | Title | [Name Surname](https://example.com/) | [Paper](https://example.com/), [Code](https://example.com/), [Slides](https://example.com/) |
+| [Name Surname](https://example.com/) | Year | Title | [Name Surname, PhD/DSc](https://example.com/) | [Paper](https://example.com/), [Code](https://example.com/), [Slides](https://example.com/) |
 
 #### Master's Students (2nd year)
 
 | Student | Title | Advisor | Links |
 | :------ | :---- | :------ | :---- |
-| [Nikita Kiselev](https://kisnikser.github.io/) | Curvature-Aligned Probing for Local Loss-Landscape Stabilization | [Andrey Grabovoy](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ) | [Paper](https://arxiv.org/abs/2604.14870), [Code](https://github.com/intsystems/curvature-subspace-landscape), [Slides](https://github.com/intsystems/robust-loss-landscape-convergence/blob/main/slides/main.pdf) |
-| Kirill Semkin | Dynamical systems time series classification | [Vadim Strijov](https://intsystems.github.io/ru/people/strijov_vv/index.html)  | [Paper](https://github.com/intsystems/n_ode/blob/main/paper/node_classification_Semkin.pdf), [Code](https://github.com/intsystems/n_ode/tree/main/experiment), [Slides](https://github.com/intsystems/n_ode/blob/main/slides/neural_ode_Semkin_slides.pdf) |
+| [Nikita Kiselev](https://kisnikser.github.io/) | Curvature-Aligned Probing for Local Loss-Landscape Stabilization | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ) | [Paper](https://arxiv.org/abs/2604.14870), [Code](https://github.com/intsystems/curvature-subspace-landscape), [Slides](https://github.com/intsystems/robust-loss-landscape-convergence/blob/main/slides/main.pdf) |
+| Kirill Semkin | Dynamical systems time series classification | [Vadim Strijov, DSc](https://intsystems.github.io/ru/people/strijov_vv/index.html)  | [Paper](https://github.com/intsystems/n_ode/blob/main/paper/node_classification_Semkin.pdf), [Code](https://github.com/intsystems/n_ode/tree/main/experiment), [Slides](https://github.com/intsystems/n_ode/blob/main/slides/neural_ode_Semkin_slides.pdf) |
 | [Ruslan Nasyrov](https://github.com/2001092236) | Analyzing large-dimensional data with a small sample size | [Alexei Zaikin, PhD](https://scholar.google.com/citations?user=SE0YfKkAAAAJ&hl=en)  | [Paper](https://github.com/intsystems/Modelling-data-with-parenclitic-and-synolitic-networks/blob/master/paper/Synolitic_Graphs_%D0%BC%D0%B0%D0%B3%D0%B8%D1%81%D1%82%D0%B5%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%94%D0%98%D0%9F%D0%9B%D0%9E%D0%9C%20(4).pdf), [Code](https://github.com/intsystems/Modelling-data-with-parenclitic-and-synolitic-networks/blob/master/code/experiment_(fixed).ipynb), [Slides](https://github.com/intsystems/Modelling-data-with-parenclitic-and-synolitic-networks/blob/master/slides/Synolitic_Geaphs_presentation%20(1).pdf) |
-| [Matvei Kreinin](https://github.com/kreininmv) | Medical Flow Matching for CT Translation | [Andrey Grabovoy](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ) | [Paper](https://github.com/intsystems/Kreinin-MS-Thesis/blob/main/paper/diploma/main.pdf), [Code](https://github.com/intsystems/Kreinin-MS-Thesis), [Slides](https://github.com/intsystems/Kreinin-MS-Thesis/blob/main/slides/slides.pdf) |
+| [Matvei Kreinin](https://github.com/kreininmv) | Medical Flow Matching for CT Translation | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ) | [Paper](https://github.com/intsystems/Kreinin-MS-Thesis/blob/main/paper/diploma/main.pdf), [Code](https://github.com/intsystems/Kreinin-MS-Thesis), [Slides](https://github.com/intsystems/Kreinin-MS-Thesis/blob/main/slides/slides.pdf) |
 | [Iryna Zabarianska](https://www.researchgate.net/profile/Iryna-Zabarianska) | Estimation of mutual information based on discrete diffusion bridges | [Alexander Korotin, PhD](https://akorotin.netlify.app/)| [Paper](https://doi.org/10.48550/arXiv.2602.08894), [Code](https://github.com/intsystems/DBMI-/blob/main/notebooks/info-model-universal.ipynb), [Slides](https://drive.google.com/file/d/1Kfhq-IjRj7QiH2s7BjjyWOmdjSnny7C3/view?usp=sharing) |
 
 #### Master's Students (1st year)
 
 | Student | Title | Advisor | Links |
 | :------ | :---- | :------ | :---- |
-| [Dmitrii Vasilenko](https://github.com/Dimundel) | Jacobian Analysis of a Recurrent Transformer Block | [Andrey Grabovoy](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ) | [Paper](https://github.com/intsystems/Vasilenko-MS-Thesis/blob/main/paper/Jacobian_Analysis_of_a_Recurrent_Transformer_Block.pdf), [Code](https://github.com/intsystems/Vasilenko-MS-Thesis/tree/main/src), [Slides](https://github.com/intsystems/Vasilenko-MS-Thesis/blob/main/slides/slides.pdf) |
-| [Denis Rubtsov](https://github.com/RubtsovDN/Rubtsov-MSc-Thesis) | Generative Models from Physical Processes | [Alexander Korotin](https://scholar.google.com/citations?user=1rIIvjAAAAAJ&hl=ru&oi=ao) | [Paper](https://github.com/RubtsovDN/Rubtsov-MSc-Thesis/blob/master/paper/main.pdf), [Code](https://github.com/RubtsovDN/Rubtsov-MSc-Thesis/tree/master/code), [Slides](https://github.com/RubtsovDN/Rubtsov-MSc-Thesis/blob/master/slides/slides.pdf) |
+| [Dmitrii Vasilenko](https://github.com/Dimundel) | Jacobian Analysis of a Recurrent Transformer Block | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ) | [Paper](https://github.com/intsystems/Vasilenko-MS-Thesis/blob/main/paper/Jacobian_Analysis_of_a_Recurrent_Transformer_Block.pdf), [Code](https://github.com/intsystems/Vasilenko-MS-Thesis/tree/main/src), [Slides](https://github.com/intsystems/Vasilenko-MS-Thesis/blob/main/slides/slides.pdf) |
+| [Denis Rubtsov](https://github.com/RubtsovDN/Rubtsov-MSc-Thesis) | Generative Models from Physical Processes | [Alexander Korotin, PhD](https://scholar.google.com/citations?user=1rIIvjAAAAAJ&hl=ru&oi=ao) | [Paper](https://github.com/RubtsovDN/Rubtsov-MSc-Thesis/blob/master/paper/main.pdf), [Code](https://github.com/RubtsovDN/Rubtsov-MSc-Thesis/tree/master/code), [Slides](https://github.com/RubtsovDN/Rubtsov-MSc-Thesis/blob/master/slides/slides.pdf) |
 
 #### Bachelor's Students (4th year)
 
 | Student | Title | Advisor | Links |
 | :------ | :---- | :------ | :---- |
-| [Name Surname](https://example.com/) | Title | [Name Surname](https://example.com/) | [Paper](https://example.com/), [Code](https://example.com/), [Slides](https://example.com/) |
 | [Alexey Kravatskiy](https://scholar.google.com/citations?user=aLnWEyUAAAAJ&hl=en) | ImprovEvolve: Ask AlphaEvolve to Improve the Input Solution and Then Improvise | [Ivan Oseledets, DSc](https://scholar.google.com/citations?hl=ru&user=5kMqBQEAAAAJ&view_op=list_works&sortby=pubdate) | [Paper](https://arxiv.org/pdf/2602.10233), [Code](https://github.com/FusionBrainLab/gigaevo-core/commit/6d6fec46d3d360d51adeafdaa31aaff9939de6e0), [Slides](https://drive.google.com/file/d/1ueEtDGYfGE84IBISvxQJZXrTefXuQFEq/view) |
 
 ### 2025 Fall
