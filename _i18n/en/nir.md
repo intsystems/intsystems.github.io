@@ -29,6 +29,7 @@ This page contains information about the research projects of students at the In
 | Nikita Okhotnikov | Stable Rank Based Analysis of Low-Rank Adaptation: Tighter Expressivity and Generalization Bounds | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ) | [Paper](https://github.com/intsystems/lora_stable_rank/blob/main/paper/main.pdf), [Code](https://github.com/intsystems/lora_stable_rank/tree/main/code), [Slides](https://github.com/intsystems/lora_stable_rank/blob/main/slides/main.pdf) |
 | Ilgam Latypov | UCB-type Algorithm for Budget-Constrained Expert Learning | [Yuriy Dorn, PhD](https://scholar.google.com/citations?user=ByIc-l8AAAAJ) | [Paper](https://github.com/intsystems/Latypov-MS-Thesis/blob/main/paper/paper.pdf), [Code](https://github.com/intsystems/Latypov-MS-Thesis/tree/main), [Slides](https://github.com/intsystems/Latypov-MS-Thesis/blob/main/slides/slides_Latypov.pdf) |
 | [Anastasia Voznyuk](https://github.com/natriistorm) | Automated Text Quality Analysis based on Graph Representations | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=ru&oi=sra) | [Paper](https://github.com/intsystems/TextQualityAnalyser/tree/main/paper), [Code](https://github.com/intsystems/TextQualityAnalyser/tree/main/code), [Slides](https://github.com/intsystems/TextQualityAnalyser/tree/main/slides) |
+
 #### Master's Students (1st year)
 
 | Student | Title | Advisor | Links |
