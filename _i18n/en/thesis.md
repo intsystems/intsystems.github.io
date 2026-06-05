@@ -10,7 +10,7 @@ This page contains links to recent theses of students of the Intelligent Systems
 | :----------------- | :--------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------- | :------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------- |
 
 
-| [Iryna Zabarianska](https://www.researchgate.net/profile/Iryna-Zabarianska) | Estimation of mutual information based on discrete diffusion bridges | [Alexander Korotin, PhD](https://akorotin.netlify.app/)| [Project](https://github.com/intsystems/DBMI-/blob/main/notebooks/info-model-universal.ipynb)               | [Thesis](...)     | [Slides](...)    |
+| [Iryna Zabarianska](https://www.researchgate.net/profile/Iryna-Zabarianska) | Estimation of mutual information based on discrete diffusion bridges | [Alexander Korotin, PhD](https://akorotin.netlify.app/)| [Project](https://github.com/intsystems/DBMI-/blob/main/notebooks/info-model-universal.ipynb)               | Thesis     | Slides   |
 
 ### 2025
 
