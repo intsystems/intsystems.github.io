@@ -2,6 +2,10 @@
 
 This page contains links to recent theses of students of the Intelligent Systems Department, MIPT.
 
+### 2026
+
+#### Master's Theses
+
 ### 2025
 
 #### Master's Theses
