@@ -2,7 +2,7 @@
 title: people.grishanov_av
 edit: true
 position: pgs
-avatar: grishanov_av.jpeg
+avatar: grishanov_av.jpg
 mail: grishanov.av@phystech.edu
 site:
 scholar: https://scholar.google.com/citations?user=LLgj-U4AAAAJ&hl=en
