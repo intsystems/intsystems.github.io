@@ -21,6 +21,12 @@ This page contains links to recent theses of students of the Intelligent Systems
 | Terentyev Alexander | Классификация временных рядов динамических систем | [Vadim Strijov, DSc](https://scholar.google.com/citations?user=3TpENmIAAAAJ&hl=en)| [Project](https://github.com/lopate/inverse-npde)| [Thesis](https://github.com/lopate/inverse-npde/blob/main/paper/thesis/main.pdf)| [Slides](https://github.com/lopate/inverse-npde/blob/main/slides/defense.pdf)|
 | Anastasia Voznyuk | Автоматический анализ текстов с помощью графовых представлений | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ)| [Project](https://github.com/intsystems/TextQualityAnalyser)| [Thesis](https://github.com/intsystems/TextQualityAnalyser)| [Slides](https://github.com/intsystems/TextQualityAnalyser/blob/main/slides/predefense_slides.pdf)|
 
+#### Bachelor's Theses
+
+| Student               | Title                                                                                                   | Advisor                                                                         | Link to Project                                                                                    | Link to Paper                                                                                                               | Link to Slides                                                                                                                                          |
+| :-------------------- | :------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Kravatskiy Alexey | Non-spectral matrix norms for neural network training | [Ivan Oseledets, DSc](https://scholar.google.com/citations?user=5kMqBQEAAAAJ&hl=en&oi=ao) | [Project](https://github.com/intsystems/Kravatskiy-BSc-Thesis) | [Thesis](https://github.com/intsystems/Kravatskiy-BSc-Thesis/blob/main/paper/ky_fan_thesis.pdf) | [Slides](https://github.com/intsystems/Kravatskiy-BSc-Thesis/blob/main/slides/ky_fan_slides.pdf) |
+
 ### 2025
 
 #### Master's Theses
