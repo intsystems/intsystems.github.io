@@ -32,6 +32,7 @@ This page contains links to recent theses of students of the Intelligent Systems
 |[Danila Chernousov](https://github.com/Chernousovdv) | Геометрический подход к оценке сложности данных на основе генеративных диффузионных моделей | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=ru) | [Project](https://github.com/intsystems/Chernousov-BSc-Thesis) | [Thesis](https://github.com/intsystems/Chernousov-BSc-Thesis/blob/main/paper/report.pdf)| [Slides](https://github.com/intsystems/Chernousov-BSc-Thesis/blob/main/slides/defense.pdf) |
 |[Matvey Karpov](https://github.com/karpovml) | Параметризация тематических моделей локального контекста | [Konstantin Vorontsov, DSc](https://scholar.google.com/citations?user=KIW4fnsAAAAJ&hl=en&oi=ao) | [Project](https://github.com/karpovml/SciRus-contrastive-retrieval) | [Thesis](https://github.com/karpovml/SciRus-contrastive-retrieval/tree/master/paper)| [Slides](https://github.com/karpovml/SciRus-contrastive-retrieval/blob/master/slides/main.pdf) |
 |[Mark Ikonnikov](https://github.com/makemebright) | Bayesian Causal Inference in the Convergent Cross-Mapping test | [Vadim Strijov, DSc](https://scholar.google.com/citations?user=3TpENmIAAAAJ&hl=en) | [Project](https://github.com/makemebright/Ikonnikov_BS_thesis) |  [Thesis](https://github.com/makemebright/Ikonnikov_BS_thesis/blob/master/paper/Ikonnikov_CI_%D0%A1%D0%A1M_thesis_raw.pdf) | [Slides](https://github.com/makemebright/Ikonnikov_BS_thesis/blob/master/slides/Ikonnikov_CI_CCM_slides_raw.pdf) |
+
 ### 2025
 
 #### Master's Theses
