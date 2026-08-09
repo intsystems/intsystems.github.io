@@ -3,7 +3,7 @@ title: people.strijov_vv
 edit: true
 position: dos
 avatar: strijov_vv.jpg
-mail: strijov@аforecsys.ru
+mail: strijov@forecsys.ru
 site: https://m1p.org/index.php/My_first_scientific_paper
 scholar: https://scholar.google.com/citations?user=3TpENmIAAAAJ&hl=en&oi=ao
 orcid: https://orcid.org/0000-0002-2194-8859/print
