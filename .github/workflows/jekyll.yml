@@ -26,12 +26,18 @@ jobs:
       - name: Optimize images
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq jpegoptim pngquant imagemagick
+          # Collect file lists up front: mogrify/jpegoptim create temp files
+          # (".!NNN!name.jpg") in place, and a streaming `find | xargs` would
+          # pick those up mid-run and fail on them.
+          find images -type f -not -name '.*' \( -iname '*.jpg' -o -iname '*.jpeg' \) -print0 > /tmp/jpg.list
+          find images/people -type f -not -name '.*' \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -print0 > /tmp/people.list
+          find images -type f -not -name '.*' -iname '*.png' -print0 > /tmp/png.list
           # Cap dimensions: photos never render wider than ~1920px (avatars at 300px)
-          find images -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -print0 | xargs -0 -r mogrify -resize '1920x1920>' -auto-orient
-          find images/people -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -print0 | xargs -0 -r mogrify -resize '600x600>'
+          xargs -0 -r mogrify -resize '1920x1920>' -auto-orient < /tmp/jpg.list
+          xargs -0 -r mogrify -resize '600x600>' < /tmp/people.list
           # Lossy-but-visually-safe compression
-          find images -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -print0 | xargs -0 -r jpegoptim --max=82 --strip-all --quiet
-          find images -type f -iname '*.png' -print0 | xargs -0 -r -n 50 pngquant --quality=70-90 --speed 1 --ext .png --force --skip-if-larger || true
+          xargs -0 -r jpegoptim --max=82 --strip-all --quiet < /tmp/jpg.list
+          xargs -0 -r -n 50 pngquant --quality=70-90 --speed 1 --ext .png --force --skip-if-larger < /tmp/png.list || true
           du -sh images
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
