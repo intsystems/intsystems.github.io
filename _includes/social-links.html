@@ -1,0 +1,24 @@
+{% comment %}
+  Department social links (GitHub, mail, Telegram, YouTube, Rutube).
+  Single source of truth for the four places they appear:
+  navbar (desktop + mobile), footer, and the home page hero.
+
+  Parameters:
+    link_class  — CSS class for each <a> (optional)
+    skip_rutube — set to true to omit the Rutube text link (hero uses this)
+{% endcomment %}
+{%- if site.github -%}
+<a href="https://github.com/{{ site.github }}" class="{{ include.link_class }}" target="_blank" rel="noopener"><i class="fa fa-github"></i></a>
+{%- endif -%}
+{%- if site.mail -%}
+<a href="#" onclick="copyEmailToClipboard(event, '{{ site.mail }}')" class="{{ include.link_class }}"><i class="fa fa-envelope-o"></i></a>
+{%- endif -%}
+{%- if site.telegram -%}
+<a href="{{ site.telegram }}" class="{{ include.link_class }}" target="_blank" rel="noopener"><i class="fa fa-telegram"></i></a>
+{%- endif -%}
+{%- if site.youtube -%}
+<a href="{{ site.youtube }}" class="{{ include.link_class }}" target="_blank" rel="noopener"><i class="fa fa-youtube-play"></i></a>
+{%- endif -%}
+{%- if site.rutube and include.skip_rutube != true -%}
+<a href="{{ site.rutube }}" class="{{ include.link_class }} social-link--text" target="_blank" rel="noopener">Rutube</a>
+{%- endif -%}

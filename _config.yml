@@ -40,7 +40,7 @@ plugins:
 languages: ["en", "ru"]
 
 exclude_from_localizations:
-  ["images", "favicon.ico", "javascript", "style.scss"]
+  ["images", "favicon.ico", "javascript", "style.scss", "fonts"]
 
 default_locale_in_subfolder: False
 

@@ -20,6 +20,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      # Compress images at build time: originals stay untouched in the repo,
+      # only the deployed site gets optimized copies. Contributors commit
+      # plain jpg/png without any manual compression.
+      - name: Optimize images
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq jpegoptim pngquant
+          # Cap dimensions: photos never render wider than ~1920px (avatars at 300px)
+          find images -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -print0 | xargs -0 -r mogrify -resize '1920x1920>' -auto-orient
+          find images/people -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -print0 | xargs -0 -r mogrify -resize '600x600>'
+          # Lossy-but-visually-safe compression
+          find images -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -print0 | xargs -0 -r jpegoptim --max=82 --strip-all --quiet
+          find images -type f -iname '*.png' -print0 | xargs -0 -r -n 50 pngquant --quality=70-90 --speed 1 --ext .png --force --skip-if-larger || true
+          du -sh images
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:

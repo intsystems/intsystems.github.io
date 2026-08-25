@@ -1,105 +1,45 @@
 ---
 layout: default
 ---
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+{% assign person_id = page.id | split: "/" | last %}
 <div class="profile-header">
     <div class="profile-avatar">
-        {% if page.avatar %}
-        <img width="300" height="auto" src="{{ site.baseurl_root }}/images/people/{{page.avatar}}">
-        {% else %}
-        <img width="300" height="auto" src="{{ site.baseurl_root }}/images/people/default.jpg">
-        {% endif %}
+        <img width="300" height="auto" src="{{ site.baseurl_root }}/images/people/{{ page.avatar | default: 'default.jpg' }}">
     </div>
     <div class="profile-info">
-        <div class="no_toc_section" style="margin-top: 2rem;">
-            <h1 id="{% t people.{{ page.id | split: '/' | last }} %}" class="title" style="margin-bottom: 0.5rem;">{% t people.{{ page.id | split: '/' | last }} %}</h1>
+        <div class="no_toc_section profile-name">
+            <h1 id="{% t people.{{ person_id }} %}" class="title page-title">{% t people.{{ person_id }} %}</h1>
         </div>
-        {% if page.site or page.mail or page.telegram or page.scholar or page.orcid or page.scopus or page.elib or page.mathnet %}
+        {% assign profile_links = site.data.profile_links | where_exp: "l", "page[l.key]" %}
+        {% if profile_links.size > 0 %}
         <div class="profile-links">
-            {% if page.site %}
+            {% for link in profile_links %}
+            {% assign value = page[link.key] %}
             <div class="profile-link-item">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                <a href="{{page.site}}" target="_blank">{% t profile.website %}</a>
+                <i class="{{ link.icon }}" aria-hidden="true"></i>
+                {% case link.key %}
+                {% when 'site' %}<a href="{{ value }}" target="_blank">{% t profile.website %}</a>
+                {% when 'mail' %}<a href="#" onclick="copyEmailToClipboard(event, '{{ value }}')">{{ value }}</a>
+                {% when 'telegram' %}<a href="https://t.me/{{ value }}" target="_blank">@{{ value }}</a>
+                {% else %}<a href="{{ value }}" target="_blank">{{ link.label }}</a>
+                {% endcase %}
             </div>
-            {% endif %}
-            
-            {% if page.mail %}
-            <div class="profile-link-item">
-                <i class="fa fa-envelope-o"></i>
-                <a href="#" onclick="copyEmailToClipboard(event, '{{page.mail}}')">{{ page.mail }}</a>
-            </div>
-            {% endif %}
-            
-            {% if page.telegram %}
-            <div class="profile-link-item">
-                <i class="fa fa-telegram"></i>
-                <a href="https://t.me/{{page.telegram}}" target="_blank">@{{ page.telegram }}</a>
-            </div>
-            {% endif %}
-            
-            {% if page.scholar %}
-            <div class="profile-link-item">
-                <i class="ai ai-google-scholar"></i>
-                <a href="{{page.scholar}}" target="_blank">Google Scholar</a>
-            </div>
-            {% endif %}
-            
-            {% if page.orcid %}
-            <div class="profile-link-item">
-                <i class="ai ai-orcid"></i>
-                <a href="{{page.orcid}}" target="_blank">ORCID</a>
-            </div>
-            {% endif %}
-            
-            {% if page.scopus %}
-            <div class="profile-link-item">
-                <i class="ai ai-scopus"></i>
-                <a href="{{page.scopus}}" target="_blank">Scopus</a>
-            </div>
-            {% endif %}
-            
-            {% if page.elib %}
-            <div class="profile-link-item">
-                <i class="fa fa-bar-chart"></i>
-                <a href="{{page.elib}}" target="_blank">eLibrary</a>
-            </div>
-            {% endif %}
-            
-            {% if page.mathnet %}
-            <div class="profile-link-item">
-                <i class="fa fa-bar-chart"></i>
-                <a href="{{page.mathnet}}" target="_blank">Math-Net</a>
-            </div>
-            {% endif %}
+            {% endfor %}
         </div>
         {% endif %}
     </div>
 </div>
 {{ content }}
 
-{% assign found = false %}
-{% for course in site.course %}
-	{% assign lecturers = course.lecturers | split: "," %}
-	{% for lecturer in lecturers %}
-		{% if page.url contains lecturer %}	
-			   {% assign found = true %} 
-		{% endif %}			
-	{% endfor %}	
-  {% endfor %}
-
-{% if found %}
+{% assign taught = site.course | where_exp: "c", "c.lecturers contains person_id" %}
+{% if taught.size > 0 %}
 <hr>
 <h3>{% t profile.teaches %}</h3>
 <div class="profile-courses-list">
-    {% for course in site.course %}
-		{% assign lecturers = course.lecturers | split: "," %}
-		{% for lecturer in lecturers %}
-			{% if page.url contains lecturer %}
+    {% for course in taught %}
     <a href="{{ site.baseurl }}{{ course.url }}" class="profile-course-item">
         {% t courses.{{ course.id | split: '/' | last }} %}
     </a>
-    {% endif %}			
-		{% endfor %}	
-	  {% endfor %}
+    {% endfor %}
 </div>
 {% endif %}

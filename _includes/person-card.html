@@ -1,0 +1,22 @@
+{% comment %}
+  Person card: avatar thumbnail + name, linking to the profile page.
+  Used on /people/, course pages, and the home page.
+
+  Parameters (pass exactly one):
+    profile — a document from site.people
+    id      — a person id (e.g. "strijov_vv") to look up in site.people
+{% endcomment %}
+{%- if include.profile -%}
+  {%- assign profile = include.profile -%}
+{%- else -%}
+  {%- assign profile = site.people | where_exp: "p", "p.url contains include.id" | first -%}
+{%- endif -%}
+{%- if profile -%}
+{%- assign pid = profile.id | split: "/" | last -%}
+<div class="list-item-people">
+    <p class="list-post-title">
+        <a href="{{ site.baseurl }}{{ profile.url }}"><img loading="lazy" class="profile-thumbnail" src="{{ site.baseurl_root }}/images/people/{{ profile.avatar | default: 'default.jpg' }}"></a>
+        <a class="name" href="{{ site.baseurl }}{{ profile.url }}">{% t people.{{ pid }} %}</a>
+    </p>
+</div>
+{%- endif -%}

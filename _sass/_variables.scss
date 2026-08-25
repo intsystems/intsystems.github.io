@@ -1,3 +1,4 @@
+// Breakpoints
 $lt-width: 768px;
 $sm-width: 852px;
 $md-width: 1152px;
@@ -7,11 +8,19 @@ $qhd-width: 2560px;
 $wqhd-width: 3440px;
 $uhd-width: 3840px;
 
+// Container width per breakpoint: on screens wider than the key,
+// .container and .navbar-container are capped at the value.
+$container-widths: (
+  $xl-width: $lg-width,
+  $qhd-width: $xl-width,
+  $wqhd-width: $qhd-width,
+  $uhd-width: $wqhd-width,
+);
+
+// Colors
 $bg-default: #fff;
 $href-color: #c42929;
 $href-bg-color: #ffeeee;
-
-$page-margin: 0.3;
 
 // Font families
 $font-primary: "Open Sans", sans-serif;
@@ -20,8 +29,6 @@ $font-monospace: ui-monospace, Monaco, monospace;
 // Fonts
 $font-size-base: 18px;
 $font-weight-base: 400;
-
-$font-size-base-large: 1rem;
 
 // Headings
 $font-size-h1: 2rem;
@@ -39,6 +46,3 @@ $font-size-code: 1rem;
 $font-size-navbar: 1rem;
 $font-size-navbar-icon: 24px;
 $font-size-footer-icon: 20px;
-
-// Math display
-$font-size-math: 1.2rem;

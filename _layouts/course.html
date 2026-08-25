@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="no_toc_section">
-    <h2 id="{% t courses.{{ page.id | split: '/' | last }} %}" class="title" style="margin-bottom: 0.5rem;">
+    <h2 id="{% t courses.{{ page.id | split: '/' | last }} %}" class="title page-title">
         {% t courses.{{ page.id | split: '/' | last }} %}
     </h2>
 </div>
@@ -17,26 +17,9 @@ layout: default
 {% if page.lecturers %}
 <div class="list people">
     {% assign lecturers = page.lecturers | split: "," %}
-{% for lecturer in lecturers %}
-{% for profile in site.people %}
-{% if profile.url contains lecturer %}
-    <div class="list-item-people">
-        <p class="list-post-title">
-            {% if profile.avatar %}
-            <a href="{{ site.baseurl }}{{ profile.url }}">
-                <img class="profile-thumbnail" src="{{ site.baseurl_root }}/images/people/{{profile.avatar}}">
-            </a>
-            {% else %}
-            <a href="{{ site.baseurl }}{{ profile.url }}">
-                <img class="profile-thumbnail" src="{{ site.baseurl_root }}/images/people/default.jpg">
-            </a>
-            {% endif %}
-            <a class="name" href="{{ site.baseurl }}{{ profile.url }}">{% t people.{{ profile.id | split: "/" | last }} %}</a>
-        </p>
-    </div>
-    {% endif %}
-{% endfor %}
-{% endfor %}
+    {% for lecturer in lecturers %}
+    {% include person-card.html id=lecturer %}
+    {% endfor %}
 </div>
 {% endif %}
 

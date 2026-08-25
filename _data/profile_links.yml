@@ -1,0 +1,26 @@
+# Contact / academic links shown on a person's profile page, in this order.
+# `key` is the front-matter field in _people/*.md, `icon` is a class from
+# _sass/_icons.scss. To support a new link type, add an entry here
+# (and, if it needs a new icon, add the icon to _icons.scss).
+# Keys `site`, `mail` and `telegram` get special rendering in _layouts/profile.html.
+- key: site
+  icon: fa fa-user
+- key: mail
+  icon: fa fa-envelope-o
+- key: telegram
+  icon: fa fa-telegram
+- key: scholar
+  icon: ai ai-google-scholar
+  label: Google Scholar
+- key: orcid
+  icon: ai ai-orcid
+  label: ORCID
+- key: scopus
+  icon: ai ai-scopus
+  label: Scopus
+- key: elib
+  icon: fa fa-bar-chart
+  label: eLibrary
+- key: mathnet
+  icon: fa fa-bar-chart
+  label: Math-Net

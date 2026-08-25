@@ -118,3 +118,17 @@
 .fade-in-fast {
     transition-duration: 0.3s;
 }
+
+// Respect user's motion preferences: show everything immediately
+@media (prefers-reduced-motion: reduce) {
+    .fade-in-section,
+    .fade-in-left,
+    .fade-in-right,
+    .fade-in-up,
+    .fade-in-down,
+    .fade-in-scale {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

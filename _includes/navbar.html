@@ -22,7 +22,7 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Main menu (collapsible on mobile) -->
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-center">
                 {% for nav in site.nav.pages %}
@@ -31,16 +31,16 @@
                     <a
                         class="nav-link dropdown-toggle"
                         href="#"
-                        id="{{ t nav.id }}"
+                        id="{{ nav.id }}"
                         role="button"
                         data-toggle="dropdown"
                         aria-haspopup="true"
                         aria-expanded="false"
                     >{% t nav.name %}</a>
-                    <div class="dropdown-menu" aria-labelledby="{{ t nav.id }}">
+                    <div class="dropdown-menu" aria-labelledby="{{ nav.id }}">
                         <ul class="nav navbar-nav">
                             {% for drop in nav.dropdown %}
-                            <li style="width:100% !important;">
+                            <li>
                                 <a class="name" href="{{ site.baseurl }}{{ drop.href }}">{% t drop.name %}</a>
                             </li>
                             {% endfor %}
@@ -54,9 +54,8 @@
                 {% endif %}
                 {% endfor %}
             </ul>
-            <!-- Social links for mobile (inside collapse menu) -->
+            <!-- Language switcher + social links for mobile (inside collapse menu) -->
             <div class="navbar-social-mobile">
-                <!-- Language switcher -->
                 <div class="navbar-social-mobile-item">
                     <span class="navbar-social-mobile-label">Language:</span>
                     <div class="navbar-social-mobile-links">
@@ -69,42 +68,16 @@
                         {% endfor %}
                     </div>
                 </div>
-                <!-- Social icons -->
                 <div class="navbar-social-mobile-item">
                     <span class="navbar-social-mobile-label">Connect:</span>
                     <div class="navbar-social-mobile-icons">
-                        {% if site.github %}
-                        <a href="https://github.com/{{site.github}}" target="_blank" style="margin-right: 1rem;">
-                            <i class="fa fa-github"></i>
-                        </a>
-                        {% endif %}
-                        {% if site.mail %}
-                        <a href="#" onclick="copyEmailToClipboard(event, '{{site.mail}}')" style="margin-right: 1rem;">
-                            <i class="fa fa-envelope-o"></i>
-                        </a>
-                        {% endif %}
-                        {% if site.telegram %}
-                        <a href="{{site.telegram}}" target="_blank" style="margin-right: 1rem;">
-                            <i class="fa fa-telegram"></i>
-                        </a>
-                        {% endif %}
-                        {% if site.youtube %}
-                        <a href="{{site.youtube}}" target="_blank" style="margin-right: 1rem;">
-                            <i class="fa fa-youtube-play"></i>
-                        </a>
-                        {% endif %}
-                        {% if site.rutube %}
-                        <a href="{{site.rutube}}" target="_blank" style="font-size: 1rem; font-weight: 400; text-decoration: none;">
-                            Rutube
-                        </a>
-                        {% endif %}
+                        {% include social-links.html %}
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Social links -->
+        <!-- Language switcher + social links (desktop) -->
         <div class="navbar-social-block">
-            <!-- Language switcher -->
             <div class="nav-item dropdown">
                 <a
                     class="nav-link dropdown-toggle"
@@ -114,7 +87,6 @@
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
-                    style="color: inherit; text-decoration: none; cursor: pointer;"
                 >{{ site.global.langs[site.lang] }}</a>
                 <div class="dropdown-menu" aria-labelledby="languageDropdown">
                     <ul class="nav navbar-nav">
@@ -130,36 +102,7 @@
                     </ul>
                 </div>
             </div>
-            {% if site.github %}
-            <a href="https://github.com/{{site.github}}" class="navbar-social" target="_blank">
-                <i class="fa fa-github"></i>
-            </a>
-            {% endif %}
-            {% if site.mail %}
-            <a href="#" onclick="copyEmailToClipboard(event, '{{site.mail}}')" class="navbar-social">
-                <i class="fa fa-envelope-o"></i>
-            </a>
-            {% endif %}
-            {% if site.telegram %}
-            <a href="{{site.telegram}}" class="navbar-social" target="_blank">
-                <i class="fa fa-telegram"></i>
-            </a>
-            {% endif %}
-            {% if site.youtube %}
-            <a href="{{site.youtube}}" class="navbar-social" target="_blank">
-                <i class="fa fa-youtube-play"></i>
-            </a>
-            {% endif %}
-            {% if site.rutube %}
-            <a
-                href="{{site.rutube}}"
-                class="navbar-social"
-                target="_blank"
-                style="font-size: 1rem; font-weight: 400;"
-            >
-                Rutube
-            </a>
-            {% endif %}
+            {% include social-links.html link_class="navbar-social" %}
         </div>
     </div>
 </nav>

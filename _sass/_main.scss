@@ -415,14 +415,8 @@ table :is(p, span, a, li) {
   padding: 1rem 0;
 }
 
-.list-header > h1 {
-  margin: auto;
-}
-
-.list-header > h2 {
-  margin: auto;
-}
-
+.list-header > h1,
+.list-header > h2,
 .list-header > h3 {
   margin: auto;
 }
@@ -519,4 +513,17 @@ table :is(p, span, a, li) {
 .edit-floating-btn__icon {
   width: 24px;
   height: 24px;
+}
+
+// Shared page/section title spacing (formerly inline styles in layouts)
+.page-title {
+  margin-bottom: 0.5rem;
+}
+
+// Text variant of a social link (Rutube) — same size in navbar, footer and mobile menu
+a.social-link--text {
+  font-size: 1rem !important;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
 }

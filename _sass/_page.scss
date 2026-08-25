@@ -1,36 +1,24 @@
+// Page frame: .container (outer, centered by _bootstrap_shim.scss)
+// and .content (inner column, always centered, width varies by screen).
+
 .container {
   width: 100%;
-  padding: 0px;
-}
-
-.content {
-  padding: 10px;
-  margin-top: 2rem !important;
-  margin-bottom: 3rem !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  min-height: 100vh;
-
-  &.content--home {
-    margin-top: 0 !important;
-  }
+  padding: 0;
 }
 
 @media (max-width: $md-width) {
   .container {
-    width: 100%;
     padding: 0 10px;
   }
+}
 
-  .content {
-    margin-left: 0;
-    margin-right: 0;
-    width: 100%;
+.content {
+  padding: 10px;
+  margin: 2rem auto 3rem !important;
+  min-height: 100vh;
 
-    &.content--home {
-      margin-left: 0;
-      margin-right: 0;
-    }
+  &.content--home {
+    margin-top: 0 !important;
   }
 }
 
@@ -41,81 +29,19 @@
 }
 
 @media (min-width: $lt-width) {
-  .container {
-    width: 100%;
-  }
-
   .content {
-    margin-left: calc(#{$page-margin}* 100%);
     width: 70%;
-
-    &.content--home {
-      margin-left: auto;
-      margin-right: auto;
-    }
   }
 }
 
-@media (min-width: $xl-width) {
-  .container {
-    width: $lg-width;
-  }
-
-  .content {
-    // margin-left: calc(#{$page-margin}* 100%);
-    width: calc(#{$lg-width} * 0.7);
-
-    &.content--home {
-      margin-left: auto;
-      margin-right: auto;
+@each $bp, $w in $container-widths {
+  @media (min-width: $bp) {
+    .container {
+      width: $w;
     }
-  }
-}
 
-@media (min-width: $qhd-width) {
-  .container {
-    width: $xl-width;
-  }
-
-  .content {
-    margin-left: calc(#{$page-margin}* 100%);
-    width: calc(#{$xl-width} * 0.7);
-
-    &.content--home {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-}
-
-@media (min-width: $wqhd-width) {
-  .container {
-    width: $qhd-width;
-  }
-
-  .content {
-    margin-left: calc(#{$page-margin}* 100%);
-    width: calc(#{$qhd-width} * 0.7);
-
-    &.content--home {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-}
-
-@media (min-width: $uhd-width) {
-  .container {
-    width: $wqhd-width;
-  }
-
-  .content {
-    margin-left: calc(#{$page-margin}* 100%);
-    width: calc(#{$wqhd-width} * 0.7);
-
-    &.content--home {
-      margin-left: auto;
-      margin-right: auto;
+    .content {
+      width: calc(#{$w} * 0.7);
     }
   }
 }

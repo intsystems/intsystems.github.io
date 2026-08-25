@@ -1,5 +1,222 @@
-.layout-home {
-    margin: 0 auto;
+// --- Hero (full-width banner on top of the home page) ---
+
+.hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+
+.hero__bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("/images/main/вц_ран.jpg") center/cover no-repeat;
+    filter: blur(5px);
+    transform: scale(1.1);
+    z-index: 0;
+}
+
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    width: 90%;
+    max-width: 1200px;
+    padding: 1.5rem;
+}
+
+.hero__eyebrow {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    margin-bottom: 0;
+}
+
+.hero__title {
+    color: #fff;
+    margin: 0 0 1.5rem;
+    font-size: clamp(1.8rem, 8vw, 3rem);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+// Long titles (RU) cap at a smaller size
+.hero__title--sm {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+}
+
+.hero__socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.8rem, 4vw, 1.5rem);
+    flex-wrap: wrap;
+}
+
+.hero__social-link {
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    padding: 0.5rem;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+// --- Generic home page section spacing ---
+
+.section-block {
+    margin: 2rem 0;
+}
+
+.section-lead {
+    margin-top: 1rem;
+}
+
+// --- News ---
+
+.news-scroll-container {
+    overflow-x: auto;
+}
+
+.news-track {
+    display: flex;
+    gap: 1.5rem;
+    min-width: 0;
+    padding: 1rem 0.5rem;
+}
+
+.news-block__badge-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+// --- Department statistics ---
+
+.stats {
+    margin: 3rem auto 2.5rem;
+    width: 100%;
+}
+
+// RU variant is slightly narrower (kept as-is from the original markup)
+.stats--narrow {
+    max-width: 1200px;
+    width: 95%;
+}
+
+.stats__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    gap: clamp(1.5rem, 3vw, 2rem) clamp(2rem, 4vw, 4rem);
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat__value {
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.stat__value--md {
+    font-size: 2.8rem;
+}
+
+.stat__value--sm {
+    font-size: 2.2rem;
+    line-height: 1.1;
+}
+
+.stat__label {
+    max-width: 220px;
+    font-size: 1rem;
+}
+
+// --- Full-width photo between sections ---
+
+.fullwidth-figure {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 3.5rem 0;
+
+    img {
+        width: 100vw;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 0;
+    }
+}
+
+// --- Research blocks ---
+
+.research-section {
+    margin: 0 0 3rem;
+    max-width: 1200px;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
+    gap: 2.5rem;
+    margin: 2.5rem 0;
+}
+
+.research-block__text {
+    margin: 1rem 0;
+}
+
+.research-block__footer {
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    text-align: left;
+}
+
+.link-strong {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    p {
+        background: #f0f0f0;
+        padding: 0.3rem 0.8rem;
+        border-radius: 1rem;
+    }
 }
 
 .news-block {
@@ -143,9 +360,79 @@
     overflow-x: hidden; /* Только горизонтальный overflow */
 }
 
-#carousel-section .carousel,
-#carousel-section .slider-container {
+#carousel-section .carousel {
     margin: 0 auto; /* Центрируем карусель */
+}
+
+/* Scroll-snap механика карусели (замена bulma-carousel) */
+.carousel-wrap {
+    position: relative;
+}
+
+#carousel-section .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    -webkit-overflow-scrolling: touch;
+}
+
+#carousel-section .carousel::-webkit-scrollbar {
+    display: none;
+}
+
+#carousel-section .carousel-item {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+/* Стрелки навигации (как у bulma-carousel: белые круги с шевроном) */
+.carousel-nav {
+    position: absolute;
+    top: calc(50% - 1.5rem); /* по центру изображения, минус подпись */
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 2;
+    padding: 0;
+    transition: box-shadow 0.2s ease;
+}
+
+.carousel-nav:hover,
+.carousel-nav:focus {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+
+.carousel-nav::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+    margin: auto;
+}
+
+.carousel-nav--prev {
+    left: 0.5rem;
+}
+
+.carousel-nav--prev::before {
+    transform: translateX(2px) rotate(-135deg);
+}
+
+.carousel-nav--next {
+    right: 0.5rem;
+}
+
+.carousel-nav--next::before {
+    transform: translateX(-2px) rotate(45deg);
 }
 
 #carousel-section .container {
@@ -180,15 +467,6 @@
     }
 }
 
-/* Стили для стрелок навигации карусели */
-/* Центрируем стрелки по изображению, а не по всему блоку */
-#carousel-section .slider-navigation-previous,
-#carousel-section .slider-navigation-next {
-    /* Рассчитываем позицию: половина высоты контейнера минус половина высоты подписи */
-    top: calc(50% - 1.5rem) !important; /* вычитаем примерно половину высоты подписи */
-    transform: translateY(-50%);
-}
-
 /* Адаптивные размеры для мобильных */
 @media screen and (max-width: 768px) {
     .carousel-item {
@@ -198,13 +476,6 @@
 
     .carousel-item img {
         max-height: 300px;
-    }
-
-    /* Стрелки навигации на мобильных - по центру изображения */
-    #carousel-section .slider-navigation-previous,
-    #carousel-section .slider-navigation-next {
-        top: calc(50% - 1.5rem) !important;
-        transform: translateY(-50%);
     }
 }
 
