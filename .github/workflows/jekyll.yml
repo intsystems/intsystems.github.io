@@ -25,7 +25,7 @@ jobs:
       # plain jpg/png without any manual compression.
       - name: Optimize images
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq jpegoptim pngquant
+          sudo apt-get update -qq && sudo apt-get install -y -qq jpegoptim pngquant imagemagick
           # Cap dimensions: photos never render wider than ~1920px (avatars at 300px)
           find images -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -print0 | xargs -0 -r mogrify -resize '1920x1920>' -auto-orient
           find images/people -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -print0 | xargs -0 -r mogrify -resize '600x600>'
