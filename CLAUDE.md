@@ -99,5 +99,5 @@ Home page shows the 10 latest.
 - No inline `style="..."` in markup — every visual rule lives in `_sass/`.
   Home page sections use dedicated classes in `_sass/_home.scss` (`.hero*`, `.stats*`, `.research-*`, `.tag-list`, `.fullwidth-figure`); person cards and social links are includes, never copy-pasted markup.
 - Responsive container widths come from the `$container-widths` map in `_sass/_variables.scss` — change breakpoint behavior there, not in per-file media queries.
-- EN and RU `index.md` must keep identical markup (only text differs, plus `hero__title--sm` / `stats--narrow` modifiers on RU).
+- EN and RU `index.md` must keep identical markup (only text differs, plus the `hero__title--sm` modifier on RU for the longer title).
 - Local build: system Ruby works via `BUNDLE_PATH=vendor/bundle bundle install && BUNDLE_PATH=vendor/bundle bundle exec jekyll build` (`vendor/` and `Gemfile.lock` are not committed).

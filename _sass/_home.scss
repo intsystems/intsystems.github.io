@@ -32,8 +32,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #000;
-    opacity: 0.6;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.52));
     z-index: 1;
 }
 
@@ -86,7 +85,7 @@
 // --- Generic home page section spacing ---
 
 .section-block {
-    margin: 2rem 0;
+    margin: 2.5rem 0;
 }
 
 .section-lead {
@@ -115,22 +114,30 @@
 // --- Department statistics ---
 
 .stats {
-    margin: 3rem auto 2.5rem;
+    margin: 3rem auto;
     width: 100%;
 }
 
-// RU variant is slightly narrower (kept as-is from the original markup)
-.stats--narrow {
-    max-width: 1200px;
-    width: 95%;
-}
-
+// Фиксированное число колонок (3 → 2 → 1), чтобы 6 элементов
+// всегда ложились ровными рядами независимо от зума/ширины окна
 .stats__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: clamp(1.5rem, 3vw, 2rem) clamp(2rem, 4vw, 4rem);
     text-align: center;
     padding: 1.5rem 0;
+}
+
+@media (max-width: $md-width) {
+    .stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: $lt-width) {
+    .stats__grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .stat {
@@ -167,7 +174,7 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    margin: 3.5rem 0;
+    margin: 3rem 0;
 
     img {
         width: 100vw;
@@ -185,11 +192,18 @@
     max-width: 1200px;
 }
 
+// 4 блока: всегда 2×2 на десктопе, столбик на узких экранах
 .research-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
     margin: 2.5rem 0;
+}
+
+@media (max-width: $md-width) {
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .research-block__text {
@@ -216,6 +230,7 @@
         background: #f0f0f0;
         padding: 0.3rem 0.8rem;
         border-radius: 1rem;
+        margin: 0;
     }
 }
 
@@ -244,10 +259,13 @@
 
     &:hover,
     &:focus {
-        background-color: #f5f5f5;
         cursor: pointer;
         text-decoration: none;
         color: inherit;
+        transform: translateY(-2px);
+        box-shadow:
+            0 4px 14px rgba(0, 0, 0, 0.08),
+            0 1px 3px rgba(0, 0, 0, 0.05);
 
         .news-title {
             color: $href-color;
@@ -310,7 +328,10 @@
 
     &:hover,
     &:focus {
-        background-color: #f5f5f5;
+        transform: translateY(-2px);
+        box-shadow:
+            0 4px 14px rgba(0, 0, 0, 0.08),
+            0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     a {
@@ -501,9 +522,12 @@
 
     &:hover,
     &:focus {
-        background-color: #f5f5f5;
         text-decoration: none;
         color: inherit;
+        transform: translateY(-2px);
+        box-shadow:
+            0 4px 14px rgba(0, 0, 0, 0.08),
+            0 1px 3px rgba(0, 0, 0, 0.05);
 
         h4 {
             color: $href-color;

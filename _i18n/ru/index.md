@@ -49,7 +49,7 @@
 </section>
 
 <!-- Department Statistics -->
-<div class="stats stats--narrow">
+<div class="stats">
     <div class="stats__grid">
         <div class="stat fade-in-left">
             <p class="stat__value">2003</p>
