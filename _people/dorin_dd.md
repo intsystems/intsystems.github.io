@@ -1,7 +1,7 @@
 ---
 title: people.dorin_dd
 edit: true
-position: gs
+position: pgs
 avatar: dorin_dd.jpeg
 mail: dorin.dd@phystech.edu
 telegram: danulkin

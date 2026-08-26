@@ -1,7 +1,7 @@
 ---
 title: people.kiselev_ns
 edit: true
-position: gs
+position: pgs
 avatar: kiselev_ns.jpg
 mail: kiselev.ns@phystech.edu
 telegram: kisnikser
