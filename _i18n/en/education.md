@@ -19,12 +19,12 @@
 #### Key Dates
 
 - **September 2:** Deadline for [scholarship]({{ site.baseurl }}/materials/scholarship) applications
-- **September 6:** Start of classes at the department
-- **September 11-12:** Organizational meeting
+- **September 7:** Start of classes at the department
+<!-- - **September 11-12:** Organizational meeting -->
 - **October 23:** Department presentation for 3rd year students
 - **November 1:** Interview for 3rd year students applying to the department
 - **December 15-21:** Exam week for 3rd to 6th year students
-- **December 20:** ❗️ Credit on research work (be ready with paper/code/presentation)
+- **December 19:** ❗️ Credit on research work (be ready with paper/code/presentation)
 <!-- **January 17:** State exam for 6th year students-->
 
 #### 4th year, 7th semester (Tuesday)
