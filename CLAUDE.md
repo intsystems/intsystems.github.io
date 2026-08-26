@@ -1,14 +1,19 @@
 # Intelligent Systems Department Website — Claude Instructions
 
-Jekyll 3.9 static site for the Intelligent Systems Department (MIPT), deployed to GitHub Pages via GitHub Actions.
-Bilingual (EN default at `/`, RU at `/ru/`) using `jekyll-multiple-languages-plugin`.
+Jekyll 4.3 static site for the Intelligent Systems Department (MIPT), deployed to GitHub Pages via GitHub Actions.
+Bilingual (EN default at `/`, RU at `/ru/`) using `jekyll-multiple-languages-plugin` 1.8.
 
 ## Build & deploy
 
 - Local: `bundle install && bundle exec jekyll serve` (Ruby 3.1 in CI).
-- Deploy: push to `main` triggers `.github/workflows/jekyll.yml` (build + deploy to Pages).
-  There is no other deploy path; `_site/` is never committed.
-- `Gemfile.lock` is gitignored.
+  With macOS system Ruby use `BUNDLE_PATH=vendor/bundle bundle install && BUNDLE_PATH=vendor/bundle bundle exec jekyll build`.
+- Sass is compiled by `jekyll-sass-converter` 2.x (libsass) on purpose: no dart-sass binary and no `@import` deprecation noise.
+  libsass evaluates CSS `min()`/`max()` as Sass math — wrap them in `unquote("...")` (see `_sass/_toc.scss`).
+- Deploy: push to `main` triggers `.github/workflows/jekyll.yml` (optimize images → build → deploy to Pages).
+  Pull requests to `main` run the same build without deploying.
+  Optimized images are cached by the hash of the originals (`actions/cache`), so the slow step runs only when images change.
+- `.github/workflows/links.yml` checks all external links weekly (lychee); a red run means a dead link in content.
+- There is no other deploy path; `_site/`, `vendor/` and `Gemfile.lock` are gitignored.
 
 ## Architecture: how i18n works (critical)
 
@@ -30,8 +35,9 @@ Never add a person/course without registering its display name in BOTH `en.yml` 
 
 | Path | Purpose |
 |---|---|
-| `_config.yml` | Site config, nav menu (`nav.pages`), collections, defaults, roles/types enums (`global.people.roles`, `global.course.types`) |
+| `_config.yml` | Site config, nav menu (`nav.pages`), collections, defaults, roles/types enums (`global.people.roles`, `global.course.types`), `logo` (large, for Open Graph) / `navbar_logo` (small) |
 | `*.md` (root) | Page stubs: front matter + `{% tf %}` only. Permalinks like `/materials/nir/` are set here |
+| `404.html` | Not-found page (bilingual, served by GitHub Pages for any missing URL) |
 | `_i18n/en.yml`, `_i18n/ru.yml` | ALL translation strings: nav, titles, `people:` names, `courses:` names |
 | `_i18n/{en,ru}/*.md` | Real page content per language |
 | `_i18n/{en,ru}/_people/*.md` | Person biographies (rendered under profile header) |
@@ -84,6 +90,10 @@ Home page shows the 10 latest.
 
 - The i18n plugin builds the site once per language; EN pages live at `/...`, RU at `/ru/...`.
   `site.baseurl` is language-prefixed; `site.baseurl_root` is not — use `baseurl_root` for assets (images, JS).
+  In `seo.html`, image URLs are built from `site.url` + root path for the same reason.
+- `{% t key %}` with a MISSING key fails the build (plugin 1.8 returns nil).
+  `page.title` may be a translation key (`titles.nir`, `people.x` — has a dot, no spaces) or a literal string (blog/news posts);
+  `_layouts/default.html` resolves it into `page_title` once, and `seo.html` reuses that — never call `{% t page.title %}` elsewhere.
 - People/course lookups are done by `page.url contains lecturer_id` string matching — keep IDs unique and never rename a person file without checking `lecturers:` fields in `_course/`.
 - `edit: true` in front matter shows the floating "edit on GitHub" button (`_includes/edit.html` maps the path into `_i18n/<lang>/`).
 - `toc: true` + optional `toc_headings` enables the floating table of contents (`javascript/toc.js`).
@@ -100,4 +110,3 @@ Home page shows the 10 latest.
   Home page sections use dedicated classes in `_sass/_home.scss` (`.hero*`, `.stats*`, `.research-*`, `.tag-list`, `.fullwidth-figure`); person cards and social links are includes, never copy-pasted markup.
 - Responsive container widths come from the `$container-widths` map in `_sass/_variables.scss` — change breakpoint behavior there, not in per-file media queries.
 - EN and RU `index.md` must keep identical markup (only text differs, plus the `hero__title--sm` modifier on RU for the longer title).
-- Local build: system Ruby works via `BUNDLE_PATH=vendor/bundle bundle install && BUNDLE_PATH=vendor/bundle bundle exec jekyll build` (`vendor/` and `Gemfile.lock` are not committed).

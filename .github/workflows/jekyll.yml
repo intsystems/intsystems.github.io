@@ -3,6 +3,9 @@ name: Deploy Intelligent Systems Website to Pages
 on:
   push:
     branches: ["main"]
+  # Pull requests get a build check (no deploy) so broken changes are caught before merge
+  pull_request:
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -11,7 +14,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  # Deploys are serialized; PR builds run independently of each other
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.ref) || 'pages' }}
   cancel-in-progress: false
 
 jobs:
@@ -20,10 +24,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      # Optimized images are cached by the hash of the ORIGINALS (evaluated
+      # before optimization). On a hit the compressed set is restored and the
+      # slow optimization step is skipped entirely.
+      - name: Restore optimized images
+        id: images-cache
+        uses: actions/cache@v4
+        with:
+          path: images
+          key: optimized-images-v1-${{ hashFiles('images/**') }}
       # Compress images at build time: originals stay untouched in the repo,
       # only the deployed site gets optimized copies. Contributors commit
       # plain jpg/png without any manual compression.
       - name: Optimize images
+        if: steps.images-cache.outputs.cache-hit != 'true'
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq jpegoptim pngquant imagemagick
           # Collect file lists up front: mogrify/jpegoptim create temp files
@@ -52,9 +66,11 @@ jobs:
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

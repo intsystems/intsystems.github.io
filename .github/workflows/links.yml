@@ -1,0 +1,36 @@
+name: Check external links
+
+# Weekly sweep of every http(s) link in the content (research reports, theses,
+# conference lists, bios, blog posts). A red run means something went dead.
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Only real http(s) URLs (skips Liquid paths like {{ site.baseurl }}/...).
+          # Academic profile hosts block bots, so 403/429 are not failures.
+          args: >-
+            --no-progress
+            --scheme http --scheme https
+            --accept 200..=206,403,429
+            --timeout 20
+            --max-concurrency 8
+            --exclude 'scholar\.google\.com'
+            --exclude 'elibrary\.ru'
+            --exclude 'scopus\.com'
+            --exclude 'mathnet\.ru'
+            --exclude 'linkedin\.com'
+            '_i18n/**/*.md' '_blogs/*.md' '_people/*.md' '_course/*.md' '_data/*.yml' 'README.md'
+          fail: true

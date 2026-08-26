@@ -3,7 +3,7 @@
     font-size: 0.9rem;
     top: 96px;
     right: 32px;
-    width: min(280px, 80vw);
+    width: unquote("min(280px, 80vw)"); // unquote: keep CSS min() out of libsass math
     max-height: calc(100vh - 144px);
     padding: 0;
     margin: 0;
