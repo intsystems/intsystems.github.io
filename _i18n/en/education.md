@@ -14,8 +14,6 @@
 
 ### Fall 2026
 
-(preliminary)
-
 #### Key Dates
 
 - **September 2:** Deadline for [scholarship]({{ site.baseurl }}/materials/scholarship) applications
