@@ -15,7 +15,7 @@ If you want to make a large contribution, please do it in a pull request, and as
 ## Research Report
 
 1. Go to the file [`_i18n/en/nir.md`](_i18n/en/nir.md).
-2. If you add new semester, create a new section, e.g., `### 2025 Fall`, and create a table for your course (see previous semesters for examples).
+2. If you add new semester, create a new section, e.g., `### Fall 2025`, and create a table for your course (see previous semesters for examples).
 3. Add your report information in the format:
    ```markdown
    | Student      | Title | Advisor                      | Links                                    |

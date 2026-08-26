@@ -12,8 +12,36 @@
 - Research Report Template: [link](https://docs.google.com/document/d/1XsYWC7isbiums9jqjzddHIkDjvxqKNvf/edit?usp=sharing)
 - State Exam Program for 6th Year: [link](https://docs.google.com/document/d/1KkePnIg2BOf_LHBLBbgRL0W4gqKtt1W0OhJSg43lR_Y/edit?usp=sharing)
 
-### Spring 2026
+### Fall 2026
 
+(preliminary)
+
+#### Key Dates
+
+- **September 2:** Deadline for [scholarship]({{ site.baseurl }}/materials/scholarship) applications
+- **September 6:** Start of classes at the department
+- **September 11-12:** Organizational meeting
+- **October 23:** Department presentation for 3rd year students
+- **November 1:** Interview for 3rd year students applying to the department
+- **December 15-21:** Exam week for 3rd to 6th year students
+- **December 20:** ❗️ Credit on research work (be ready with paper/code/presentation)
+<!-- **January 17:** State exam for 6th year students-->
+
+#### 4th year, 7th semester (Tuesday)
+
+{% include schedule_table.html semester="fall_2026.year_4_semester_7" %}
+
+#### 5th year, 9th semester (Tuesday)
+
+{% include schedule_table.html semester="fall_2026.year_5_semester_9" %}
+
+#### 6th year, 11th semester (Thursday)
+
+{% include schedule_table.html semester="fall_2026.year_6_semester_11" %}
+
+### Spring 2027
+
+(preliminary)
 #### Key Dates
 
 - **February 10:** Start of classes at the department
@@ -47,29 +75,3 @@
 
 {% include schedule_table.html semester="spring_2026.year_5_semester_10" %}
 
-### Fall 2026
-
-(preliminary)
-
-#### Key Dates
-
-- **September 2:** Deadline for [scholarship]({{ site.baseurl }}/materials/scholarship) applications
-- **September 6:** Start of classes at the department
-- **September 11-12:** Organizational meeting
-- **October 23:** Department presentation for 3rd year students
-- **November 1:** Interview for 3rd year students applying to the department
-- **December 15-21:** Exam week for 3rd to 6th year students
-- **December 20:** ❗️ Credit on research work (be ready with paper/code/presentation)
-<!-- **January 17:** State exam for 6th year students-->
-
-#### 4th year, 7th semester (Tuesday)
-
-{% include schedule_table.html semester="fall_2026.year_4_semester_7" %}
-
-#### 5th year, 9th semester (Tuesday)
-
-{% include schedule_table.html semester="fall_2026.year_5_semester_9" %}
-
-#### 6th year, 11th semester (Thursday)
-
-{% include schedule_table.html semester="fall_2026.year_6_semester_11" %}

@@ -84,9 +84,10 @@ Create `_i18n/en/_posts/YYYY-MM-DD-slug.md` AND `_i18n/ru/_posts/YYYY-MM-DD-slug
 Home page shows the 10 latest.
 
 ### Update schedule / NIR / thesis tables
-- Schedule: edit `_data/schedule.yml` (course IDs must match `_course/` filenames).
+- Schedule: edit `_data/schedule.yml` (course IDs must match `_course/` filenames); keep EN and RU `education.md` in sync (same semesters, same order).
 - NIR reports: append rows to tables in `_i18n/en/nir.md` (see README for the row format).
 - Theses: `_i18n/en/thesis.md`.
+- Semester headings are always **Season Year**: `### Spring 2026` / `### Fall 2026` (RU: `### Весна 2026` / `### Осень 2026`); data keys follow the same order (`spring_2026`). Thesis sections are by year only (`### 2026`).
 
 ## Gotchas
 

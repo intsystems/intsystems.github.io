@@ -2,7 +2,7 @@
 
 This page contains information about the research projects of students at the Intelligent Systems Department. Here you can find the titles of theses, names of advisors, links to publications, presentations and code repositories.
 
-### 2026 Spring
+### Spring 2026
 
 #### PhD Students
 
@@ -62,7 +62,7 @@ This page contains information about the research projects of students at the In
 | Matvey Karpov | Параметризация тематических моделей локального контекста | [Konstantin Vorontsov, DSc](https://scholar.google.com/citations?user=KIW4fnsAAAAJ&hl=en&oi=ao) | [Paper](https://github.com/karpovml/SciRus-contrastive-retrieval/tree/master/paper), [Code](https://github.com/karpovml/SciRus-contrastive-retrieval/tree/master/code), [Slides](https://github.com/karpovml/SciRus-contrastive-retrieval/tree/master/slides/main.pdf) |
 |[Anastasiia German](https://github.com/AnastasiaGerman01) | Multimodal approximation of fMRI data based on audiovisual stimuli | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=ru&oi=sra) | [Paper](https://github.com/AnastasiaGerman01/2025-Project-172/blob/main/paper/диплом.pdf), [Code](https://github.com/AnastasiaGerman01/2025-Project-172/tree/main/code), [Slides](https://github.com/AnastasiaGerman01/2025-Project-172/blob/main/presentations/презентация_НИР.pdf) |
 
-### 2025 Fall
+### Fall 2025
 
 #### PhD Students
 
@@ -134,7 +134,7 @@ This page contains information about the research projects of students at the In
 | [Roman Shevchuk](https://github.com/RomanS123) | Analysis of the Relationship Between Electroencephalography (EEG) and Functional Magnetic Resonance Imaging (fMRI) Signals | [Andrey Grabovoy, PhD](https://scholar.google.com/citations?user=ZtI9pgsAAAAJ&hl=en) | [GitHub](https://github.com/intsystems/Shevchuk-BS-Thesis/tree/main), [Paper](https://github.com/intsystems/Shevchuk-BS-Thesis/blob/main/paper/article_ru.pdf), [Code](https://github.com/intsystems/Shevchuk-BS-Thesis/tree/main), [Slides]() |
 | [Sergei Dementyev](https://github.com/sdem3) | Self-organization effects in recommender systems | [Anton Khritankov, PhD](https://scholar.google.com/citations?user=OtxWKpMAAAAJ&hl=en) | [GitHub](https://github.com/intsystems/2025-Project-174/tree/main), [Paper](https://github.com/intsystems/2025-Project-174/blob/main/paper/m1p.pdf), [Code](https://github.com/intsystems/2025-Project-174/blob/main/code/%5Bm1p%5Dbase_code.ipynb), [Slides](https://github.com/intsystems/2025-Project-174/blob/main/slides/%5B%D0%9D%D0%98%D0%A0%5D%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F.pdf) |
 
-### 2025 Spring
+### Spring 2025
 
 #### PhD Students
 
@@ -196,7 +196,7 @@ This page contains information about the research projects of students at the In
 | Fedor Sobolevsky      | Application of Large Language Models for Hierarchical Summarization of Scientific Texts                                              | [Vorontsov K.V.](http://www.machinelearning.ru/wiki/index.php?title=User:Vokov) | [Code](https://github.com/intsystems/Sobolevsky-BS-Thesis/tree/main/code),[Paper](https://github.com/intsystems/Sobolevsky-BS-Thesis/blob/main/paper/Sobolevsky2025BSThesis.pdf), [Slides](https://github.com/intsystems/Sobolevsky-BS-Thesis/blob/main/slides/Sobolevsky2024Presentation.pdf)                                                                            |
 | Kasiuk Vadim          | Application of compression operators in distributed optimization problems                                                            | [Beznosikov A.N.](https://anbeznosikov.github.io/)                              | [Paper](https://github.com/KasiukVadim/BacDip24_25/blob/main/docs/Kasiuk2024CompressionForDistributedOptimization.pdf), [Code](https://github.com/KasiukVadim/BacDip24_25/blob/main/notebooks/MethodsNotebook.ipynb), [Slides](<https://github.com/KasiukVadim/BacDip24_25/blob/main/slides/Kasiuk2024CompressionForDistributedOptimization_slides_pdf__Copy_%20(1).pdf>) |
 
-### 2024 Fall
+### Fall 2024
 
 #### PhD Students
 
@@ -259,7 +259,7 @@ This page contains information about the research projects of students at the In
 | Anastasiia Linich     | Топологический анализ математических доказательств, генерируемых большими языковыми моделями на формальном языке Lean4               | Barannikov S.A.                                                                 | [Code](https://github.com/khilling/diploma/tree/main), [Paper](https://github.com/khilling/diploma/blob/main/srw_text.pdf), [Slides](https://github.com/khilling/diploma/blob/main/srw_presentation.pdf)                                                                                                                                                                                                                |
 | Karpeev Gleb          | Порождающие модели для прогнозирования (наборов временных рядов) в метрическом вероятностном пространстве                            | [Strijov V.V.](http://www.ccas.ru/strijov/)                                     | [Code](https://github.com/intsystems/2024-Project-152/blob/master/code/gen_score_based_models.ipynb), [Paper](https://github.com/intsystems/2024-Project-152/blob/master/paper/diploma.pdf), [Slides](https://github.com/intsystems/2024-Project-152/blob/master/slides/Karpeev.pdf)                                                                                                                                    |
 
-### 2024 Spring
+### Spring 2024
 
 #### PhD Students
 
@@ -318,7 +318,7 @@ This page contains information about the research projects of students at the In
 | Okhotnikov Nikita   | Interconnected latent representations for outfit generation task                                                                             | [Isachenko R.V.](https://intsystems.github.io/ru/people/isachenko_rv/index.html)                                                    | [Paper](https://github.com/Wayfarer123/BS_Thesis/blob/main/paper/main.pdf), [Code](https://github.com/intsystems/Okhotnikov-BS-Thesis/tree/main/code), [Slides](https://github.com/Wayfarer123/BS_Thesis/blob/main/slides/slides.pdf)                                                                                                                                                                                                                                                          |
 | Oleinik Mikhail     | Knowledge distillation in deep neural networks using model structure alignment methods                                                       | [Bakhteev O.Y.](http://www.machinelearning.ru/wiki/index.php?title=Участник:Oleg_Bakhteev)                                          | [Paper](https://github.com/intsystems/Oleinik-BS-Thesis/blob/master/paper/main.pdf), [Code](https://github.com/intsystems/Oleinik-BS-Thesis/tree/master/code), [Slides](https://github.com/intsystems/Oleinik-BS-Thesis/blob/master/slides/main.pdf)                                                                                                                                                                                                                                           |
 
-### 2023 Fall
+### Fall 2023
 
 #### PhD Students
 
@@ -382,7 +382,7 @@ This page contains information about the research projects of students at the In
 | Dorin Daniil        | Spatial-temporal characteristics in the time series decoding                             | [Grabovoy A. V.](https://andriygav.github.io)                                                              | [Paper](https://github.com/Daniilmipt007/project_VKR/blob/master/paper/main.pdf), [Code](https://github.com/Daniilmipt007/project_VKR/blob/master/code), [Slides](https://github.com/Daniilmipt007/project_VKR/blob/master/slides/pres_NIR.pdf)                                                                                                                                                              |
 | Okhotnikov Nikita   | Interconnected latent representations for outfit generation task                         | [Isachenko R.V.](https://intsystems.github.io/ru/people/isachenko_rv/index.html)                           | [Paper](https://github.com/Wayfarer123/BS_Thesis/blob/main/paper/main.pdf), [Code](https://github.com/intsystems/Okhotnikov-BS-Thesis/tree/main/code), [Slides](https://github.com/Wayfarer123/BS_Thesis/blob/main/slides/slides.pdf)                                                                                                                                                                        |
 
-### 2023 Spring
+### Spring 2023
 
 #### PhD Students
 
@@ -434,7 +434,7 @@ This page contains information about the research projects of students at the In
 | Vladimirov Eduard      | Choosing a state space model in a neural decoding problem                                              | [Strijov V.V.](<[http://www.machinelearning.ru/wiki/index.php?title=User:Vokov](http://www.ccas.ru/strijov/)>) | [Code1](https://github.com/Edyarich/annotated-s4), [Code2](https://github.com/Edyarich/ECGNet), [Slides](https://github.com/intsystems/Vladimirov-BS-Thesis/blob/master/slides/VladimirovTSModels.pdf)                                                                                  |
 | Molozhavenko Alexander | Solution of a block multidimensional eigenvalues search problem                                        | Gasnikov A.V.                                                                                                  | [Slides](https://www.overleaf.com/read/gxtnzbdhzhcj), [Code](https://github.com/intsystems/Molozhavenko-BS-Thesis)                                                                                                                                                                      |
 
-### 2022 Fall
+### Fall 2022
 
 #### PhD Students
 
@@ -483,7 +483,7 @@ This page contains information about the research projects of students at the In
 | Georgiy Zharov         | Search for manipulations and their relations with named entities in texts | Vorontsov K.V.                                                                     | [Slides](https://drive.google.com/file/d/1oYjCU8GJPjGBfe2d_tHbeBHT1WyB8R5i/view?usp=share_link)                                                                                                                                                                                                                  |
 | Molozhavenko Alexander | Solution of a block multidimensional eigenvalues search problem           | Gasnikov A.V.                                                                      | [Slides](https://www.overleaf.com/read/gxtnzbdhzhcj), [Code](https://github.com/SuperCrabLover/BachelorDiploma)                                                                                                                                                                                                  |
 
-### 2022 Spring
+### Spring 2022
 
 #### PhD Students
 
@@ -536,7 +536,7 @@ This page contains information about the research projects of students at the In
 | Konstantin Yakovlev  | Selection of concordant architectures with complexity control                                   | Bakhteev O.Y.                                            | [Paper](https://easychair.org/publications/preprint_open/H5MC) [Code](https://github.com/Intelligent-Systems-Phystech/DARTS-CC), [Slides](https://github.com/Intelligent-Systems-Phystech/Yakovlev-BS-Thesis/raw/master/slides/main.pdf)                                                                                                                                                 |
 | Khristolyubov Maxim  | Approximation of the phase trajectory of the time series                                        | [Strijov V.V.](http://www.ccas.ru/strijov/)              | [Paper](<https://github.com/Intelligent-Systems-Phystech/Khristolyubov-BS-Thesis/blob/main/paper/Khristolyubov_Bacalavr_Thesis%20(21).pdf>) [Code](https://github.com/Intelligent-Systems-Phystech/Khristolyubov-BS-Thesis/tree/main/code), [Slides](https://github.com/Intelligent-Systems-Phystech/Khristolyubov-BS-Thesis/tree/main/slides)                                           |
 
-### 2021 Fall
+### Fall 2021
 
 #### PhD Students
 
