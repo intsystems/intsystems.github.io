@@ -24,6 +24,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history: needed to restore file mtimes from git
+      # jekyll-sitemap derives <lastmod> from file mtimes; a fresh checkout would
+      # stamp every page with "now". Restore the last-commit time of each file.
+      - name: Restore file modification times from git
+        uses: chetan/git-restore-mtime-action@v2
       # Optimized images are cached by the hash of the ORIGINALS (evaluated
       # before optimization). On a hit the compressed set is restored and the
       # slow optimization step is skipped entirely.

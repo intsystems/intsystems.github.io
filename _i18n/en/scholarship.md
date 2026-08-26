@@ -1,4 +1,4 @@
-## K.V. Rudakov Academic Research Scholarship
+# K.V. Rudakov Academic Research Scholarship
 
 The scholarship supports 2–4 year Bachelor’s students and 1–2 year Master’s students of the Department of Intelligent Data Analysis who are conducting research in applied mathematics, including machine learning, data analysis, and other branches of mathematics. The scholarship is awarded on a monthly basis.
 

@@ -1,4 +1,4 @@
-## Research Reports
+# Research Reports
 
 This page contains information about the research projects of students at the Intelligent Systems Department. Here you can find the titles of theses, names of advisors, links to publications, presentations and code repositories.
 

@@ -2,6 +2,12 @@
 title: Intelligent Systems
 description: Intelligent Systems Department at MIPT — news, courses, people and research
 
+# Atom feeds: /feed.xml (news posts) and /feed/blog.xml (blog collection)
+feed:
+  collections:
+    blogs:
+      path: feed/blog.xml
+
 brand: /images/logo/logo-square.png
 logo: /images/logo/logo-full.png          # large version: Open Graph image, JSON-LD
 navbar_logo: /images/logo/logo-nav.png    # 400x150, shown at 50px height in the navbar

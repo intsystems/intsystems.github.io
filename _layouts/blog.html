@@ -3,7 +3,7 @@ layout: default
 ---
 <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
     <header class="blog-post__header">
-        <h2 class="blog-post__title" itemprop="headline">{{ page.title }}</h2>
+        <h1 class="blog-post__title page-heading" itemprop="headline">{{ page.title }}</h1>
         {% if page.tags %}
         <ul class="blog-post__tags" itemprop="keywords">
             {% for tag in page.tags %}
@@ -12,7 +12,7 @@ layout: default
         </ul>
         {% endif %}
         <div class="blog-post__meta">
-            <span itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</span>
+            <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
             {% if page.read_time %}
             <span aria-hidden="true">&middot;</span>
             <span>{{ page.read_time }} min</span>

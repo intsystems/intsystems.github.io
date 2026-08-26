@@ -1,5 +1,6 @@
 ---
 layout: redirect
+sitemap: false
 id: rudakov_kv
 name: peoples.name
 position: hotd

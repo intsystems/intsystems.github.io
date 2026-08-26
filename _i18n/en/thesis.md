@@ -1,4 +1,4 @@
-## Theses
+# Theses
 
 This page contains links to recent theses of students of the Intelligent Systems Department, MIPT.
 

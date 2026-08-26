@@ -5,6 +5,8 @@ meta_desc_en: "Lecturers at the Department of Intelligent Systems: Founders of t
 meta_desc_ru: "Преподаватели Кафедры интеллектуальных систем: Основатели кафедры, Доктора наук, Кандидаты наук, преподаватели, Аспиранты, семинаристы"
 ---
 
+<h1 class="sr-only">{% t titles.people %}</h1>
+
 {% for role in site.global.people.roles %}
 
 {% if role != 'template' %}

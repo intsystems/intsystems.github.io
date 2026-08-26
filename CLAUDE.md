@@ -45,7 +45,8 @@ Never add a person/course without registering its display name in BOTH `en.yml` 
 | `_i18n/{en,ru}/_posts/` | News posts (`YYYY-MM-DD-slug.md`, layout `news`, shown on home page carousel) |
 | `_people/*.md` | Person stubs: `position` (role), `avatar`, contact/scholar links. Filename = `lastname_ii.md` |
 | `_course/*.md` | Course stubs: `type` (bachelor/master/deprecated/draft), `lecturers` (comma-separated people IDs), `site` |
-| `_blogs/*.md` | Blog posts — full content directly here (NOT via `_i18n`), EN only. `BLOGPOST.md` is the template |
+| `_blogs/*.md` | Blog posts — full content directly here (NOT via `_i18n`), EN only. Filename = URL slug (`/materials/blog/<slug>/`) |
+| `redirects/*.md` | Front-matter-only stubs with `layout: redirect` that keep old URLs alive (`permalink:` old, `redirect:` new) |
 | `_data/schedule.yml` | Timetable data, rendered by `_includes/schedule_table.html` from `_i18n/*/education.md` |
 | `_data/conferences.yml` | Conference deadlines, rendered by Liquid in `_i18n/en/conferences.md` |
 | `_layouts/` | `default` (base HTML, all `<head>` assets), `page`, `profile`, `course`, `blog`, `news`, `redirect` |
@@ -73,9 +74,10 @@ URL becomes `/people/lastname_ii/`.
 The course auto-appears on `/course/`, home page, lecturer profiles ("Teaches" section), and the schedule if referenced in `_data/schedule.yml`.
 
 ### Add a blog post
-1. Copy `_blogs/BLOGPOST.md` to `_blogs/<slug>.md`; fill `title`, `date`, `authors`, `summary`, `tags`, `read_time`, `cover`.
+1. Copy an existing post (e.g. `_blogs/hyperband.md`) to `_blogs/<slug>.md` — a short descriptive slug, it becomes the URL; fill `title`, `date`, `authors`, `summary`, `tags`, `read_time`, `cover`.
 2. Put images in `images/blog/<slug>/` (as is — CI compresses at deploy time).
-URL becomes `/materials/blog/<slug>/`.
+3. Start body headings at `##` — the layout already renders the title as `<h1>`.
+URL becomes `/materials/blog/<slug>/`. Never rename a published post without adding a stub in `redirects/`.
 
 ### Add news
 Create `_i18n/en/_posts/YYYY-MM-DD-slug.md` AND `_i18n/ru/_posts/YYYY-MM-DD-slug.md` with `title`, `date`, `important: true|false`.
@@ -91,6 +93,12 @@ Home page shows the 10 latest.
 - The i18n plugin builds the site once per language; EN pages live at `/...`, RU at `/ru/...`.
   `site.baseurl` is language-prefixed; `site.baseurl_root` is not — use `baseurl_root` for assets (images, JS).
   In `seo.html`, image URLs are built from `site.url` + root path for the same reason.
+- SEO lives in `_includes/seo.html` (description, canonical, hreflang, Open Graph, JSON-LD incl. breadcrumbs) and the `<title>` template in `default.html`
+  (`<page> — <brand>`, strings under `site.seo` in `en.yml`/`ru.yml`).
+  A root stub with `untranslated: true` (nir, thesis, conferences, seminars, templates) and every blog post canonicalize their RU copy to the EN URL — remove the flag when RU content is added.
+- Every page has exactly one `<h1>`: layouts render the title as `h1.page-heading` (styled like h2), content pages start with a single `#` heading, list pages (`people.md`, `course.md`) carry an `h1.sr-only`.
+  Keep this when adding pages — Lighthouse/SEO and screen readers depend on it.
+- `_plugins/i18n_filter_cache.rb` clears Jekyll 4's `absolute_url` cache between the per-language builds; without it RU canonicals/sitemap point at EN URLs.
 - `{% t key %}` with a MISSING key fails the build (plugin 1.8 returns nil).
   `page.title` may be a translation key (`titles.nir`, `people.x` — has a dot, no spaces) or a literal string (blog/news posts);
   `_layouts/default.html` resolves it into `page_title` once, and `seo.html` reuses that — never call `{% t page.title %}` elsewhere.

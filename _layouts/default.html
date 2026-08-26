@@ -14,11 +14,13 @@
         {% if page_title contains "." %}{% unless page_title contains " " %}{% assign title_is_key = true %}{% endunless %}{% endif %}
         {% if page_title == "" %}{% capture page_title %}{% t site.name %}{% endcapture %}
         {% elsif title_is_key %}{% capture page_title %}{% t page.title %}{% endcapture %}{% endif %}
-        <title>{{ page_title }}</title>
+        {%- comment -%} Document title: "<page> — <brand>", home page has its own {%- endcomment -%}
+        <title>{% if page.home %}{% t site.seo.home_title %}{% else %}{{ page_title }} — {% t site.seo.brand %}{% endif %}</title>
 
         {% include seo.html %}
 
-        <link rel="alternate" type="application/atom+xml" title="{% t site.name %}" href="{{ site.baseurl }}/feed.xml">
+        <link rel="alternate" type="application/atom+xml" title="{% t site.name %} — {% t site.nav.names.home %}" href="{{ site.baseurl }}/feed.xml">
+        <link rel="alternate" type="application/atom+xml" title="{% t site.name %} — {% t site.nav.names.blog %}" href="{{ site.baseurl_root }}/feed/blog.xml">
 
         <!-- Google and Yandex Verification -->
         <meta name="google-site-verification" content="Mq6PRXIcGjEbdk2gdU6tahVlGnP5nsUEPwtpEH_eYb8">
@@ -90,23 +92,18 @@
         <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
     </head>
     <body>
+        <a class="skip-link" href="#main">{% t site.seo.skip_to_content %}</a>
         {% if page.toc %}
         {% include toc.html %}
         {% endif %}
         <div class="navbar-page">
             {% include navbar.html %}
         </div>
-        <div class="container">
-            {% if page.home or page.url == '/' or page.url == '/en/' or page.url == '/ru/' %}
-            <div class="content content--home" data-toc-content>
+        <main id="main" class="container">
+            <div class="content{% if page.home %} content--home{% endif %}" data-toc-content>
                 {{ content }}
             </div>
-            {% else %}
-            <div class="content" data-toc-content>
-                {{ content }}
-            </div>
-            {% endif %}
-        </div>
+        </main>
         {% include footer.html %}
         {% if page.toc %}
         <script type="module" src="{{ site.baseurl_root }}/javascript/toc.js"></script>

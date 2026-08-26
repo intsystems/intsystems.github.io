@@ -1,4 +1,4 @@
-## Templates
+# Templates
 
 Here we collect useful templates for writing papers, reports, and theses.
 

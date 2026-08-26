@@ -1,4 +1,4 @@
-## Meetings
+# Meetings
 
 This page contains links to recent seminars, meetings with alumni, PhD defences, Bachelor's and Master's pre-defences and defences of students of the Intelligent Systems Department, MIPT.
 

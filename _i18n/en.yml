@@ -7,6 +7,12 @@ site:
 
   name: Intelligent Systems
 
+  seo:
+    home_title: Intelligent Systems Department — MIPT
+    brand: Intelligent Systems, MIPT
+    skip_to_content: Skip to content
+    main_navigation: Main navigation
+
   nav:
     names:
       home: Home

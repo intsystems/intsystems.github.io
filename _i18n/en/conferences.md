@@ -1,4 +1,4 @@
-## Conferences & Journals
+# Conferences & Journals
 
 This page contains upcoming deadlines for top-tier machine learning conferences, and a comprehensive list of conferences and journals relevant to our department's research areas.
 

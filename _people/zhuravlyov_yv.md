@@ -1,5 +1,6 @@
 ---
 layout: redirect
+sitemap: false
 id: zhuravlyov_yv
 name: peoples.name
 position: hotd

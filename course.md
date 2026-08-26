@@ -5,6 +5,8 @@ meta_desc_en: "Department of Intelligent Systems, academical courses at the Bach
 meta_desc_ru: "Кафедра интеллектуальных систем, курсы бакалавриата и магистратуры"
 ---
 
+<h1 class="sr-only">{% t titles.course %}</h1>
+
 {% for type in site.global.course.types %}
 
 <div class="list-header">

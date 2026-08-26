@@ -1,185 +1,251 @@
-<!-- SEO Meta Tags -->
-{% comment %} page_title is resolved (translated, with fallback) in _layouts/default.html {% endcomment %}
-{% assign seo_title = page_title | default: "Intelligent Systems" %}
-{% assign seo_description = "" %}
-{% assign page_type = "website" %}
+{%- comment -%}
+  SEO <head> block: description, canonical, hreflang, Open Graph, Twitter, JSON-LD.
+  `page_title` is resolved (translated, with fallback) in _layouts/default.html.
+  Images are addressed from site.url + root path: /images is not localized,
+  so it must never get the language baseurl.
+{%- endcomment -%}
+{%- assign is_ru = false -%}{%- if site.lang == 'ru' -%}{%- assign is_ru = true -%}{%- endif -%}
+{%- assign seo_title = page_title | default: site.title -%}
+{%- assign canonical_path = page.url | replace: 'index.html', '' -%}
+{%- assign en_url = site.url | append: canonical_path -%}
+{%- assign ru_url = site.url | append: '/ru' | append: canonical_path -%}
+{%- assign self_url = site.url | append: site.baseurl | append: canonical_path -%}
+{%- assign home_url = site.url | append: site.baseurl | append: '/' -%}
 
-<!-- Определяем описание на основе типа страницы и языка -->
-{% if site.lang == 'ru' %}
-  {% assign seo_description = page.meta_desc_ru | default: page.description %}
-{% else %}
-  {% assign seo_description = page.meta_desc_en | default: page.description %}
-{% endif %}
+{%- comment -%} Pages whose RU version is just the EN content (blog posts, stubs flagged `untranslated: true`) point search engines to the EN page. {%- endcomment -%}
+{%- assign en_only = false -%}
+{%- if page.layout == 'blog' or page.untranslated -%}{%- assign en_only = true -%}{%- endif -%}
+{%- if page.canonical_url -%}{%- assign canonical = page.canonical_url -%}
+{%- elsif en_only -%}{%- assign canonical = en_url -%}
+{%- else -%}{%- assign canonical = self_url -%}{%- endif -%}
 
-<!-- Для курсов -->
-{% if page.layout == "course" %}
-  {% if page.type == "bachelor" %}
-    {% assign course_type_ru = "Бакалаврский курс" %}
-    {% assign course_type_en = "Bachelor course" %}
-  {% else %}
-    {% assign course_type_ru = "Магистерский курс" %}
-    {% assign course_type_en = "Master course" %}
-  {% endif %}
-  
-  {% if site.lang == 'ru' %}
-    {% assign seo_description = course_type_ru | append: " - " | append: seo_title | append: " - Кафедра интеллектуальных систем МФТИ" %}
-  {% else %}
-    {% assign seo_description = course_type_en | append: " - " | append: seo_title | append: " - Intelligent Systems Department MIPT" %}
-  {% endif %}
-  {% assign page_type = "article" %}
-{% endif %}
+{%- if is_ru -%}
+  {%- assign site_name = "Кафедра интеллектуальных систем МФТИ" -%}
+  {%- assign mipt_name = "Московский физико-технический институт" -%}
+  {%- assign locale = "ru_RU" -%}{%- assign locale_alt = "en_US" -%}
+{%- else -%}
+  {%- assign site_name = "Intelligent Systems Department, MIPT" -%}
+  {%- assign mipt_name = "Moscow Institute of Physics and Technology" -%}
+  {%- assign locale = "en_US" -%}{%- assign locale_alt = "ru_RU" -%}
+{%- endif -%}
 
-<!-- Для профилей преподавателей -->
-{% if page.layout == "profile" %}
-  {% if site.lang == 'ru' %}
-    {% assign seo_description = "Преподаватель кафедры интеллектуальных систем МФТИ - " | append: seo_title %}
-  {% else %}
-    {% assign seo_description = "Lecturer at Intelligent Systems Department MIPT - " | append: seo_title %}
-  {% endif %}
-  {% assign page_type = "profile" %}
-{% endif %}
+{%- comment -%} Description: explicit front matter, then per-layout, then site default {%- endcomment -%}
+{%- if is_ru -%}{%- assign seo_description = page.meta_desc_ru | default: page.description -%}
+{%- else -%}{%- assign seo_description = page.meta_desc_en | default: page.description -%}{%- endif -%}
+{%- assign page_type = "website" -%}
+{%- case page.layout -%}
+{%- when 'course' -%}
+  {%- assign page_type = "article" -%}
+  {%- if page.type == "bachelor" -%}
+    {%- if is_ru -%}{%- assign course_kind = "Бакалаврский курс" -%}{%- else -%}{%- assign course_kind = "Bachelor course" -%}{%- endif -%}
+  {%- else -%}
+    {%- if is_ru -%}{%- assign course_kind = "Магистерский курс" -%}{%- else -%}{%- assign course_kind = "Master course" -%}{%- endif -%}
+  {%- endif -%}
+  {%- assign seo_description = course_kind | append: " — " | append: seo_title | append: " — " | append: site_name -%}
+{%- when 'profile' -%}
+  {%- assign page_type = "profile" -%}
+  {%- if is_ru -%}{%- assign seo_description = "Преподаватель кафедры интеллектуальных систем МФТИ — " | append: seo_title -%}
+  {%- else -%}{%- assign seo_description = "Lecturer at Intelligent Systems Department MIPT — " | append: seo_title -%}{%- endif -%}
+{%- when 'blog' -%}
+  {%- assign page_type = "article" -%}
+  {%- assign seo_description = page.summary | default: seo_description -%}
+{%- when 'news' -%}
+  {%- assign page_type = "article" -%}
+  {%- assign seo_description = page.excerpt | default: seo_description | strip_html | strip -%}
+{%- endcase -%}
+{%- unless seo_description and seo_description != "" -%}
+  {%- if is_ru -%}{%- assign seo_description = "Кафедра интеллектуальных систем МФТИ — подготовка бакалавров и магистров по прикладной математике и физике с фокусом на анализ данных, машинное обучение и искусственный интеллект" -%}
+  {%- else -%}{%- assign seo_description = "Intelligent Systems Department at MIPT — training bachelors and masters in applied mathematics and physics with focus on data science, machine learning and artificial intelligence" -%}{%- endif -%}
+{%- endunless -%}
+{%- assign seo_description = seo_description | strip_html | normalize_whitespace -%}
 
-<!-- Для блогов -->
-{% if page.layout == "blog" %}
-  {% assign seo_description = page.summary | default: seo_description %}
-  {% assign page_type = "article" %}
-{% endif %}
+{%- comment -%} Preview image: person's photo on profiles, page/post image otherwise, site logo as fallback {%- endcomment -%}
+{%- if page.layout == 'profile' and page.avatar -%}
+  {%- assign seo_image_path = '/images/people/' | append: page.avatar -%}
+{%- else -%}
+  {%- assign seo_image_path = page.image | default: page.cover | default: site.og.image -%}
+{%- endif -%}
+{%- assign seo_image = site.url | append: seo_image_path -%}
 
-<!-- Fallback описание -->
-{% unless seo_description and seo_description != "" %}
-  {% if site.lang == 'ru' %}
-    {% assign seo_description = "Кафедра интеллектуальных систем МФТИ - подготовка бакалавров и магистров по прикладной математике и физике с фокусом на анализ данных, машинное обучение и искусственный интеллект" %}
-  {% else %}
-    {% assign seo_description = "Intelligent Systems Department at MIPT - training bachelors and masters in applied mathematics and physics with focus on data science, machine learning and artificial intelligence" %}
-  {% endif %}
-{% endunless %}
-
-<!-- Canonical URL -->
-{% if page.canonical_url %}
-  {% assign canonical = page.canonical_url %}
-{% else %}
-  {% assign canonical = page.url | replace: 'index.html', '' | absolute_url %}
-{% endif %}
-
-<!-- Page Image (root-relative path; images are not localized, so never prefix with the language baseurl) -->
-{% assign seo_image_path = page.image | default: page.cover | default: site.og.image %}
-{% assign seo_image = site.url | append: seo_image_path %}
-
-<!-- Meta Tags -->
-<meta name="description" content="{{ seo_description | strip_html | normalize_whitespace | truncate: 160 }}">
+<meta name="description" content="{{ seo_description | truncate: 160 }}">
 <meta name="keywords" content="{% if page.tags %}{{ page.tags | join: ', ' }}{% else %}machine learning, data science, AI, MIPT, intelligent systems{% endif %}">
+<meta name="author" content="{% if page.authors %}{{ page.authors | join: ', ' }}{% else %}{{ site_name }}{% endif %}">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="{{ canonical }}">
 
-<!-- Open Graph / Facebook -->
+<!-- Language alternates (must match canonical URLs) -->
+<link rel="alternate" hreflang="en" href="{{ en_url }}">
+{% unless en_only %}<link rel="alternate" hreflang="ru" href="{{ ru_url }}">{% endunless %}
+<link rel="alternate" hreflang="x-default" href="{{ en_url }}">
+
+<!-- Open Graph -->
 <meta property="og:type" content="{{ page_type }}">
 <meta property="og:title" content="{{ seo_title | strip_html }}">
-<meta property="og:description" content="{{ seo_description | strip_html | normalize_whitespace | truncate: 200 }}">
+<meta property="og:description" content="{{ seo_description | truncate: 200 }}">
 <meta property="og:url" content="{{ canonical }}">
-<meta property="og:site_name" content="{% if site.lang == 'ru' %}Кафедра интеллектуальных систем МФТИ{% else %}Intelligent Systems MIPT{% endif %}">
+<meta property="og:site_name" content="{{ site_name }}">
 <meta property="og:image" content="{{ seo_image }}">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-{% if page.layout == "blog" and page.date %}
-<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
-{% endif %}
+<meta property="og:locale" content="{{ locale }}">
+<meta property="og:locale:alternate" content="{{ locale_alt }}">
+{% if page.date and page_type == "article" %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">{% endif %}
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ seo_title | strip_html | truncate: 70 }}">
-<meta name="twitter:description" content="{{ seo_description | strip_html | normalize_whitespace | truncate: 200 }}">
+<meta name="twitter:description" content="{{ seo_description | truncate: 200 }}">
 <meta name="twitter:image" content="{{ seo_image }}">
 
-<!-- Additional Meta Tags -->
-<meta name="author" content="{% if page.authors %}{{ page.authors | join: ', ' }}{% else %}Intelligent Systems Department MIPT{% endif %}">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-{% if site.lang %}
-<meta name="language" content="{{ site.lang }}">
-{% endif %}
-
-<!-- Multilingual / hreflang tags -->
-{% if site.languages %}
-  {% for lang in site.languages %}
-    {% if lang == 'en' %}
-<link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ page.url | remove: '/ru/' | remove: '/en/' }}">
-    {% elsif lang == 'ru' %}
-<link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}/{{ lang }}{{ page.url | remove: '/ru/' | remove: '/en/' }}">
-    {% endif %}
-  {% endfor %}
-<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url | remove: '/ru/' | remove: '/en/' }}">
-{% endif %}
-
-<!-- Structured Data - JSON-LD -->
+<!-- Structured data (JSON-LD) -->
 <script type="application/ld+json">
+{%- if page.home -%}
+{%- assign same_as = "" | split: "" -%}
+{%- if site.github %}{% assign gh = "https://github.com/" | append: site.github %}{% assign same_as = same_as | push: gh %}{% endif -%}
+{%- if site.telegram %}{% assign same_as = same_as | push: site.telegram %}{% endif -%}
+{%- if site.youtube %}{% assign same_as = same_as | push: site.youtube %}{% endif -%}
+{%- if site.rutube %}{% assign same_as = same_as | push: site.rutube %}{% endif -%}
 {
   "@context": "https://schema.org",
-  "@type": "{% if page.layout == 'profile' %}Person{% elsif page.layout == 'blog' %}Article{% elsif page.layout == 'course' %}Course{% else %}WebPage{% endif %}",
-  {% if page.layout == "profile" %}
-  "name": "{{ seo_title }}",
-  "url": "{{ canonical }}",
-  {% if page.avatar %}
-  "image": "{{ site.url }}/images/people/{{ page.avatar }}",
-  {% endif %}
-  {% if page.mail %}
-  "email": "{{ page.mail }}",
-  {% endif %}
+  "@type": "EducationalOrganization",
+  "name": {{ site_name | jsonify }},
+  "alternateName": {{ seo_title | jsonify }},
+  "url": {{ home_url | jsonify }},
+  "logo": {{ site.url | append: site.logo | jsonify }},
+  "description": {{ seo_description | jsonify }},
+  {% if site.mail %}"email": {{ site.mail | jsonify }},{% endif %}
+  "sameAs": {{ same_as | jsonify }},
+  "parentOrganization": {
+    "@type": "CollegeOrUniversity",
+    "name": {{ mipt_name | jsonify }},
+    "alternateName": "MIPT",
+    "url": "https://mipt.ru"
+  }
+}
+{%- elsif page.layout == "profile" -%}
+{%- assign same_as = "" | split: "" -%}
+{%- for link in site.data.profile_links -%}
+  {%- assign value = page[link.key] -%}
+  {%- if value and link.key != 'mail' -%}
+    {%- if link.key == 'telegram' -%}{%- assign value = "https://t.me/" | append: value -%}{%- endif -%}
+    {%- assign same_as = same_as | push: value -%}
+  {%- endif -%}
+{%- endfor -%}
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ seo_title | jsonify }},
+  "url": {{ canonical | jsonify }},
+  {% if page.avatar %}"image": {{ seo_image | jsonify }},{% endif %}
+  {% if page.mail %}"email": {{ page.mail | jsonify }},{% endif %}
+  {% if same_as.size > 0 %}"sameAs": {{ same_as | jsonify }},{% endif %}
+  "worksFor": {
+    "@type": "EducationalOrganization",
+    "name": {{ site_name | jsonify }},
+    "url": {{ home_url | jsonify }}
+  },
   "affiliation": {
-    "@type": "Organization",
-    "name": "Moscow Institute of Physics and Technology",
+    "@type": "CollegeOrUniversity",
+    "name": {{ mipt_name | jsonify }},
     "url": "https://mipt.ru"
   }
-  {% elsif page.layout == "blog" %}
-  "headline": "{{ seo_title }}",
-  "description": "{{ seo_description | strip_html | normalize_whitespace }}",
-  "url": "{{ canonical }}",
-  {% if page.cover or page.image %}
-  "image": "{{ seo_image }}",
-  {% endif %}
-  {% if page.date %}
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  {% endif %}
-  {% if page.authors %}
-  "author": [
-    {% for author in page.authors %}
-    {
-      "@type": "Person",
-      "name": "{{ author }}"
-    }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ],
-  {% endif %}
-  "publisher": {
-    "@type": "Organization",
-    "name": "Intelligent Systems Department MIPT",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ site.url }}{{ site.logo }}"
-    }
-  }
-  {% elsif page.layout == "course" %}
-  "name": "{{ seo_title }}",
-  "description": "{{ seo_description | strip_html | normalize_whitespace }}",
-  "url": "{{ canonical }}",
+}
+{%- elsif page.layout == "course" -%}
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": {{ seo_title | jsonify }},
+  "description": {{ seo_description | jsonify }},
+  "url": {{ canonical | jsonify }},
+  {% if page.site %}"sameAs": {{ page.site | jsonify }},{% endif %}
   "provider": {
-    "@type": "Organization",
-    "name": "Moscow Institute of Physics and Technology",
-    "url": "https://mipt.ru"
+    "@type": "EducationalOrganization",
+    "name": {{ site_name | jsonify }},
+    "url": {{ home_url | jsonify }},
+    "parentOrganization": {
+      "@type": "CollegeOrUniversity",
+      "name": {{ mipt_name | jsonify }},
+      "url": "https://mipt.ru"
+    }
   },
   {% if page.lecturers %}
   "instructor": [
     {% assign lecturers = page.lecturers | split: "," %}
     {% for lecturer in lecturers %}
+    {% assign lecturer_url = site.url | append: site.baseurl | append: "/people/" | append: lecturer | append: "/" %}
     {
       "@type": "Person",
-      "name": "{{ lecturer }}"
+      "name": {% capture lecturer_name %}{% t people.{{ lecturer }} %}{% endcapture %}{{ lecturer_name | jsonify }},
+      "url": {{ lecturer_url | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ],
   {% endif %}
   "educationalLevel": "{% if page.type == 'bachelor' %}Undergraduate{% else %}Graduate{% endif %}"
-  {% else %}
-  "name": "{{ seo_title }}",
-  "description": "{{ seo_description | strip_html | normalize_whitespace }}",
-  "url": "{{ canonical }}"
+}
+{%- elsif page.layout == "blog" or page.layout == "news" -%}
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ seo_title | jsonify }},
+  "description": {{ seo_description | jsonify }},
+  "url": {{ canonical | jsonify }},
+  "mainEntityOfPage": {{ canonical | jsonify }},
+  "inLanguage": {% if page.layout == "blog" %}"en"{% else %}{{ site.lang | jsonify }}{% endif %},
+  {% if page.cover or page.image %}"image": {{ seo_image | jsonify }},{% endif %}
+  {% if page.date %}"datePublished": {{ page.date | date_to_xmlschema | jsonify }},{% endif %}
+  {% if page.authors %}
+  "author": [
+    {% for author in page.authors %}
+    { "@type": "Person", "name": {{ author | jsonify }} }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
   {% endif %}
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": {{ site_name | jsonify }},
+    "url": {{ home_url | jsonify }},
+    "logo": { "@type": "ImageObject", "url": {{ site.url | append: site.logo | jsonify }} }
+  }
+}
+{%- else -%}
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": {{ seo_title | jsonify }},
+  "description": {{ seo_description | jsonify }},
+  "url": {{ canonical | jsonify }},
+  "inLanguage": {{ site.lang | jsonify }},
+  "isPartOf": { "@type": "WebSite", "name": {{ site_name | jsonify }}, "url": {{ home_url | jsonify }} }
+}
+{%- endif -%}
+</script>
+
+{%- comment -%} Breadcrumbs: Home › [section] › page. Sections only where a real index page exists. {%- endcomment -%}
+{%- unless page.home -%}
+{%- assign crumbs = "" | split: "" -%}
+{%- capture crumb %}{% t site.nav.names.home %}|{{ home_url }}{% endcapture -%}
+{%- assign crumbs = crumbs | push: crumb -%}
+{%- case page.layout -%}
+{%- when 'profile' -%}
+  {%- capture crumb %}{% t site.nav.names.lecturers %}|{{ site.url }}{{ site.baseurl }}/people/{% endcapture -%}
+  {%- assign crumbs = crumbs | push: crumb -%}
+{%- when 'course' -%}
+  {%- capture crumb %}{% t site.nav.names.courses %}|{{ site.url }}{{ site.baseurl }}/course/{% endcapture -%}
+  {%- assign crumbs = crumbs | push: crumb -%}
+{%- when 'blog' -%}
+  {%- capture crumb %}{% t site.nav.names.blog %}|{{ site.url }}{{ site.baseurl }}/materials/blog/{% endcapture -%}
+  {%- assign crumbs = crumbs | push: crumb -%}
+{%- endcase -%}
+{%- capture crumb %}{{ seo_title | strip_html }}|{{ canonical }}{% endcapture -%}
+{%- assign crumbs = crumbs | push: crumb -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {% for c in crumbs %}{% assign parts = c | split: "|" %}
+    { "@type": "ListItem", "position": {{ forloop.index }}, "name": {{ parts[0] | strip | jsonify }}, "item": {{ parts[1] | strip | jsonify }} }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
 }
 </script>
+{%- endunless -%}

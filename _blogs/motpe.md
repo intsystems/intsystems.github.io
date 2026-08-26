@@ -16,7 +16,7 @@ tags:
 cover: /images/blog/MOTPE.png
 ---
 
-# Multiobjective Tree-Structured Parzen Estimator (MOTPE): Bayesian Optimization for the Real World
+## Multiobjective Tree-Structured Parzen Estimator (MOTPE): Bayesian Optimization for the Real World
 
 
 ## Introduction: The Problem with Real-World Problems

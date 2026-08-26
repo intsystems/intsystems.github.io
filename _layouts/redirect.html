@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="refresh" content="0;URL={{ page.redirect }}">
+    <!-- Redirect stub: search engines should index the target, not this page -->
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="{{ page.redirect }}">
     <title>Redirecting...</title>
 </head>
 <body>

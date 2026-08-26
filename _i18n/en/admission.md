@@ -1,4 +1,4 @@
-## Admission to the Department
+# Admission to the Department
 
 On this page, you will find information about the admission process to the Intelligent Systems Department at MIPT, including details for individual course attendees, the interview procedure for undergraduates, the master's program admission process, and research work at the department.
 

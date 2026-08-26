@@ -1,4 +1,4 @@
-## Paper Writing and Defense Guidelines
+# Paper Writing and Defense Guidelines
 
 On this page, you will find guidelines for writing scientific papers, choosing publication venues, and defending your thesis work at the Intelligent Systems Department.
 

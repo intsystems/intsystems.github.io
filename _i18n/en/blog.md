@@ -1,4 +1,4 @@
-## Blog Posts
+# Blog Posts
 
 Research notes, library releases, and other updates.
 

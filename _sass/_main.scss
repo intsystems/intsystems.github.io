@@ -527,3 +527,27 @@ a.social-link--text {
   font-style: normal;
   text-decoration: none;
 }
+
+// Page-level <h1> that must look exactly like the former <h2>
+// (headings were promoted for SEO/a11y without changing the design)
+.page-heading,
+.content > h1:first-child {
+  font-size: $font-size-h2;
+}
+
+// Keyboard-only "skip to content" link: invisible until focused
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0.5rem;
+  z-index: 2000;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: $href-color;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  &:focus {
+    top: 0.5rem;
+  }
+}
