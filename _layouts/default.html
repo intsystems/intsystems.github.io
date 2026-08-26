@@ -3,10 +3,23 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% if page.title %}{% t page.title %}{% else %}{% t site.name %}{% endif %}</title>
-        
+        {%- comment -%}
+          page.title is either a translation key (titles.nir, people.x, courses.y —
+          contains a dot, no spaces) or a literal string (blog/news posts).
+          Only keys go through {% t %}; a missing key would fail the build.
+          Resolved once here; seo.html reuses page_title.
+        {%- endcomment -%}
+        {% assign page_title = page.title | default: "" %}
+        {% assign title_is_key = false %}
+        {% if page_title contains "." %}{% unless page_title contains " " %}{% assign title_is_key = true %}{% endunless %}{% endif %}
+        {% if page_title == "" %}{% capture page_title %}{% t site.name %}{% endcapture %}
+        {% elsif title_is_key %}{% capture page_title %}{% t page.title %}{% endcapture %}{% endif %}
+        <title>{{ page_title }}</title>
+
         {% include seo.html %}
-        
+
+        <link rel="alternate" type="application/atom+xml" title="{% t site.name %}" href="{{ site.baseurl }}/feed.xml">
+
         <!-- Google and Yandex Verification -->
         <meta name="google-site-verification" content="Mq6PRXIcGjEbdk2gdU6tahVlGnP5nsUEPwtpEH_eYb8">
         <meta name="yandex-verification" content="b955620073da94d9">

@@ -1,5 +1,10 @@
+# Used by jekyll-feed (feed.xml) and as the last-resort SEO title
+title: Intelligent Systems
+description: Intelligent Systems Department at MIPT — news, courses, people and research
+
 brand: /images/logo/logo-square.png
-logo: /images/logo/logo-full.png
+logo: /images/logo/logo-full.png          # large version: Open Graph image, JSON-LD
+navbar_logo: /images/logo/logo-nav.png    # 400x150, shown at 50px height in the navbar
 image:
 og:
   image: /images/logo/logo-full.png
@@ -26,7 +31,8 @@ markdown: kramdown
 # Sass
 sass:
   sass_dir: _sass
-  style: :compressed
+  style: compressed
+  sourcemap: never
 
 exclude: ["LICENSE", "README.md", "Gemfile", "Gemfile.lock", "vendor", "_sass"]
 

@@ -4,9 +4,9 @@
         <div class="navbar-header page-scroll">
             <a class="navbar-brand" href="{{ site.baseurl }}/">
                 <img
-                    src="{{ site.logo }}"
-                    height="50px"
-                    alt="Logo"
+                    src="{{ site.baseurl_root }}{{ site.navbar_logo }}"
+                    height="50"
+                    alt="{% t site.name %}"
                     class="navbar-logo{% if site.lang == 'ru' %} navbar-logo-ru{% endif %}"
                 >
             </a>

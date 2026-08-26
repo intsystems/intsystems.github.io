@@ -15,7 +15,7 @@
 {%- assign pid = profile.id | split: "/" | last -%}
 <div class="list-item-people">
     <p class="list-post-title">
-        <a href="{{ site.baseurl }}{{ profile.url }}"><img loading="lazy" class="profile-thumbnail" src="{{ site.baseurl_root }}/images/people/{{ profile.avatar | default: 'default.jpg' }}"></a>
+        <a href="{{ site.baseurl }}{{ profile.url }}"><img loading="lazy" class="profile-thumbnail" src="{{ site.baseurl_root }}/images/people/{{ profile.avatar | default: 'default.jpg' }}" alt="{% t people.{{ pid }} %}"></a>
         <a class="name" href="{{ site.baseurl }}{{ profile.url }}">{% t people.{{ pid }} %}</a>
     </p>
 </div>

@@ -45,3 +45,26 @@
     }
   }
 }
+
+// 404 page
+.not-found {
+  text-align: center;
+  padding: 3rem 0;
+
+  &__code {
+    font-size: 6rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 1rem;
+    color: $href-color;
+  }
+
+  &__links {
+    margin-top: 2rem;
+
+    a {
+      text-decoration: none;
+      font-weight: 600;
+    }
+  }
+}

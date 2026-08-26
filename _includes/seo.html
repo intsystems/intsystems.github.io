@@ -1,5 +1,6 @@
 <!-- SEO Meta Tags -->
-{% assign seo_title = page.title | default: site.title | default: "Intelligent Systems" %}
+{% comment %} page_title is resolved (translated, with fallback) in _layouts/default.html {% endcomment %}
+{% assign seo_title = page_title | default: "Intelligent Systems" %}
 {% assign seo_description = "" %}
 {% assign page_type = "website" %}
 
@@ -60,8 +61,9 @@
   {% assign canonical = page.url | replace: 'index.html', '' | absolute_url %}
 {% endif %}
 
-<!-- Page Image -->
-{% assign seo_image = page.image | default: page.cover | default: site.og.image | absolute_url %}
+<!-- Page Image (root-relative path; images are not localized, so never prefix with the language baseurl) -->
+{% assign seo_image_path = page.image | default: page.cover | default: site.og.image %}
+{% assign seo_image = site.url | append: seo_image_path %}
 
 <!-- Meta Tags -->
 <meta name="description" content="{{ seo_description | strip_html | normalize_whitespace | truncate: 160 }}">
@@ -115,7 +117,7 @@
   "name": "{{ seo_title }}",
   "url": "{{ canonical }}",
   {% if page.avatar %}
-  "image": "{{ page.avatar | absolute_url }}",
+  "image": "{{ site.url }}/images/people/{{ page.avatar }}",
   {% endif %}
   {% if page.mail %}
   "email": "{{ page.mail }}",
@@ -150,7 +152,7 @@
     "name": "Intelligent Systems Department MIPT",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ site.logo | absolute_url }}"
+      "url": "{{ site.url }}{{ site.logo }}"
     }
   }
   {% elsif page.layout == "course" %}

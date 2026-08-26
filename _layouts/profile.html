@@ -4,7 +4,7 @@ layout: default
 {% assign person_id = page.id | split: "/" | last %}
 <div class="profile-header">
     <div class="profile-avatar">
-        <img width="300" height="auto" src="{{ site.baseurl_root }}/images/people/{{ page.avatar | default: 'default.jpg' }}">
+        <img width="300" height="auto" src="{{ site.baseurl_root }}/images/people/{{ page.avatar | default: 'default.jpg' }}" alt="{% t people.{{ person_id }} %}">
     </div>
     <div class="profile-info">
         <div class="no_toc_section profile-name">
