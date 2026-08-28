@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0 # full history: needed to restore file mtimes from git
       # jekyll-sitemap derives <lastmod> from file mtimes; a fresh checkout would
