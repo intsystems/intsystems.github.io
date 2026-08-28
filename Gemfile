@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'ffi', '= 1.16.3'
+gem 'ffi', '1.17.4'
 gem 'jekyll', '~> 4.3'
 # Keep the libsass-based converter: no dart-sass binary/protobuf dependency,
 # and no @import deprecation noise for the existing partials
