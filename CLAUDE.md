@@ -12,7 +12,8 @@ Bilingual (EN default at `/`, RU at `/ru/`) using `jekyll-multiple-languages-plu
 - Deploy: push to `main` triggers `.github/workflows/jekyll.yml` (optimize images → build → deploy to Pages).
   Pull requests to `main` run the same build without deploying.
   The site is also rebuilt **daily** (cron) so date-driven content — current semester, upcoming deadlines, expiring news — follows the calendar without commits.
-- Automation workflows: `refresh-data.yml` (weekly data refresh + deploy), `links.yml` (weekly dead-link report → issue labelled `broken-links`), Dependabot (`.github/dependabot.yml`, weekly gem/action updates as PRs).
+- Automation workflows: `refresh-data.yml` (weekly data refresh + deploy), `links.yml` (weekly dead-link report → issue labelled `broken-links`).
+  No Dependabot on purpose — dependency bumps are done by hand when needed.
   Optimized images are cached by the hash of the originals (`actions/cache`), so the slow step runs only when images change.
 - `.github/workflows/links.yml` checks all external links weekly (lychee); a red run means a dead link in content.
 - There is no other deploy path; `_site/`, `vendor/` and `Gemfile.lock` are gitignored.
