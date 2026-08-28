@@ -39,7 +39,7 @@ jobs:
       # slow optimization step is skipped entirely.
       - name: Restore optimized images
         id: images-cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: images
           key: optimized-images-v1-${{ hashFiles('images/**') }}
