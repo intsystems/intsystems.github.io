@@ -3,7 +3,7 @@ gem 'ffi', '= 1.16.3'
 gem 'jekyll', '~> 4.3'
 # Keep the libsass-based converter: no dart-sass binary/protobuf dependency,
 # and no @import deprecation noise for the existing partials
-gem 'jekyll-sass-converter', '~> 2.2'
+gem 'jekyll-sass-converter', '~> 3.1'
 gem 'bigdecimal'
 gem 'kramdown-parser-gfm'
 gem 'jekyll-sitemap'
