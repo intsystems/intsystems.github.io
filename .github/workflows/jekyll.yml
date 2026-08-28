@@ -6,6 +6,10 @@ on:
   # Pull requests get a build check (no deploy) so broken changes are caught before merge
   pull_request:
     branches: ["main"]
+  # Daily rebuild: date-driven content (current semester, conference deadlines,
+  # expiring news) must move on even when nobody pushes
+  schedule:
+    - cron: "0 4 * * *" # 04:00 UTC = 07:00 Moscow
   workflow_dispatch:
 
 permissions:

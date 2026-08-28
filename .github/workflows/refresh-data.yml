@@ -1,0 +1,45 @@
+name: Refresh external data
+
+# Weekly: pull conference deadlines (ccfddl/ccf-deadlines) and GitHub org stats
+# into _data/, commit if anything changed, and trigger a site deploy.
+on:
+  schedule:
+    - cron: "0 5 * * 1" # Mondays 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Update _data
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          pip install --quiet pyyaml
+          python3 scripts/update_data.py
+      - name: Commit and deploy if changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- _data; then
+            echo "Data is up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data
+          git commit -m "Refresh conference deadlines and stats"
+          git push
+          # Pushes made with the workflow token do not trigger other workflows;
+          # start the deploy explicitly.
+          gh workflow run jekyll.yml --ref main

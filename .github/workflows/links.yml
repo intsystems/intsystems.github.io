@@ -1,7 +1,8 @@
 name: Check external links
 
 # Weekly sweep of every http(s) link in the content (research reports, theses,
-# conference lists, bios, blog posts). A red run means something went dead.
+# conference lists, bios, blog posts). Dead links are reported in a single
+# GitHub issue labelled "broken-links" (updated in place while it stays open).
 on:
   schedule:
     - cron: "0 6 * * 1" # Mondays 06:00 UTC
@@ -9,6 +10,7 @@ on:
 
 permissions:
   contents: read
+  issues: write
 
 jobs:
   lychee:
@@ -17,6 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Check links
+        id: lychee
         uses: lycheeverse/lychee-action@v2
         with:
           # Only real http(s) URLs (skips Liquid paths like {{ site.baseurl }}/...).
@@ -33,4 +36,21 @@ jobs:
             --exclude 'mathnet\.ru'
             --exclude 'linkedin\.com'
             '_i18n/**/*.md' '_blogs/*.md' '_people/*.md' '_course/*.md' '_data/*.yml' 'README.md'
-          fail: true
+          output: lychee/report.md
+          fail: false
+      - name: Find the open report issue
+        if: steps.lychee.outputs.exit_code != 0
+        id: existing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          number=$(gh issue list --repo "$GITHUB_REPOSITORY" --label broken-links --state open --json number --jq '.[0].number // empty')
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+      - name: Create or update the report issue
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Broken links report"
+          content-filepath: lychee/report.md
+          labels: broken-links
+          issue-number: ${{ steps.existing.outputs.number }}
