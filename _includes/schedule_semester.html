@@ -1,0 +1,21 @@
+{% comment %}
+  One semester block on /education/: heading, optional "(preliminary)" note,
+  key dates, and a timetable per year of study. Parameter: semester (from _data/schedule.yml).
+{% endcomment %}
+{%- assign s = include.semester -%}
+<h3 id="{{ s.id | replace: '_', '-' }}">{% t schedule.seasons.{{ s.season }} %} {{ s.year }}</h3>
+{% if s.draft %}
+<p>{% t schedule.draft %}</p>
+{% endif %}
+{% if s.key_dates %}
+<h4>{% t schedule.key_dates %}</h4>
+{% include date_list.html items=s.key_dates %}
+{% endif %}
+{% for g in s.groups %}
+{%- capture year_label %}{% t ordinals.n{{ g.year_of_study }} %}{% endcapture -%}
+{%- capture semester_label %}{% t ordinals.n{{ g.semester }} %}{% endcapture -%}
+{%- capture day_label %}{% t days.{{ g.day }} %}{% endcapture -%}
+{%- capture group_title %}{% t schedule.group %}{% endcapture -%}
+<h4>{{ group_title | replace: '[year]', year_label | replace: '[semester]', semester_label | replace: '[day]', day_label }}</h4>
+{% include schedule_table.html group=g %}
+{% endfor %}

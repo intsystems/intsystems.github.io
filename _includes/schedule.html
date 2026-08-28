@@ -1,0 +1,31 @@
+{% comment %}
+  Whole schedule section of /education/ (used by both language pages).
+  Semesters come from _data/schedule.yml and are ordered by date automatically:
+  the current one first, then upcoming ones, then past semesters collapsed.
+  The site is rebuilt daily, so this follows the calendar without edits.
+{% endcomment %}
+{%- assign today = site.time | date: '%s' -%}
+{%- assign current = "" | split: "" -%}
+{%- assign upcoming = "" | split: "" -%}
+{%- assign past = "" | split: "" -%}
+{%- for s in site.data.schedule.semesters -%}
+  {%- assign s_start = s.start | date: '%s' -%}
+  {%- assign s_end = s.end | date: '%s' -%}
+  {%- if s_end < today -%}{%- assign past = past | push: s -%}
+  {%- elsif s_start > today -%}{%- assign upcoming = upcoming | push: s -%}
+  {%- else -%}{%- assign current = current | push: s -%}{%- endif -%}
+{%- endfor -%}
+{%- assign upcoming = upcoming | sort: "start" -%}
+{%- assign past = past | sort: "start" | reverse -%}
+{%- assign shown = current | concat: upcoming -%}
+{% for s in shown %}
+{% include schedule_semester.html semester=s %}
+{% endfor %}
+{% if past.size > 0 %}
+<details class="data-table">
+  <summary><h3>{% t schedule.past %}</h3></summary>
+  {% for s in past %}
+  {% include schedule_semester.html semester=s %}
+  {% endfor %}
+</details>
+{% endif %}

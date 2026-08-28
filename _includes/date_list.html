@@ -1,0 +1,27 @@
+{% comment %}
+  Bulleted list of dated items from _data (schedule key dates, admission dates).
+  Each item: date, [date_end] (same month), en, ru (markdown; {baseurl} = site.baseurl).
+  Rendered as "<strong>September 2:</strong> text" (EN) / "<strong>2 сентября:</strong> text" (RU).
+
+  Parameters:
+    items          — array of items
+    upcoming_only  — true to skip items whose date has passed
+{% endcomment %}
+{%- assign today = site.time | date: '%s' -%}
+<ul>
+{%- for item in include.items -%}
+  {%- assign ts = item.date | date: '%s' -%}
+  {%- if include.upcoming_only and ts < today -%}{%- continue -%}{%- endif -%}
+  {%- assign month_no = item.date | date: '%-m' -%}
+  {%- capture month %}{% t months.m{{ month_no }} %}{% endcapture -%}
+  {%- assign day = item.date | date: '%-d' -%}
+  {%- if item.date_end -%}
+    {%- assign day_end = item.date_end | date: '%-d' -%}
+    {%- assign day = day | append: '-' | append: day_end -%}
+  {%- endif -%}
+  {%- if site.lang == 'ru' -%}{%- assign label = day | append: ' ' | append: month -%}
+  {%- else -%}{%- assign label = month | append: ' ' | append: day -%}{%- endif -%}
+  {%- assign text = item[site.lang] | default: item.en | replace: '{baseurl}', site.baseurl | markdownify | remove: '<p>' | remove: '</p>' | strip -%}
+  <li><strong>{{ label }}:</strong> {{ text }}</li>
+{%- endfor -%}
+</ul>

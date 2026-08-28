@@ -21,6 +21,8 @@ On this page, you will find information about the admission process to the Intel
 5. Receives the department's decision that same evening,
 6. Awaits the dean's office directive on department assignment.
 
+{% include admission_dates.html %}
+
 <!-- ### Interview Procedure for Third-Year Students (Faculty Perspective)
 
 1. We gather all candidates wishing to join the department,

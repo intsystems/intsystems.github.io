@@ -18,9 +18,14 @@
     <h2>Новости</h2>
     <div class="news-scroll-container">
         <div class="news-track">
+        {% assign today = site.time | date: '%s' %}
         {% assign news_sorted = site.posts | where: "lang", "ru" | sort: "date" | reverse %}
-        {% if news_sorted.size > 0 %}
-            {% for post in news_sorted limit:10 %}
+        {% assign shown = 0 %}
+        {% for post in news_sorted %}
+            {% comment %} posts with `expires:` disappear from the home page after that date {% endcomment %}
+            {% if post.expires %}{% assign expires = post.expires | date: '%s' %}{% if expires < today %}{% continue %}{% endif %}{% endif %}
+            {% if shown >= 10 %}{% break %}{% endif %}
+            {% assign shown = shown | plus: 1 %}
             <a class="news-block" href="{{ site.baseurl }}{{ post.url }}">
                 {% if post.important %}
                 <div class="news-block__badge-row"><span class="news-important-badge">ВАЖНОЕ</span></div>
@@ -30,7 +35,7 @@
                 <p class="news-excerpt">{{ post.excerpt }}</p>
             </a>
             {% endfor %}
-        {% else %}
+        {% if shown == 0 %}
             Нет новостей
         {% endif %}
         </div>
@@ -64,7 +69,7 @@
             <p class="stat__label">средний возраст преподавателей курсов</p>
         </div>
         <div class="stat fade-in-right">
-            <p class="stat__value">170+</p>
+            <p class="stat__value">{{ site.data.stats.github_repos | divided_by: 10 | times: 10 }}+</p>
             <p class="stat__label">open source проектов на <a href="https://github.com/{{ site.github }}">GitHub</a></p>
         </div>
         <div class="stat fade-in-left">

@@ -11,6 +11,8 @@ Bilingual (EN default at `/`, RU at `/ru/`) using `jekyll-multiple-languages-plu
   libsass evaluates CSS `min()`/`max()` as Sass math — wrap them in `unquote("...")` (see `_sass/_toc.scss`).
 - Deploy: push to `main` triggers `.github/workflows/jekyll.yml` (optimize images → build → deploy to Pages).
   Pull requests to `main` run the same build without deploying.
+  The site is also rebuilt **daily** (cron) so date-driven content — current semester, upcoming deadlines, expiring news — follows the calendar without commits.
+- Automation workflows: `refresh-data.yml` (weekly data refresh + deploy), `links.yml` (weekly dead-link report → issue labelled `broken-links`), Dependabot (`.github/dependabot.yml`, weekly gem/action updates as PRs).
   Optimized images are cached by the hash of the originals (`actions/cache`), so the slow step runs only when images change.
 - `.github/workflows/links.yml` checks all external links weekly (lychee); a red run means a dead link in content.
 - There is no other deploy path; `_site/`, `vendor/` and `Gemfile.lock` are gitignored.
@@ -47,8 +49,10 @@ Never add a person/course without registering its display name in BOTH `en.yml` 
 | `_course/*.md` | Course stubs: `type` (bachelor/master/deprecated/draft), `lecturers` (comma-separated people IDs), `site` |
 | `_blogs/*.md` | Blog posts — full content directly here (NOT via `_i18n`), EN only. Filename = URL slug (`/materials/blog/<slug>/`) |
 | `redirects/*.md` | Front-matter-only stubs with `layout: redirect` that keep old URLs alive (`permalink:` old, `redirect:` new) |
-| `_data/schedule.yml` | Timetable data, rendered by `_includes/schedule_table.html` from `_i18n/*/education.md` |
-| `_data/conferences.yml` | Conference deadlines, rendered by Liquid in `_i18n/en/conferences.md` |
+| `_data/schedule.yml` | THE schedule: semesters (dates, key dates in EN+RU, timetables). Rendered on `/education/` by `_includes/schedule.html` → `schedule_semester.html` → `schedule_table.html` / `date_list.html`; admission-tagged dates also on `/admission/` via `admission_dates.html` |
+| `_data/conferences.yml` | Conference deadlines for `/materials/conferences/`; entries with `ccfddl:` are auto-refreshed weekly from ccfddl/ccf-deadlines by `scripts/update_data.py` |
+| `_data/stats.yml` | Home page numbers (GitHub repo count), auto-refreshed weekly by `scripts/update_data.py` |
+| `scripts/update_data.py` | Data refresh script run by `.github/workflows/refresh-data.yml` (commits to `_data/`, then triggers a deploy) |
 | `_layouts/` | `default` (base HTML, all `<head>` assets), `page`, `profile`, `course`, `blog`, `news`, `redirect` |
 | `_includes/` | `navbar`, `footer`, `seo` (meta + JSON-LD), `edit` (floating edit button), `toc`, `blog-grid`, `schedule_table`, `person-card` (avatar+name card, pass `id=` or `profile=`), `social-links` (the department's social links, pass `link_class=`) |
 | `_data/profile_links.yml` | Ordered list of contact/academic link types on profile pages; add an entry here to support a new link field in `_people/*.md` |
@@ -81,13 +85,24 @@ URL becomes `/materials/blog/<slug>/`. Never rename a published post without add
 
 ### Add news
 Create `_i18n/en/_posts/YYYY-MM-DD-slug.md` AND `_i18n/ru/_posts/YYYY-MM-DD-slug.md` with `title`, `date`, `important: true|false`.
-Home page shows the 10 latest.
+Add `expires: YYYY-MM-DD` for event announcements — the post leaves the home page after that date (the site rebuilds daily).
+Home page shows the 10 latest non-expired posts.
 
-### Update schedule / NIR / thesis tables
-- Schedule: edit `_data/schedule.yml` (course IDs must match `_course/` filenames); keep EN and RU `education.md` in sync (same semesters, same order).
-- NIR reports: append rows to tables in `_i18n/en/nir.md` (see README for the row format).
-- Theses: `_i18n/en/thesis.md`.
-- Semester headings are always **Season Year**: `### Spring 2026` / `### Fall 2026` (RU: `### Весна 2026` / `### Осень 2026`); data keys follow the same order (`spring_2026`). Thesis sections are by year only (`### 2026`).
+### Add a semester / update the schedule
+Everything is in `_data/schedule.yml` — never edit semester blocks in `education.md` (the pages only hold the intro links and `{% include schedule.html %}`).
+1. Append a semester: `id` (`fall_2026`), `season`, `year`, `start`/`end` (set `end` to the day before the next semester starts), `draft: true` while preliminary.
+2. `key_dates`: `{date, [date_end], en, ru, [tag: admission]}`; text is markdown, internal links as `({baseurl}/materials/...)`.
+3. `groups`: one per year of study — `{year_of_study, semester, day, courses: [{time, course_id, [type]}]}`; `course_id` = `_course/` filename or `research_work`.
+The current semester is shown first, upcoming after it, past ones collapse under "Past semesters" automatically.
+Semester labels render as **Season Year** (`Fall 2026` / `Осень 2026`) from `schedule.seasons` translations.
+
+### Update NIR / thesis tables
+- NIR reports: append rows to tables in `_i18n/en/nir.md` (see README for the row format); section headings are **Season Year** (`### Fall 2026`).
+- Theses: `_i18n/en/thesis.md`, sections by year (`### 2026`).
+
+### Conferences and home-page stats
+`scripts/update_data.py` (weekly via `refresh-data.yml`, or `python3 scripts/update_data.py` locally) rewrites deadlines/dates/venues for every conference with a `ccfddl:` key and the GitHub repo count in `_data/stats.yml`.
+To track a new conference add an entry with `ccfddl: <dir>/<file>` from https://github.com/ccfddl/ccf-deadlines/tree/main/conference; without the key the entry is manual (KDD, ACL).
 
 ## Gotchas
 

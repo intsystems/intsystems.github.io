@@ -1,0 +1,17 @@
+{% comment %}
+  Upcoming dates relevant to applicants: key dates tagged `admission` in
+  _data/schedule.yml, across all semesters. Renders nothing when none are ahead.
+{% endcomment %}
+{%- assign today = site.time | date: '%s' -%}
+{%- assign items = "" | split: "" -%}
+{%- for s in site.data.schedule.semesters -%}
+  {%- for d in s.key_dates -%}
+    {%- assign ts = d.date | date: '%s' -%}
+    {%- if d.tag == 'admission' and ts >= today -%}{%- assign items = items | push: d -%}{%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- if items.size > 0 -%}
+{%- assign items = items | sort: "date" -%}
+<h3>{% t schedule.admission_dates %}</h3>
+{% include date_list.html items=items %}
+{%- endif -%}

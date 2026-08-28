@@ -156,6 +156,51 @@ schedule:
   course: Course
   instructors: Instructors
   research_work: Research Work
+  seasons:
+    spring: Spring
+    fall: Fall
+  draft: (preliminary)
+  key_dates: Key Dates
+  group: "[year] year, [semester] semester ([day])"
+  past: Past semesters
+  admission_dates: Upcoming dates for applicants
+
+months:
+  m1: January
+  m2: February
+  m3: March
+  m4: April
+  m5: May
+  m6: June
+  m7: July
+  m8: August
+  m9: September
+  m10: October
+  m11: November
+  m12: December
+
+days:
+  monday: Monday
+  tuesday: Tuesday
+  wednesday: Wednesday
+  thursday: Thursday
+  friday: Friday
+  saturday: Saturday
+  sunday: Sunday
+
+ordinals:
+  n1: 1st
+  n2: 2nd
+  n3: 3rd
+  n4: 4th
+  n5: 5th
+  n6: 6th
+  n7: 7th
+  n8: 8th
+  n9: 9th
+  n10: 10th
+  n11: 11th
+  n12: 12th
 
 profile:
   website: Personal Website

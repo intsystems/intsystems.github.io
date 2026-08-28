@@ -1,89 +1,198 @@
-spring_2026:
-  year_3_semester_6:
-    day: thursday
-    courses:
-      - time: "12:20-13:50"
-        course_id: introduction_machine_learning
-      - time: "14:30-16:00"
-        course_id: programming_practicum_python
-      - time: "16:10-17:40"
-        course_id: introduction_to_speciality
-      - time: "17:50-19:20"
-        course_id: automation_scientific_research
+# Department schedule — single source for /education/ in BOTH languages.
+# Rendered by _includes/schedule.html; the current and upcoming semesters are
+# shown expanded, past ones are collapsed automatically (by `start`/`end`).
+#
+# Semester fields:
+#   id        spring_YYYY | fall_YYYY (also the heading anchor)
+#   season    spring | fall            (label comes from schedule.seasons.* in en.yml/ru.yml)
+#   start/end the semester is "current" between these dates; make `end` the day
+#             before the next semester starts so there is always a current one
+#   draft     true → "(preliminary)" note under the heading
+#   key_dates list of {date, [date_end], en, ru, [tag]}; text is markdown,
+#             write internal links as ({baseurl}/materials/...). `tag: admission`
+#             dates also appear on /admission/ while they are upcoming.
+#   groups    one table per year of study: {year_of_study, semester, day, courses}
+#             courses: {time, course_id, [type: lecture|seminar]}; course_id is a
+#             filename from _course/ or the pseudo id research_work.
 
-  year_4_semester_8:
-    day: tuesday
-    courses:
-      - time: "10:30-12:00"
-        course_id: recommender_systems
-      - time: "12:10-13:40"
-        course_id: forecasting_methods
-      - time: "14:30-16:00"
-        course_id: bayesian_model_selection
-      - time: ""
-        course_id: research_work
+semesters:
+  - id: fall_2026
+    season: fall
+    year: 2026
+    start: 2026-09-07
+    end: 2027-02-09
+    draft: false
+    key_dates:
+      - date: 2026-09-02
+        en: "Deadline for [scholarship]({baseurl}/materials/scholarship) applications"
+        ru: "Подача заявок на [стипендию К.В. Рудакова]({baseurl}/materials/scholarship)"
+      - date: 2026-09-07
+        en: "Start of classes at the department"
+        ru: "Начало занятий на кафедре"
+      # - date: 2026-09-11
+      #   date_end: 2026-09-12
+      #   en: "Organizational meeting"
+      #   ru: "Организационное собрание"
+      - date: 2026-10-23
+        tag: admission
+        en: "Department presentation for 3rd year students"
+        ru: "Презентация кафедры для студентов 3 курса"
+      - date: 2026-11-01
+        tag: admission
+        en: "Interview for 3rd year students applying to the department"
+        ru: "Собеседование для студентов 3 курса, поступающих на кафедру"
+      - date: 2026-12-15
+        date_end: 2026-12-21
+        en: "Exam week for 3rd to 6th year students"
+        ru: "Экзаменационная неделя для студентов 3-6 курсов"
+      - date: 2026-12-19
+        en: "❗️ Credit on research work (be ready with paper/code/presentation)"
+        ru: "❗️ Зачет по исследовательской работе (научная статья/код/презентация)"
+      # - date: 2027-01-17
+      #   en: "State exam for 6th year students"
+      #   ru: "Госэкзамен для студентов 6 курса"
+    groups:
+      - year_of_study: 4
+        semester: 7
+        day: tuesday
+        courses:
+          - time: "10:30-12:00"
+            course_id: deep_learning
+            type: lecture
+          - time: "12:10-13:40"
+            course_id: deep_learning
+            type: seminar
+          - time: "14:30-16:00"
+            course_id: bayesian_model_selection
+          - time: "16:10-17:40"
+            course_id: forecasting_methods
+          - time: ""
+            course_id: research_work
+      - year_of_study: 5
+        semester: 9
+        day: tuesday
+        courses:
+          - time: "12:10-13:40"
+            course_id: bioinformatics
+          - time: "14:30-16:00"
+            course_id: bayesian_multimodeling
+          - time: "16:10-17:40"
+            course_id: rnd_in_ai
+          - time: "18:00-19:30"
+            course_id: deep_generative_models
+            type: lecture
+          - time: "19:30-21:00"
+            course_id: deep_generative_models
+            type: seminar
+          - time: ""
+            course_id: research_work
+      - year_of_study: 6
+        semester: 11
+        day: thursday
+        courses:
+          - time: "10:30-12:00"
+            course_id: functional_data_analysis
+          - time: "12:10-13:40"
+            course_id: intellectual_data_analysis
+          - time: "14:30-16:00"
+            course_id: probabilistic_topic_models
+          - time: ""
+            course_id: research_work
 
-  year_5_semester_10:
-    day: tuesday
-    courses:
-      - time: "10:30-12:00"
-        course_id: optimal_transport
-      - time: "12:10-13:40"
-        course_id: bioinformatics
-      - time: "14:30-16:00"
-        course_id: natural_language_processing
-      - time: "17:00-18:30"
-        course_id: software_engineering_data_analysis
-      - time: ""
-        course_id: bayesian_multimodeling
-      - time: ""
-        course_id: rnd_in_ai
-      - time: ""
-        course_id: research_work
-
-fall_2026:
-  year_4_semester_7:
-    day: tuesday
-    courses:
-      - time: "10:30-12:00"
-        course_id: deep_learning
-        type: lecture
-      - time: "12:10-13:40"
-        course_id: deep_learning
-        type: seminar
-      - time: "14:30-16:00"
-        course_id: bayesian_model_selection
-      - time: "16:10-17:40"
-        course_id: forecasting_methods
-      - time: ""
-        course_id: research_work
-
-  year_5_semester_9:
-    day: tuesday
-    courses:
-      - time: "12:10-13:40"
-        course_id: bioinformatics
-      - time: "14:30-16:00"
-        course_id: bayesian_multimodeling
-      - time: "16:10-17:40"
-        course_id: rnd_in_ai
-      - time: "18:00-19:30"
-        course_id: deep_generative_models
-        type: lecture
-      - time: "19:30-21:00"
-        course_id: deep_generative_models
-        type: seminar
-      - time: ""
-        course_id: research_work
-
-  year_6_semester_11:
-    day: thursday
-    courses:
-      - time: "10:30-12:00"
-        course_id: functional_data_analysis
-      - time: "12:10-13:40"
-        course_id: intellectual_data_analysis
-      - time: "14:30-16:00"
-        course_id: probabilistic_topic_models
-      - time: ""
-        course_id: research_work
+  - id: spring_2027
+    season: spring
+    year: 2027
+    start: 2027-02-10
+    end: 2027-08-31
+    draft: true
+    key_dates:
+      - date: 2027-02-10
+        en: "Start of classes at the department"
+        ru: "Начало занятий на кафедре"
+      - date: 2027-02-15
+        en: "Deadline for [scholarship]({baseurl}/materials/scholarship) applications"
+        ru: "Крайний срок подачи заявок на [стипендию]({baseurl}/materials/scholarship)"
+      - date: 2027-03-04
+        tag: admission
+        en: "Monday 18:30 presentation about the department for second-year students, offline"
+        ru: "Понедельник 18:30 презентация о кафедре для студентов второго курса, оффлайн"
+      - date: 2027-03-10
+        en: "Deadline for submissions to the student conference"
+        ru: "Cрок подачи заявок на студенческую конференцию"
+      - date: 2027-04-04
+        en: "13:00 conference and discussion of theses for 4th and 6th year students"
+        ru: "13:00 конференция и обсуждение тезисов для студентов 4-го и 6-го курсов"
+      - date: 2027-05-23
+        en: "15:00 (Saturday) Credit on research work for 3rd-6th year and postgraduate students"
+        ru: "15:00 (суббота) Зачет по научной работе для студентов 3-го-6-го курсов и аспирантов"
+      - date: 2027-05-18
+        date_end: 2027-05-24
+        en: "Exam week for 3rd to 6th year students"
+        ru: "Зачетная неделя для студентов 3-го-6-го курсов"
+      - date: 2027-06-02
+        en: "PhD qualifying exam for postgraduate students"
+        ru: "Квалификационный экзамен для аспирантов"
+      - date: 2027-06-06
+        en: "10:00 predefense for 6th year students"
+        ru: "10:00 предзащита для студентов 6-го курса"
+      - date: 2027-06-13
+        en: "10:00 predefense for 4th year students"
+        ru: "10:00 предзащита для студентов 4-го курса"
+      - date: 2027-06-17
+        en: "State final attestation for graduating postgraduate students"
+        ru: "Государственная итоговая аттестация для выпускников аспирантуры"
+      - date: 2027-06-17
+        en: "Scientific report for graduating postgraduate students"
+        ru: "Научный доклад для выпускников аспирантуры"
+      - date: 2027-06-17
+        en: "13:00 (Wednesday) defense for 6th year students, offline Vavilova 42, 355"
+        ru: "13:00 (среда) защита для студентов 6-го курса, оффлайн Вавилова 42, 355"
+      - date: 2027-06-24
+        en: "13:00 (Wednesday) defense for 4th year students, offline Vavilova 42, 355"
+        ru: "13:00 (среда) защита для студентов 4-го курса, оффлайн Вавилова 42, 355"
+    groups:
+      # Both "Introduction to Machine Learning" and "Programming Practicum in Python"
+      # appear in the grade sheet as "Introduction to Machine Learning and Python Programming Practicum".
+      - year_of_study: 3
+        semester: 6
+        day: thursday
+        courses:
+          - time: "12:20-13:50"
+            course_id: introduction_machine_learning
+          - time: "14:30-16:00"
+            course_id: programming_practicum_python
+          - time: "16:10-17:40"
+            course_id: introduction_to_speciality
+          - time: "17:50-19:20"
+            course_id: automation_scientific_research
+      - year_of_study: 4
+        semester: 8
+        day: tuesday
+        courses:
+          - time: "10:30-12:00"
+            course_id: recommender_systems
+          - time: "12:10-13:40"
+            course_id: forecasting_methods
+          - time: "14:30-16:00"
+            course_id: bayesian_model_selection
+          - time: ""
+            course_id: research_work
+      # "Software Engineering for Data Analysis" could not find a place in the curriculum.
+      - year_of_study: 5
+        semester: 10
+        day: tuesday
+        courses:
+          - time: "10:30-12:00"
+            course_id: optimal_transport
+          - time: "12:10-13:40"
+            course_id: bioinformatics
+          - time: "14:30-16:00"
+            course_id: natural_language_processing
+          - time: "17:00-18:30"
+            course_id: software_engineering_data_analysis
+          - time: ""
+            course_id: bayesian_multimodeling
+          - time: ""
+            course_id: rnd_in_ai
+          - time: ""
+            course_id: research_work
