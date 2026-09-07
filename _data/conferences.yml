@@ -36,13 +36,13 @@ conferences:
 - name: CVPR
   ccfddl: AI/cvpr
   full_name: Conference on Computer Vision and Pattern Recognition
-  submission_deadline: '2025-11-13'
-  conference_date: '2026-06-03'
-  location: Denver, Colorado, United States
-  website: https://cvpr.thecvf.com/Conferences/2026
+  submission_deadline: '2026-11-16'
+  conference_date: '2027-06-20'
+  location: Seattle, WA, United States
+  website: https://cvpr.thecvf.com/Conferences/2027
   rank: A*
   active: true
-  abstract_deadline: '2025-11-06'
+  abstract_deadline: '2026-11-10'
 - name: ICCV
   ccfddl: AI/iccv
   full_name: International Conference on Computer Vision
@@ -86,13 +86,13 @@ conferences:
 - name: AISTATS
   ccfddl: AI/aistats
   full_name: International Conference on Artificial Intelligence and Statistics
-  submission_deadline: '2025-10-02'
-  conference_date: '2026-05-02'
-  location: Morocco
-  website: https://virtual.aistats.org/Conferences/2026
+  submission_deadline: '2026-10-06'
+  conference_date: '2027-05-03'
+  location: Montréal, Canada
+  website: https://virtual.aistats.org/Conferences/2027
   rank: A
   active: true
-  abstract_deadline: '2025-09-25'
+  abstract_deadline: '2026-09-29'
 - name: KDD
   full_name: ACM SIGKDD Conference on Knowledge Discovery and Data Mining
   submission_deadline: '2026-02-06'
