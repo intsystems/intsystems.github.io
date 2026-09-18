@@ -120,7 +120,10 @@ To track a new conference add an entry with `ccfddl: <dir>/<file>` from https://
   `page.title` may be a translation key (`titles.nir`, `people.x` — has a dot, no spaces) or a literal string (blog/news posts);
   `_layouts/default.html` resolves it into `page_title` once, and `seo.html` reuses that — never call `{% t page.title %}` elsewhere.
 - People/course lookups are done by `page.url contains lecturer_id` string matching — keep IDs unique and never rename a person file without checking `lecturers:` fields in `_course/`.
-- `edit: true` in front matter shows the floating "edit on GitHub" button (`_includes/edit.html` maps the path into `_i18n/<lang>/`).
+- `edit: true` in front matter shows the floating "edit on GitHub" button (`_includes/edit.html`).
+  It opens the file that actually rendered the page: `_i18n/<lang>/<path>` when that translation exists, `_i18n/en/<path>` when it does not (missing RU pages and bios fall back to EN, and linking a missing file gives a GitHub 404), the page's own file otherwise (blog posts).
+  Existence is checked against `site.i18n_files`, a `{path => true}` hash built by `_plugins/i18n_file_index.rb` — Liquid cannot read the filesystem.
+  Root stubs carry a `{% comment %}` telling editors that the text lives in `_i18n/{en,ru}/` — keep it when adding a stub.
 - `toc: true` + optional `toc_headings` enables the floating table of contents (`javascript/toc.js`).
 - Front matter defaults in `_config.yml` assign layouts by collection type — new files usually need no `layout:` key.
 - Tables are auto-wrapped for horizontal scroll by `table_scroll.js`; don't wrap them manually.

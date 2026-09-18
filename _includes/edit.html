@@ -13,13 +13,27 @@
 {% endif %}
 
 {% if edit_href == '' and edit_base != '' and edit_path %}
-    {% assign first_char = edit_path | slice: 0, 1 %}
-    {% if edit_path contains '_i18n/' or first_char == '_' %}
-        {% assign edit_href = edit_base | append: edit_path %}
+    {%- comment -%}
+    Send the editor to the file that holds the text of this page, not to the stub that
+    only holds settings: `_i18n/<lang>/<path>` when that translation exists, the EN file
+    when it does not (that is what the `tf` tag rendered), and the page's own file for
+    content that lives outside `_i18n/` — blog posts, or a person with no bio yet.
+    `site.i18n_files` is built by `_plugins/i18n_file_index.rb`.
+    {%- endcomment -%}
+    {% if edit_path contains '_i18n/' %}
+        {% assign edit_target = edit_path %}
     {% else %}
         {% assign localized_path = '_i18n/' | append: site.lang | append: '/' | append: edit_path %}
-        {% assign edit_href = edit_base | append: localized_path %}
+        {% assign english_path = '_i18n/en/' | append: edit_path %}
+        {% if site.i18n_files[localized_path] %}
+            {% assign edit_target = localized_path %}
+        {% elsif site.i18n_files[english_path] %}
+            {% assign edit_target = english_path %}
+        {% else %}
+            {% assign edit_target = edit_path %}
+        {% endif %}
     {% endif %}
+    {% assign edit_href = edit_base | append: edit_target %}
 {% endif %}
 
 {% if edit_allowed and edit_href != '' %}

@@ -10,7 +10,7 @@ If you want to make a large contribution, please do it in a pull request, and as
 ## Blog
 
 1. Create or edit a file in the [`_blogs`](_blogs/) folder. Use the existing files as a reference for the structure and required fields.
-2. If your blog contains some images, add them to the [`images/blog/{blog-title}`](images/blog/) folder, where `blog-title` equals your `.md` filename under [`_blogs`](_blogs/). Please, compress the images to optimize loading times.
+2. If your blog contains some images, add them to the [`images/blog/{blog-title}`](images/blog/) folder, where `blog-title` equals your `.md` filename under [`_blogs`](_blogs/). Add them as they are — the deploy workflow resizes and compresses every image at build time, so the repository keeps the originals.
 
 ## Research Report
 
@@ -38,7 +38,7 @@ If you want to make a large contribution, please do it in a pull request, and as
 
 1. Create or edit a file in the [`_people`](_people/) folder. Use the existing files as a reference for the structure and required fields. Each file should be named using the format `lastname_firstname.md`.
 2. Add a brief biography and any relevant links (e.g., personal website, scholar, elibrary) to the files in [`_i18n/en/_people/`](_i18n/en/_people/) and [`_i18n/ru/_people/`](_i18n/ru/_people/) directories. Name files consistently across languages, following the same `lastname_firstname` format.
-3. Add the person's profile picture to the [`images/people/`](images/people/) folder. Please, compress the image to optimize loading times. Add image filename to the file from 1st step.
+3. Add the person's profile picture to the [`images/people/`](images/people/) folder — as it is, the deploy workflow compresses it at build time. Add the image filename to the file from the 1st step.
 4. Update meta information `people` in the [`_i18n/en.yml`](_i18n/en.yml) and [`_i18n/ru.yml`](_i18n/ru.yml) files to include the new person, following the same `lastname_firstname` format.
 
 ## Courses
