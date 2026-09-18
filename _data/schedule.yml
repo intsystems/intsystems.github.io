@@ -39,8 +39,8 @@ semesters:
         ru: "Презентация кафедры для студентов 3 курса"
       - date: 2026-11-07
         tag: admission
-        en: "Interview for 3rd year students applying to the department [scholarship]({baseurl}/admission)"
-        ru: "Собеседование для студентов 3 курса, поступающих на кафедру [scholarship]({baseurl}/admission)"
+        en: "Interview for 3rd year students applying to the department, [read this]({baseurl}/admission)"
+        ru: "Собеседование для студентов 3 курса, поступающих на кафедру, [подробнее]({baseurl}/admission)"
       - date: 2026-12-15
         date_end: 2026-12-21
         en: "Exam week for 3rd to 6th year students"
