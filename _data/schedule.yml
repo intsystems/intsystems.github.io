@@ -184,13 +184,13 @@ semesters:
         courses:
           - time: "10:30-12:00"
             course_id: optimal_transport
-          - time: "12:10-13:40"
-            course_id: bioinformatics
+          #- time: "12:10-13:40"
+          #  course_id: bioinformatics
           - time: "14:30-16:00"
             course_id: natural_language_processing
           - time: "17:00-18:30"
             course_id: software_engineering_data_analysis
-          - time: ""
+          - time: "12:10-13:40"
             course_id: bayesian_multimodeling
           - time: ""
             course_id: rnd_in_ai
