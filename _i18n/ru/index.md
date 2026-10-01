@@ -191,6 +191,14 @@
     <div id="carousel-section">
         <div id="carousel-demo" class="carousel">
             <div class="carousel-item">
+                <img loading="lazy" src="{{ site.baseurl_root }}/images/life/bachelors-2026.jpeg" alt="Бакалавриат 2026">
+                <p>Бакалавриат, выпуск 2026</p>
+            </div>
+            <div class="carousel-item">
+                <img loading="lazy" src="{{ site.baseurl_root }}/images/life/masters-2026.jpeg" alt="Магистратура 2026">
+                <p>Магистратура, выпуск 2026</p>
+            </div>
+            <div class="carousel-item">
                 <img loading="lazy" src="{{ site.baseurl_root }}/images/life/bachelors-2025.jpeg" alt="Бакалавриат 2025">
                 <p>Бакалавриат, выпуск 2025</p>
             </div>

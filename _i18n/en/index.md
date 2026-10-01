@@ -192,6 +192,14 @@
     <div id="carousel-section">
         <div id="carousel-demo" class="carousel">
             <div class="carousel-item">
+                <img loading="lazy" src="{{ site.baseurl_root }}/images/life/bachelors-2026.jpeg" alt="Bachelors 2026">
+                <p>Bachelors 2026'</p>
+            </div>
+            <div class="carousel-item">
+                <img loading="lazy" src="{{ site.baseurl_root }}/images/life/masters-2026.jpeg" alt="Masters 2026">
+                <p>Masters 2026'</p>
+            </div>
+            <div class="carousel-item">
                 <img loading="lazy" src="{{ site.baseurl_root }}/images/life/bachelors-2025.jpeg" alt="Bachelors 2025">
                 <p>Bachelors 2025'</p>
             </div>
