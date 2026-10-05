@@ -7,7 +7,7 @@ conferences:
   ccfddl: AI/nips
   full_name: Neural Information Processing Systems
   submission_deadline: '2026-05-07'
-  conference_date: '2026-12-06'
+  conference_date: '2026-12-08'
   location: Sydney, Australia; Atlanta, USA; Paris, France
   website: https://neurips.cc/Conferences/2026
   rank: A*
@@ -57,7 +57,7 @@ conferences:
   ccfddl: AI/eccv
   full_name: European Conference on Computer Vision
   submission_deadline: '2026-03-05'
-  conference_date: '2026-09-08'
+  conference_date: '2026-09-10'
   location: Malmö, Sweden
   website: https://eccv.ecva.net/
   rank: A*
@@ -104,18 +104,18 @@ conferences:
 - name: ACL
   ccfddl: AI/acl
   full_name: Annual Meeting of the Association for Computational Linguistics
-  submission_deadline: '2026-02-15'
-  conference_date: '2026-07-30'
-  location: TBA
-  website: https://www.2026.aclweb.org
+  submission_deadline: '2027-01-04'
+  conference_date: '2027-08-17'
+  location: Kyoto, Japan
+  website: https://2027.aclweb.org/
   rank: A*
   active: true
 - name: EMNLP
   ccfddl: AI/emnlp
   full_name: Conference on Empirical Methods in Natural Language Processing
   submission_deadline: '2026-05-25'
-  conference_date: '2026-10-24'
-  location: Budapest, Hungary
+  conference_date: '2026-10-25'
+  location: Budapest, Hungary (Hybrid)
   website: https://2026.emnlp.org/
   rank: A
   active: true
