@@ -76,13 +76,13 @@ conferences:
 - name: IJCAI
   ccfddl: AI/ijcai
   full_name: International Joint Conference on Artificial Intelligence
-  submission_deadline: '2026-01-19'
-  conference_date: '2026-08-15'
-  location: Bremen, Germany
-  website: https://2026.ijcai.org/
+  submission_deadline: '2027-01-11'
+  conference_date: '2027-08-07'
+  location: Kyoto, Japan
+  website: https://2027.ijcai.org/
   rank: A*
   active: true
-  abstract_deadline: '2026-01-12'
+  abstract_deadline: '2027-01-04'
 - name: AISTATS
   ccfddl: AI/aistats
   full_name: International Conference on Artificial Intelligence and Statistics
