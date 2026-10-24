@@ -231,19 +231,6 @@
     height: auto;
 }
 
-// News post styles
-.news-post__header {
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.news-post__date {
-    color: #777;
-    font-size: 1rem;
-    margin-bottom: 0;
-}
-
 @media (min-width: $sm-width) {
     .blog-card__link {
         flex-direction: row;

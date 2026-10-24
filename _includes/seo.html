@@ -49,9 +49,6 @@
 {%- when 'blog' -%}
   {%- assign page_type = "article" -%}
   {%- assign seo_description = page.summary | default: seo_description -%}
-{%- when 'news' -%}
-  {%- assign page_type = "article" -%}
-  {%- assign seo_description = page.excerpt | default: seo_description | strip_html | strip -%}
 {%- endcase -%}
 {%- unless seo_description and seo_description != "" -%}
   {%- if is_ru -%}{%- assign seo_description = "Кафедра интеллектуальных систем МФТИ — подготовка бакалавров и магистров по прикладной математике и физике с фокусом на анализ данных, машинное обучение и искусственный интеллект" -%}
@@ -181,7 +178,7 @@
   {% endif %}
   "educationalLevel": "{% if page.type == 'bachelor' %}Undergraduate{% else %}Graduate{% endif %}"
 }
-{%- elsif page.layout == "blog" or page.layout == "news" -%}
+{%- elsif page.layout == "blog" -%}
 {
   "@context": "https://schema.org",
   "@type": "Article",
