@@ -1,9 +1,16 @@
 ---
-layout: redirect
-sitemap: false
-id: zhuravlyov_yv
-name: peoples.name
+title: people.zhuravlyov_yv
+edit: true
 position: hotd
 avatar: zhuravlyov_yv.jpg
-redirect: https://ru.wikipedia.org/wiki/Журавлёв,_Юрий_Иванович_(математик)
+mail:
+telegram:
+site:
+scholar:
+orcid:
+mathnet:
+scopus:
+elib:
 ---
+
+{% tf _people/zhuravlyov_yv.md %}
