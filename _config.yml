@@ -1,8 +1,8 @@
 # Used by jekyll-feed (feed.xml) and as the last-resort SEO title
 title: Intelligent Systems
-description: Intelligent Systems Department at MIPT — news, courses, people and research
+description: Intelligent Systems Department at MIPT — courses, people and research
 
-# Atom feeds: /feed.xml (news posts) and /feed/blog.xml (blog collection)
+# Atom feed for the blog collection: /feed/blog.xml
 feed:
   collections:
     blogs:
@@ -40,7 +40,7 @@ sass:
   style: compressed
   sourcemap: never
 
-exclude: ["LICENSE", "README.md", "Gemfile", "Gemfile.lock", "vendor", "_sass"]
+exclude: ["LICENSE", "README.md", "AGENTS.md", "CLAUDE.md", "Gemfile", "Gemfile.lock", "vendor", "_sass"]
 
 # Highlighter
 highlighter: rouge

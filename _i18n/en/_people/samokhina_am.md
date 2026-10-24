@@ -4,7 +4,7 @@ She is an author of some scientific papers on machine learning and neuroscience.
 **Professional interests:** brain-computer interfaces, continuous models.
 
 ### Publications
-1. А. М. Самохина, Р. Г. Нейчев, В. В. Гончаренко, Р. К. Григорян, В. В. Стрижов [Модели классификации выборки вызванных потенциалов P300]() // Системы и средства информатики, 2022
+1. А. М. Самохина, Р. Г. Нейчев, В. В. Гончаренко, Р. К. Григорян, В. В. Стрижов Модели классификации выборки вызванных потенциалов P300 // Системы и средства информатики, 2022
 2. Matvey Bulat, Alexandra Karpman, Alina Samokhina, Alexander Panov [Playing a P300-based BCI VR game leads to changes in cognitive functions of healthy adults](https://www.biorxiv.org/content/10.1101/2020.05.28.118281v3.abstract) // BioRxiv, 2020
 
 

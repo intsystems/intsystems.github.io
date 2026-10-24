@@ -92,25 +92,6 @@
     margin-top: 1rem;
 }
 
-// --- News ---
-
-.news-scroll-container {
-    overflow-x: auto;
-}
-
-.news-track {
-    display: flex;
-    gap: 1.5rem;
-    min-width: 0;
-    padding: 1rem 0.5rem;
-}
-
-.news-block__badge-row {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-}
-
 // --- Department statistics ---
 
 .stats {
@@ -232,83 +213,6 @@
         border-radius: 1rem;
         margin: 0;
     }
-}
-
-.news-block {
-    font-family: $font-primary;
-    text-align: left;
-    line-height: 1.4;
-    display: block;
-    min-width: 200px;
-    max-width: 300px;
-    background: #fff;
-    border-radius: 1rem;
-    padding: 1rem;
-    border-left: 10px solid #f5f5f5;
-    box-shadow:
-        0px 1px 3px rgba(0, 0, 0, 0.05),
-        1px 0px 3px rgba(0, 0, 0, 0.05);
-    text-decoration: none;
-    color: inherit;
-    transition:
-        box-shadow 0.2s,
-        transform 0.2s,
-        background-color 0.2s;
-    flex-shrink: 0;
-    position: relative;
-
-    &:hover,
-    &:focus {
-        cursor: pointer;
-        text-decoration: none;
-        color: inherit;
-        transform: translateY(-2px);
-        box-shadow:
-            0 4px 14px rgba(0, 0, 0, 0.08),
-            0 1px 3px rgba(0, 0, 0, 0.05);
-
-        .news-title {
-            color: $href-color;
-        }
-    }
-}
-
-.news-title {
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: left;
-    margin-bottom: 0.2rem;
-    transition: color 0.2s ease;
-    color: inherit;
-}
-
-.news-date {
-    font-family: $font-primary;
-    color: #777;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.news-excerpt {
-    color: #555;
-    font-size: 1rem;
-    margin-bottom: 0px;
-}
-
-.news-important-badge {
-    position: absolute;
-    top: 0rem;
-    right: -1rem;
-    background: $href-bg-color;
-    color: $href-color;
-    font-weight: 600;
-    padding: 0.4rem 1.2rem;
-    border-radius: 0.5rem;
-    box-shadow:
-        0px 1px 3px rgba(0, 0, 0, 0.05),
-        1px 0px 3px rgba(0, 0, 0, 0.05);
-    transform: rotate(15deg);
-    pointer-events: none;
 }
 
 .research-block {

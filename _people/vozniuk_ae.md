@@ -2,7 +2,7 @@
 title: people.vozniuk_ae
 edit: true
 position: gs
-avatar: default.jpg
+avatar: vozniuk_ae.jpg
 mail: vozniuk.ae@phystech.edu
 telegram: tropaeolum
 site:

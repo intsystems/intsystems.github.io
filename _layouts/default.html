@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {%- comment -%}
           page.title is either a translation key (titles.nir, people.x, courses.y —
-          contains a dot, no spaces) or a literal string (blog/news posts).
+          contains a dot, no spaces) or a literal string (blog posts).
           Only keys go through {% t %}; a missing key would fail the build.
           Resolved once here; seo.html reuses page_title.
         {%- endcomment -%}
@@ -19,7 +19,6 @@
 
         {% include seo.html %}
 
-        <link rel="alternate" type="application/atom+xml" title="{% t site.name %} — {% t site.nav.names.home %}" href="{{ site.baseurl }}/feed.xml">
         <link rel="alternate" type="application/atom+xml" title="{% t site.name %} — {% t site.nav.names.blog %}" href="{{ site.baseurl_root }}/feed/blog.xml">
 
         <!-- Google and Yandex Verification -->
@@ -85,8 +84,8 @@
         {% endif %}
         <script src="{{ site.baseurl_root }}/javascript/copy_email.js"></script>
         <script src="{{ site.baseurl_root }}/javascript/table_scroll.js"></script>
-        {% if page.layout == 'blog' or page.layout == 'news' or page.mermaid %}
-        <!-- Mermaid: loaded only where diagrams can appear (blog/news, or mermaid: true) -->
+        {% if page.layout == 'blog' or page.mermaid %}
+        <!-- Mermaid: loaded only where diagrams can appear (blog, or mermaid: true) -->
         <script type="module" src="{{ site.baseurl_root }}/javascript/mermaid_init.js"></script>
         {% endif %}
         <link rel="stylesheet" href="{{ site.baseurl }}/style.css">

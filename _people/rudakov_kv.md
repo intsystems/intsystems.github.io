@@ -1,9 +1,16 @@
 ---
-layout: redirect
-sitemap: false
-id: rudakov_kv
-name: peoples.name
+title: people.rudakov_kv
+edit: true
 position: hotd
 avatar: rudakov_kv.jpg
-redirect: https://ru.wikipedia.org/wiki/Рудаков,_Константин_Владимирович
+mail:
+telegram:
+site:
+scholar:
+orcid:
+mathnet:
+scopus:
+elib:
 ---
+
+{% tf _people/rudakov_kv.md %}

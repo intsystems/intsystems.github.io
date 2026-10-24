@@ -13,35 +13,6 @@
   </div>
 </div>
 
-<!-- News Section -->
-<section class="section-block">
-    <h2>Новости</h2>
-    <div class="news-scroll-container">
-        <div class="news-track">
-        {% assign today = site.time | date: '%s' %}
-        {% assign news_sorted = site.posts | where: "lang", "ru" | sort: "date" | reverse %}
-        {% assign shown = 0 %}
-        {% for post in news_sorted %}
-            {% comment %} posts with `expires:` disappear from the home page after that date {% endcomment %}
-            {% if post.expires %}{% assign expires = post.expires | date: '%s' %}{% if expires < today %}{% continue %}{% endif %}{% endif %}
-            {% if shown >= 10 %}{% break %}{% endif %}
-            {% assign shown = shown | plus: 1 %}
-            <a class="news-block" href="{{ site.baseurl }}{{ post.url }}">
-                {% if post.important %}
-                <div class="news-block__badge-row"><span class="news-important-badge">ВАЖНОЕ</span></div>
-                {% endif %}
-                <p class="news-title">{{ post.title }}</p>
-                <p class="news-date">{{ post.date | date: "%d.%m.%Y" }}</p>
-                <p class="news-excerpt">{{ post.excerpt }}</p>
-            </a>
-            {% endfor %}
-        {% if shown == 0 %}
-            Нет новостей
-        {% endif %}
-        </div>
-    </div>
-</section>
-
 <!-- About Section -->
 <section class="fade-in-section">
     <h2>О кафедре</h2>
