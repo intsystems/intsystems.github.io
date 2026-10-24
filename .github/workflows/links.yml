@@ -24,12 +24,18 @@ jobs:
         with:
           # Only real http(s) URLs (skips Liquid paths like {{ site.baseurl }}/...).
           # Academic profile hosts block bots, so 403/429 are not failures.
+          # --root-dir resolves root-relative image paths (/images/...) in blog posts.
+          # NIR and thesis tables are an archive: dead student repos there are expected.
           args: >-
             --no-progress
             --scheme http --scheme https
             --accept 200..=206,403,429
             --timeout 20
             --max-concurrency 8
+            --root-dir ${{ github.workspace }}
+            --exclude-path '_i18n/en/nir.md'
+            --exclude-path '_i18n/en/thesis.md'
+            --exclude '%7B%7B'
             --exclude 'scholar\.google\.com'
             --exclude 'elibrary\.ru'
             --exclude 'scopus\.com'
