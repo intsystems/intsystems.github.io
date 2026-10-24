@@ -2,6 +2,7 @@
 title: people.kravatskiy_ay
 edit: true
 position: gs
+avatar: kravatskiy_ay.png
 mail:
 telegram:
 site:
