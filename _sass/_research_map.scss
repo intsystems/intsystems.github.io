@@ -1,0 +1,415 @@
+// Research map (/materials/research-map/): _includes/research_map.html + javascript/research_map.js.
+// Grey by default; the current selection is drawn in the site accent ($href-color).
+
+$rm-node: #bbbbbb;
+$rm-faded: #e5e5e5;
+$rm-ink: #333;
+
+.research-map__chips {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.5rem 0 1rem;
+}
+
+// One row per research direction: its name (selects all its topics), then its topic chips.
+.research-map__direction-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.research-map__direction-name {
+  font: inherit;
+  font-size: $font-size-small;
+  font-weight: 600;
+  color: inherit;
+  text-align: left;
+  padding: 0.25rem 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover,
+  &:focus-visible,
+  &[aria-pressed="true"] {
+    color: $href-color;
+  }
+}
+
+@media (min-width: $lt-width) {
+  .research-map__direction {
+    display: grid;
+    grid-template-columns: 17rem 1fr;
+    gap: 0.75rem;
+    align-items: start;
+  }
+}
+
+.research-map__chip {
+  font: inherit;
+  font-size: $font-size-small;
+  color: inherit;
+  padding: 0.25rem 0.7rem;
+  border: none;
+  border-radius: 999px;
+  background: #f0f0f0;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+
+  &:hover,
+  &:focus-visible {
+    background: #e5e5e5;
+  }
+
+  &[aria-pressed="true"] {
+    background: $href-bg-color;
+    color: $href-color;
+  }
+}
+
+.research-map__count {
+  opacity: 0.6;
+  font-size: 0.85em;
+}
+
+.research-map__figure {
+  position: relative;
+  margin: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.research-map__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: $font-primary;
+  touch-action: pan-y; // a one-finger swipe keeps scrolling the page until the map is zoomed in
+}
+
+// --rm-zoom is set by research_map.js; labels, hubs and strokes are divided by it to keep their screen size.
+.research-map.is-zoomed .research-map__svg {
+  touch-action: none;
+  cursor: grab;
+}
+
+.research-map.is-dragging .research-map__svg {
+  cursor: grabbing;
+}
+
+.research-map__fixed-size {
+  transform: scale(calc(1 / var(--rm-zoom, 1)));
+}
+
+.research-map__zoom {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.research-map__zoom-button {
+  font: inherit;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: inherit;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.25rem;
+  background: #fff;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+
+  &:hover,
+  &:focus-visible {
+    background: $href-bg-color;
+    color: $href-color;
+  }
+
+  &--text {
+    font-size: $font-size-small;
+    padding: 0 0.6rem;
+  }
+}
+
+.research-map__zoom-hint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background: rgba(51, 51, 51, 0.8);
+  color: #fff;
+  font-size: $font-size-small;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &.is-visible {
+    opacity: 1;
+  }
+}
+
+.research-map__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  font-size: $font-size-small;
+  color: #777;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.research-map__edge {
+  stroke: $href-color;
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+  opacity: 0;
+  transition: opacity 0.2s;
+
+  &.is-active {
+    opacity: 0.45;
+  }
+}
+
+.research-map__node {
+  fill: $rm-node;
+  fill-opacity: 0.85;
+  cursor: pointer;
+  transition:
+    fill 0.2s,
+    fill-opacity 0.2s;
+
+  &--pub {
+    stroke: $rm-ink;
+    stroke-width: 1.2;
+    vector-effect: non-scaling-stroke;
+  }
+
+  &:hover {
+    fill: $href-color;
+  }
+}
+
+.research-map__label {
+  font-size: calc(13px / var(--rm-zoom, 1));
+  font-weight: 600;
+  fill: #777;
+  text-anchor: middle;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: calc(4px / var(--rm-zoom, 1));
+  stroke-linejoin: round;
+
+  &.is-active {
+    fill: $href-color;
+  }
+}
+
+.research-map__hub {
+  cursor: pointer;
+
+  rect {
+    fill: $rm-ink;
+  }
+
+  text {
+    font-size: 11px;
+    fill: $rm-ink;
+    paint-order: stroke;
+    stroke: #fff;
+    stroke-width: 3px;
+    stroke-linejoin: round;
+  }
+
+  &:hover rect,
+  &:focus-visible rect,
+  &.is-active rect {
+    fill: $href-color;
+  }
+
+  &.is-active text {
+    font-weight: 600;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// With a selection, everything outside it fades.
+.research-map.is-selected .research-map__nodes {
+  .research-map__node:not(.is-active) {
+    fill: $rm-faded;
+    fill-opacity: 1;
+    stroke-opacity: 0.25;
+  }
+
+  .research-map__node.is-active {
+    fill: $href-color;
+  }
+}
+
+.research-map.is-selected {
+  .research-map__hub:not(.is-active) {
+    opacity: 0.35;
+  }
+
+  .research-map__label:not(.is-active) {
+    opacity: 0.35;
+  }
+}
+
+.research-map__panel {
+  margin-top: 2rem;
+}
+
+.research-map__open {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  background: #f9f9f9;
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.research-map__works {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.research-map__work {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: $font-size-small;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.research-map__work-title {
+  font: inherit;
+  font-size: $font-size-body;
+  color: inherit;
+  text-align: left;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover,
+  &:focus-visible {
+    color: $href-color;
+  }
+}
+
+.research-map__work-meta {
+  color: #777;
+}
+
+.research-map__work-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.research-map__matrix {
+  th,
+  td {
+    max-width: none;
+  }
+
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+.research-map__matrix-direction {
+  text-align: center;
+  font-size: $font-size-small;
+  border-left: 1px solid #e5e5e5;
+}
+
+.research-map__matrix-topic {
+  vertical-align: bottom;
+
+  span {
+    display: inline-block;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    max-height: 14rem;
+    white-space: normal;
+  }
+}
+
+// Cell shade: level 1..4 from the script (square-root scale of the count).
+.research-map__cell {
+  &--1 {
+    background: $href-bg-color;
+  }
+
+  &--2 {
+    background: mix($href-color, $href-bg-color, 30%);
+  }
+
+  &--3 {
+    background: mix($href-color, $href-bg-color, 60%);
+    color: #fff;
+  }
+
+  &--4 {
+    background: $href-color;
+    color: #fff;
+  }
+}
+
+.research-map__hint {
+  color: #777;
+  margin: 0;
+}
+
+.research-map__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  .research-map__node {
+    cursor: default;
+  }
+}
+
+.research-map__legend-hub {
+  fill: $rm-ink;
+}
+
+.research-map__work-abstract {
+  margin: 0.5rem 0 0;
+  font-size: $font-size-small;
+  line-height: 1.6;
+}

@@ -1,0 +1,214 @@
+# Research map: directions, topics and per-work tags (hand-edited).
+# scripts/build_research_map.py reads this file and writes _data/research_map.yml.
+# Topics were derived from Ward clustering of the work embeddings (5 directions -> 12 topics) and checked against the abstracts.
+# Work id = student name tokens (transliterated), sorted, + degree level; the first tag is the primary topic.
+# A topic may carry open_problems: {en: ..., ru: ...}, shown when the topic is selected.
+
+directions:
+  signals:
+    en: "Signals & dynamical systems"
+    ru: "Сигналы и динамические системы"
+  deep_learning:
+    en: "Deep learning theory & architectures"
+    ru: "Теория и архитектуры глубокого обучения"
+  optimization:
+    en: "Optimization"
+    ru: "Оптимизация"
+  probabilistic:
+    en: "Generative & probabilistic modeling"
+    ru: "Генеративное и вероятностное моделирование"
+  language:
+    en: "Language & information systems"
+    ru: "Язык и информационные системы"
+
+topics:
+  neuro:
+    direction: signals
+    en: "Brain signal decoding & BCI"
+    ru: "Декодирование сигналов мозга и ИМК"
+  timeseries:
+    direction: signals
+    en: "Time series & dynamical systems"
+    ru: "Временные ряды и динамические системы"
+  theory:
+    direction: deep_learning
+    en: "Loss landscape, Jacobians & expressivity"
+    ru: "Ландшафт функции потерь, якобианы и выразительность"
+  nas:
+    direction: deep_learning
+    en: "Architecture search, compression & distillation"
+    ru: "Поиск архитектур, сжатие и дистилляция"
+  optimization:
+    direction: optimization
+    en: "Stochastic & distributed optimization"
+    ru: "Стохастическая и распределенная оптимизация"
+  generative:
+    direction: probabilistic
+    en: "Generative models & optimal transport"
+    ru: "Генеративные модели и оптимальный транспорт"
+  bayes:
+    direction: probabilistic
+    en: "Bayesian & small-sample statistics"
+    ru: "Байесовские методы и статистика малых выборок"
+  medical:
+    direction: probabilistic
+    en: "Medical imaging"
+    ru: "Медицинские изображения"
+  text:
+    direction: language
+    en: "Text understanding, topic models & LLMs"
+    ru: "Анализ текстов, тематические модели и LLM"
+  textcheck:
+    direction: language
+    en: "Generated-text & manipulation detection"
+    ru: "Детекция сгенерированных текстов и манипуляций"
+  recsys:
+    direction: language
+    en: "Recommenders, event sequences & feedback loops"
+    ru: "Рекомендации, последовательности событий и обратная связь"
+  other:
+    en: "Other"
+    ru: "Другое"
+
+tags:
+  alekseev_vasiliy__phd: [text]  # 2024 Vasiliy Alekseev: Incompleteness and Instability of Topic Models
+  alexander_astakhov__bachelor: [timeseries]  # 2026 Aleksandr Astakhov: Снижение размерности латентного пространства в задачах управления
+  alexander_bogdanov__bachelor: [optimization]  # 2024 Bogdanov Alexander: Gradient approximations using a zero-order oracle and memorizatio
+  alexander_kolesov__master: [generative, nas]  # 2022 Kolesov Alexander: Adversarial training approach for a neural network in Transfer Lea
+  alexander_molozhavenko__bachelor: [optimization]  # 2023 Alexander Molozhavenko: Riemannian optimization on the manifold of fixed rank tensor
+  alexander_terentyev__bachelor: [timeseries]  # 2024 Terentyev Alexander: Classification of trajectories of dynamic systems with physics-i
+  alexander_terentyev__master: [timeseries]  # 2026 Terentyev Alexander: Классификация временных рядов динамических систем
+  alexander_tolmachev__master: [theory]  # 2024 Alexander Tolmachev: Information Bottleneck Analysis of Deep Neural Networks
+  alexander_udeneev__bachelor: [nas]  # 2026 Udeneev Alexandr: Surrogate assisted diversity estimation in neural ensemble search
+  alexey_goncharov__phd: [timeseries]  # 2023 Aleksei Goncharov: Space-time series alignment models
+  alexey_grigorev__master: [theory]  # 2022 Alexey Grigorev: Regularization of neural layer via construction of frame in paramete
+  alexey_grishanov__master: [recsys]  # 2022 Alexey Grishanov: Application of Reinforcement Learning for recommendation system per
+  alexey_grishanov__phd: [recsys]  # 2026 Alexey Grishanov: Applying Reinforcement Learning for Recommendation Platform Persona
+  alexey_kravatskiy__bachelor: [optimization]  # 2026 Alexey Kravatskiy: Optimization algorithms based on non-spectral matrix norms for neu
+  alexey_rebrikov__bachelor: [optimization]  # 2025 Rebrikov Alexey: Variance Reduction Methods Do Not Need to Compute Full Gradients: Im
+  alina_samokhina__phd: [neuro]  # 2023 Alina Samokhina: Continous-in-time representations of signals
+  alkin_emil__master: [theory]  # 2024 Emil Alkin: Expressive Power of Tensor-Train Networks With Equal TT-cores
+  alsahanova_nadezhda__master: [timeseries]  # 2023 Nadezhda Alsahanova: Selection of tensor representations for multiview forecasting
+  altay_eynullayev__bachelor: [timeseries]  # 2025 Eynullayev Altay: Forecasting models in riemannian phase space
+  altay_eynullayev__master: [bayes, generative]  # 2026 Altay Eynullayev: DAG-GFlowNets and MCMC methods for Bayesian Structure Learning
+  anastasia_german__bachelor: [neuro]  # 2026 Anastasiia German: Multimodal approximation of fMRI data based on audiovisual stimuli
+  anastasia_linich__bachelor: [text]  # 2025 Линич Анастасия: Оценка частичных доказательств в Lean 4 на основе анализа матриц вни
+  anastasia_voznyuk__bachelor: [textcheck]  # 2024 Anastasia Voznyuk: Detection of Machine-Generated Fragments in Text
+  anastasia_voznyuk__master: [textcheck]  # 2026 Anastasia Voznyuk: Автоматический анализ текстов с помощью графовых представлений
+  andrey_filatov__master: [recsys]  # 2023 Filatov Andrei: Text Interfaces for Event Sequences
+  andrey_grabovoy__phd: [nas]  # 2022 Andrey Grabovoy: A prior distribution of parameters in problems of choosing deep lear
+  andrey_veprikov__bachelor: [recsys]  # 2024 Andrey Veprikov: Mathematical model of the hidden feedback loop effect in machine lea
+  andrey_veprikov__master: [recsys]  # 2026 Andrey Veprikov: Задача оптимального управления в системах искусственного интеллекта
+  anna_remizova__bachelor: [nas]  # 2024 Anna Remizova: Reducing the dimension of the space of the trainable parameters in the
+  anton_bishuk__master: [generative]  # 2023 Anton Bishuk: Controlled Graph Generation
+  anton_pilkevich__bachelor: [textcheck]  # 2022 Pilkevich Anton: Clustering of news text messages based on polar opinions
+  antonina_kurdyukova__bachelor: [timeseries]  # 2022 Kurdyukova Antonina: Dimensionality reduction in the phase space in canonical correla
+  antyshev_tikhon__bachelor: [optimization]  # 2024 Antyshev Tikhon: Gradient Sliding for Composite Saddle Point Problems
+  arina_chumachenko__master: [generative, medical]  # 2025 Chumachenko Arina: Controlled Image Editing Mechanisms Based on Diffusion Models
+  babkin_petr__bachelor: [nas]  # 2024 Petr Babkin: Differentiable algorithm for searching ensembles of deep learning models
+  babkin_petr__master: [nas]  # 2026 Petr Babkin: Поиск архитектуры смеси экспертов
+  bair_mikhailov__master: [medical]  # 2025 Mikhailov Bair: Сегментация и объяснимое машинное обучение в задачах радиологии
+  barabanshchikova_polina__master: [other]  # 2024 Barabanshchikova Polina: Tverberg type theorems
+  bartenev_pavel__master: [medical, generative]  # 2024 Pavel Bartenev: MRI data augmentation via conditional generative 3D inpainting
+  boeva_galina__master: [recsys]  # 2025 Boeva Galina: Efficient aggregation by labels for the problem of event sequences
+  chernousov_danila__bachelor: [bayes, generative]  # 2026 Danila Chernousov: Геометрический подход к оценке сложности данных на основе генерати
+  daniil_dorin__bachelor: [neuro]  # 2024 Daniil Dorin: Spatial-temporal characteristics in the time series decoding
+  daniil_dorin__master: [neuro]  # 2026 Daniil Dorin: Decoding Visual Information from Neural Signals: Image Reconstruction B
+  daniil_kazachkov__bachelor: [generative]  # 2026 Daniil Kazachkov: Recovering Pairwise Correspondences from Grouped Unpaired Data
+  dementev_sergey__bachelor: [recsys]  # 2026 Sergey Dementev: Алгоритм распознования скрытых петель обратной связи в рекомендатель
+  denis__phd: [timeseries]  # 2023 Denis: Dimension reduction of tensor phase spaces in dynamical system simulation
+  denis_kuznetsov__phd: [text]  # 2023 Denis Kuznetsov: Neural network models of dialogue on general topics
+  denis_rubtsov__bachelor: [optimization]  # 2025 Rubtsov Denis: High-probability guarantees in stochastic optimization
+  denis_rubtsov__master: [generative, optimization]  # 2026 Denis Rubtsov: Convergence of Accelerated Gradient Methods under Generalized Smoothne
+  denis_tikhonov__master: [timeseries]  # 2022 Tikhonov Denis: Forecasting models selection for quasi-periodic time series
+  denis_tikhonov__phd: [timeseries]  # 2024 Tikhonov Denis: Dimensionality reduction of tensor phase spaces in nonlinear dynamica
+  dmitrii_protasov__master: [other]  # 2024 Dmitry Protasov: Automatic Music Transcription
+  dmitrii_vasilenko__master: [theory]  # 2026 Dmitrii Vasilenko: Spectral Norm Bounds for the Jacobian of a Recurrent Transformer B
+  eduard_vladimirov__bachelor: [neuro]  # 2023 Eduard Vladimirov: State space models in ECoG signal classification problem
+  eduard_vladimirov__master: [neuro, bayes]  # 2025 Vladimirov Eduard: Причинно-ориентированное снижение размерности для анализа данных н
+  eduard_vladimirov__phd: [neuro]  # 2026 Eduard Vladimirov: Оценка направленных взаимодействий в ЭЭГ через локальные якобианы
+  egor_petrov__bachelor: [theory]  # 2026 Egor Petrov: Ландшафт функции Потерь для архитектуры Трансформер
+  egor_zadvornov__bachelor: [timeseries]  # 2025 Zadvornov Egor: Forecasting highly volatile time series of social trends and public i
+  fanis_khafizov__bachelor: [optimization]  # 2025 Khafizov Fanis: Adaptive Compression in Distributed Optimization
+  fedor_sobolevsky__bachelor: [text]  # 2025 Sobolevsky Fedor: Application of large language models for hierarchical summarization
+  fedor_sobolevsky__master: [text]  # 2026 Fedor Sobolevsky: Automatic Hierarchical Summarization of Scientific Texts
+  filipp_nikitin__phd: [generative, nas]  # 2022 Nikitin Filipp: Generation and selection of graph neural network models in the proble
+  firsov_sergey__bachelor: [nas]  # 2025 Firsov Sergey: Neural architecture search with target hardware control
+  firsov_sergey__master: [nas]  # 2026 Sergey Firsov: Distillation Inductive Bias
+  gadaev_tamaz__phd: [timeseries]  # 2022 Tamaz Gadaev: Multilinear model choice in forecasting problem
+  georgiy_zharov__bachelor: [textcheck]  # 2023 Georgiy Zharov: Searching for links between fragments of manipulations with named ent
+  georgiy_zharov__master: [nas]  # 2024 Zharov Georgiy: Search for an effective architecture for solving the problem of obtai
+  german_gritsai__master: [textcheck]  # 2025 Gritsai German: Verification of artificially generated text fragments
+  german_gritsai__phd: [textcheck]  # 2026 German Gritsai: Верификация искусственно сгенерированных текстовых фрагментов
+  gleb_karpeev__bachelor: [timeseries]  # 2025 Karpeev Gleb: Generative models for forecasting time series sets
+  gleb_karpeev__master: [theory]  # 2026 Gleb Karpeev: Experimental Validation of Jacobian Bounds for Iterative Transformers
+  gorchakov_vyacheslav__bachelor: [optimization]  # 2022 Gorсhakov Vyacheslav: Importance Sampling Approach to Chance-Constrained DC Optimal P
+  gorpinich_mariya__bachelor: [nas]  # 2022 Gorpinich Mariya: Metaparameter optimization in knowledge distillation
+  grebenkova_olga__master: [medical]  # 2023 Olga Grebenkova: Automatic detection of focal cortical dysplasia for sparse data repr
+  grigoriy_ksenofontov__master: [generative]  # 2024 Ksenofontov Gregory: Adversarial Schrödinger bridges on domain translation problem
+  grigoriy_ksenofontov__phd: [generative]  # 2026 Grigoriy Ksenofontov: Discrete Schrödinger Bridges
+  ignashin_igor__bachelor: [nas]  # 2024 Ignashin Igor: Bayesian distilation of transformer-based models
+  ignashin_igor__master: [optimization]  # 2026 Igor Ignashin: Приложения алгоритма Франк-Вульфа к задачам машинного обучения
+  ikonnikov_mark__bachelor: [bayes, timeseries]  # 2026 Mark Ikonnikov: Bayesian Causal Inference in the Convergent Cross-Mapping test
+  ildar_khabutdinov__master: [text]  # 2025 Khabutdinov Ildar: Исправление Грамматических Ошибок в Домене Низкоресурсных Языков
+  ildar_khabutdinov__phd: [textcheck]  # 2026 Ildar Khabutdinov: Интеллектуальные методы оценки достоверности и качества текстов
+  ilgam_latypov__bachelor: [optimization]  # 2024 Ilgam Latypov: An effective method of scalarization and search for a competitive solu
+  ilgam_latypov__master: [bayes]  # 2026 Ilgam Latypov: UCB-type Algorithm for Budget-Constrained Expert Learning
+  ilya_stepanov__bachelor: [generative]  # 2025 Ilya Stepanov: The use of synthetic data obtained using a generative neural network t
+  ilya_stepanov__master: [theory]  # 2026 Ilya Stepanov: Jacobian Analysis of a Recurrent Transformer Block
+  ilya_zharikov__phd: [textcheck]  # 2022 Ilia Zharikov: Neural network methods for document image recognition
+  iryna_zabarianska__master: [generative]  # 2026 Iryna Zabarianska: Оценка взаимной информации на основе дискретных диффузионных мосто
+  islamov_rustem__master: [optimization]  # 2024 Rustem Islamov: Distributed Newton-Type Methods with Communication Compression and Be
+  ivan_lukyanenko__bachelor: [textcheck]  # 2023 Ivan Lukyanenko: Manipulation detection in news
+  ivan_papay__bachelor: [bayes]  # 2025 Papay Ivan: Ordinal Classification Using Partially Ordered Feature Sets
+  ivan_papay__master: [timeseries, generative]  # 2026 Ivan Papay: Implicit weak adversarial networks to solve stochastic partial differenti
+  ivanov_maksim__bachelor: [nas]  # 2026 Maksim Ivanov: Surrogate-based neural network structural pruning
+  kamil_safin__phd: [textcheck]  # 2022 Kamil Safin: Intrinsic methods for plagiarised texts detection
+  karimov_parviz__master: [bayes]  # 2024 Parviz Karimov: Representation learning for data point groups
+  karpov_matvey__bachelor: [text]  # 2026 Matvey Karpov: Training information retrieval models using domain knowledge
+  kasiuk_vadim__bachelor: [optimization]  # 2025 Kasiuk Vadim: Application of the compression operator in federative learning
+  kasiuk_vadim__master: [theory]  # 2026 Vadim Kasiuk: Lyapunov's stability of Jacobian of an iterative transformer block
+  khristolyubov_maxim__bachelor: [timeseries]  # 2022 Khristolybov Maxim: Model parameter space for phase trajectory approximation
+  khusainov_marat__master: [theory, generative]  # 2025 Marat Khusainov: Understanding the plasticity of neural networks employed in GFlowNet
+  kirill_semkin__bachelor: [timeseries]  # 2024 Kirill Semkin: Tensor-SSA method in application to time series decomposition
+  kirill_semkin__master: [timeseries]  # 2026 Kirill Semkin: Классификация временных рядов динамических систем
+  kiselev_nikita__bachelor: [bayes]  # 2024 Nikita Kiselev: Bayesian Sample Size Estimation
+  kiselev_nikita__master: [bayes, theory]  # 2026 Nikita Kiselev: Методы определения достаточного размера выборки в параметрических мод
+  klypa_roman__master: [generative]  # 2024 Klypa Roman: Generative modeling for protein structures
+  konstantin_yakovlev__bachelor: [nas]  # 2022 Konstantin Yakovlev: Selection of concordant architectures with complexity control
+  konstantin_yakovlev__master: [nas]  # 2024 Yakovlev Konstantin: Generalized Greedy Gradient-Based Hyperparameter Optimization
+  konstantin_yakovlev__phd: [optimization]  # 2026 Konstantin Yakovlev: Tensor Methods in Federated Learning
+  kornilov_nikita__bachelor: [optimization]  # 2023 Kornilov Nikita: Gradient Free Optimization with Infinite Variance
+  kornilov_nikita__master: [generative, optimization]  # 2025 Kornilov Nikita: Optimal Flow Matching: новый подход к генеративному моделированию и
+  kornilov_nikita__phd: [optimization]  # 2026 Nikita Kornilov: Методы оптимизации, устойчивые к тяжелым шумам
+  kovaleva_maria__master: [recsys]  # 2024 Maria Kovaleva: Addition of global information for enhancement of local embeddings fo
+  kreinin_matvei__bachelor: [optimization]  # 2024 Matvei Kreinin: On methods with preconditioning and weight decaying
+  kreinin_matvei__master: [medical, generative]  # 2026 Matvei Kreinin: Флоу матчинг в задачах трансляции КТ
+  kseniia_petrushina__master: [text]  # 2025 Petrushina Kseniia: Detection of Hallucinations in Multimodal Models Based on Interna
+  maria_nikitina__bachelor: [bayes]  # 2024 Maria Nikitina: Analysis of distribution bias in contrastive learning
+  maria_nikitina__master: [nas]  # 2026 Maria Nikitina: Spectral characteristics of autoencoder parameters as a vector repres
+  meshkov_vladislav__bachelor: [theory]  # 2025 Meshkov Vladislav: ConvNets Landscape Convergence: Hessian-Based Analysis of Matriciz
+  meshkov_vladislav__master: [theory, bayes]  # 2026 Vladislav Meshkov: Robust Convergence of Loss Landscapes through Distributional Avera
+  mikhail_oleinik__bachelor: [nas]  # 2024 Oleinik Mikhail: Knowledge distillation in deep neural networks using model structure
+  minashkin_vladislav__master: [generative]  # 2026 Vladislav Minashkin: Extending Equilibrium Matching: Second-Order Dynamics, Latent Sp
+  mokrov_petr__master: [generative]  # 2022 Petr Mokrov: Wasserstein gradient flows: modeling and applications
+  muhammadsharif_nabiev__bachelor: [timeseries, bayes]  # 2025 Nabiev Muhammadsharif: Predictive multitask model selection using symbolic regression
+  muhammadsharif_nabiev__master: [nas]  # 2026 Muhammadsharif Nabiev: Heterogenous Knowledge Distillation
+  nasyrov_ruslan__master: [bayes]  # 2026 Ruslan Nasyrov: Analyzing large-dimensional data with a small sample size
+  natalia_varenik__master: [neuro]  # 2022 Natalia Varenik: Building a connectivity map of functional groups in the problem of d
+  neychev_radoslav__phd: [bayes]  # 2023 Radoslav Neychev: Informative prior in privileged learning
+  nikita_okhotnikov__bachelor: [generative]  # 2024 Okhotnikov Nikita: Interconnected latent representations for outfit generation task
+  nikita_okhotnikov__master: [theory]  # 2026 Nikita Okhotnikov: Анализ выразительности и обобщающей способности LoRA
+  novitskii_vasilii__phd: [optimization]  # 2024 Novitskii Vasilii: New Bounds for One-point Oracle in Stochastic Gradient-free Optimi
+  ostroukhov_petr__phd: [optimization]  # 2023 Petr Ostroukhov: Tensor Methods for Convex Functions Minimization
+  panchenko_sviatoslav__master: [neuro]  # 2022 Panchenko Sviatoslav: Bilinearity of geometric product for the task of signal decodin
+  panchenko_sviatoslav__phd: [neuro]  # 2024 Panchenko Sviatoslav: Graph Diffusion models for human brain activity decoding
+  pankratov_viktor__master: [text]  # 2023 Viktor Pankratov: Probabilistic Topic Modeling for Unbalanced Text Collections
+  pankratov_viktor__phd: [text]  # 2025 Viktor Pankratov: Probabilistic topic modeling
+  pavel_severilov__master: [timeseries]  # 2022 Pavel Severilov: Differential analysis of phase spaces in the problem of decoding sig
+  pavel_severilov__phd: [neuro]  # 2024 Pavel Severilov: Decoding of multimodal signals of brain activity
+  polina_potapova__phd: [text]  # 2023 Polina Potapova: Topic modeling for multilingual topic search
+  robert_safiullin__master: [timeseries]  # 2023 Robert Safiullin: Substance properties analysis based on its SERS spectra
+  roman_shevchuk__bachelor: [neuro]  # 2026 Roman Shevchuk: Анализ взаимосвязи между ЭЭГ и фМРТ с помощью CCA и CCM
+  sapronov_yuri__master: [recsys]  # 2026 Yuri Sapronov: TransPointRank: Global Learning to Rank with Attention
+  shokorov_viacheslav__master: [nas]  # 2023 Shokorov Viacheslav: Deep ensemble boosting

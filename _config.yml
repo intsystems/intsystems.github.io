@@ -84,6 +84,9 @@ nav:
         - id: "thesis"
           href: "/materials/thesis"
           name: site.nav.names.thesis
+        - id: "research_map"
+          href: "/materials/research-map"
+          name: site.nav.names.research_map
         - id: "blog"
           href: "/materials/blog"
           name: site.nav.names.blog

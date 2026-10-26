@@ -29,6 +29,7 @@ site:
       paper_guidelines: Paper Guidelines
       templates: Templates
       conferences: Conferences & Journals
+      research_map: Research Map
 
   toc:
     title: Contents
@@ -144,6 +145,32 @@ titles:
   seminars: Scientific seminars
   templates: Templates
   blog: Blog
+  research_map: Research Map
+
+research_map:
+  topics: Topics
+  reset: Show all
+  hint: Select a topic, an advisor or a point on the map to list its works.
+  zoom_in: Zoom in
+  zoom_out: Zoom out
+  zoom_reset: Reset
+  zoom_hint: Hold Ctrl or ⌘ and scroll to zoom
+  svg_label: Map of student works by topic similarity, with advisors
+  advisor: Advisor
+  levels:
+    l1: Research reports
+    l2: Defended thesis
+    l3: Preprint (arXiv)
+    l4: Peer-reviewed publication
+  works: Works
+  advisors: Advisors
+  open_problems: Open problems
+  matrix_title: Works per advisor and topic
+  matrix_advisor: Advisor
+  stages:
+    bachelor: Bachelor's
+    master: Master's
+    phd: PhD
 
 course:
   teachers: People
