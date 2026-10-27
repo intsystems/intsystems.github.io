@@ -65,9 +65,16 @@ nav:
     - id: "education"
       href: "/education"
       name: site.nav.names.education
-    - id: "lecturers"
-      href: "/people"
-      name: site.nav.names.lecturers
+    - id: "people"
+      href: "/instructors"
+      name: site.nav.names.people
+      dropdown:
+        - id: "lecturers"
+          href: "/instructors"
+          name: site.nav.names.lecturers
+        - id: "students"
+          href: "/students"
+          name: site.nav.names.students
     - id: "courses"
       href: "/course"
       name: site.nav.names.courses

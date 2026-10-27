@@ -223,7 +223,7 @@
 {%- assign crumbs = crumbs | push: crumb -%}
 {%- case page.layout -%}
 {%- when 'profile' -%}
-  {%- capture crumb %}{% t site.nav.names.lecturers %}|{{ site.url }}{{ site.baseurl }}/people/{% endcapture -%}
+  {%- capture crumb %}{% t site.nav.names.lecturers %}|{{ site.url }}{{ site.baseurl }}/instructors/{% endcapture -%}
   {%- assign crumbs = crumbs | push: crumb -%}
 {%- when 'course' -%}
   {%- capture crumb %}{% t site.nav.names.courses %}|{{ site.url }}{{ site.baseurl }}/course/{% endcapture -%}

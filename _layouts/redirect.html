@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+<!-- page.redirect is a path without the language prefix; site.baseurl adds /ru on Russian pages. -->
 <html lang="{{ site.lang | default: 'en' }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="0;URL={{ page.redirect }}">
+    <meta http-equiv="refresh" content="0;URL={{ site.baseurl }}{{ page.redirect }}">
     <!-- Redirect stub: search engines should index the target, not this page -->
     <meta name="robots" content="noindex">
-    <link rel="canonical" href="{{ page.redirect }}">
+    <link rel="canonical" href="{{ site.baseurl }}{{ page.redirect }}">
     <title>Redirecting...</title>
 </head>
 <body>
-    <p>Redirecting to <a href="{{ page.redirect }}">{{ page.redirect }}</a>...</p>
+    <p>Redirecting to <a href="{{ site.baseurl }}{{ page.redirect }}">{{ site.baseurl }}{{ page.redirect }}</a>...</p>
 </body>
 </html>

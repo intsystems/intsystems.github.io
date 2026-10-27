@@ -1,6 +1,6 @@
 ---
 title: titles.people
-permalink: /people/
+permalink: /instructors/
 meta_desc_en: "Lecturers at the Department of Intelligent Systems: Founders of the Department, Doctors of Science, PhD, teachers, Graduate Students, Instructors"
 meta_desc_ru: "Преподаватели Кафедры интеллектуальных систем: Основатели кафедры, Доктора наук, Кандидаты наук, преподаватели, Аспиранты, семинаристы"
 ---

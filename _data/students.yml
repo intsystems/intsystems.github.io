@@ -1,0 +1,220 @@
+# Department students and supervisors without a profile. Rendered on /students/ by _includes/students.html.
+# Updated by hand from the department's lists each semester.
+#
+# students:
+#   id            lastname_ii as in _people/ (lastname_i while the patronymic is unknown);
+#                 a student with a profile keeps its id, and the page links to it
+#   name          {ru: Фамилия Имя Отчество, en: Name Surname}; ignored for profiles, which use _i18n/
+#   track         one item per program, in order:
+#     level       bachelor | master | phd
+#     start       first semester at the department, an id from _data/schedule.yml (spring_2026, fall_2026);
+#                 students may join in any semester
+#     start_course  year of study in `start`; default bachelor 3, master 5, phd 1
+#     end         last semester, once known
+#     outcome     graduated | left; `left` is never shown
+#     supervisors ids from _people/ or from `external`
+#     topic       thesis topic, Russian
+#   orcid, github optional public ids
+#
+# The current year of study is start_course plus the number of fall semesters after `start`, so it is never stored.
+# Public: names, programs, supervisors, topics only. No grades, contacts, or jobs.
+
+external:  # supervisors without a profile in _people/
+  - {id: hildebrand_rf, name: {ru: Хильдебранд Роланд Фалькович, en: Roland Hildebrand}}
+  - {id: korotin_aa, name: {ru: Коротин Александр Андреевич, en: Alexander Korotin}}
+  - {id: maksimov_yv, name: {ru: Максимов Юрий Владимирович, en: Yury Maximov}}
+  - {id: oseledets_iv, name: {ru: Оселедец Иван Валерьевич, en: Ivan Oseledets}}
+
+students:
+  - id: akinzhala_r
+    name: {ru: Акинжала Родион, en: Rodion Akinzhala}
+    track:
+      - {level: bachelor, start: spring_2026, supervisors: [strijov_vv, maksimov_yv], topic: "Топологический анализ спектра пространственно-временных рядов"}
+  - id: baronov_m
+    name: {ru: Баронов Михаил, en: Mikhail Baronov}
+    track:
+      - {level: bachelor, start: spring_2026, supervisors: [strijov_vv], topic: "Порождение интерпретируемых суперпозиций в задачах математического моделирования"}
+  - id: vazhenin_a
+    name: {ru: Важенин Алексей, en: Alexey Vazhenin}
+    track:
+      - {level: bachelor, start: spring_2026, supervisors: [grabovoy_av], topic: "Согласование потоков с учётом геометрии"}
+  - id: vasilenko_da
+    name: {ru: Василенко Дмитрий Андреевич, en: Dmitry Vasilenko}
+    track:
+      - {level: master, start: fall_2025, supervisors: [grabovoy_av]}
+  - id: vladimirov_ea
+    name: {ru: Владимиров Эдуард Анатольевич, en: Eduard Vladimirov}
+    track:
+      - {level: phd}
+  - id: german_aya
+    name: {ru: Герман Анастасия Яновна, en: Anastasia German}
+    track:
+      - {level: master, start: fall_2026}
+  - id: gorbunova_li
+    name: {ru: Горбунова Лина Игоревна, en: Lina Gorbunova}
+    track:
+      - {level: master, start: fall_2026, supervisors: [strijov_vv], topic: "Причинно-следственный вывод и интервенция в задачах математического моделирования"}
+  - id: gritsay_gm
+    name: {ru: Грицай Герман Михайлович, en: German Gritsay}
+    track:
+      - {level: phd}
+  - id: grishanov_av
+    name: {ru: Гришанов Алексей Владимирович, en: Alexey Grishanov}
+    track:
+      - {level: phd}
+  - id: gudkov_d
+    name: {ru: Гудков Денис, en: Denis Gudkov}
+    track:
+      - {level: bachelor, start: spring_2026, supervisors: [grabovoy_av]}
+  - id: dementev_sa
+    name: {ru: Дементьев Сергей Андреевич, en: Sergey Dementev}
+    track:
+      - {level: master, start: fall_2026, supervisors: [khritankov_as]}
+  - id: dorin_dd
+    name: {ru: Дорин Даниил Дмитриевич, en: Daniil Dorin}
+    track:
+      - {level: phd}
+  - id: enikeev_a
+    name: {ru: Еникеев Арнольд, en: Arnold Enikeev}
+    track:
+      - {level: bachelor, start: spring_2026, supervisors: [grabovoy_av]}
+  - id: zabaryanskiy_a
+    name: {ru: Забарянский Александр, en: Alexander Zabaryanskiy}
+    track:
+      - {level: bachelor, start: spring_2026, supervisors: [oseledets_iv], topic: "Необходимое количество сэмплов из распределения для восстановления распределения с заданным качеством"}
+  - id: zolotarev_k
+    name: {ru: Золотарёв Кирилл, en: Kirill Zolotarev}
+    track:
+      - {level: bachelor, start: spring_2026, supervisors: [grabovoy_av]}
+  - id: ibragimova_k
+    name: {ru: Ибрагимова Ксения, en: Ksenia Ibragimova}
+    track:
+      - {level: bachelor, start: spring_2026, supervisors: [bakhteev_oy], topic: "Динамика обучения и специализация в моделях смеси экспертов"}
+  - id: ivanov_mo
+    name: {ru: Иванов Максим Олегович, en: Maksim Ivanov}
+    track:
+      - {level: master, start: fall_2026, supervisors: [bakhteev_oy]}
+  - id: ignatev_d
+    name: {ru: Игнатьев Даниил, en: Daniil Ignatev}
+    track:
+      - {level: bachelor, start: spring_2026, supervisors: [strijov_vv]}
+  - id: ikonnikov_mi
+    name: {ru: Иконников Марк Игоревич, en: Mark Ikonnikov}
+    track:
+      - {level: master, start: fall_2026, supervisors: [grabovoy_av]}
+  - id: kazachkov_di
+    name: {ru: Казачков Даниил Иванович, en: Daniil Kazachkov}
+    track:
+      - {level: master, start: fall_2026}
+  - id: karpeev_ga
+    name: {ru: Карпеев Глеб Андреевич, en: Gleb Karpeev}
+    track:
+      - {level: master, start: fall_2025, supervisors: [strijov_vv]}
+  - id: kasiuk_va
+    name: {ru: Касюк Вадим Александрович, en: Vadim Kasiuk}
+    track:
+      - {level: master, start: fall_2025, supervisors: [grabovoy_av]}
+  - id: kiselev_ns
+    name: {ru: Киселев Никита Сергеевич, en: Nikita Kiselev}
+    track:
+      - {level: phd}
+  - id: kolotilin_f
+    name: {ru: Колотилин Фёдор, en: Fedor Kolotilin}
+    track:
+      - {level: bachelor, start: spring_2026, supervisors: [korotin_aa], topic: "Дискретный мост Шрёдингера"}
+  - id: kornilov_nm
+    name: {ru: Корнилов Никита Максимович, en: Nikita Kornilov}
+    track:
+      - {level: phd}
+  - id: kravatskiy_ay
+    name: {ru: Кравацкий Алексей Юрьевич, en: Alexey Kravatskiy}
+    track:
+      - {level: master, start: fall_2026}
+  - id: ksenofontov_gs
+    name: {ru: Ксенофонтов Григорий Сергеевич, en: Grigoriy Ksenofontov}
+    track:
+      - {level: phd}
+  - id: kurdyukov_vm
+    name: {ru: Курдюков Владимир Михайлович, en: Vladimir Kurdyukov}
+    track:
+      - {level: master, start: fall_2026}
+  - id: lomachenko_o
+    name: {ru: Ломаченко Олег, en: Oleg Lomachenko}
+    track:
+      - {level: bachelor, start: spring_2026, supervisors: [hildebrand_rf], topic: "Коническая оптимизация через конусы Дикина"}
+  - id: meshkov_vs
+    name: {ru: Мешков Владислав Сергеевич, en: Vladislav Meshkov}
+    track:
+      - {level: master, start: fall_2025, supervisors: [grabovoy_av]}
+  - id: minashkin_vm
+    name: {ru: Минашкин Владислав Михайлович, en: Vladislav Minashkin}
+    track:
+      - {level: master, start: fall_2025, supervisors: [grabovoy_av]}
+  - id: nabiev_mf
+    name: {ru: Набиев Мухаммадшариф Фуркатович, en: Mukhammadsharif Nabiev}
+    track:
+      - {level: master, start: fall_2025, supervisors: [bakhteev_oy]}
+  - id: novokshonova_a
+    name: {ru: Новокшонова Анна, en: Anna Novokshonova}
+    track:
+      - {level: bachelor, start: spring_2026, supervisors: [strijov_vv], topic: "Обучение спектральных операторов в задачах прогнозирования"}
+  - id: panchenko_sk
+    name: {ru: Панченко Святослав Константинович, en: Sviatoslav Panchenko}
+    track:
+      - {level: phd}
+  - id: papay_id
+    name: {ru: Папай Иван Дмитриевич, en: Ivan Papay}
+    track:
+      - {level: master, start: fall_2025, supervisors: [strijov_vv]}
+  - id: ponamarev_av
+    name: {ru: Понамарев Алексей Витальевич, en: Alexey Ponamarev}
+    track:
+      - {level: master, start: fall_2026}
+  - id: rubtsov_dn
+    name: {ru: Рубцов Денис Николаевич, en: Denis Rubtsov}
+    track:
+      - {level: master, start: fall_2025, supervisors: [korotin_aa]}
+  - id: smirnova_m
+    name: {ru: Смирнова Мария, en: Maria Smirnova}
+    track:
+      - {level: bachelor, start: spring_2026, supervisors: [strijov_vv, maksimov_yv], topic: "Выбор причинно-следственных моделей пространственно-временных рядов"}
+  - id: sobolevskiy_fa
+    name: {ru: Соболевский Федор Александрович, en: Fedor Sobolevskiy}
+    track:
+      - {level: master, start: fall_2025, supervisors: [vorontsov_kv], topic: "Иерархическая суммаризация текстов научных документов"}
+  - id: stepanov_id
+    name: {ru: Степанов Илья Дмитриевич, en: Ilya Stepanov}
+    track:
+      - {level: master, start: fall_2025, supervisors: [grabovoy_av]}
+  - id: tikhonov_dm
+    name: {ru: Тихонов Денис Максимович, en: Denis Tikhonov}
+    track:
+      - {level: phd}
+  - id: udeneev_av
+    name: {ru: Уденеев Александр Владимирович, en: Alexander Udeneev}
+    track:
+      - {level: master, start: fall_2026, supervisors: [bakhteev_oy]}
+  - id: khabutdinov_ia
+    name: {ru: Хабутдинов Ильдар Айратович, en: Ildar Khabutdinov}
+    track:
+      - {level: phd}
+  - id: khusainov_m
+    name: {ru: Хусаинов Марат, en: Marat Khusainov}
+    track:
+      - {level: phd}
+  - id: chaykin_v
+    name: {ru: Чайкин Владимир, en: Vladimir Chaykin}
+    track:
+      - {level: bachelor, start: spring_2026, supervisors: [bakhteev_oy], topic: "Inductive bias identification"}
+  - id: chernousov_dv
+    name: {ru: Черноусов Данила Владиславович, en: Danila Chernousov}
+    track:
+      - {level: master, start: fall_2026}
+  - id: eynullaev_ae
+    name: {ru: Эйнуллаев Алтай Эльшан оглы, en: Altay Eynullaev}
+    track:
+      - {level: master, start: fall_2025, supervisors: [grabovoy_av]}
+  - id: yakovlev_kd
+    name: {ru: Яковлев Константин Дмитриевич, en: Konstantin Yakovlev}
+    track:
+      - {level: phd}

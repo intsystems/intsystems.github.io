@@ -17,7 +17,9 @@ site:
     names:
       home: Home
       education: Schedule
-      lecturers: People
+      people: People
+      lecturers: Instructors
+      students: Students
       courses: Courses
       admission: Admission
       materials: Materials
@@ -134,6 +136,7 @@ titles:
   index: Intelligent Systems
   course: Course
   people: People
+  students: Students
   materials: Materials
   nir: Research Reports
   scholarship: Scholarships
@@ -237,3 +240,21 @@ metatags:
   lecturer: Lecturer of the Department of Intelligent Systems at MIPT
   bachelor_course: Course of the Bachelor program of Intelligent Systems at MIPT
   master_course: Course of the Master program of Intelligent Systems at MIPT
+
+students:
+  intro: "Department students by year of study. The list is updated every semester; students join the department in the second semester of year 3."
+  name: Name
+  year: Year
+  graduated: Graduated
+  supervisor: Supervisor
+  groups:
+    c3: Year 3
+    c4: Year 4
+    c5: Year 5 (Master's year 1)
+    c6: Year 6 (Master's year 2)
+    phd: PhD students
+    alumni: Alumni
+  levels:
+    bachelor: bachelor's
+    master: master's
+    phd: PhD

@@ -1,0 +1,121 @@
+{% comment %}
+  Students of /students/ (both language pages), from _data/students.yml.
+  The current semester is the one in _data/schedule.yml whose dates include today; the site is rebuilt
+  daily, so years of study and graduations follow the calendar without edits.
+  A semester id becomes an index: year * 2, plus 1 for fall. A year of study grows by one with each
+  fall semester after `start`: the number of odd indexes in (start, current].
+{% endcomment %}
+{%- assign today = site.time | date: '%s' -%}
+{%- assign current_id = "" -%}
+{%- for s in site.data.schedule.semesters -%}
+  {%- assign s_start = s.start | date: '%s' -%}
+  {%- assign s_end = s.end | date: '%s' -%}
+  {%- if s_start <= today and s_end >= today -%}{%- assign current_id = s.id -%}{%- endif -%}
+{%- endfor -%}
+{%- if current_id == "" -%}
+  {%- comment -%} No semester in the schedule yet: February–August is spring, September–January is fall. {%- endcomment -%}
+  {%- assign month = site.time | date: '%-m' | plus: 0 -%}
+  {%- assign y = site.time | date: '%Y' | plus: 0 -%}
+  {%- if month >= 9 -%}{%- assign current_id = "fall_" | append: y -%}
+  {%- elsif month == 1 -%}{%- assign y = y | minus: 1 -%}{%- assign current_id = "fall_" | append: y -%}
+  {%- else -%}{%- assign current_id = "spring_" | append: y -%}{%- endif -%}
+{%- endif -%}
+{%- assign parts = current_id | split: "_" -%}
+{%- assign current = parts[1] | times: 2 -%}
+{%- if parts[0] == "fall" -%}{%- assign current = current | plus: 1 -%}{%- endif -%}
+
+{%- comment -%}
+  Rows are sorted by surname in the page language: the first word of "Фамилия Имя Отчество" in Russian,
+  the last word of "Name Surname" in English. PhD students are sorted by year of study first.
+  Each row is pushed as "key<TAB>html", sorted, and printed without the key.
+{%- endcomment -%}
+{%- assign tab = "	" -%}
+{%- assign groups = "c3,c4,c5,c6,phd,alumni" | split: "," -%}
+{%- for group in groups -%}
+  {%- assign rows = "" | split: "" -%}
+  {%- for st in site.data.students.students -%}
+    {%- for t in st.track -%}
+      {%- assign start = -1 -%}
+      {%- if t.start -%}
+        {%- assign p = t.start | split: "_" -%}
+        {%- assign start = p[1] | times: 2 -%}
+        {%- if p[0] == "fall" -%}{%- assign start = start | plus: 1 -%}{%- endif -%}
+      {%- endif -%}
+      {%- assign finish = 100000 -%}
+      {%- if t.end -%}
+        {%- assign p = t.end | split: "_" -%}
+        {%- assign finish = p[1] | times: 2 -%}
+        {%- if p[0] == "fall" -%}{%- assign finish = finish | plus: 1 -%}{%- endif -%}
+      {%- endif -%}
+      {%- assign key = "" -%}
+      {%- assign year = "" -%}
+      {%- if start <= current and finish >= current -%}
+        {%- case t.level -%}
+          {%- when "bachelor" -%}{%- assign first = t.start_course | default: 3 -%}
+          {%- when "master" -%}{%- assign first = t.start_course | default: 5 -%}
+          {%- else -%}{%- assign first = t.start_course | default: 1 -%}
+        {%- endcase -%}
+        {%- if start >= 0 -%}
+          {%- assign a = start | plus: 1 | divided_by: 2 -%}
+          {%- assign b = current | plus: 1 | divided_by: 2 -%}
+          {%- assign year = b | minus: a | plus: first -%}
+        {%- endif -%}
+        {%- comment -%} Past the program's last year means a missing `end`: hide rather than misplace. {%- endcomment -%}
+        {%- if t.level == "phd" -%}{%- assign key = "phd" -%}
+        {%- elsif t.level == "bachelor" and year <= 4 -%}{%- assign key = "c" | append: year -%}
+        {%- elsif t.level == "master" and year <= 6 -%}{%- assign key = "c" | append: year -%}{%- endif -%}
+      {%- elsif t.outcome == "graduated" and finish < current -%}
+        {%- assign key = "alumni" -%}
+        {%- assign p = t.end | split: "_" -%}
+        {%- capture year %}{% t schedule.seasons.{{ p[0] }} %} {{ p[1] }}, {% t students.levels.{{ t.level }} %}{% endcapture -%}
+      {%- endif -%}
+      {%- if key == group -%}
+        {%- assign needle = "/people/" | append: st.id | append: "/" -%}
+        {%- assign student_page = site.people | where_exp: "x", "x.url contains needle" | first -%}
+        {%- if student_page -%}{%- capture name -%}{% t people.{{ st.id }} %}{%- endcapture -%}
+        {%- else -%}{%- assign name = st.name[site.lang] | default: st.name.ru -%}{%- endif -%}
+        {%- assign words = name | split: " " -%}
+        {%- if site.lang == "ru" -%}{%- assign surname = words | first -%}{%- else -%}{%- assign surname = words | last -%}{%- endif -%}
+        {%- assign sort_key = surname | append: " " | append: name | downcase | replace: "ё", "е" -%}
+        {%- if group == "phd" -%}{%- assign sort_key = year | default: 9 | prepend: "0" | slice: -2, 2 | append: sort_key -%}{%- endif -%}
+        {%- capture row -%}
+        <tr>
+          <td>{% if student_page %}<a href="{{ site.baseurl }}{{ student_page.url }}">{{ name }}</a>{% else %}{{ name }}{% endif %}</td>
+          {%- if group == "phd" or group == "alumni" %}<td>{{ year | default: "—" }}</td>{% endif %}
+          <td>
+            {%- for sid in t.supervisors -%}
+              {%- assign needle = "/people/" | append: sid | append: "/" -%}
+              {%- assign sup = site.people | where_exp: "x", "x.url contains needle" | first -%}
+              {%- if sup -%}<a href="{{ site.baseurl }}{{ sup.url }}">{% t people.{{ sid }} %}</a>
+              {%- else -%}{%- assign ext = site.data.students.external | where: "id", sid | first -%}{{ ext.name[site.lang] | default: sid }}
+              {%- endif -%}{%- unless forloop.last -%}<br>{%- endunless -%}
+            {%- else -%}—
+            {%- endfor -%}
+          </td>
+        </tr>
+        {%- endcapture -%}
+        {%- assign item = sort_key | append: tab | append: row -%}
+        {%- assign rows = rows | push: item -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+  {%- if rows.size > 0 -%}
+  {%- assign rows = rows | sort %}
+{% if group == "alumni" %}<details class="data-table"><summary><h2>{% t students.groups.alumni %}</h2></summary>{% else %}<h2 id="{{ group }}">{% t students.groups.{{ group }} %}</h2>{% endif %}
+<table>
+  <thead>
+    <tr>
+      <th>{% t students.name %}</th>
+      {%- if group == "phd" %}<th>{% t students.year %}</th>{% elsif group == "alumni" %}<th>{% t students.graduated %}</th>{% endif %}
+      <th>{% t students.supervisor %}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%- for item in rows %}
+    {{ item | split: tab | last }}
+    {%- endfor %}
+  </tbody>
+</table>
+{% if group == "alumni" %}</details>{% endif %}
+  {%- endif -%}
+{%- endfor %}
