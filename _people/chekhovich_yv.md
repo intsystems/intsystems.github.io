@@ -10,6 +10,7 @@ orcid:
 mathnet:
 scopus: https://www.scopus.com/authid/detail.uri?authorId=6507286315
 elib: https://www.elibrary.ru/author_items.asp?authorid=17499&pubrole=100&show_refs=1&show_option=0
+openreview: [~Yury_Chekhovich1]
 ---
 
 {% tf _people/chekhovich_yv.md %}

@@ -10,6 +10,7 @@ orcid:
 mathnet:
 scopus:
 elib:
+openreview: [~Matvey_Morozov1, ~Matvey_Morozov2]
 ---
 
 {% tf _people/morozov_ma.md %}

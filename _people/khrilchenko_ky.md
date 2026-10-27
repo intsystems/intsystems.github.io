@@ -8,6 +8,7 @@ site:
 scholar:
 orcid:
 mathnet:
+openreview: [~Kirill_Khrylchenko1]
 ---
 
 {% tf _people/khrilchenko_ky.md %}

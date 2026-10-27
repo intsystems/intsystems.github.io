@@ -11,6 +11,7 @@ orcid:
 mathnet:
 scopus:
 elib: https://www.elibrary.ru/author_items.asp?authorid=1305582
+openreview: [~Daniil_Dorin1]
 ---
 
 {% tf _people/dorin_dd.md %}

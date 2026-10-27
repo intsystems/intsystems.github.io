@@ -11,6 +11,7 @@ orcid: https://orcid.org/0009-0005-9397-6081
 mathnet:
 scopus:
 elib:
+openreview: [~Konstantin_Yakovlev2]
 ---
 
 {% tf _people/yakovlev_kd.md %}

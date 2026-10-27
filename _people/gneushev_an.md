@@ -9,6 +9,7 @@ scholar: https://scholar.google.com/citations?hl=ru&user=sjlY2q8AAAAJ
 orcid:
 elib: https://www.elibrary.ru/author_items.asp?authorid=298568
 mathnet: https://www.mathnet.ru/rus/person72735
+openreview: [~Alexander_Gneushev1]
 ---
 
 {% tf _people/gneushev_an.md %}

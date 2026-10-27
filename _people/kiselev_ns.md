@@ -11,6 +11,7 @@ orcid:
 mathnet:
 scopus:
 elib: https://elibrary.ru/author_items.asp?authorid=1303715
+openreview: [~Nikita_Kiselev1]
 ---
 
 {% tf _people/kiselev_ns.md %}

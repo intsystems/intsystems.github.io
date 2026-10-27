@@ -11,6 +11,7 @@ orcid:
 mathnet:
 scopus:
 elib:
+openreview: [~Eduard_Anatolevich_Vladimirov1]
 ---
 
 {% tf _people/vladimirov_ea.md %}

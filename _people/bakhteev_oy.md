@@ -11,6 +11,7 @@ orcid:
 mathnet:
 elib: https://www.elibrary.ru/author_profile.asp?id=966578
 scopus: https://www.scopus.com/authid/detail.uri?authorId=57189341556
+openreview: [~Oleg_Bakhteev1, ~Oleg_Bakhteev2]
 ---
 
 {% tf _people/bakhteev_oy.md %}

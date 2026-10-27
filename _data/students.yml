@@ -14,24 +14,27 @@
 #     outcome     graduated | left; `left` is never shown
 #     supervisors ids from _people/ or from `external`
 #     topic       thesis topic, Russian
-#   orcid, github optional public ids
+#   orcid, github, openreview  optional public ids; openreview is a list of profile ids (~Name_Surname1)
+#                 and lives in _people/<id>.md instead when the person has a profile
 #
 # The current year of study is start_course plus the number of fall semesters after `start`, so it is never stored.
 # Public: names, programs, supervisors, topics only. No grades, contacts, or jobs.
 
 external:  # supervisors without a profile in _people/
-  - {id: hildebrand_rf, name: {ru: Хильдебранд Роланд Фалькович, en: Roland Hildebrand}}
-  - {id: korotin_aa, name: {ru: Коротин Александр Андреевич, en: Alexander Korotin}}
-  - {id: maksimov_yv, name: {ru: Максимов Юрий Владимирович, en: Yury Maximov}}
-  - {id: oseledets_iv, name: {ru: Оселедец Иван Валерьевич, en: Ivan Oseledets}}
+  - {id: hildebrand_rf, name: {ru: Хильдебранд Роланд Фалькович, en: Roland Hildebrand}, openreview: [~Roland_Hildebrand1]}
+  - {id: korotin_aa, name: {ru: Коротин Александр Андреевич, en: Alexander Korotin}, openreview: [~Alexander_Andreevich_Korotin1]}
+  - {id: maksimov_yv, name: {ru: Максимов Юрий Владимирович, en: Yury Maximov}, openreview: [~Yury_Maximov3]}
+  - {id: oseledets_iv, name: {ru: Оселедец Иван Валерьевич, en: Ivan Oseledets}, openreview: [~Ivan_Oseledets1]}
 
 students:
   - id: akinzhala_r
     name: {ru: Акинжала Родион, en: Rodion Akinzhala}
+    openreview: [~Rodion_Akinzhala1]
     track:
       - {level: bachelor, start: spring_2026, supervisors: [strijov_vv, maksimov_yv], topic: "Топологический анализ спектра пространственно-временных рядов"}
   - id: baronov_m
     name: {ru: Баронов Михаил, en: Mikhail Baronov}
+    openreview: [~Mikhail_Aleksandrovich_Baronov1]
     track:
       - {level: bachelor, start: spring_2026, supervisors: [strijov_vv], topic: "Порождение интерпретируемых суперпозиций в задачах математического моделирования"}
   - id: vazhenin_a
@@ -64,6 +67,7 @@ students:
       - {level: phd}
   - id: gudkov_d
     name: {ru: Гудков Денис, en: Denis Gudkov}
+    openreview: [~Denis_Gudkov1]
     track:
       - {level: bachelor, start: spring_2026, supervisors: [grabovoy_av]}
   - id: dementev_sa
@@ -92,22 +96,27 @@ students:
       - {level: bachelor, start: spring_2026, supervisors: [bakhteev_oy], topic: "Динамика обучения и специализация в моделях смеси экспертов"}
   - id: ivanov_mo
     name: {ru: Иванов Максим Олегович, en: Maksim Ivanov}
+    openreview: [~Maksim_Ivanov2, ~Maksim_Ivanov3]
     track:
       - {level: master, start: fall_2026, supervisors: [bakhteev_oy]}
   - id: ignatev_d
     name: {ru: Игнатьев Даниил, en: Daniil Ignatev}
+    openreview: [~Daniil_Ignatev1]
     track:
       - {level: bachelor, start: spring_2026, supervisors: [strijov_vv]}
   - id: ikonnikov_mi
     name: {ru: Иконников Марк Игоревич, en: Mark Ikonnikov}
+    openreview: [~Mark_Ikonnikov1]
     track:
       - {level: master, start: fall_2026, supervisors: [grabovoy_av]}
   - id: kazachkov_di
     name: {ru: Казачков Даниил Иванович, en: Daniil Kazachkov}
+    openreview: [~Daniil_Kazachkov1]
     track:
       - {level: master, start: fall_2026}
   - id: karpeev_ga
     name: {ru: Карпеев Глеб Андреевич, en: Gleb Karpeev}
+    openreview: [~Gleb_Karpeev1]
     track:
       - {level: master, start: fall_2025, supervisors: [strijov_vv]}
   - id: kasiuk_va
@@ -124,6 +133,7 @@ students:
       - {level: bachelor, start: spring_2026, supervisors: [korotin_aa], topic: "Дискретный мост Шрёдингера"}
   - id: kornilov_nm
     name: {ru: Корнилов Никита Максимович, en: Nikita Kornilov}
+    openreview: [~Nikita_Maksimovich_Kornilov1]
     track:
       - {level: phd}
   - id: kravatskiy_ay
@@ -144,10 +154,12 @@ students:
       - {level: bachelor, start: spring_2026, supervisors: [hildebrand_rf], topic: "Коническая оптимизация через конусы Дикина"}
   - id: meshkov_vs
     name: {ru: Мешков Владислав Сергеевич, en: Vladislav Meshkov}
+    openreview: [~Vladislav_Meshkov1]
     track:
       - {level: master, start: fall_2025, supervisors: [grabovoy_av]}
   - id: minashkin_vm
     name: {ru: Минашкин Владислав Михайлович, en: Vladislav Minashkin}
+    openreview: [~Vladislav_Mikhailovich_Minashkin1]
     track:
       - {level: master, start: fall_2025, supervisors: [grabovoy_av]}
   - id: nabiev_mf
@@ -164,6 +176,7 @@ students:
       - {level: phd}
   - id: papay_id
     name: {ru: Папай Иван Дмитриевич, en: Ivan Papay}
+    openreview: [~Ivan_Papay1]
     track:
       - {level: master, start: fall_2025, supervisors: [strijov_vv]}
   - id: ponamarev_av
@@ -176,6 +189,7 @@ students:
       - {level: master, start: fall_2025, supervisors: [korotin_aa]}
   - id: smirnova_m
     name: {ru: Смирнова Мария, en: Maria Smirnova}
+    openreview: [~Maria_Smirnova1]
     track:
       - {level: bachelor, start: spring_2026, supervisors: [strijov_vv, maksimov_yv], topic: "Выбор причинно-следственных моделей пространственно-временных рядов"}
   - id: sobolevskiy_fa
@@ -184,6 +198,7 @@ students:
       - {level: master, start: fall_2025, supervisors: [vorontsov_kv], topic: "Иерархическая суммаризация текстов научных документов"}
   - id: stepanov_id
     name: {ru: Степанов Илья Дмитриевич, en: Ilya Stepanov}
+    openreview: [~Stepanov_Ilya1]
     track:
       - {level: master, start: fall_2025, supervisors: [grabovoy_av]}
   - id: tikhonov_dm
@@ -200,6 +215,7 @@ students:
       - {level: phd}
   - id: khusainov_m
     name: {ru: Хусаинов Марат, en: Marat Khusainov}
+    openreview: [~Marat_Khusainov1]
     track:
       - {level: phd}
   - id: chaykin_v
@@ -208,6 +224,7 @@ students:
       - {level: bachelor, start: spring_2026, supervisors: [bakhteev_oy], topic: "Inductive bias identification"}
   - id: chernousov_dv
     name: {ru: Черноусов Данила Владиславович, en: Danila Chernousov}
+    openreview: [~Danila_Chernousov1]
     track:
       - {level: master, start: fall_2026}
   - id: eynullaev_ae

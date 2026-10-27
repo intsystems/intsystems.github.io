@@ -10,6 +10,7 @@ orcid: https://orcid.org/0000-0002-2194-8859/print
 mathnet: https://www.mathnet.ru/php/person.phtml?option_lang=rus&personid=71984
 scopus: https://www.scopus.com/authid/detail.uri?authorId=35796373700
 elib: https://www.elibrary.ru/author_profile.asp?id=16834
+openreview: [~Vadim_Strijov1]
 ---
 
 {% tf _people/strijov_vv.md %}

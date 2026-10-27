@@ -11,6 +11,7 @@ orcid:
 mathnet:
 elib: https://www.elibrary.ru/author_items.asp?authorid=15081&pubrole=100&show_refs=1&show_option=0
 scopus: https://www.scopus.com/authid/detail.uri?authorId=6507982932
+openreview: [~Vorontsov_Konstantin1]
 ---
 
 {% tf _people/vorontsov_kv.md %}

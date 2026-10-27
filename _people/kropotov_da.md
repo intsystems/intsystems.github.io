@@ -10,6 +10,7 @@ orcid:
 mathnet:
 elib: https://elibrary.ru/author_profile.asp?id=126077
 scopus: https://scopus.com/authid/detail.uri?authorId=56414713100
+openreview: [~Dmitry_Kropotov1]
 ---
 
 {% tf _people/kropotov_da.md %}
