@@ -2,8 +2,9 @@
 # Entries with a `ccfddl:` key are refreshed weekly by scripts/update_data.py
 # from https://github.com/ccfddl/ccf-deadlines — edit only name/full_name/rank/active
 # for those; entries without `ccfddl:` are maintained by hand.
-# `notification` (decision date of the current cycle, hand-entered) is kept as is:
-# the intsystems-media bot reminds the editor on that day.
+# `notification` (next decision date) is refreshed from huggingface/ai-deadlines; a
+# hand-entered value is kept when that source has none. The intsystems-media bot
+# reminds the editor on that day.
 conferences:
 - name: NeurIPS
   ccfddl: AI/nips
@@ -35,6 +36,7 @@ conferences:
   rank: A*
   active: true
   abstract_deadline: '2026-09-18'
+  notification: '2026-12-16'
 - name: CVPR
   ccfddl: AI/cvpr
   full_name: Conference on Computer Vision and Pattern Recognition
@@ -75,6 +77,7 @@ conferences:
   rank: A*
   active: true
   abstract_deadline: '2026-07-21'
+  notification: '2026-11-30'
 - name: IJCAI
   ccfddl: AI/ijcai
   full_name: International Joint Conference on Artificial Intelligence
@@ -160,6 +163,7 @@ conferences:
   conference_date: '2027-05-10'
   location: Dublin, Ireland
   website: https://www2027.thewebconf.org/
+  notification: '2027-01-04'
 - name: SIGIR
   ccfddl: DB/sigir
   full_name: International ACM SIGIR Conference on Research and Development in Information Retrieval

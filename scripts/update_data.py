@@ -5,6 +5,9 @@
    from the community-maintained ccfddl/ccf-deadlines repository. Only entries
    with a `ccfddl:` key (path inside its `conference/` folder, e.g. AI/nips)
    are updated; everything else in the file is left as is.
+   `notification` (the next decision date) comes from huggingface/ai-deadlines,
+   file `aideadlines:` or the lowercased name (ECML-PKDD -> ecml_pkdd); when that
+   source has no upcoming date, a hand-entered value is kept.
 2. _data/stats.yml — numbers shown on the home page (public repositories of
    the GitHub organization).
 
@@ -24,6 +27,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 CCFDDL_RAW = "https://raw.githubusercontent.com/ccfddl/ccf-deadlines/main/conference/{}.yml"
+AIDEADLINES_RAW = "https://raw.githubusercontent.com/huggingface/ai-deadlines/main/src/data/conferences/{}.yml"
 GITHUB_ORG_API = "https://api.github.com/orgs/{}"
 
 MONTHS = {m.lower(): i for i, m in enumerate(
@@ -81,11 +85,33 @@ def pick_edition(editions: list[dict], today: date) -> dict | None:
     return editions[-1] if editions else None
 
 
+def next_notification(conf: dict, today: date) -> str | None:
+    """Earliest decision date on or after today in huggingface/ai-deadlines, or None."""
+    key = conf.get("aideadlines") or conf["name"].lower().replace("-", "_")
+    try:
+        editions = yaml.safe_load(fetch(AIDEADLINES_RAW.format(key))) or []
+    except Exception:  # not covered (404) or a network hiccup: keep the current value
+        return None
+    dates = []
+    for edition in editions:
+        for step in edition.get("deadlines") or []:
+            if step.get("type") == "notification" and step.get("date"):
+                day = date.fromisoformat(str(step["date"])[:10])
+                if day >= today:
+                    dates.append(day)
+    return min(dates).isoformat() if dates else None
+
+
 def update_conferences(today: date) -> bool:
     path = ROOT / "_data" / "conferences.yml"
     data = yaml.safe_load(path.read_text(encoding="utf-8"))
     changed = False
     for conf in data["conferences"]:
+        notification = next_notification(conf, today)
+        if notification and conf.get("notification") != notification:
+            conf["notification"] = notification
+            changed = True
+            print(f"  {conf['name']}: decisions on {notification}")
         key = conf.get("ccfddl")
         if not key:
             continue
@@ -121,8 +147,9 @@ def update_conferences(today: date) -> bool:
                   "# Entries with a `ccfddl:` key are refreshed weekly by scripts/update_data.py\n"
                   "# from https://github.com/ccfddl/ccf-deadlines — edit only name/full_name/rank/active\n"
                   "# for those; entries without `ccfddl:` are maintained by hand.\n"
-                  "# `notification` (decision date of the current cycle, hand-entered) is kept as is:\n"
-                  "# the intsystems-media bot reminds the editor on that day.\n")
+                  "# `notification` (next decision date) is refreshed from huggingface/ai-deadlines; a\n"
+                  "# hand-entered value is kept when that source has none. The intsystems-media bot\n"
+                  "# reminds the editor on that day.\n")
         path.write_text(header + yaml.safe_dump(data, sort_keys=False, allow_unicode=True, width=1000),
                         encoding="utf-8")
     return changed
