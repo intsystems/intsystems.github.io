@@ -2,6 +2,8 @@
 # Entries with a `ccfddl:` key are refreshed weekly by scripts/update_data.py
 # from https://github.com/ccfddl/ccf-deadlines — edit only name/full_name/rank/active
 # for those; entries without `ccfddl:` are maintained by hand.
+# `notification` (decision date of the current cycle, hand-entered) is kept as is:
+# the intsystems-media bot reminds the editor on that day.
 conferences:
 - name: NeurIPS
   ccfddl: AI/nips
@@ -94,13 +96,15 @@ conferences:
   active: true
   abstract_deadline: '2026-09-29'
 - name: KDD
+  ccfddl: DB/sigkdd
   full_name: ACM SIGKDD Conference on Knowledge Discovery and Data Mining
-  submission_deadline: '2026-02-06'
-  conference_date: '2026-08-23'
-  location: TBA
-  website: https://www.kdd.org
+  submission_deadline: '2026-07-26'
+  conference_date: '2027-08-01'
+  location: San Jose, California, USA
+  website: https://kdd2027.kdd.org/
   rank: A*
   active: true
+  abstract_deadline: '2026-07-19'
 - name: ACL
   ccfddl: AI/acl
   full_name: Annual Meeting of the Association for Computational Linguistics
@@ -117,5 +121,62 @@ conferences:
   conference_date: '2026-10-25'
   location: Budapest, Hungary (Hybrid)
   website: https://2026.emnlp.org/
+  rank: A*
+  active: true
+- name: COLT
+  ccfddl: AI/colt
+  full_name: Conference on Learning Theory
+  rank: A*
+  active: true
+  submission_deadline: '2027-01-29'
+  conference_date: '2027-06-28'
+  location: Tokyo, Japan
+  website: https://learningtheory.org/colt2027/
+- name: UAI
+  ccfddl: AI/uai
+  full_name: Conference on Uncertainty in Artificial Intelligence
+  rank: A
+  active: true
+  submission_deadline: '2026-02-25'
+  conference_date: '2026-08-18'
+  location: Amsterdam, Netherlands (Hybrid)
+  website: https://www.auai.org/uai2026/
+- name: NAACL
+  ccfddl: AI/naacl
+  full_name: Annual Conference of the North American Chapter of the Association for Computational Linguistics
+  rank: A
+  active: true
+  submission_deadline: '2026-10-12'
+  conference_date: '2027-06-01'
+  location: San Francisco, California, USA
+  website: https://2027.naacl.org/
+- name: WWW
+  ccfddl: MX/www
+  full_name: The ACM Web Conference
+  rank: A*
+  active: true
+  submission_deadline: '2026-10-25'
+  abstract_deadline: '2026-10-18'
+  conference_date: '2027-05-10'
+  location: Dublin, Ireland
+  website: https://www2027.thewebconf.org/
+- name: SIGIR
+  ccfddl: DB/sigir
+  full_name: International ACM SIGIR Conference on Research and Development in Information Retrieval
+  rank: A*
+  active: true
+  submission_deadline: '2027-01-21'
+  abstract_deadline: '2027-01-14'
+  conference_date: '2027-07-18'
+  location: San Jose, California, USA
+  website: https://sigir2027.org/
+- name: RecSys
+  ccfddl: DB/recsys
+  full_name: ACM Conference on Recommender Systems
+  rank: A
+  active: true
+- name: ECML-PKDD
+  ccfddl: DB/pkdd
+  full_name: European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases
   rank: A
   active: true

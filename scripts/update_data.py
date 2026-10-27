@@ -120,7 +120,9 @@ def update_conferences(today: date) -> bool:
         header = ("# Conference deadlines shown on /materials/conferences/.\n"
                   "# Entries with a `ccfddl:` key are refreshed weekly by scripts/update_data.py\n"
                   "# from https://github.com/ccfddl/ccf-deadlines — edit only name/full_name/rank/active\n"
-                  "# for those; entries without `ccfddl:` are maintained by hand.\n")
+                  "# for those; entries without `ccfddl:` are maintained by hand.\n"
+                  "# `notification` (decision date of the current cycle, hand-entered) is kept as is:\n"
+                  "# the intsystems-media bot reminds the editor on that day.\n")
         path.write_text(header + yaml.safe_dump(data, sort_keys=False, allow_unicode=True, width=1000),
                         encoding="utf-8")
     return changed
