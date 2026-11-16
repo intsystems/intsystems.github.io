@@ -19,13 +19,13 @@ conferences:
 - name: ICML
   ccfddl: AI/icml
   full_name: International Conference on Machine Learning
-  submission_deadline: '2026-01-29'
-  conference_date: '2026-07-06'
-  location: Seoul, Korea
-  website: https://icml.cc/Conferences/2026
+  submission_deadline: '2027-01-22'
+  conference_date: '2027-08-02'
+  location: Riocentro, Rio de Janeiro, Brazil
+  website: https://icml.cc/Conferences/2027
   rank: A*
   active: true
-  abstract_deadline: '2026-01-24'
+  abstract_deadline: '2027-01-14'
 - name: ICLR
   ccfddl: AI/iclr
   full_name: International Conference on Learning Representations
@@ -41,7 +41,7 @@ conferences:
   ccfddl: AI/cvpr
   full_name: Conference on Computer Vision and Pattern Recognition
   submission_deadline: '2026-11-16'
-  conference_date: '2027-06-20'
+  conference_date: '2027-06-22'
   location: Seattle, WA, United States
   website: https://cvpr.thecvf.com/Conferences/2027
   rank: A*
@@ -112,7 +112,7 @@ conferences:
   ccfddl: AI/acl
   full_name: Annual Meeting of the Association for Computational Linguistics
   submission_deadline: '2027-01-04'
-  conference_date: '2027-08-17'
+  conference_date: '2027-08-20'
   location: Kyoto, Japan
   website: https://2027.aclweb.org/
   rank: A*
