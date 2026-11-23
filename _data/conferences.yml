@@ -171,7 +171,7 @@ conferences:
   active: true
   submission_deadline: '2027-01-21'
   abstract_deadline: '2027-01-14'
-  conference_date: '2027-07-18'
+  conference_date: '2027-07-20'
   location: San Jose, California, USA
   website: https://sigir2027.org/
 - name: RecSys
